@@ -21,19 +21,19 @@ const faqItems = [
     id: 3,
     question: "How does AdvanceEdge verify Mass Tort leads before sending them to law firms?",
     answer:
-      "We implement a comprehensive verification process including eligibility verification, case assessment, and quality assurance to ensure only qualified leads reach your firm.",
+      "We validate leads through medical record retrieval and case screening, ensuring compliance with eligibility criteria before delivery.",
   },
   {
     id: 4,
     question: "What digital marketing services does AdvanceEdge offer for law firms?",
     answer:
-      "We provide targeted digital marketing campaigns, SEO optimization, paid advertising, and lead generation strategies specifically designed for legal practices.",
+      "We provide SEO, PPC, social media management, and content marketing to boost law firms’ online presence and attract more qualified leads.",
   },
   {
     id: 5,
     question: "How does AdvanceEdge's web development service help law firms?",
     answer:
-      "Our web development services create high-converting, mobile-optimized websites that showcase your services, improve search rankings, and attract quality clients.",
+      "We create SEO-optimized, conversion-focused websites tailored to legal practices, improving client acquisition and search rankings.",
   },
 ];
 

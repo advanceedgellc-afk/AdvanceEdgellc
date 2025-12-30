@@ -1,5 +1,5 @@
 // src/app/layout.tsx - GTM ADDED ✅
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Marcellus } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -8,6 +8,7 @@ import { BookingModalProvider } from "@/context/BookingModalContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
 
+
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -15,12 +16,14 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+
 const marcellus = Marcellus({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-marcellus",
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "Advance Edge LLC - Empowering Legal Professionals",
@@ -36,6 +39,15 @@ export const metadata: Metadata = {
   },
 };
 
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#FF9A28',
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,6 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`scroll-smooth ${dmSans.variable} ${marcellus.variable}`}
     >
       {/* ✅ GTM - HEAD (JavaScript version) */}
@@ -60,7 +73,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${dmSans.className} antialiased`}>
+      {/* ✅ FIXED: Added suppressHydrationWarning to body tag */}
+      <body suppressHydrationWarning className={`${dmSans.className} antialiased`}>
         {/* ✅ GTM - BODY (noscript fallback) */}
         <noscript
           dangerouslySetInnerHTML={{

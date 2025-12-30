@@ -150,7 +150,7 @@ export default function WhyChooseUsSection() {
                 </motion.div>
 
                 {/* Heading */}
-                <h2 className="font-marcellus text-3xl sm:text-4xl leading-tight mb-4 sm:mb-6">
+                <h2 className="font-marcellus  text-3xl sm:text-4xl leading-tight mb-4 sm:mb-6">
                   Results Driven Solutions for Law Firms & Legal Marketing Firms
                 </h2>
 

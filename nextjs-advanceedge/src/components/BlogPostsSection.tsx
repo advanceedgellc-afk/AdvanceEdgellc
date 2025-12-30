@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FaGavel, FaArrowRight } from "react-icons/fa";
 import { urlFor } from "@/lib/sanity";
 import type { Post } from "@/types/post";
+import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 interface BlogPostsSectionProps {
   posts: Post[];
@@ -15,17 +17,34 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
   return (
     <>
       {posts.length > 0 && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-4 md:py-14 bg-gray-50">
           <div className="container mx-auto px-4">
             {/* Header */}
-            <div className="max-w-5xl mx-auto mb-12">
-              <h2 className="text-4xl font-marcellus text-center mb-4">
-                Latest Articles
-              </h2>
-              <p className="text-center text-gray-600 max-w-2xl mx-auto">
-                Stay updated with insights, strategies, and best practices for law firm growth
-              </p>
+            <motion.div
+            className="text-center mb-16 px-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="space-y-6 flex flex-col items-center justify-center">
+              <motion.div
+                className="flex items-center gap-3 pb-5"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="w-12 h-1 rounded-full bg-[#FF9A28]" />
+                <span className="font-dm text-sm font-bold tracking-widest text-[#FF3600] uppercase">
+                Recent Articles
+                </span>
+              </motion.div>
             </div>
+
+            <h2 className="font-marcellus text-4xl md:text-5xl text-slate-900 mb-4">
+            What News Do We Have<br/> Today, Latest Blog            </h2>
+          </motion.div>
 
             {/* Posts Grid */}
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

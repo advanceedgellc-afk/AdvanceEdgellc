@@ -12,8 +12,10 @@ import { FaGavel, FaArrowRight } from "react-icons/fa"
 import { client } from "@/sanity/client"
 import { urlFor } from "@/lib/sanity"
 import type { Post } from "@/types/post"
-import ScrollDownArrow from "@/components/ScrollDownArrow";  // Add this import
+import ScrollDownArrow from "@/components/ScrollDownArrow";
 import BlogPostsSection from "@/components/BlogPostsSection";
+import TrustIndicators from "@/components/TrustIndicators";
+
 
 const POSTS_QUERY = `
 *[
@@ -31,7 +33,8 @@ const POSTS_QUERY = `
 }
 `
 
-// ✅ NEW: SEO Meta tags for homepage
+
+// ✅ SEO Meta tags for homepage (viewport and themeColor removed - moved to layout.tsx)
 export const metadata: Metadata = {
   title: 'AdvanceEdge Legal Support Services | Case Acquisition, Virtual Agents & Digital Marketing',
   description: 'AdvanceEdge empowers legal professionals with expert case acquisition, virtual legal agents, and digital marketing solutions tailored for law firms across the United States.',
@@ -96,33 +99,33 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: '#FF9A28',
 }
+
 
 export default async function Home() {
   const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, { next: { revalidate: 30 } })
 
+
   return (
     <main>
       <Hero />
+      <TrustIndicators/>
       <AboutSection />
       <WhoWeHelpSlider />
       <WhyChooseUsSection />
       <ServicesSection />
       <FAQSection />
 
+
       {/* ✅ Related Articles */}
       <section className="my-20">
         <BlogPostsSection posts={posts} />
       </section>
 
+
       {/* ✅ PERFECT: ScrollDownArrow BEFORE closing </main> */}
       <ScrollDownArrow />
+
 
       {/* ✅ SINGLE JSON-LD - NO DUPLICATES */}
       <script

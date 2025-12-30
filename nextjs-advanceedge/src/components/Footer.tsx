@@ -1,5 +1,6 @@
 'use client';
 
+
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -7,17 +8,20 @@ import {
   FaFacebook,
   FaInstagram,
   FaTiktok,
-} from "react-icons/fa";
+} from "react-icons/fa6";  // ← UPDATED: Use fa6 instead of fa
 import CTASection from "@/components/CTASection";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
 
+
   const handleSubscribe = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -26,13 +30,16 @@ export default function Footer() {
       return;
     }
 
+
     if (!emailRegex.test(email)) {
       setMessage({ type: "error", text: "Please enter a valid email address" });
       return;
     }
 
+
     setLoading(true);
     setMessage({ type: "", text: "" });
+
 
     try {
       const response = await fetch("/api/newsletter", {
@@ -43,7 +50,9 @@ export default function Footer() {
         body: JSON.stringify({ email }),
       });
 
+
       const data = await response.json();
+
 
       if (response.ok) {
         setMessage({
@@ -70,9 +79,40 @@ export default function Footer() {
     }
   };
 
+
+  // ✅ Social links with proper icons and colors
+  const socialLinks = [
+    {
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/company/advanceedge-solutions/",
+      label: "LinkedIn",
+      color: 'hover:bg-[#0A66C2]',
+    },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/advanceedgellc",
+      label: "Facebook",
+      color: 'hover:bg-[#4267B2]',
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/advanceedge_/#",
+      label: "Instagram",
+      color: 'hover:bg-[#E4405F]',
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@advanceedge",
+      label: "TikTok",
+      color: 'hover:bg-[#000000]',
+    },
+  ];
+
+
   return (
     <footer className="bg-[#0a0d1e] text-white relative overflow-hidden">
       <CTASection />
+
 
       <div className="container mx-auto px-4  relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pt-10 md:pt-16 pb-2 md:pb-5 ">
@@ -88,47 +128,31 @@ export default function Footer() {
               </Link>
             </div>
 
+
             <p className="font-dm text-gray-400 text-base mb-6 leading-relaxed">
               Empowering legal professionals with innovative solutions and
               expertise since 2013.
             </p>
 
+
+            {/* ✅ UPDATED: Social icons with proper react-icons */}
             <div className="flex space-x-4">
-  {[
-    {
-      icon: <FaLinkedin size={18} />,
-      href: "https://www.linkedin.com/company/advanceedge-solutions/",
-      label: "LinkedIn",
-    },
-    {
-      icon: <FaFacebook size={18} />,
-      href: "https://www.facebook.com/advanceedgellc",
-      label: "Facebook",
-    },
-    {
-      icon: <FaInstagram size={18} />,
-      href: "https://www.instagram.com/advanceedge_/#",
-      label: "Instagram",
-    },
-    {
-      icon: <FaTiktok size={18} />,
-      href: "https://www.tiktok.com/@advanceedge",
-      label: "TikTok",
-    },
-  ].map(({ icon, href, label }, i) => (
-    <a
-      key={i}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-[#FF9A28]"
-    >
-      {icon}
-    </a>
-  ))}
-</div>
+              {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 ${color}`}
+                >
+                  <Icon size={18} className="text-white" />
+                </a>
+              ))}
+            </div>
           </div>
+
 
           {/* Services */}
           <div>
@@ -151,9 +175,11 @@ export default function Footer() {
             </ul>
           </div>
 
+
          {/* Contact Info */}
             <div>
               <h4 className="font-marcellus text-xl mb-6">Connect with Us</h4>
+
 
               <ul className="space-y-3 font-dm text-gray-400">
                 <li>
@@ -166,6 +192,7 @@ export default function Footer() {
                   </a>
                 </li>
 
+
                 <li>
                   <a
                     href="tel:18329377738"
@@ -176,6 +203,7 @@ export default function Footer() {
                   </a>
                 </li>
 
+
                 <li>
                   <a
                     href="https://maps.google.com/?q=1008+Hamilton+St,+Immokalee,+FL+34142"
@@ -184,11 +212,12 @@ export default function Footer() {
                     className="group inline-flex items-center gap-2 transition-colors hover:text-[#FF9A28]"
                   >
                     <FaMapMarkerAlt className="text-[#FF9A28] transition-transform group-hover:-translate-y-0.5" />
-                    <span>1008 Hamilton St, Immokalee, FL 34142</span>
+                    <span>1008 Hamilton St, Immokalee,<br/> FL 34142</span>
                   </a>
                 </li>
               </ul>
             </div>
+
 
 
 
@@ -198,6 +227,7 @@ export default function Footer() {
             <p className="font-dm text-gray-400 text-base mb-4">
               Subscribe to get the latest news & updates
             </p>
+
 
             <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
               <div className="flex flex-col sm:flex-row w-full gap-1 lg:gap-0">
@@ -210,6 +240,7 @@ export default function Footer() {
                   className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 font-dm text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#FF9A28] w-full disabled:opacity-50"
                 />
 
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -218,6 +249,7 @@ export default function Footer() {
                   {loading ? "Sending..." : "Send"}
                 </button>
               </div>
+
 
               {/* Success/Error Message */}
               {message.text && (
@@ -235,12 +267,14 @@ export default function Footer() {
           </div>
         </div>
 
+
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 pb-11">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="font-dm text-gray-400 text-sm">
               &copy; 2025 Advance Edge LLC. All rights reserved.
             </p>
+
 
             <div className="flex space-x-6 font-dm text-sm">
               <Link

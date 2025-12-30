@@ -4,11 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
+import BlogPostShare from "@/components/BlogPostShare";
+
 
 interface Category {
   title: string;
   slug: { current: string };
 }
+
 
 interface Post extends SanityDocument {
   title: string;
@@ -20,6 +23,7 @@ interface Post extends SanityDocument {
   categories?: Category[];
   tags?: string[];
 }
+
 
 const POSTS_QUERY = `*[
   _type == "post" && defined(slug.current)
@@ -35,7 +39,9 @@ const POSTS_QUERY = `*[
   tags
 }`;
 
+
 const options = { next: { revalidate: 30 } };
+
 
 // ✅ NEW: SEO Meta tags for blog listing page
 export const metadata: Metadata = {
@@ -72,8 +78,10 @@ export const metadata: Metadata = {
   keywords: ['law firm marketing', 'legal intake', 'law firm advertising', 'legal operations', 'client acquisition'],
 }
 
+
 export default async function Blog() {
   const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, options);
+
 
   const allCategories = Array.from(
     new Map(
@@ -83,12 +91,14 @@ export default async function Blog() {
     ).values()
   );
 
+
   return (
     <main className="bg-slate-950 text-slate-50">
       {/* HERO */}
       <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#1a1f2e] via-[#050814] to-[#050711]">
         <div className="pointer-events-none absolute -right-40 top-[-40px] h-80 w-80 rounded-full bg-[#FF9A28]/20 blur-3xl" />
         <div className="pointer-events-none absolute -left-40 bottom-[-40px] h-80 w-80 rounded-full bg-[#FF9A28]/10 blur-3xl" />
+
 
         {/* Flex container - centered */}
         <div className="relative z-10 min-h-[450px] md:min-h-[580px] flex items-center justify-center px-4 pt-24 pb-0">
@@ -98,12 +108,14 @@ export default async function Blog() {
               Insights for modern law firms
             </span>
 
+
             <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight animate-fadeInUp animation-delay-200">
               Legal Growth
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF9A28] via-[#ffd08c] to-[#FF9A28]">
                 Insights & Strategies
               </span>
             </h1>
+
 
             <p className="max-w-2xl text-base md:text-lg text-slate-300 animate-fadeInUp animation-delay-400">
               Deep dives on intake, advertising, and operations to help your firm
@@ -112,6 +124,7 @@ export default async function Blog() {
           </div>
         </div>
       </section>
+
 
       {/* BLOG LIST */}
       <section className="py-16 md:py-20 bg-slate-950">
@@ -132,6 +145,7 @@ export default async function Blog() {
                       "en-US",
                       { year: "numeric", month: "short", day: "numeric" }
                     );
+
 
                     return (
                       <article
@@ -162,6 +176,7 @@ export default async function Blog() {
                               )}
                             </div>
 
+
                             <div className="absolute left-4 top-4 z-20">
                               <span className="inline-flex items-center gap-1 rounded-full bg-black/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-100">
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#FF9A28]" />
@@ -169,6 +184,7 @@ export default async function Blog() {
                               </span>
                             </div>
                           </Link>
+
 
                           {/* CONTENT */}
                           <div className="flex flex-col h-full">
@@ -178,6 +194,7 @@ export default async function Blog() {
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#FF9A28]" />
                                 {date}
                               </span>
+
 
                               {post.categories && post.categories.length > 0 && (
                                 <div className="flex flex-wrap gap-2">
@@ -194,12 +211,14 @@ export default async function Blog() {
                               )}
                             </div>
 
+
                             {/* Title */}
                             <Link href={`/blog/${post.slug.current}`}>
                               <h2 className="text-xl md:text-2xl font-semibold leading-snug text-slate-50 mb-3 line-clamp-2 group-hover:text-[#FF9A28] transition-colors">
                                 {post.title}
                               </h2>
                             </Link>
+
 
                             {/* Tags */}
                             {post.tags && post.tags.length > 0 && (
@@ -216,6 +235,7 @@ export default async function Blog() {
                               </div>
                             )}
 
+
                             {/* Meta */}
                             <div className="mt-auto flex flex-wrap items-center gap-5 text-xs text-slate-400 mb-4">
                               <span className="inline-flex items-center gap-1.5">
@@ -229,6 +249,7 @@ export default async function Blog() {
                               </span>
                             </div>
 
+
                             {/* Footer: Read more + share */}
                             <div className="flex flex-wrap items-center justify-between gap-4">
                               <Link
@@ -239,32 +260,12 @@ export default async function Blog() {
                                 <span className="text-lg">↗</span>
                               </Link>
 
-                              <div className="flex gap-2 text-xs text-slate-200">
-                                <button
-                                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 hover:bg-[#4267B2] transition-colors"
-                                  aria-label="Share on Facebook"
-                                >
-                                  f
-                                </button>
-                                <button
-                                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 hover:bg-black transition-colors"
-                                  aria-label="Share on X"
-                                >
-                                  𝕏
-                                </button>
-                                <button
-                                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 hover:bg-[#0A66C2] transition-colors"
-                                  aria-label="Share on LinkedIn"
-                                >
-                                  in
-                                </button>
-                                <button
-                                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800/80 hover:bg-[#E60023] transition-colors"
-                                  aria-label="Share on Pinterest"
-                                >
-                                  📌
-                                </button>
-                              </div>
+
+                              {/* ✅ UPDATED: Social share component - Fully Functional */}
+                              <BlogPostShare
+                                title={post.title}
+                                slug={post.slug.current}
+                              />
                             </div>
                           </div>
                         </div>
@@ -273,6 +274,7 @@ export default async function Blog() {
                   })}
                 </div>
               </div>
+
 
               {/* RIGHT: SIDEBAR */}
               <aside className="lg:col-span-1">
@@ -297,6 +299,7 @@ export default async function Blog() {
                     </ul>
                   </div>
 
+
                   {/* Categories */}
                   <div className="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 md:p-6 backdrop-blur-md animate-fadeInUp animation-delay-400">
                     <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-200">
@@ -312,13 +315,14 @@ export default async function Blog() {
                           >
                             <span>{category.title}</span>
                             <span className="text-[10px] opacity-60">
-                              View
+                              
                             </span>
                           </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
+
 
                   {/* Archives */}
                   <div className="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 md:p-6 backdrop-blur-md animate-fadeInUp animation-delay-600">

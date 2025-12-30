@@ -25,14 +25,14 @@ const slides: Slide[] = [
     title: "Boost Client Growth",
     description:
       "We complement your efforts with services that drive qualified leads and increase visibility, ensuring your clients achieve their marketing goals.",
-    image: "/cases/case-2.webp",
+    image: "/cases/case-3.webp",
   },
   {
     id: 3,
     title: "Streamline Your Practice",
     description:
       "Whether solo or part of a larger team, our flexible solutions help you reduce administrative burdens and grow your practice.",
-    image: "/cases/case-3.webp",
+    image: "/cases/case2-1.webp",
   },
 ];
 

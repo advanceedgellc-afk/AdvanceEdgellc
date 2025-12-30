@@ -50,7 +50,7 @@ export function BookingModalProvider({ children }: { children: ReactNode }) {
       {/* Global Booking Modal (rendered once) */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center mt-4 p-4 backdrop-blur-sm"
           onClick={closeBookingModal}
         >
           <div
