@@ -16,7 +16,7 @@ const services = [
     bgColor: "bg-white",
     borderColor: "border-orange-200",
     iconColor: "text-[#F69325]",
-    href: "/services/case-acquisition",
+    href: "/services/masstort-case-acquisition-services",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const services = [
     bgColor: "bg-white",
     borderColor: "border-orange-200",
     iconColor: "text-[#F69325]",
-    href: "/services/virtual-agents",
+    href: "/services/virtual-legal-agents-services",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const services = [
     bgColor: "bg-white",
     borderColor: "border-orange-200",
     iconColor: "text-[#F69325]",
-    href: "/services/digital-solutions",
+    href: "/services/legal-digital-marketing-solutions",
   },
 ];
 

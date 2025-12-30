@@ -109,8 +109,8 @@ export default function ContactPageClient() {
                   </div>
                   <div>
                     <h3 className="font-marcellus text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                    <a href="mailto:test@publicjusticeadvocates.com" className="font-dm text-lg text-gray-600 hover:text-orange-500 transition-colors">
-                      test@publicjusticeadvocates.com
+                    <a href="mailto:info@advanceedgellc.com" className="font-dm text-lg text-gray-600 hover:text-orange-500 transition-colors">
+                    info@advanceedgellc.com
                     </a>
                   </div>
                 </div>

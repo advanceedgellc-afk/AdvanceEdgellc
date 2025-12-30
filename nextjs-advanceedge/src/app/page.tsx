@@ -13,6 +13,7 @@ import { client } from "@/sanity/client"
 import { urlFor } from "@/lib/sanity"
 import type { Post } from "@/types/post"
 import ScrollDownArrow from "@/components/ScrollDownArrow";  // Add this import
+import BlogPostsSection from "@/components/BlogPostsSection";
 
 const POSTS_QUERY = `
 *[
@@ -115,12 +116,10 @@ export default async function Home() {
       <ServicesSection />
       <FAQSection />
 
-      {/* Your PERFECT blog section - unchanged */}
-      {posts.length > 0 && (
-        <section className="py-20 bg-gray-50">
-          {/* ... your existing blog posts code ... */}
-        </section>
-      )}
+      {/* ✅ Related Articles */}
+      <section className="my-20">
+        <BlogPostsSection posts={posts} />
+      </section>
 
       {/* ✅ PERFECT: ScrollDownArrow BEFORE closing </main> */}
       <ScrollDownArrow />
