@@ -66,7 +66,7 @@ export default function PartnerInGrowthCTA() {
             {/* Main Image Container */}
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="/about/growth.webp"
+                src="/about/Growth.webp"
                 alt="Team Meeting"
                 className=" w-[100%] object-cover"
               />
