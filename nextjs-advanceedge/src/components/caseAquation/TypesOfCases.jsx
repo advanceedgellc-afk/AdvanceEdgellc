@@ -53,7 +53,7 @@ export default function TypesOfCases() {
     if (!autoplay) return;
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % caseTypes.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [autoplay]);
 

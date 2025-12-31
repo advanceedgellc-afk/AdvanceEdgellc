@@ -17,7 +17,7 @@ export default function WhyVaasSmarterSection() {
     if (!autoplay) return;
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % sliderImages.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [autoplay, sliderImages.length]);
 

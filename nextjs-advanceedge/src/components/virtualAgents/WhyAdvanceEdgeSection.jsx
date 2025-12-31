@@ -11,25 +11,25 @@ export default function WhyAdvanceEdgeSection() {
       id: 1,
       title: 'Cost-Effective & Scalable',
       icon: 'bi-graph-up',
-      description: 'Reduce staffing costs by up to 60% while maintaining service quality. Scale resources based on demand without long-term commitments.'
+      description: 'Reduce staffing costs while maintaining efficiency.'
     },
     {
       id: 2,
       title: 'Legal Industry Experts',
       icon: 'bi-briefcase-fill',
-      description: 'Specialized virtual agents with extensive law firm experience. Deep understanding of legal workflows and compliance requirements.'
+      description: 'Specialized virtual agents with law firm experience.'
     },
     {
       id: 3,
       title: '24/7 Availability',
       icon: 'bi-clock-fill',
-      description: 'Round-the-clock support for client intake, document management, and case follow-ups. Never miss a client opportunity.'
+      description: 'Support whenever you need it, including after-hours case intake.'
     },
     {
       id: 4,
       title: 'Fully Trained Professionals',
       icon: 'bi-award-fill',
-      description: 'Pre-vetted and trained agents ready to integrate immediately. Skip hiring delays and get productive talent from day one.'
+      description: 'No need to spend time on hiring & training.'
     }
   ];
 

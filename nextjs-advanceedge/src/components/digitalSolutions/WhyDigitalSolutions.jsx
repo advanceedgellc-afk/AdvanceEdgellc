@@ -19,7 +19,7 @@ export default function WhyDigitalSolutionsSection() {
     if (!autoplay) return;
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % sliderImages.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [autoplay, sliderImages.length]);
 

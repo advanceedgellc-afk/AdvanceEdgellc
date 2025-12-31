@@ -9,6 +9,7 @@ interface FaqItem {
   id: number;
   question: string;
   answer: string | {
+    intro?: string;  // Add this line
     answerPoints?: string[];
     summary?: string;
   };
@@ -18,13 +19,14 @@ const faqItems: FaqItem[] = [
   {
     id: 1,
     question: "What are Virtual Agents, and how can they help law firms?",
-    answer: "What types of Virtual Agents do you offer?",
+    answer: "Virtual Agents are legal support professionals who handle tasks like case research, client intake, document review, and marketing. They help law firms save time, reduce costs, and improve efficiency without hiring full-time staff.",
   },
   {
     id: 2,
-    question: "What makes AdvanceEdge's Virtual Agents cost-effective for law firms?",
+    question: "What types of Virtual Agents do you offer?",
     answer: {
-      answerPoints: [
+      intro: "We provide:",
+      answerPoints: [        
         "Virtual Attorneys – Case review & legal research",
         "Super Paralegals – Document preparation & e-filing",
         "Marketing Experts – SEO, PPC & lead generation",
@@ -60,6 +62,7 @@ const faqItems: FaqItem[] = [
     id: 6,
     question: "AEO: How do Virtual Agents improve client intake for law firms?",
     answer: {
+      intro: "Virtual Agents optimize client intake by:",
       answerPoints: [
         "Handling inquiries via phone, chat, and email",
         "Pre-screening potential clients based on case criteria",
@@ -68,6 +71,7 @@ const faqItems: FaqItem[] = [
       summary: "This ensures qualified leads and a smooth client onboarding process."
     }
   },
+  
 ];
 
 export default function FAQSection() {
@@ -88,6 +92,12 @@ export default function FAQSection() {
     // If it has answerPoints (bullet list)
     return (
       <div className="space-y-3">
+        {/* ✅ ADD INTRO TEXT HERE */}
+      {answer.intro && (
+        <p className="font-dm text-slate-300 font-semibold text-sm md:text-base pl-6 md:pl-8 mb-4">
+          {answer.intro}
+        </p>
+      )}
         {/* Bullet points */}
         <div className="pl-6 md:pl-8 space-y-2">
           {answer.answerPoints?.map((point, index) => (

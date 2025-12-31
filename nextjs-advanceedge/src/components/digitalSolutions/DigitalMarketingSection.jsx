@@ -151,7 +151,7 @@ function ServiceCard({ image, title, description, delay = 0 }) {
       </div>
 
       {/* Title */}
-      <h3 className="text-lg md:text-xl font-medium text-white">
+      <h3 className="text-xl md:text-2xl font-medium text-white">
         {title}
       </h3>
 
