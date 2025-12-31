@@ -131,7 +131,7 @@ export default function Footer() {
 
             <p className="font-dm text-gray-400 text-base mb-6 leading-relaxed">
               Empowering legal professionals with innovative solutions and
-              expertise since 2013.
+              expertise since 2011.
             </p>
 
 
@@ -272,7 +272,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 pb-11">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="font-dm text-gray-400 text-sm">
-              &copy; 2025 Advance Edge LLC. All rights reserved.
+              &copy; 2026 Advance Edge LLC. All rights reserved.
             </p>
 
 

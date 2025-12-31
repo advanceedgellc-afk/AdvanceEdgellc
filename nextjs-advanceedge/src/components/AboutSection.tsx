@@ -52,7 +52,7 @@ export default function AboutSection() {
                 }}
               >
                 <Image
-                  src="/about/about-img-2.jpg"
+                  src="/about/About-2-edited.webp"
                   alt="Team collaboration"
                   fill
                   className="object-cover"

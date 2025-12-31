@@ -7,33 +7,33 @@ import { FaPlus, FaTimes } from "react-icons/fa";
 const faqItems = [
   {
     id: 1,
-    question: "How can AdvanceEdge help law firms get qualified Mass Tort leads?",
+    question: "What does a legal intake specialist do for a law firm?",
     answer:
-      "AdvanceEdge delivers high-quality, verified Mass Tort leads through targeted campaigns and rigorous case screening, ensuring law firms receive only eligible claimants.",
+      "A legal intake specialist handles the first interaction with potential clients by answering calls, qualifying cases based on firm-specific criteria, documenting details in the CRM, and ensuring a smooth handoff to the legal team. At AdvanceEdge, our intake specialists are trained in Mass Tort, Personal Injury, and MVA workflows, so they capture information that matters for case evaluation, not just basic contact details.",
   },
   {
     id: 2,
-    question: "What makes AdvanceEdge's Virtual Agents cost-effective for law firms?",
+    question: "Can AdvanceEdge intake specialists follow my law firm’s specific intake criteria and scripts?",
     answer:
-      "Our Virtual Agents streamline administrative and legal tasks with flexible, scalable solutions that reduce overhead while maintaining quality service delivery for your clients.",
+      "Yes. While all AdvanceEdge intake specialists are pre-trained on legal and Mass Tort intake workflows, every agent is additionally trained on your firm’s specific scripts, qualification criteria, disqualifiers, and documentation requirements before taking live calls. This ensures intake decisions are aligned exactly with how your firm accepts or rejects cases.",
   },
   {
     id: 3,
-    question: "How does AdvanceEdge verify Mass Tort leads before sending them to law firms?",
+    question: "Do you provide after-hours, weekend, or overnight intake coverage for law firms?",
     answer:
-      "We implement a comprehensive verification process including eligibility verification, case assessment, and quality assurance to ensure only qualified leads reach your firm.",
+      "Yes. AdvanceEdge provides intake coverage during weekends, after-hours, and graveyard shifts for U.S. law firms. Many firms start with off-hour coverage to prevent missed leads and evaluate intake quality before scaling to full-day or multi-shift support.",
   },
   {
     id: 4,
-    question: "What digital marketing services does AdvanceEdge offer for law firms?",
+    question: "How do you ensure quality and accuracy in outsourced legal intake?",
     answer:
-      "We provide targeted digital marketing campaigns, SEO optimization, paid advertising, and lead generation strategies specifically designed for legal practices.",
+      "Every intake call handled by AdvanceEdge is recorded and audited for quality. Our teams conduct weekly review meetings to evaluate call handling, identify missed opportunities, and uptrain intake specialists. Additionally, each group of eight intake specialists is supported by a dedicated supervisor who monitors quality, scheduling, and performance to ensure consistency at scale.",
   },
   {
     id: 5,
-    question: "How does AdvanceEdge's web development service help law firms?",
+    question: "Is outsourcing intake more cost-effective than hiring in-house intake staff?",
     answer:
-      "Our web development services create high-converting, mobile-optimized websites that showcase your services, improve search rankings, and attract quality clients.",
+      "Outsourcing intake with AdvanceEdge is typically more cost-effective than building an in-house intake team because firms avoid hiring delays, training costs, employee overhead, and coverage gaps. Our intake model allows firms to scale up or down quickly while maintaining consistent quality and supervision, especially during high-volume campaigns or peak lead periods.",
   },
 ];
 
