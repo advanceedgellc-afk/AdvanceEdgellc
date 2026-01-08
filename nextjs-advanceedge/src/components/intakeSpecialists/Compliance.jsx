@@ -11,30 +11,48 @@ export default function ComplianceSection() {
       title: 'Client-Approved Scripts',
       description:
         'All intake conversations follow your pre-approved scripts and required disclosures, ensuring compliance with your firm\'s standards and regulatory requirements',
-      icon: ' bi-card-checklist',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+          <path d="M9 11l3 3L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
     {
       number: '02',
       title: 'Secure Data Handling',
       description:
         'Personal and medical information is handled securely with strict protocols, encrypted systems, and limited access controls to protect client confidentiality',
-      icon: 'bi bi-shield-lock-fill',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+          <path d="M12 1C8.13 1 5 4.13 5 8v4H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1h-1V8c0-3.87-3.13-7-7-7zM9 8c0-1.66 1.34-3 3-3s3 1.34 3 3v4H9V8z" />
+        </svg>
+      ),
     },
     {
       number: '03',
       title: 'TCPA Alignment',
       description:
         'Intake processes are aligned with your client\'s TCPA requirements and consent documentation standards to minimize compliance risk',
-      icon: 'bi-telephone',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+          <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.52.57 3.58a1 1 0 0 1-.21 1.11l-2.2 2.2z"/>
+        </svg>
+      ),
     },
     {
-        number: '04',
-        title: 'Complete Audit Trails',
-        description:
-          'Comprehensive call monitoring, QA reviews, and detailed audit trails provide full transparency and accountability for every intake interaction',
-        icon: 'bi-laptop',
-      },
+      number: '04',
+      title: 'Complete Audit Trails',
+      description:
+        'Comprehensive call monitoring, QA reviews, and detailed audit trails provide full transparency and accountability for every intake interaction',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+          <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm3 3h6v2H9V9zm0 4h6v2H9v-2z"/>
+        </svg>
+      ),
+    },
   ];
+  
 
   return (
     <section className="relative py-10 md:py-20 px-5 overflow-hidden bg-white">
@@ -76,10 +94,7 @@ export default function ComplianceSection() {
                     {step.number}
                   </p>
                   <div className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-[#FF9A28] group-hover:text-white transition-all duration-300 flex-shrink-0 border border-[#FFE8D1]">
-                    <i
-                      aria-hidden="true"
-                      className={`bi ${step.icon} text-2xl`}
-                    ></i>
+                  <div className="text-2xl text-white">{step.icon}</div>
                   </div>
                 </div>
 

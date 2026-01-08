@@ -1,6 +1,5 @@
 // app/about/page.tsx
 import type { Metadata } from 'next'
-import { FaCheckCircle } from "react-icons/fa";
 import HeroSection from "@/components/About/HeroSection";
 import AboutAdvanceEdge from "@/components/About/AboutAdvanceEdge";
 import PartnerInGrowthCTA from "@/components/About/PartnerInGrowthCTA";
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-about.jpg`,
         width: 1200,
         height: 630,
-        alt: 'About AdvanceEdge - Legal Marketing Solutions',
+        alt: 'About AdvanceEdge - Legal Solutions',
       },
     ],
   },

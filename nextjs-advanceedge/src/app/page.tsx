@@ -1,4 +1,3 @@
-// app/page.tsx
 import type { Metadata } from 'next'
 import Link from "next/link"
 import Image from "next/image"
@@ -8,14 +7,12 @@ import WhoWeHelpSlider from "@/components/WhoWeHelpSlider"
 import ServicesSection from "@/components/ServicesSection"
 import WhyChooseUsSection from "@/components/WhyChooseUsSection"
 import FAQSection from "@/components/FAQSection"
-import { FaGavel, FaArrowRight } from "react-icons/fa"
 import { client } from "@/sanity/client"
 import { urlFor } from "@/lib/sanity"
 import type { Post } from "@/types/post"
-import ScrollDownArrow from "@/components/ScrollDownArrow";
-import BlogPostsSection from "@/components/BlogPostsSection";
-import TrustIndicators from "@/components/TrustIndicators";
-
+import ScrollDownArrow from "@/components/ScrollDownArrow"
+import BlogPostsSection from "@/components/BlogPostsSection"
+import TrustIndicators from "@/components/TrustIndicators"
 
 const POSTS_QUERY = `
 *[
@@ -32,7 +29,6 @@ const POSTS_QUERY = `
   publishedAt
 }
 `
-
 
 // ✅ SEO Meta tags for homepage (viewport and themeColor removed - moved to layout.tsx)
 export const metadata: Metadata = {
@@ -101,31 +97,26 @@ export const metadata: Metadata = {
   },
 }
 
-
 export default async function Home() {
   const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, { next: { revalidate: 30 } })
-
 
   return (
     <main>
       <Hero />
-      <TrustIndicators/>
+      <TrustIndicators />
       <AboutSection />
       <WhoWeHelpSlider />
       <WhyChooseUsSection />
       <ServicesSection />
       <FAQSection />
 
-
       {/* ✅ Related Articles */}
       <section className="my-20">
         <BlogPostsSection posts={posts} />
       </section>
 
-
       {/* ✅ PERFECT: ScrollDownArrow BEFORE closing </main> */}
       <ScrollDownArrow />
-
 
       {/* ✅ SINGLE JSON-LD - NO DUPLICATES */}
       <script

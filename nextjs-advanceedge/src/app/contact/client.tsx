@@ -1,8 +1,7 @@
-// app/contact/client.tsx
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
+import { Mail, Phone, MapPin, CheckCircle, Clock } from "lucide-react";
 import StatsSectionCountdown from "@/components/contact/StatsSectionCountdown";
 import MapSection from "@/components/contact/MapSection";
 
@@ -104,13 +103,13 @@ export default function ContactPageClient() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100">
-                      <FaEnvelope className="text-2xl text-orange-500" />
+                      <Mail className="w-6 h-6 text-orange-500" />
                     </div>
                   </div>
                   <div>
                     <h3 className="font-marcellus text-xl font-semibold text-gray-800 mb-2">Email</h3>
                     <a href="mailto:info@advanceedgellc.com" className="font-dm text-lg text-gray-600 hover:text-orange-500 transition-colors">
-                    info@advanceedgellc.com
+                      info@advanceedgellc.com
                     </a>
                   </div>
                 </div>
@@ -119,7 +118,7 @@ export default function ContactPageClient() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100">
-                      <FaPhone className="text-2xl text-orange-500" />
+                      <Phone className="w-6 h-6 text-orange-500" />
                     </div>
                   </div>
                   <div>
@@ -134,7 +133,7 @@ export default function ContactPageClient() {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100">
-                      <FaMapMarkerAlt className="text-2xl text-orange-500" />
+                      <MapPin className="w-6 h-6 text-orange-500" />
                     </div>
                   </div>
                   <div>
@@ -151,9 +150,7 @@ export default function ContactPageClient() {
                 <div className="flex items-start space-x-4 pt-4 border-t border-gray-200">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100">
-                      <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <Clock className="w-6 h-6 text-orange-500" />
                     </div>
                   </div>
                   <div>
@@ -173,7 +170,7 @@ export default function ContactPageClient() {
               
               {submitted && (
                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-4 rounded-lg mb-6 flex items-center space-x-3">
-                  <FaCheckCircle className="text-xl text-green-600" />
+                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                   <div>
                     <p className="font-dm font-semibold">Thank you!</p>
                     <p className="font-dm text-sm">We've received your message and will get back to you soon.</p>

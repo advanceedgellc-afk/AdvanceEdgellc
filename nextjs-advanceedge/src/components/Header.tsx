@@ -5,13 +5,13 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
-  FaBars,
-  FaTimes,
-  FaChevronDown,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function Header() {
                 className="flex items-center space-x-2 hover:text-orange-400 transition-colors"
                 aria-label="Email Advance Edge"
               >
-                <FaEnvelope className="text-orange-400 flex-shrink-0" size={14} />
+                <Mail className="text-orange-400 flex-shrink-0 w-4 h-4" />
                 <span>info@advanceedgellc.com</span>
               </a>
 
@@ -72,7 +72,7 @@ export default function Header() {
                 className="flex items-center space-x-2 hover:text-orange-400 transition-colors"
                 aria-label="View Advance Edge location on map"
               >
-                <FaMapMarkerAlt className="text-orange-400 flex-shrink-0" size={14} />
+                <MapPin className="text-orange-400 flex-shrink-0 w-4 h-4" />
                 <span>1008 Hamilton St, Immokalee, FL 34142</span>
               </a>
             </div>
@@ -109,14 +109,12 @@ export default function Header() {
               aria-label="Advance Edge home"
             >
               <Image
-                src="/Logo-ae.webp"
+                src="/advanceedge-logo.webp"
                 alt="Advance Edge Logo"
-                width={180}
-                height={40}
-                className="object-contain"
+                width={200}
+                height={100}
+                className="w-44 h-auto object-contain"
                 priority
-                quality={85}
-                loading="eager"
               />
             </Link>
 
@@ -136,81 +134,80 @@ export default function Header() {
               </Link>
 
               {/* Services Dropdown */}
-<div className="relative group">
-  <button
-    className={`flex items-center space-x-1 text-sm uppercase font-medium transition-colors py-2 px-3 rounded-md ${
-      isActive("/services")
-        ? "text-orange-400"
-        : scrolled
-        ? "text-slate-900 hover:text-orange-400"
-        : "text-white hover:text-orange-400"
-    }`}
-    aria-label="Services menu"
-    aria-haspopup="true"
-    aria-expanded={false}
-  >
-    <span>SERVICES</span>
-    <FaChevronDown size={12} className="group-hover:rotate-180 transition-transform" />
-  </button>
-
-  <div 
-    className="absolute left-0 top-full mt-2 w-64 bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
-    role="menu"
-  >
-    {services.map((service, index) => (
-      <div key={service.href}>
-        <div className="relative group/submenu">
-          <Link
-            href={service.href}
-            className={`inline-flex items-center justify-between px-6 py-4 transition-colors w-full text-left h-full ${
-              isActive(service.href)
-                ? "bg-orange-50 text-orange-600"
-                : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-            } ${index === 0 ? "rounded-t-lg" : ""} ${
-              index === services.length - 1 && !service.subItems
-                ? "rounded-b-lg"
-                : ""
-            }`}
-            role="menuitem"
-          >
-            <span>{service.name}</span>
-            {service.subItems && (
-              <FaChevronDown
-                size={12}
-                className="group-hover/submenu:rotate-180 transition-transform flex-shrink-0"
-              />
-            )}
-          </Link>
-
-          {/* Submenu */}
-          {service.subItems && (
-            <div className="absolute left-full top-0 ml-2 w-48 bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 translate-x-2 group-hover/submenu:translate-x-0 z-50">
-              {service.subItems.map((subItem, subIndex) => (
-                <Link
-                  key={subItem.href}
-                  href={subItem.href}
-                  className={`inline-block px-6 py-4 transition-colors w-full ${
-                    isActive(subItem.href)
-                      ? "bg-orange-50 text-orange-600"
-                      : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-                  } ${subIndex === 0 ? "rounded-t-lg" : ""} ${
-                    subIndex === service.subItems!.length - 1
-                      ? "rounded-b-lg"
-                      : ""
+              <div className="relative group">
+                <button
+                  className={`flex items-center space-x-1 text-sm uppercase font-medium transition-colors py-2 px-3 rounded-md ${
+                    isActive("/services")
+                      ? "text-orange-400"
+                      : scrolled
+                      ? "text-slate-900 hover:text-orange-400"
+                      : "text-white hover:text-orange-400"
                   }`}
-                  role="menuitem"
+                  aria-label="Services menu"
+                  aria-haspopup="true"
+                  aria-expanded={false}
                 >
-                  {subItem.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+                  <span>SERVICES</span>
+                  <ChevronDown size={12} className="group-hover:rotate-180 transition-transform" />
+                </button>
 
+                <div 
+                  className="absolute left-0 top-full mt-2 w-64 bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
+                  role="menu"
+                >
+                  {services.map((service, index) => (
+                    <div key={service.href}>
+                      <div className="relative group/submenu">
+                        <Link
+                          href={service.href}
+                          className={`inline-flex items-center justify-between px-6 py-4 transition-colors w-full text-left h-full ${
+                            isActive(service.href)
+                              ? "bg-orange-50 text-orange-600"
+                              : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                          } ${index === 0 ? "rounded-t-lg" : ""} ${
+                            index === services.length - 1 && !service.subItems
+                              ? "rounded-b-lg"
+                              : ""
+                          }`}
+                          role="menuitem"
+                        >
+                          <span>{service.name}</span>
+                          {service.subItems && (
+                            <ChevronDown
+                              size={12}
+                              className="group-hover/submenu:rotate-180 transition-transform flex-shrink-0"
+                            />
+                          )}
+                        </Link>
+
+                        {/* Submenu */}
+                        {service.subItems && (
+                          <div className="absolute left-full top-0 ml-2 w-48 bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300 translate-x-2 group-hover/submenu:translate-x-0 z-50">
+                            {service.subItems.map((subItem, subIndex) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                className={`inline-block px-6 py-4 transition-colors w-full ${
+                                  isActive(subItem.href)
+                                    ? "bg-orange-50 text-orange-600"
+                                    : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                                } ${subIndex === 0 ? "rounded-t-lg" : ""} ${
+                                  subIndex === service.subItems!.length - 1
+                                    ? "rounded-b-lg"
+                                    : ""
+                                }`}
+                                role="menuitem"
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <Link
                 href="/about"
@@ -263,7 +260,7 @@ export default function Header() {
                 }`}
                 aria-label="Call Advance Edge at 832.937.7738"
               >
-                <FaPhone className="text-lg flex-shrink-0" />
+                <Phone className="w-5 h-5 flex-shrink-0" />
                 <span className="font-semibold text-xl leading-none">832.937.7738</span>
               </a>
 
@@ -303,7 +300,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               type="button"
             >
-              {mobileMenuOpen ? <FaTimes size={20} aria-hidden="true" /> : <FaBars size={20} aria-hidden="true" />}
+              {mobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
           </div>
 

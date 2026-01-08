@@ -1,11 +1,18 @@
-// src/app/blog/[slug]/page.tsx
 import { PortableText, type SanityDocument } from "next-sanity";
+
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import type { Metadata } from 'next'
 import { client } from "@/sanity/client";
 import Link from "next/link";
-import BlogPostShare from "@/components/BlogPostShare";
+import BlogPostShareWrapper from "@/components/BlogPostShareWrapper";
+
+// ... rest of code
+
+
+// ... rest of your code stays the same
+
+
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -232,10 +239,9 @@ export default async function BlogPost({ params }: Props) {
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-4">
                   Share this article
                 </p>
-                <BlogPostShare
-                  title={post.title}
-                  slug={post.slug}
-                />
+                <BlogPostShareWrapper title={post.title} slug={post.slug.current} />
+
+
               </div>
             </div>
 

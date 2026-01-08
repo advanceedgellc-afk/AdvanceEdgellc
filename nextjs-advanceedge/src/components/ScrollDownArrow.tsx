@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { FaArrowUp } from "react-icons/fa";
+import { ArrowUp } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function ScrollDownArrow() {
@@ -38,9 +38,9 @@ export default function ScrollDownArrow() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          initial={{ opacity: 0, y: 20, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
           className="fixed right-6 bottom-8 z-40 group"
         >
@@ -49,47 +49,40 @@ export default function ScrollDownArrow() {
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             className={`absolute inset-0 rounded-full border-2 border-transparent 
-            border-b-[#FF9A28] border-l-[#FF9A28] ${
+            border-b-[#FF9A28] border-l-[#FF9A28] transition-opacity duration-300 ${
               isSmall ? "opacity-50" : "opacity-100"
             }`}
           />
 
-          {/* Main button */}
+          {/* Main button - use scale instead of width/height */}
           <motion.div
             whileHover={{ scale: isSmall ? 1.1 : 1.15 }}
             whileTap={{ scale: 0.9 }}
             animate={{
-              width: isSmall ? 48 : 50,
-              height: isSmall ? 48 : 50,
+              scale: isSmall ? 0.96 : 1,
             }}
             transition={{ duration: 0.3 }}
-            className="relative bg-gradient-to-br from-[#FF9A28] to-[#e78920] rounded-full shadow-2xl flex items-center justify-center overflow-hidden"
+            className="relative w-12 h-12 bg-gradient-to-br from-[#FF9A28] to-[#e78920] rounded-full shadow-2xl flex items-center justify-center overflow-hidden"
           >
-            {/* Glow effect */}
+            {/* Glow effect - use opacity instead of boxShadow */}
             <motion.div
               animate={{
-                boxShadow: [
-                  "0 0 20px rgba(255,154,40,0.5)",
-                  "0 0 40px rgba(255,154,40,0.8)",
-                  "0 0 20px rgba(255,154,40,0.5)",
-                ],
+                opacity: [0.5, 0.8, 0.5],
               }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-0 rounded-full"
+              className="absolute inset-0 rounded-full bg-[#FF9A28]/30 blur-lg"
             />
 
-            {/* Arrow icon with bounce animation */}
+            {/* Arrow icon with bounce animation - GPU accelerated */}
             <motion.div
               animate={{ y: [8, 0, 8] }}
               transition={{ duration: 1.2, repeat: Infinity }}
-              className={`relative z-10 text-white ${
-                isSmall ? "text-lg" : "text-2xl"
-              }`}
+              className="relative z-10 text-white w-6 h-6"
             >
-              <FaArrowUp />
+              <ArrowUp className="w-full h-full" />
             </motion.div>
 
-            {/* Shine effect */}
+            {/* Shine effect - use opacity + y */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 rounded-full"
               animate={{

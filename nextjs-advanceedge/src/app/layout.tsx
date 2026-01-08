@@ -5,7 +5,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BookingModalProvider } from "@/context/BookingModalContext";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -50,7 +49,19 @@ export default function RootLayout({
       className={`scroll-smooth ${dmSans.variable} ${marcellus.variable}`}
     >
       <head>
-        {/* ✅ GTM - Async (non-blocking) */}
+        {/* ✅ Bootstrap Icons with font-display swap */}
+        <style>{`
+          @font-face {
+            font-family: 'bootstrap-icons';
+            src: url('/fonts/bootstrap-icons.woff2') format('woff2');
+            font-display: swap;
+            font-weight: 400;
+            font-style: normal;
+          }
+        `}</style>
+      </head>
+      <body suppressHydrationWarning className={`${dmSans.className} antialiased`}>
+        {/* ✅ GTM Script - IMMEDIATELY AFTER <body> tag (for Google Search Console verification) */}
         <script
           async
           dangerouslySetInnerHTML={{
@@ -63,10 +74,7 @@ export default function RootLayout({
             `,
           }}
         />
-        
-        {/* ✅ REMOVED: Font preload (Google Fonts handles this automatically) */}
-      </head>
-      <body suppressHydrationWarning className={`${dmSans.className} antialiased`}>
+
         {/* ✅ GTM Noscript */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -81,8 +89,8 @@ export default function RootLayout({
             <ScrollDownArrow />
           </main>
           <Footer />
-          {/* ✅ ScrollToTop moved inside BookingModalProvider */}
           <ScrollToTop />
+           {/* ✅ ADD THIS LINE */}
         </BookingModalProvider>
       </body>
     </html>

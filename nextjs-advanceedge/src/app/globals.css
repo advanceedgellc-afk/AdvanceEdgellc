@@ -1,3 +1,11 @@
+/* ✅ FIX: Bootstrap Icons font-display */
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("/_next/static/media/bootstrap-icons.0e2260bb.woff2") format("woff2");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
 /* CRITICAL: Above-fold styles ONLY - inline in head */
 @tailwind base;
 @tailwind components;

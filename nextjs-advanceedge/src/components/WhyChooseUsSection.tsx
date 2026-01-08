@@ -1,37 +1,37 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaTrophy,
-  FaClock,
-  FaCheckCircle,
-  FaHeadset,
-  FaStar,
-  FaTimes,
-} from "react-icons/fa";
+  Trophy,
+  Clock,
+  CheckCircle,
+  Headphones,
+  Star,
+  X,
+} from "lucide-react";
 
 const features = [
   {
-    icon: FaTrophy,
+    icon: Trophy,
     title: "Proven Success",
     description:
       "We take pride in delivering top-quality case acquisition and legal support solutions that drive real results for our clients.",
   },
   {
-    icon: FaClock,
+    icon: Clock,
     title: "Industry Expertise",
     description:
       "With years of experience in legal marketing and operations, we help law firms and agencies scale efficiently.",
   },
   {
-    icon: FaCheckCircle,
+    icon: CheckCircle,
     title: "Trusted by Professionals",
     description:
       "Our tailored services are designed to meet the unique needs of law firms and legal marketing firms across the U.S.",
   },
   {
-    icon: FaHeadset,
+    icon: Headphones,
     title: "Consultation at No Cost",
     description:
       "Discover how AdvanceEdge can enhance your practice with a free consultation—no commitment required.",
@@ -99,7 +99,7 @@ export default function WhyChooseUsSection() {
                     >
                       {/* Icon */}
                       <motion.div
-                        className="text-4xl sm:text-5xl text-[#FF9A28] mb-4 sm:mb-6 inline-block"
+                        className="text-[#FF9A28] mb-4 sm:mb-6 inline-block"
                         animate={{ y: [0, -8, 0] }}
                         transition={{
                           duration: 2,
@@ -108,7 +108,7 @@ export default function WhyChooseUsSection() {
                         }}
                         whileHover={{ scale: 1.15 }}
                       >
-                        <IconComponent />
+                        <IconComponent className="w-12 h-12 sm:w-14 sm:h-14" />
                       </motion.div>
 
                       {/* Title */}
@@ -150,7 +150,7 @@ export default function WhyChooseUsSection() {
                 </motion.div>
 
                 {/* Heading */}
-                <h2 className="font-marcellus  text-3xl sm:text-4xl leading-tight mb-4 sm:mb-6">
+                <h2 className="font-marcellus text-3xl sm:text-4xl leading-tight mb-4 sm:mb-6">
                   Results Driven Solutions for Law Firms & Legal Marketing Firms
                 </h2>
 
@@ -163,10 +163,10 @@ export default function WhyChooseUsSection() {
                   {[...Array(5)].map((_, i) => (
                     <motion.span
                       key={i}
-                      className="text-xl sm:text-2xl text-[#FF9A28]"
+                      className="text-[#FF9A28]"
                       whileHover={{ scale: 1.2, rotate: 15 }}
                     >
-                      <FaStar />
+                      <Star className="w-6 h-6 sm:w-7 sm:h-7 fill-[#FF9A28]" />
                     </motion.span>
                   ))}
                 </div>
@@ -202,43 +202,51 @@ export default function WhyChooseUsSection() {
       </section>
 
       {/* Booking Modal */}
-      {showBookingModal && (
-        <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
-          onClick={() => setShowBookingModal(false)}
-        >
-          <div
-            className="bg-white rounded-2xl shadow-2xl max-w-8xl w-full max-h-[100vh] overflow-hidden relative flex flex-col"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {showBookingModal && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowBookingModal(false)}
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setShowBookingModal(false)}
-              className="absolute top-6 right-6 p-2 bg-red-500 hover:bg-red-600 rounded-full transition-colors z-50 shadow-lg"
-              aria-label="Close modal"
-              type="button"
+            <motion.div
+              className="bg-white rounded-2xl shadow-2xl max-w-8xl w-full max-h-[100vh] overflow-hidden relative flex flex-col"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
             >
-              <FaTimes size={20} className="text-white" />
-            </button>
+              {/* Close Button */}
+              <button
+                onClick={() => setShowBookingModal(false)}
+                className="absolute top-6 right-6 p-2 bg-red-500 hover:bg-red-600 rounded-full transition-colors z-50 shadow-lg"
+                aria-label="Close modal"
+                type="button"
+              >
+                <X size={20} className="text-white" />
+              </button>
 
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">
-              <h2 className="font-marcellus text-3xl mb-2">Book a Call</h2>
-              <p className="font-dm text-gray-300">
-                Schedule a meeting with our team to discuss your needs
-              </p>
-            </div>
+              {/* Modal Header */}
+              <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">
+                <h2 className="font-marcellus text-3xl mb-2">Book a Call</h2>
+                <p className="font-dm text-gray-300">
+                  Schedule a meeting with our team to discuss your needs
+                </p>
+              </div>
 
-            {/* TidyCal Embed */}
-            <div className="flex-1 overflow-y-auto p-8 bg-white">
-              <div
-                className="tidycal-embed"
-                data-path="victor-daniel/website"
-              ></div>
-            </div>
-          </div>
-        </div>
-      )}
+              {/* TidyCal Embed */}
+              <div className="flex-1 overflow-y-auto p-8 bg-white">
+                <div
+                  className="tidycal-embed"
+                  data-path="victor-daniel/website"
+                ></div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlay, FaTimes } from "react-icons/fa";
+import { Play, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function AboutSection() {
@@ -41,7 +41,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* LEFT IMAGE SECTION */}
             <div className="relative h-[500px] flex items-center justify-center lg:justify-start">
-              {/* Back Card */}
+              {/* Back Card - GPU accelerated */}
               <motion.div
                 className="absolute top-1/4 w-[100%] md:w-[340px] h-[440px] md:h-[520px] rounded-2xl overflow-hidden shadow-xl"
                 animate={{ y: [0, -12, 0] }}
@@ -59,7 +59,7 @@ export default function AboutSection() {
                 />
               </motion.div>
 
-              {/* Front Card */}
+              {/* Front Card - GPU accelerated */}
               <motion.div
                 className="absolute right-0 md:right-12 top-6 w-[220px] md:w-[380px] h-[320px] md:h-[480px] rounded-2xl overflow-hidden hidden md:block shadow-2xl border-8 border-white"
                 animate={{ y: [0, 14, 0] }}
@@ -77,9 +77,7 @@ export default function AboutSection() {
                 />
               </motion.div>
 
-              
-
-              {/* Dot Pattern */}
+              {/* Dot Pattern - GPU accelerated (scale + opacity) */}
               <div className="absolute left-0 md:-left-12 top-1/3 grid grid-cols-5 gap-3">
                 {Array.from({ length: 15 }).map((_, i) => (
                   <motion.span
@@ -101,7 +99,7 @@ export default function AboutSection() {
 
             {/* RIGHT CONTENT */}
             <div className="space-y-6 pt-16 md:pt-40">
-              {/* Tag Line */}
+              {/* Tag Line - GPU accelerated */}
               <motion.div
                 className="flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
@@ -115,7 +113,7 @@ export default function AboutSection() {
                 </span>
               </motion.div>
 
-              {/* Heading */}
+              {/* Heading - GPU accelerated */}
               <motion.h2
                 className="font-marcellus text-3xl md:text-5xl text-slate-900 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
@@ -126,7 +124,7 @@ export default function AboutSection() {
                 Empowering Legal Professionals with Innovation and Expertise
               </motion.h2>
 
-              {/* Description */}
+              {/* Description - GPU accelerated */}
               <motion.p
                 className="font-dm text-slate-600 text-base leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
@@ -147,12 +145,12 @@ export default function AboutSection() {
                   <span className="absolute -top-6 -left-4 text-[#FF9A28] text-6xl">
                     ❝
                   </span>
-                  Success in the legal industry isn’t just about winning
-                  cases—it’s about having the right support to grow and thrive.
+                  Success in the legal industry isn't just about winning
+                  cases—it's about having the right support to grow and thrive.
                 </div>
               </div>
 
-              {/* Play + CTA Wrapper */}
+              {/* Play + CTA Wrapper - GPU accelerated */}
               <motion.div
                 className="flex flex-col md:flex-row md:items-center gap-6 pt-4"
                 initial={{ opacity: 0, y: 20 }}
@@ -162,17 +160,20 @@ export default function AboutSection() {
               >
                 {/* Play Button Section (video modal) */}
                 <div className="flex items-center gap-4 justify-center md:justify-start">
-                  <button
+                  <motion.button
                     onClick={() => setIsVideoModalOpen(true)}
-                    className="relative w-16 h-16 bg-[#FF9A28] hover:bg-[#e88720] rounded-full flex items-center justify-center shadow-lg transition-all"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative w-16 h-16 bg-[#FF9A28] hover:bg-[#e88720] rounded-full flex items-center justify-center shadow-lg transition-colors group"
                   >
+                    {/* Pulsing ring - use opacity instead of scale */}
                     <motion.div
                       className="absolute inset-0 rounded-full border-2 border-[#FF9A28]"
-                      animate={{ scale: [1, 1.3], opacity: [1, 0] }}
+                      animate={{ opacity: [1, 0], scale: [1, 1.3] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     />
-                    <FaPlay className="text-white text-lg ml-1" />
-                  </button>
+                    <Play className="text-white w-6 h-6 ml-1 fill-white" />
+                  </motion.button>
 
                   <div className="font-dm text-left">
                     <p className="font-semibold text-slate-900 text-lg">
@@ -200,7 +201,7 @@ export default function AboutSection() {
                   >
                     BOOK A CALL
                     <svg
-                      className="w-6 h-6 md:w-7 md:h-7 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
+                      className="w-6 h-6 md:w-7 md:h-7 group-hover:rotate-90 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
                       viewBox="0 0 16 19"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -232,18 +233,19 @@ export default function AboutSection() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}
-                className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full text-white flex items-center justify-center"
+                className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full text-white flex items-center justify-center z-50 transition-colors"
+                aria-label="Close video"
               >
-                ✕
+                <X className="w-6 h-6" />
               </button>
 
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.youtube.com/embed/NvtsM8Nk72c?autoplay=1"
+                  src="https://www.youtube.com/embed/QSKcnXJQg0k?autoplay=1"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -270,7 +272,7 @@ export default function AboutSection() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
             >
               <button
                 onClick={() => setShowBookingModal(false)}
@@ -278,7 +280,7 @@ export default function AboutSection() {
                 aria-label="Close modal"
                 type="button"
               >
-                <FaTimes size={20} className="text-white" />
+                <X size={20} className="text-white" />
               </button>
 
               <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">

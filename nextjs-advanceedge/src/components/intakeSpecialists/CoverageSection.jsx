@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function IndustryExpertiseSection() {
+export default function CoverageSection() {
   const benefits = [
     {
       title: 'Flexible Scheduling',
@@ -100,7 +100,18 @@ export default function IndustryExpertiseSection() {
                         fontSize: '1.5rem'
                       }}
                     >
-                      <i aria-hidden="true" className="bi bi-arrow-right-circle-fill"></i>
+                      <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10
+                                  10-4.477 10-10S17.523 2 12 2zm-1 14.414l-3.707-3.707
+                                  1.414-1.414L11 13.586l4.293-4.293
+                                  1.414 1.414L11 16.414z" />
+                        </svg>
+
                     </div>
                   </div>
 

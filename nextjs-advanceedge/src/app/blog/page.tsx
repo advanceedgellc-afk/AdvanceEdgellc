@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
-import BlogPostShare from "@/components/BlogPostShare";
-
+import BlogPostShareWrapper from "@/components/BlogPostShareWrapper";
 
 interface Category {
   title: string;
@@ -261,11 +260,10 @@ export default async function Blog() {
                               </Link>
 
 
-                              {/* ✅ UPDATED: Social share component - Fully Functional */}
-                              <BlogPostShare
-                                title={post.title}
-                                slug={post.slug.current}
-                              />
+                              <BlogPostShareWrapper title={post.title} slug={post.slug.current} />
+
+
+
                             </div>
                           </div>
                         </div>

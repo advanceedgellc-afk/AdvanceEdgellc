@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlus, FaTimes } from "react-icons/fa";
+import { Plus, X } from "lucide-react";
+
 
 const faqItems = [
   {
@@ -169,7 +170,7 @@ export default function FAQSection() {
                         animate={{ rotate: activeId === item.id ? 45 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <FaPlus className="text-sm font-bold" />
+                        <Plus size={20} className="text-sm font-bold" />
                       </motion.div>
                     </div>
                   </motion.button>
@@ -221,7 +222,7 @@ export default function FAQSection() {
               aria-label="Close modal"
               type="button"
             >
-              <FaTimes size={20} className="text-white" />
+              <X size={20} className="text-white" />
             </button>
 
             {/* Modal Header */}
