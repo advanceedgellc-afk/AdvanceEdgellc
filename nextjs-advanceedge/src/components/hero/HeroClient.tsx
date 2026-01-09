@@ -69,10 +69,14 @@ export default function HeroClient() {
             <button
                 type="button"
                 onClick={openBookingModal}
+                aria-label="Book a call"
+                aria-haspopup="dialog"
                 className="inline-flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md font-semibold border-gray-50  isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FF9A28] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-8 py-4 overflow-hidden border-2  rounded-full group text-gray-800 font-dm"
               >
                 BOOK A CALL
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   className="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1.5 rotate-45"
                   viewBox="0 0 16 19"
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +97,7 @@ export default function HeroClient() {
         className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce z-20"
         aria-label="Scroll to services"
       >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+        <div  aria-hidden="true" className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2" />
         </div>
       </button>

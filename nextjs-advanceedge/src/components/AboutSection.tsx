@@ -162,17 +162,23 @@ export default function AboutSection() {
                 <div className="flex items-center gap-4 justify-center md:justify-start">
                   <motion.button
                     onClick={() => setIsVideoModalOpen(true)}
+                    aria-label="Play introduction video"
+                    aria-haspopup="dialog"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="relative w-16 h-16 bg-[#FF9A28] hover:bg-[#e88720] rounded-full flex items-center justify-center shadow-lg transition-colors group"
                   >
                     {/* Pulsing ring - use opacity instead of scale */}
                     <motion.div
+                      aria-hidden="true"
                       className="absolute inset-0 rounded-full border-2 border-[#FF9A28]"
                       animate={{ opacity: [1, 0], scale: [1, 1.3] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     />
-                    <Play className="text-white w-6 h-6 ml-1 fill-white" />
+                    <Play  
+                    aria-hidden="true" 
+                    focusable="false" 
+                    className="text-white w-6 h-6 ml-1 fill-white" />
                   </motion.button>
 
                   <div className="font-dm text-left">
@@ -194,6 +200,8 @@ export default function AboutSection() {
                   <button
                     type="button"
                     onClick={() => setShowBookingModal(true)}
+                    aria-label="Book a call"
+                    aria-haspopup="dialog"
                     className="group inline-flex justify-center gap-4 items-center shadow-xl text-base md:text-lg bg-gray-50 backdrop-blur-md font-semibold border-gray-50 
                       before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 
                       before:rounded-full before:bg-[#FF9A28] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 
@@ -201,6 +209,8 @@ export default function AboutSection() {
                   >
                     BOOK A CALL
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       className="w-6 h-6 md:w-7 md:h-7 group-hover:rotate-90 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
                       viewBox="0 0 16 19"
                       xmlns="http://www.w3.org/2000/svg"

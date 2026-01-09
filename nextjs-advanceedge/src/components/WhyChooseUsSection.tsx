@@ -108,7 +108,9 @@ export default function WhyChooseUsSection() {
                         }}
                         whileHover={{ scale: 1.15 }}
                       >
-                        <IconComponent className="w-12 h-12 sm:w-14 sm:h-14" />
+                        <IconComponent   aria-hidden="true"
+                        focusable="false" 
+                        className="w-12 h-12 sm:w-14 sm:h-14" />
                       </motion.div>
 
                       {/* Title */}
@@ -166,7 +168,10 @@ export default function WhyChooseUsSection() {
                       className="text-[#FF9A28]"
                       whileHover={{ scale: 1.2, rotate: 15 }}
                     >
-                      <Star className="w-6 h-6 sm:w-7 sm:h-7 fill-[#FF9A28]" />
+                      <Star   
+                      aria-hidden="true"
+                      focusable="false" 
+                      className="w-6 h-6 sm:w-7 sm:h-7 fill-[#FF9A28]" />
                     </motion.span>
                   ))}
                 </div>
@@ -184,6 +189,8 @@ export default function WhyChooseUsSection() {
                   >
                     BOOK A CALL
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       className="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-white/20 text-white ease-linear duration-300 rounded-full border border-white/50 group-hover:border-white p-1.5 rotate-45"
                       viewBox="0 0 16 19"
                       xmlns="http://www.w3.org/2000/svg"
@@ -212,6 +219,10 @@ export default function WhyChooseUsSection() {
             onClick={() => setShowBookingModal(false)}
           >
             <motion.div
+              id="booking-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="booking-modal-title"
               className="bg-white rounded-2xl shadow-2xl max-w-8xl w-full max-h-[100vh] overflow-hidden relative flex flex-col"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -225,12 +236,13 @@ export default function WhyChooseUsSection() {
                 aria-label="Close modal"
                 type="button"
               >
-                <X size={20} className="text-white" />
+                <X   aria-hidden="true"  focusable="false" size={20} className="text-white" />
               </button>
 
               {/* Modal Header */}
               <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">
-                <h2 className="font-marcellus text-3xl mb-2">Book a Call</h2>
+                <h2  id="booking-modal-title" 
+                className="font-marcellus text-3xl mb-2">Book a Call</h2>
                 <p className="font-dm text-gray-300">
                   Schedule a meeting with our team to discuss your needs
                 </p>

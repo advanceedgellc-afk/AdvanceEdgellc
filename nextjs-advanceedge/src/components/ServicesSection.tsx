@@ -127,7 +127,7 @@ export default function ServicesSection() {
                     className={`w-12 h-12 ${service.iconColor} mb-6`}
                     whileHover={{ scale: 1.2, rotate: -10 }}
                   >
-                    <IconComponent className="w-full h-full" />
+                    <IconComponent   aria-hidden="true" focusable="false" className="w-full h-full" />
                   </motion.div>
 
                   {/* Title */}
@@ -148,7 +148,7 @@ export default function ServicesSection() {
                     <span className="text-slate-900 group-hover:text-[#FF9A28]">
                       Learn More
                     </span>
-                    <ArrowRight className="w-5 h-5 text-[#FF9A28] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight   aria-hidden="true" focusable="false" className="w-5 h-5 text-[#FF9A28] group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               );
@@ -164,6 +164,9 @@ export default function ServicesSection() {
             <button
               type="button"
               onClick={() => setShowBookingModal(true)}
+              aria-haspopup="dialog"
+              aria-expanded={showBookingModal}
+              aria-controls="booking-modal"
               className="group inline-flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md font-semibold border-gray-50 
                 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 
                 before:rounded-full before:bg-[#FF9A28] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 
@@ -171,6 +174,8 @@ export default function ServicesSection() {
             >
               BOOK A CALL
               <svg
+                aria-hidden="true"
+                focusable="false"
                 className="w-7 h-7 justify-end group-hover:rotate-90 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1.5 rotate-45 transition-transform"
                 viewBox="0 0 16 19"
                 xmlns="http://www.w3.org/2000/svg"
@@ -196,6 +201,10 @@ export default function ServicesSection() {
             onClick={() => setShowBookingModal(false)}
           >
             <motion.div
+              id="booking-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="booking-modal-title"
               className="bg-white rounded-2xl shadow-2xl max-w-8xl w-full max-h-[100vh] overflow-hidden relative flex flex-col"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -209,12 +218,12 @@ export default function ServicesSection() {
                 aria-label="Close modal"
                 type="button"
               >
-                <X size={20} className="text-white" />
+                <X   aria-hidden="true" focusable="false" size={20} className="text-white" />
               </button>
 
               {/* Modal Header */}
               <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">
-                <h2 className="font-marcellus text-3xl mb-2">Book a Call</h2>
+                <h2 id="booking-modal-title" className="font-marcellus text-3xl mb-2">Book a Call</h2>
                 <p className="font-dm text-gray-300">
                   Schedule a meeting with our team to discuss your needs
                 </p>

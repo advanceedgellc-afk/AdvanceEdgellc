@@ -117,7 +117,11 @@ export default function WhoWeHelpSlider() {
         </div>
 
         {/* Slider Container */}
-        <div className="relative h-[550px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[550px] md:h-[500px] flex items-center justify-center overflow-hidden"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Who we help success stories"
+        >
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={currentIndex}
@@ -151,23 +155,27 @@ export default function WhoWeHelpSlider() {
                     </p>
 
                     {/* Slide dots */}
-                    <div className="flex gap-2 mt-6">
-                      {slides.map((_, i) => (
-                        <motion.button
-                          key={i}
-                          onClick={() => {
-                            setDirection(i > currentIndex ? 1 : -1);
-                            setCurrentIndex(i);
-                          }}
-                          className={`rounded-full transition-all duration-300 ${
-                            i === currentIndex
-                              ? "w-3 h-3 bg-white"
-                              : "w-2 h-2 bg-orange-200 hover:bg-orange-100"
-                          }`}
-                          whileHover={{ scale: 1.3 }}
-                        />
-                      ))}
-                    </div>
+                      <div className="flex gap-2 mt-6">
+                        {slides.map((slide, i) => (
+                          <motion.button
+                            key={slide.id}
+                            type="button"
+                            onClick={() => {
+                              setDirection(i > currentIndex ? 1 : -1);
+                              setCurrentIndex(i);
+                            }}
+                            aria-label={`Go to slide ${i + 1}: ${slide.title}`}
+                            aria-current={i === currentIndex ? "true" : undefined}
+                            className={`rounded-full transition-all duration-300 ${
+                              i === currentIndex
+                                ? "w-3 h-3 bg-white"
+                                : "w-2 h-2 bg-orange-200 hover:bg-orange-100"
+                            }`}
+                            whileHover={{ scale: 1.3 }}
+                          />
+                        ))}
+                      </div>
+
                   </motion.div>
 
                   {/* Right Image */}
@@ -192,23 +200,24 @@ export default function WhoWeHelpSlider() {
           {/* Left Arrow */}
           <motion.button
             onClick={() => paginate(-1)}
+            aria-label="Previous slide"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Previous"
+            
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft aria-hidden="true" focusable="false" className="w-6 h-6" />
           </motion.button>
 
           {/* Right Arrow */}
           <motion.button
             onClick={() => paginate(1)}
+            aria-label="Next slide"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight aria-hidden="true" focusable="false" className="w-6 h-6" />
           </motion.button>
         </div>
       </div>
