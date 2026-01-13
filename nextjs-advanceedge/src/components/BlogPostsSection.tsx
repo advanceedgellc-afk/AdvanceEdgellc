@@ -79,7 +79,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
                   {/* Content */}
                   <div className="p-6">
                     {/* Date */}
-                    <p className="text-sm text-orange-500 font-semibold mb-2">
+                    <p className="text-sm text-orange-700 font-semibold mb-2">
                       {post.publishedAt
                         ? new Date(post.publishedAt).toLocaleDateString("en-US", {
                             year: "numeric",
@@ -95,7 +95,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
                     </h3>
 
                     {/* CTA */}
-                    <span className="inline-flex items-center gap-2 text-orange-500 font-semibold group-hover:gap-3 transition-all duration-300 hover:text-orange-600">
+                    <span className="inline-flex items-center gap-2 text-orange-700 font-semibold group-hover:gap-3 transition-all duration-300 hover:text-orange-600">
                       Read More{" "}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>

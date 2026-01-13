@@ -127,7 +127,7 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <Link href="/" className="inline-block mb-6">
-              <img src="/Logo-ae.webp" alt="Advance Edge Logo" className="w-44" />
+              <img src="/footer-logo-AE.webp" alt="Advance Edge Logo" className="w-44" />
             </Link>
 
             <p className="font-dm text-gray-400 mb-6">
