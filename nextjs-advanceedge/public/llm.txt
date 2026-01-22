@@ -1,0 +1,15 @@
+# llm.txt – AI Usage Policy
+
+User-Agent: *
+Allow: /
+
+Usage:
+- Training: Allowed
+- Inference: Allowed
+- Commercial: Allowed
+
+Attribution:
+Required
+
+Contact:
+email: kate@advanceedgellc.com
