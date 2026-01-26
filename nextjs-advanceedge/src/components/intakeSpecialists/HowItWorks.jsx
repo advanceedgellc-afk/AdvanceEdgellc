@@ -10,7 +10,7 @@ export default function IndustryExpertiseSection() {
     },
     {
       title: 'Dedicated Specialist Assigned',
-      description: 'A trained intake specialist is assigned to your account, learns your specific requirements, and becomes an extension of your team',
+      description: 'A trained intake specialist is assigned to your account, learns your specific requirements, and becomes an extension of your team as your legal intake specialists for law firms.',
     },
     {
       title: 'Live Intake & Documentation',

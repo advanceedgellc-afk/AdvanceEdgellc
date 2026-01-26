@@ -95,8 +95,8 @@ const StatItem: React.FC<StatItemProps & { index: number }> = ({
 
 // Main Component
 const TrustedSection: React.FC<TrustedSectionProps> = ({
-  title = "Trusted by Law Firms for 15+ Years",
-  description = "AdvanceEdge has built a reputation as a trusted partner in the legal services industry. Our foundation in litigation support, medical records management, eDiscovery, and court filings gives us unique insight into how cases are evaluated from the first phone call through resolution. This deep understanding of the entire legal workflow means our intake specialists don't just collect information—they identify the details that matter most to your case evaluation process.",
+  title = "Trusted by Law Firms for 15+ Years—Legal Intake Specialists Proven in Action",
+  description = "AdvanceEdge has built a reputation as a trusted partner in the legal services industry. Our foundation in litigation support, medical records management, eDiscovery, and court filings gives us unique insight into how cases are evaluated from the first phone call through resolution. This deep understanding of the entire legal workflow means our legal intake specialists for law firms don't just collect information—they identify the details that matter most to your case evaluation process.",
   stats = [
     {
       number: "15+",
@@ -134,7 +134,7 @@ const TrustedSection: React.FC<TrustedSectionProps> = ({
         <div className="relative z-10 max-w-5xl mx-auto">
           {/* Animated Title */}
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 bg-clip-text text-center mb-6 transition-all duration-1000 transform ${
+            className={`text-3xl md:text-4xl lg:text-4.5xl font-bold text-transparent bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 bg-clip-text text-center mb-6 transition-all duration-1000 transform ${
               headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -152,7 +152,7 @@ const TrustedSection: React.FC<TrustedSectionProps> = ({
 
           {/* Animated Description */}
           <p
-            className={`text-center text-gray-700 text-sm md:text-base leading-relaxed max-w-3xl mx-auto transition-all duration-1000 delay-200 transform ${
+            className={`text-center text-gray-700 text-base md:text-lg leading-relaxed max-w-5xl mx-auto transition-all duration-1000 delay-200 transform ${
               headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >

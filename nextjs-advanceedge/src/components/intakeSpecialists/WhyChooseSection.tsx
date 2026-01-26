@@ -75,20 +75,20 @@ export default function WhyChooseSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Why Top Law Firms Choose AdvanceEdge Intake
+            Why Top Law Firms Choose<br/> AdvanceEdge Intake for Legal Intake Specialists
           </h2>
 
           <p
-            className={`text-base text-slate-600 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
+            className={`text-base md:text-lg text-slate-600 max-w-5xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            AdvanceEdge delivers intake specialists who understand the nuances of legal case
-            evaluation. Our agents do not just answer phones—they apply your firm&apos;s specific
-            criteria, capture critical incident and injury details, and document everything clearly
-            in your CRM system. With comprehensive QA monitoring and script-driven processes, every
-            lead receives consistent, professional evaluation that protects your firm&apos;s
-            reputation and conversion rates.
+            AdvanceEdge delivers legal intake specialists for law firms who understand the nuances of
+             legal case evaluation. Our agents do not just answer phones—they apply your firm's specific
+              criteria, capture critical incident and injury details, and document everything clearly in
+               your CRM system. With comprehensive QA monitoring and script-driven processes, every lead
+                receives consistent, professional evaluation that protects your firm's reputation and 
+                conversion rates.
           </p>
         </div>
 

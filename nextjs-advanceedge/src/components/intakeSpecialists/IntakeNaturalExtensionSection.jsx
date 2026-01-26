@@ -56,11 +56,10 @@ export default function IntakeNaturalExtensionSection() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0}
-              className="font-marcellus text-4xl md:text-5xl leading-tight text-slate-900 mb-4"
+              className="font-marcellus text-3xl md:text-4xl leading-tight text-slate-900 mb-4"
             >
-              Why Intake Is a Natural
-              <br />
-              Extension for Us
+              Why Intake Is a Natural Extension for Us—Legal Intake Specialists with Deep Expertise
+
             </motion.h2>
 
             <motion.div
@@ -79,11 +78,10 @@ export default function IntakeNaturalExtensionSection() {
               custom={1}
               className="font-dm text-base md:text-lg text-slate-800 leading-relaxed mb-4"
             >
-              With 15+ years supporting US law firms across litigation support,
-              medical records, eDiscovery, and court filings, we understand how
-              cases are evaluated from day one. This comprehensive experience
-              across the entire legal workflow gives our intake specialists a
-              distinct advantage—they see the bigger picture.
+              With 15+ years supporting US law firms across litigation support, medical records, 
+              eDiscovery, and court filings, we understand how cases are evaluated from day one.
+               This comprehensive experience across the entire legal workflow gives our legal intake
+                specialists for law firms a distinct advantage—they see the bigger picture.
             </motion.p>
 
             <motion.p
@@ -94,13 +92,12 @@ export default function IntakeNaturalExtensionSection() {
               custom={2}
               className="font-dm text-base md:text-lg text-slate-800 leading-relaxed mb-4"
             >
-              We started supporting intake during off‑hours when firms were
-              missing good leads that came in evenings and weekends. It quickly
-              became apparent that intake was the fastest way for clients to
-              assess our agent quality and workflow understanding before scaling
-              into broader services. Many firms now start with intake and expand
-              confidently into AdvanceEdge’s full suite of litigation support
-              solutions once they’ve validated our quality and reliability.
+              We started supporting intake during off-hours when firms were missing good leads
+               that came in evenings and weekends. It quickly became apparent that intake was 
+               the fastest way for clients to assess our agent quality and workflow understanding
+                before scaling into broader services. Many firms now start with intake and expand 
+                confidently into AdvanceEdge’s full suite of litigation support solutions once they’ve
+                 validated our quality and reliability.
             </motion.p>
 
             <motion.p
@@ -111,11 +108,10 @@ export default function IntakeNaturalExtensionSection() {
               custom={3}
               className="font-dm text-base md:text-lg text-slate-800 leading-relaxed"
             >
-              Our intake specialists aren’t just trained on scripts—they’re
-              immersed in legal operations. They understand what makes a strong
-              case, how medical records will be reviewed, and what documentation
-              standards your firm needs. This context allows them to capture
-              details other intake services might miss.
+              Our legal intake specialists for law firms aren’t just trained on scripts—they’re 
+              immersed in legal operations. They understand what makes a strong case, how medical
+               records will be reviewed, and what documentation standards your firm needs. This context
+                allows them to capture details other intake services might miss.
             </motion.p>
           </motion.div>
         </div>

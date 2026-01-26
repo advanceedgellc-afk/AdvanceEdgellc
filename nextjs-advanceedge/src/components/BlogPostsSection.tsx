@@ -108,7 +108,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
             <div className="text-center mt-12">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-orange-700 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 View All Articles
                 <ArrowRight className="w-5 h-5" />

@@ -10,7 +10,7 @@ const faqItems = [
     id: 1,
     question: "What does a legal intake specialist do for a law firm?",
     answer:
-      "A legal intake specialist handles the first interaction with potential clients by answering calls, qualifying cases based on firm-specific criteria, documenting details in the CRM, and ensuring a smooth handoff to the legal team. At AdvanceEdge, our intake specialists are trained in Mass Tort, Personal Injury, and MVA workflows, so they capture information that matters for case evaluation, not just basic contact details.",
+      "A legal intake specialist for law firms handles the first interaction with potential clients by answering calls, qualifying cases based on firm-specific criteria, documenting details in the CRM, and ensuring a smooth handoff to the legal team. At AdvanceEdge, our legal intake specialists for law firms are trained in Mass Tort, Personal Injury, and MVA workflows, so they capture information that matters for case evaluation, not just basic contact details.",
   },
   {
     id: 2,

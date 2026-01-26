@@ -34,7 +34,7 @@ export default function Header() {
       name: "Virtual Agents",
       href: "/services/virtual-legal-agents-services",
       subItems: [
-        { name: "Intake Specialists", href: "/services/virtual-legal-agents-services/intake-specialists" },
+        { name: "Intake Specialists", href: "/services/virtual-legal-agents-services/legal-intake-specialists" },
       ],
     },
     { name: "Digital Solutions", href: "/services/legal-digital-marketing-solutions" },

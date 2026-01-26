@@ -104,10 +104,10 @@ export default function StopLosingCasesSection() {
               variants={itemVariants}
               className="font-dm text-base md:text-lg text-slate-700 leading-relaxed mb-8"
             >
-              AdvanceEdge intake specialists become an extension of your team, representing your
-              firm professionally while capturing the details your attorneys need to make fast case
-              decisions. The result is more qualified leads, higher conversion rates, and the peace
-              of mind that comes from knowing no good case slips through the cracks.
+             AdvanceEdge legal intake specialists for law firms become an extension of your team,
+              representing your firm professionally while capturing the details your attorneys need 
+              to make fast case decisions. The result is more qualified leads, higher conversion rates,
+               and the peace of mind that comes from knowing no good case slips through the cracks.
             </motion.p>
 
             {/* CTA Buttons */}

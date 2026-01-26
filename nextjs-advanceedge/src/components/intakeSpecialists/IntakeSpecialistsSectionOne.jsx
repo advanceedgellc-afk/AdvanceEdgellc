@@ -62,13 +62,13 @@ export default function IntakeSpecialistsSection() {
             className="space-y-4 max-w-xl md:ml-auto"
           >
             <h3 className="font-marcellus text-2xl md:text-3xl text-slate-50 leading-snug">
-              Intake handled the way law firms actually need it.
+            Intake Handled the Way Law Firms Actually Need It—By Legal Intake Specialists
             </h3>
             <p className="font-dm text-base md:text-lg text-slate-200 leading-relaxed">
-              Our intake specialists serve as the critical first touchpoint between
-              potential clients and your firm. They’re trained to ask the right questions,
-              identify red flags early, and capture the specific details your attorneys
-              need to make fast, confident case decisions.
+            Our legal intake specialists for law firms serve as the critical first touchpoint between
+             potential clients and your firm. They’re trained to ask the right questions, identify
+              red flags early, and capture the specific details your attorneys need to make fast,
+               confident case decisions.
             </p>
             <p className="font-dm text-base md:text-lg text-slate-200 leading-relaxed">
               Every interaction follows your approved scripts and qualification criteria,
