@@ -7,6 +7,7 @@ import WhyDigitalSolutions from "@/components/digitalSolutions/WhyDigitalSolutio
 import HowItWorks from "@/components/digitalSolutions/HowItWorks";
 import WhyChooseAdvanceEdge from "@/components/digitalSolutions/WhyChooseAdvanceEdge";
 import FAQSection from "@/components/digitalSolutions/FAQSection";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

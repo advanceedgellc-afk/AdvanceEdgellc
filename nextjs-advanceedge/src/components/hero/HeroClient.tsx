@@ -52,17 +52,16 @@ export default function HeroClient() {
 
             {/* Headline */}
             <h1 className="font-marcellus text-4xl md:text-6xl text-white mb-6 leading-tight tracking-wide">
-              TRUSTED PARTNER IN{" "}
+            Legal Intake and Operations Partner for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9A28] to-[#FF9A28]/70">
-                GROWTH & EFFICIENCY
+              Modern Law Firms
               </span>
             </h1>
 
             {/* Description */}
             <p className="font-dm text-[19px] text-gray-200 mb-14 leading-relaxed max-w-3xl">
-              Empowering legal professionals with innovative solutions that
-              drive success. Over 12 years of experience in case acquisition,
-              virtual agents, and digital marketing.
+            Human‑led, AI‑accelerated intake, case qualification, and back‑office support for law firms
+             and legal marketing agencies—from solo practices to high‑volume Mass Tort and PI shops.
             </p>
 
             {/* CTA */}

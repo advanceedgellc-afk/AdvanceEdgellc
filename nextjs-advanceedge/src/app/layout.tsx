@@ -61,6 +61,7 @@ export default function RootLayout({
       className={`scroll-smooth ${dmSans.variable} ${marcellus.variable}`}
     >
       <head>
+        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

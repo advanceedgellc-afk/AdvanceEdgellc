@@ -114,41 +114,28 @@ export default function AboutSection() {
               </motion.div>
 
               {/* Heading - GPU accelerated */}
-              <motion.h2
-                className="font-marcellus text-3xl md:text-5xl text-slate-900 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                Empowering Legal Professionals with Innovation and Expertise
-              </motion.h2>
+                        {/* Headline */}
+          <h2
+            className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-12 leading-[1.05] text-brand-navy" 
+          >
+            Trusted by legal teams {' '}
+            <br className="hidden md:block" />
+            <span className="text-orange-400" >that can&apos;t afford to miss</span>
+          </h2>
 
               {/* Description - GPU accelerated */}
               <motion.p
-                className="font-dm text-slate-600 text-base leading-relaxed"
+                className="font-dm text-slate-600 text-lg leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                At Advance Edge, we are dedicated to empowering legal
-                professionals with innovative solutions that drive success. With
-                over 12 years of experience, we specialize in providing
-                high-quality case acquisition, expert virtual agents, and
-                digital marketing services tailored to law firms across the U.S.
+             AdvanceEdge supports law firms and legal marketing agencies across the United States, including high‑volume <b>Mass Tort and PI practices</b> and leading legal marketing firms.
+             <br/>   <br/>
+             Whether you run a two‑attorney shop or a national campaign desk, you get the same <b>disciplined intake processes, audited workflows,</b> and <b>elastic capacity</b>.
               </motion.p>
 
-              {/* Quote */}
-              <div className="font-dm relative">
-                <div className="font-semibold text-slate-900 text-lg relative">
-                  <span className="absolute -top-6 -left-4 text-[#FF9A28] text-6xl">
-                    ❝
-                  </span>
-                  Success in the legal industry isn't just about winning
-                  cases—it's about having the right support to grow and thrive.
-                </div>
-              </div>
 
               {/* Play + CTA Wrapper - GPU accelerated */}
               <motion.div

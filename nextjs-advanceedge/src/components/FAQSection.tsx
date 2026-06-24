@@ -7,33 +7,39 @@ import { Plus, X } from "lucide-react";
 const faqItems = [
   {
     id: 1,
-    question: "How can AdvanceEdge help law firms get qualified Mass Tort leads?",
+    question: "What does a legal intake and operations partner do for a law firm?",
     answer:
-      "AdvanceEdge delivers high-quality, verified Mass Tort leads through targeted campaigns and rigorous case screening, ensuring law firms receive only eligible claimants.",
+      "A legal intake and operations partner sits between your marketing, attorneys, and case management system. They handle intake calls/forms, case qualification, medical record retrieval/review, and back-office tasks so your team focuses on legal strategy and client relationships instead of chasing paperwork or missed calls.",
   },
   {
     id: 2,
-    question: "What makes AdvanceEdge's Virtual Agents cost-effective for law firms?",
+    question: "How can a legal intake partner improve my law firm’s intake process?",
     answer:
-      "Our Virtual Agents streamline administrative and legal tasks with flexible, scalable solutions that reduce overhead while maintaining quality service delivery for your clients.",
+      "A specialized legal intake partner provides trained specialists who answer calls, web inquiries, and campaign leads using your qualification criteria. They capture complete information, qualify cases, schedule consults, and provide performance visibility to reduce lead leakage and improve inquiry‑to‑signed‑client conversion.",
   },
   {
     id: 3,
-    question: "How does AdvanceEdge verify Mass Tort leads before sending them to law firms?",
+    question: "Should law firms outsource all intake and operations or start small?",
     answer:
-      "We validate leads through medical record retrieval and case screening, ensuring compliance with eligibility criteria before delivery.",
+      "Most firms start with one bottleneck—after‑hours coverage, medical record retrieval, or litigation support—then expand once results prove out. A good partner augments in-house teams rather than forcing an all‑or‑nothing outsourcing decision.",
   },
   {
     id: 4,
-    question: "What digital marketing services does AdvanceEdge offer for law firms?",
+    question: "How is a specialized legal intake service different from a generic call center?",
     answer:
-      "We provide SEO, PPC, social media management, and content marketing to boost law firms' online presence and attract more qualified leads.",
+      "Specialized legal intake uses teams trained specifically for Mass Tort, PI, MVA, and other practice areas, with clinicians for medical records. You get domain knowledge, elastic capacity, 24/7 coverage without weekend premiums, and AI‑assisted workflows with human quality control—not generic agents reading scripts.",
   },
   {
     id: 5,
-    question: "How does AdvanceEdge's web development service help law firms?",
+    question: "Can outsourced intake work with my existing legal marketing agency?",
     answer:
-      "We create SEO-optimized, conversion-focused websites tailored to legal practices, improving client acquisition and search rankings.",
+      "Yes—many agencies like CAMG and Bridge Legal handle campaigns and intake tech while outsourcing the human work (calls, qualification, records) to specialized partners. This setup ensures marketing spend converts to signed cases instead of exposing intake gaps.",
+  },
+  {
+    id: 6,
+    question: "How quickly can a law firm launch outsourced intake and operations support?",
+    answer:
+      "Simple programs launch in weeks after aligning scripts, criteria, and system access. Complex Mass Tort or multi‑practice rollouts phase in to protect existing workflows while adding capacity where needed most.",
   },
 ];
 
@@ -93,13 +99,13 @@ export default function FAQSection() {
                 </motion.div>
 
                 <h2 className="font-marcellus text-4xl md:text-5xl leading-tight mb-6">
-                  Frequently Asked Questions
+                Answers to Common Questions About Our Legal Intake and Operations Support
                 </h2>
 
-                <p className="font-dm text-base md:text-lg text-slate-300">
+                {/* <p className="font-dm text-base md:text-lg text-slate-300">
                   Answers You Need. Results You Trust. Your Edge in Mass Tort
                   Success.
-                </p>
+                </p> */}
               </div>
 
               {/* CTA BUTTON -> opens popup */}

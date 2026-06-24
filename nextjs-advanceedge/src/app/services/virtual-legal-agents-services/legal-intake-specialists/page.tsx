@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import IntakeSpecialistsHero from "@/components/intakeSpecialists/IntakeSpecialistsHero";
+
 import WhyChooseSection from "@/components/intakeSpecialists/WhyChooseSection";
 import TrustedBySection from "@/components/intakeSpecialists/TrustedBySection";
 import IntakeSpecialistsProp from "@/components/intakeSpecialists/IntakeSpecialistsProp";
@@ -27,7 +28,6 @@ export default function IntakeSpecialists() {
       <main className="bg-slate-950 text-slate-50">
         {/* HERO */}
         <IntakeSpecialistsHero />
-
         <WhyChooseSection />
         <TrustedBySection />
         <IntakeSpecialistsSectionOne />

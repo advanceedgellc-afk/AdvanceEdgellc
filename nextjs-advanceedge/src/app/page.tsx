@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from "next/link"
 import Image from "next/image"
 import Hero from "@/components/hero/Hero"
+import Statssection from '@/components/Statssection'
 import AboutSection from "@/components/AboutSection"
-import WhoWeHelpSlider from "@/components/WhoWeHelpSlider"
-import ServicesSection from "@/components/ServicesSection"
+
 import WhyChooseUsSection from "@/components/WhyChooseUsSection"
 import FAQSection from "@/components/FAQSection"
 import { client } from "@/sanity/client"
@@ -12,7 +12,10 @@ import { urlFor } from "@/lib/sanity"
 import type { Post } from "@/types/post"
 import ScrollDownArrow from "@/components/ScrollDownArrow"
 import BlogPostsSection from "@/components/BlogPostsSection"
-import TrustIndicators from "@/components/TrustIndicators"
+import Whoweworkwith from "@/components/Whoweworkwith"
+import Whatwedo from "@/components/Whatwedo"
+
+
 
 const POSTS_QUERY = `
 *[
@@ -103,11 +106,12 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <TrustIndicators />
+      <Statssection/>
       <AboutSection />
-      <WhoWeHelpSlider />
+      <Whoweworkwith/>
+      <Whatwedo/>
       <WhyChooseUsSection />
-      <ServicesSection />
+    
       <FAQSection />
 
       {/* ✅ Related Articles */}

@@ -35,8 +35,15 @@ export default function CTASection() {
             <h2
               className="text-2xl md:text-4xl font-light text-white mb-8 leading-tight animate-[fadeInDown_0.8s_ease-out_100ms_both]"
             >
-              Partner with AdvanceEdge today<br/> and take your Firm to the next level.
+              Fix the Bottleneck, Not Just the Marketing
             </h2>
+            <p className="font-dm text-base md:text-lg text-slate-300">
+            You’ve already invested in great lawyers and serious marketing. 
+            The next gains won’t come from bigger ad budgets; they’ll come from 
+            fixing the intake and operations bottlenecks that quietly drain profit.
+             AdvanceEdge gives you a seasoned legal intake and operations partner that
+              behaves like an extension of your firm, without the cost and rigidity of traditional staffing.​
+           </p>
           </div>
 
           {/* Right CTA Card */}

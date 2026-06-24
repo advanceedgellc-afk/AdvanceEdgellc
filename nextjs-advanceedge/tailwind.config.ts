@@ -1,10 +1,11 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",        // ✅ App Router only
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",  // ✅ Components
-    // ❌ REMOVED: "./src/pages/**/*" - not used
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -15,6 +16,11 @@ const config: Config = {
         dm: ['var(--font-dm-sans)', 'sans-serif'],
       },
       colors: {
+        brand: {
+          navy: '#0F172A',
+          orange: '#E88720',
+          'orange-dark': '#d17619',
+        },
         orange: {
           50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
           400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
@@ -23,7 +29,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
 };
 
 export default config;
