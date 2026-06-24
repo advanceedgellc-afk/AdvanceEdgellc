@@ -1,29 +1,58 @@
-import React from 'react';
+"use client";
 
-/**
- * A modern, dark-themed "Coming Soon" page.
- * Updated to use an orange brand color.
- */
-export default function App() {
+import dynamic from "next/dynamic";
+import HeroSection from "@/components/virtualAgents/HeroSection";
+
+// ✅ Code-split all heavy sections
+const ScaleYourFirmSection = dynamic(
+  () => import("@/components/virtualAgents/ScaleYourFirmSection"),
+  { loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const VirtualAgentServiceSection = dynamic(
+  () => import("@/components/virtualAgents/VirtualAgentServiceSection"),
+  { loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const MeetVirtualTeamSection = dynamic(
+  () => import("@/components/virtualAgents/MeetVirtualTeamSection"),
+  { loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const WhyVaasSmarterSection = dynamic(
+  () => import("@/components/virtualAgents/WhyVaasSmarterSection"),
+  { loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const VaasOnboardingSection = dynamic(
+  () => import("@/components/virtualAgents/VaasOnboardingSection"),
+  { loading: () => <div className="h-80 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const WhyAdvanceEdgeSection = dynamic(
+  () => import("@/components/virtualAgents/WhyAdvanceEdgeSection"),
+  { loading: () => <div className="h-80 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+const FAQSection = dynamic(
+  () => import("@/components/virtualAgents/FAQSection"),
+  { loading: () => <div className="h-72 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse" /> }
+);
+
+export default function VirtualAgentsClient() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 font-sans antialiased">
-      <div className="max-w-2xl w-full text-center space-y-8">
-        {/* Decorative Element */}
-        {}
-        <div className="w-16 h-16 bg-orange-600/20 rounded-2xl flex items-center justify-center mx-auto mb-8 animate-pulse">
-          <div className="w-8 h-8 bg-orange-500 rounded-lg"></div>
-        </div>
+    <main>
+      {/* Hero Section - Loads immediately */}
+      <HeroSection />
 
-        {/* Content */}
-        {}
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-          Something amazing is coming
-        </h1>
-        
-        <p className="text-lg md:text-xl text-slate-400 max-w-lg mx-auto leading-relaxed">
-          We are currently working hard on something special. Stay tuned for our official launch.
-        </p>
-      </div>
-    </div>
+      {/* Lazy-loaded sections */}
+      <ScaleYourFirmSection />
+      <VirtualAgentServiceSection />
+      <MeetVirtualTeamSection />
+      <WhyVaasSmarterSection />
+      <VaasOnboardingSection />
+      <WhyAdvanceEdgeSection />
+      <FAQSection />
+    </main>
   );
 }

@@ -28,7 +28,6 @@ const whatWeDo = [
       { name: "Medical Record Retrieval", href: "/services/litigation-teams/medical-record-retrieval", icon: FileSearch, desc: "Fast record collection" },
       { name: "Medical Record Review", href: "/services/litigation-teams/medical-record-review", icon: Stethoscope, desc: "Clinician-led summaries" },
       { name: "Litigation Support", href: "/services/litigation-teams/litigation-support-back-office", icon: Briefcase, desc: "Paralegal tasks" },
-      { name: "Settlement Support", href: "/services/litigation-teams/settlement-post-resolution", icon: HandCoins, desc: "Lien resolution" },
     ],
   },
   {

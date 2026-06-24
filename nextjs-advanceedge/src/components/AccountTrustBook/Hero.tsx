@@ -50,7 +50,7 @@ export default function Hero() {
       <div className="max-w-6xl w-full">
         <div className="animate-fadeIn">
           <h1   className="text-4xl md:text-5xl lg:text-5xl text-center font-light  text-white  tracking-tight">
-          Medical Record Review            
+          Medical Record Review        
           </h1>          
         </div>
       </div>
