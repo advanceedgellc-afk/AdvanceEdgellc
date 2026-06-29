@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import HeroSection from '@/components/caseAquation/HeroSection';
 import WhyChooseSection from '@/components/caseAquation/WhyChooseSection';
 import CaseAcquisitionProcess from '@/components/caseAquation/CaseAcquisitionProcess';
 import WhoWeServe from '@/components/caseAquation/WhoWeServe';
@@ -84,7 +83,7 @@ export default function CaseAcquisition() {
   return (
     <main>
       {/* Hero Section */}
-      <HeroSection />
+     
       
       {/* CaseAcquisitionHero Section */}
       <CaseAcquisitionHero />

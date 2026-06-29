@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import Hero from '@/components/ContactIntakespecialists/Hero';
 import ContactIntakehero from '@/components/ContactIntakespecialists/ContactIntakehero';
+import WhyTrustUs from '@/components/ContactIntakespecialists/WhyTrustUs';
+import FromFirstContact from '@/components/ContactIntakespecialists/FromFirstContact';
+import WhoBenefits from '@/components/ContactIntakespecialists/WhoBenefits';
+import HowItWorks from '@/components/ContactIntakespecialists/HowItWorks';
+import Compliance from '@/components/ContactIntakespecialists/Compliance';
+import Scalability from '@/components/ContactIntakespecialists/Scalability';
+import Results from '@/components/ContactIntakespecialists/Results';
+
 import Legalintakespecialists from '@/components/ContactIntakespecialists/Legalintakespecialists';
 import FAQSection from '@/components/ContactIntakespecialists/FAQSection';
 
@@ -80,9 +87,16 @@ export default function CaseAcquisition() {
   return (
     <main>
       {/* Hero Section */}
-      <Hero/>
+     
       <ContactIntakehero/>
-      <Legalintakespecialists/>
+      <WhyTrustUs/>
+      <FromFirstContact/>
+    <WhoBenefits/>
+    <HowItWorks/>
+<Compliance/>
+<Scalability/>
+<Results/>
+     
       <FAQSection/>
       
 

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Hero from "@/components/CaseQualification/Hero";
 import WhyBottleneck from "@/components/CaseQualification/Whybottleneck";
 import FourLayerFramework from "@/components/CaseQualification/Fourlayerframework";
 import DailyOperations from "@/components/CaseQualification/Dailyoperations";
@@ -88,7 +87,7 @@ export default function CaseQualificationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Hero />
+   
       <CaseQualificationHero/>
       <WhyBottleneck />
       <FourLayerFramework />

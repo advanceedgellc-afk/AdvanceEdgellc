@@ -11,59 +11,114 @@ import {
   Cpu 
 } from 'lucide-react';
 
+
 const services = [
   {
     icon: Settings,
     title: "Processing and operational housekeeping",
     items: [
-      { subtitle: "High‑volume data entry and facility updates", text: "Enter and update large batches of facility data so intake and medical records teams work from clean information." },
-      { subtitle: "Mail and document intake operations", text: "Convert physical mail into digital records and update portals so nothing sits in a physical stack." },
-      { subtitle: "Shared mailbox and follow-up queues", text: "Monitor mailboxes daily to process requests, manage resends, and keep follow-ups tied back to leads." },
-      { subtitle: "Toll‑free number and routing tests", text: "Verify that toll‑free numbers route correctly to protect media spend and reduce missed opportunities." },
-      { subtitle: "Callback gap checks", text: "Review calls to identify leads that missed callbacks and push them back into outreach flows." }
+      {
+        subtitle: "High-volume data entry and facility updates",
+        text: "Enter and update large batches of facility data, for example, more than 900 facilities in a single quarter for a Mass Tort campaign, so intake, medical records, and packet teams work from clean, consistent information."
+      },
+      {
+        subtitle: "Mail and document intake operations",
+        text: "Review hard-copy packets and UPS mail several times a week, convert physical documents into digital records, and update portals so nothing important sits in a physical stack waiting for someone to notice it."
+      },
+      {
+        subtitle: "Shared mailbox and follow-up queues",
+        text: "Monitor shared mailboxes daily, often hundreds of emails per quarter, process requests, handle hard-copy conversions, manage resend requests, and keep follow-ups tied back to specific leads and packets."
+      },
+      {
+        subtitle: "Toll-free number and routing tests",
+        text: "Place structured test calls, hundreds per quarter, to verify that toll-free numbers route to the correct campaigns and law firms. This protects media spend and reduces missed opportunities from misrouted calls."
+      },
+      {
+        subtitle: "Callback gap checks",
+        text: "Review prior weeks' calls to identify leads that never received promised callbacks, then push those leads back into your outreach flows so they are not silently lost."
+      }
     ]
   },
   {
     icon: Database,
-    title: "Lead management and case‑building",
+    title: "Lead management and case-building operations",
     items: [
-      { subtitle: "Rescuing qualified cases", text: "Audit disqualified leads to identify and recover cases that actually met criteria." },
-      { subtitle: "Call data cleanup at scale", text: "Clean and reconcile call datasets, validate dispositions, and ensure systems of record reflect actual outcomes." },
-      { subtitle: "Vendor and CSV normalization", text: "Transform vendor documents into import-ready CSVs for clean integration into your CRMs." }
+      {
+        subtitle: "Rescuing qualified cases from disqualified pools",
+        text: "In one quarter, our team reviewed 9,970 disqualified leads and identified 95 that actually met criteria, leads that would otherwise have been lost forever."
+      },
+      {
+        subtitle: "Call data cleanup at scale",
+        text: "Clean and reconcile very large call datasets, for example, around 40,000 calls in a quarter. Validate dispositions, correct missing leads, align callbacks, and ensure systems of record reflect what really happened on the phones."
+      },
+      {
+        subtitle: "Vendor and CSV intake normalization",
+        text: "Turn vendor-generated documents and intake Word files into import-ready CSVs. Build and QA CSV files for outsourced leads so they import cleanly into your portals and CRMs."
+      }
     ]
   },
   {
     icon: FileText,
     title: "Contract and packet operations",
     items: [
-      { subtitle: "Contract extraction, QC, and uploads", text: "Extract, quality check, and upload thousands of contracts into portals, tracking resolution for missing info." },
-      { subtitle: "E‑signature reconciliation", text: "Audit signed leads, verify packet completion in portals, and confirm key data fields match intake records." },
-      { subtitle: "Packet completeness validation", text: "Confirm that HIPAA, HITECH, and contracts are correctly categorized and align with signed data." }
+      {
+        subtitle: "Contract extraction, QC, and uploads",
+        text: "Extract, quality check, and upload thousands of contracts and related documents, such as more than 3,200 packets in one quarter, into client portals. Track and resolve missing information instead of letting packets sit incomplete."
+      },
+      {
+        subtitle: "E-signature and portal reconciliation",
+        text: "Audit signed leads from tools like HelloSign, verify that packet complete leads are correctly reflected in your portal, and confirm that key fields such as signing dates match intake records."
+      },
+      {
+        subtitle: "Packet completeness and intake validation",
+        text: "Confirm that contracts, HIPAA, HITECH, and related documents are present and correctly categorized. Validate that portal records and intake data align with what was actually signed."
+      }
     ]
   },
   {
     icon: CheckCircle2,
     title: "Quality assurance and compliance",
     items: [
-      { subtitle: "Packet sign call audits", text: "Audit signing calls to verify agent script adherence, critical term confirmation, and behavior alignment." },
-      { subtitle: "Vendor lead and call QA", text: "Review vendor-generated leads and recordings to improve disposition accuracy and vendor performance." },
-      { subtitle: "Firm-specific QA programs", text: "Run structured QA for specific practices, verifying compliance and reducing error volumes to near-zero." }
+      {
+        subtitle: "Packet sign call audits",
+        text: "Listen to packet signing calls, verify that agents follow the correct script, confirm critical terms, and identify where behavior drifts from expectations. In one program, auditing 452 packets uncovered and corrected multiple packet signing errors before they became systemic."
+      },
+      {
+        subtitle: "Vendor lead and call QA",
+        text: "Audit vendor-generated leads and call recordings, review agent performance and disposition accuracy, and document findings that can be used in vendor management and campaign optimization."
+      },
+      {
+        subtitle: "Firm-specific QA programs",
+        text: "Run structured QA programs for specific plaintiff firms, for example, several thousand calls across multiple Mass Tort practices in a quarter. Verify script compliance, accuracy, and criteria adherence, and feed back findings that reduced monthly error volumes from 25 to 30 down to only 2 to 3 issues."
+      }
     ]
   },
   {
     icon: BarChart,
     title: "Reporting and analytics",
     items: [
-      { subtitle: "Recurring operational reporting", text: "Maintain lead tracking, outbound call status, injury lists, and facility reports for stakeholder visibility." },
-      { subtitle: "Dashboards and ad hoc analysis", text: "Build dashboards that answer critical questions regarding vendor viability, packet stalls, and deficiency rates." }
+      {
+        subtitle: "Recurring operational reporting",
+        text: "Maintain a stack of regular reports, such as lead tracking repositories, outbound call status, contact attempts, qualified or disqualified breakdowns, injury lists, and facility reports, so stakeholders see what is happening without having to build reports themselves."
+      },
+      {
+        subtitle: "Dashboards and ad hoc analysis",
+        text: "Build and maintain dashboards, and collaborate on ad hoc reports that answer real questions. Examples include which vendors are producing viable cases, where packets stall, which firms are behind on review, and where deficiency rates are highest."
+      }
     ]
   },
   {
     icon: Cpu,
     title: "Platform and tooling support",
     items: [
-      { subtitle: "Survey and intake script support", text: "Maintain survey scripts, manage master tokens, and support integrations so criteria changes do not break data." },
-      { subtitle: "Criteria comparison and SettLiT reviews", text: "Compare criteria across firms to provide insights that guide panel strategy and campaign economics." }
+      {
+        subtitle: "Survey and intake script support",
+        text: "Maintain and enhance survey or intake scripts in tools such as LimeSurvey, manage master tokens and question mapping, and support integrations so changes to criteria do not break downstream data."
+      },
+      {
+        subtitle: "Criteria comparison and SettLiT style reviews",
+        text: "Review cases from instant retrieval or digital health platforms, compare criteria across different law firms, and generate insights that guide pricing decisions, panel strategy, and campaign economics."
+      }
     ]
   }
 ];

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Hero from "@/components/MedicalRecordRetrieval/Hero";
 import MedicalRecordHero from "@/components/MedicalRecordRetrieval/MedicalRecordHero";
 import WhyBottleneck from "@/components/MedicalRecordRetrieval/Whybottleneck";
 import WhatWeDo from "@/components/MedicalRecordRetrieval/Whatwedo";
@@ -98,7 +97,6 @@ export default function MedicalRecordRetrievalPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main>
-        <Hero />
         <MedicalRecordHero/>
         <WhyBottleneck />
         <WhatWeDo />

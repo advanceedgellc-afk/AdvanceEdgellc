@@ -107,8 +107,12 @@ Over the last 15 years, our reviewers have worked on:
             ))}
           </div>
        
-          <div className="bg-gradient-to-br from-[#FF9A28]/10 to-transparent p-12 rounded-3xl flex items-center justify-center border border-[#FF9A28]/20">
-            <ShieldCheck size={120} className="text-[#FF9A28] opacity-50" />
+          <div className=" ">
+          <img 
+          src="/medical-review/phi-protection.webp" 
+          alt="Accounting and financial records" 
+          className="w-full h-full object-cover rounded-3xl "
+        />
           </div>
           <p className="text-slate-400 leading-relaxed">Medical record review involves PHI at scale. Workflows are designed to align with law‑firm‑grade security and privacy expectations.</p>
             
@@ -118,7 +122,7 @@ Over the last 15 years, our reviewers have worked on:
       {/* 4. Human-Led AI-Assisted (White) */}
       <Section>
         <SectionHeader title="Human‑Led, AI‑Assisted Medical Record Review" />
-        <p className="text-slate-400 leading-relaxed pb-10">AI tools are powerful, but in litigation, credibility and nuance still win. Our approach:</p>
+        <p className="text-slate-700 leading-relaxed pb-10">AI tools are powerful, but in litigation, credibility and nuance still win. Our approach:</p>
             
         <div className="grid md:grid-cols-3 gap-8">
           {[
@@ -177,7 +181,7 @@ Over the last 15 years, our reviewers have worked on:
             <div key={i} className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-[#FF9A28] transition-colors group">
               <CheckCircle2 className="shrink-0 text-[#FF9A28]" />
               <h4 className="font-bold text-black mb-2">{s.t}</h4>
-              <p className="text-slate-400 text-sm">{s.d}</p>
+              <p className="text-slate-700 text-sm">{s.d}</p>
             </div>
           ))}
         </div>

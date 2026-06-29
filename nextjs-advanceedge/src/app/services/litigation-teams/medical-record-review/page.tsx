@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Hero from "@/components/RecordReview/Hero";
 import RecordReviewHero from "@/components/RecordReview/RecordReviewHero";
 import MedicalRecordReviewAppOne from "@/components/RecordReview/MedicalRecordReviewAppOne";
 import MedicalRecordReviewAppTwo from "@/components/RecordReview/MedicalRecordReviewAppTwo";
@@ -81,7 +80,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
 export default function MedicalRecordReviewPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-slate-300 font-sans selection:bg-[#FF9A28]/30">
-      <Hero/>
       <RecordReviewHero/>
       <MedicalRecordReviewAppOne/>
       <MedicalRecordReviewAppTwo/>

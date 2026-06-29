@@ -38,7 +38,7 @@ const scaleBullets = [
 export default function ComplianceAndScale() {
   return (
     <>
-      {/* Compliance */}
+      {/* Compliance Section */}
       <section
         style={{
           background: "#ffffff",
@@ -48,7 +48,6 @@ export default function ComplianceAndScale() {
         }}
       >
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          {/* Section label */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
             <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
             <span
@@ -140,13 +139,6 @@ export default function ComplianceAndScale() {
                     borderLeft: "4px solid #ff9a28",
                     transition: "box-shadow 0.2s",
                   }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.boxShadow =
-                      "0 8px 24px rgba(0,0,0,0.07)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                  }}
                 >
                   <span style={{ fontSize: "22px", flexShrink: 0, marginTop: "2px" }}>
                     {item.icon}
@@ -188,7 +180,7 @@ export default function ComplianceAndScale() {
         `}</style>
       </section>
 
-      {/* Scale & Experience */}
+      {/* Scale & Experience Section - Updated Layout */}
       <section
         style={{
           background: "linear-gradient(180deg, #0d1520 0%, #121e2e 100%)",
@@ -207,150 +199,174 @@ export default function ComplianceAndScale() {
           }}
         />
         <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-            <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
-            <span
-              style={{
-                color: "#ff3600",
-                fontWeight: "900",
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}
-            >
-              Scale & Experience
-            </span>
-          </div>
-
-          <h2
-            style={{
-              fontFamily: "'Marcellus', serif",
-              fontSize: "clamp(26px, 3.5vw, 40px)",
-              fontWeight: 400,
-              color: "#ffffff",
-              lineHeight: 1.2,
-              marginBottom: "56px",
-              maxWidth: "560px",
-            }}
-          >
-            Scale, Experience, and Facility Coverage{" "}
-            <span style={{ color: "#ff9a28" }}>You Can Rely On</span>
-          </h2>
-
-          {/* Stats row */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "2px",
-              background: "rgba(255,255,255,0.04)",
-              borderRadius: "10px",
-              overflow: "hidden",
-              marginBottom: "60px",
-            }}
-            className="stats-grid"
-          >
-            {scaleStats.map((s, i) => (
-              <div
-                key={i}
+          
+          {/* Header Section (Title & Stats at top) */}
+          <div style={{ marginBottom: "60px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+              <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
+              <span
                 style={{
-                  padding: "40px 32px",
-                  background: "#0f1923",
-                  textAlign: "center",
+                  color: "#ff3600",
+                  fontWeight: "900",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "12px",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
                 }}
               >
+                Scale & Experience
+              </span>
+            </div>
+
+            <h2
+              style={{
+                fontFamily: "'Marcellus', serif",
+                fontSize: "clamp(26px, 3.5vw, 40px)",
+                fontWeight: 400,
+                color: "#ffffff",
+                lineHeight: 1.2,
+                marginBottom: "56px",
+                maxWidth: "600px",
+              }}
+            >
+              Scale, Experience, and Facility Coverage{" "}
+              <span style={{ color: "#ff9a28" }}>You Can Rely On</span>
+            </h2>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "2px",
+                background: "rgba(255,255,255,0.04)",
+                borderRadius: "10px",
+                overflow: "hidden",
+              }}
+              className="stats-grid"
+            >
+              {scaleStats.map((s, i) => (
                 <div
+                  key={i}
                   style={{
-                    fontFamily: "'Marcellus', serif",
-                    fontSize: "44px",
-                    color: "#ff9a28",
-                    lineHeight: 1,
-                    marginBottom: "12px",
+                    padding: "40px 32px",
+                    background: "#0f1923",
+                    textAlign: "center",
                   }}
                 >
-                  {s.stat}
+                  <div
+                    style={{
+                      fontFamily: "'Marcellus', serif",
+                      fontSize: "44px",
+                      color: "#ff9a28",
+                      lineHeight: 1,
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {s.stat}
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
+                      color: "rgba(255,255,255,0.5)",
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
+                    {s.label}
+                  </p>
                 </div>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "13px",
-                    color: "rgba(255,255,255,0.5)",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {s.label}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Practical bullets */}
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "15px",
-              color: "rgba(255,255,255,0.5)",
-              marginBottom: "28px",
-              fontStyle: "italic",
-            }}
-          >
-            In practical terms, that means:
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
-            {scaleBullets.map((b, i) => (
-              <div key={i} style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <span
-                  style={{
-                    flexShrink: 0,
-                    width: "24px",
-                    height: "24px",
-                    background: "rgba(255,154,40,0.15)",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#ff9a28",
-                    fontSize: "12px",
-                    marginTop: "2px",
-                  }}
-                >
-                  ✓
-                </span>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "15px",
-                    color: "rgba(255,255,255,0.65)",
-                    lineHeight: 1.8,
-                    margin: 0,
-                  }}
-                >
-                  {b}
-                </p>
+          {/* New 2-Column Grid: Content (Left) + Image (Right) */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "start" }} className="scale-layout">
+            
+            {/* Left side Content */}
+            <div style={{ 
+              background: "rgba(255,255,255,0.05)", 
+              borderRadius: "16px", 
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.1)"
+            }}>
+              <img 
+                src="/medical-retrival/scale-and-exp.webp" 
+                alt="Scale and Experience visual reference: image_e9ad18.png" 
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              />
+            </div>
+           
+            {/* Right side Image (Referencing image_e9ad18.png) */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "15px",
+                  color: "rgba(255,255,255,0.5)",
+                  fontStyle: "italic",
+                }}
+              >
+                In practical terms, that means:
+              </p>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {scaleBullets.map((b, i) => (
+                  <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                    <span
+                      style={{
+                        flexShrink: 0,
+                        width: "20px",
+                        height: "20px",
+                        background: "rgba(255,154,40,0.15)",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#ff9a28",
+                        fontSize: "10px",
+                        marginTop: "2px",
+                      }}
+                    >
+                      ✓
+                    </span>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "14px",
+                        color: "rgba(255,255,255,0.65)",
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      {b}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "14px",
-              color: "rgba(255,255,255,0.45)",
-              lineHeight: 1.8,
-              marginTop: "36px",
-              maxWidth: "680px",
-              fontStyle: "italic",
-            }}
-          >
-            All of this is supported by AI-assisted status tracking and document organization, plus
-            human QA that ensures records are usable for litigation the moment they land in your
-            system.
-          </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.45)",
+                  lineHeight: 1.6,
+                  marginTop: "24px",
+                  fontStyle: "italic",
+                }}
+              >
+                All of this is supported by AI-assisted status tracking and document organization, plus
+                human QA that ensures records are usable for litigation the moment they land in your system.
+              </p>
+            </div>
+
+          </div>
         </div>
 
         <style>{`
+          @media (max-width: 960px) {
+            .scale-layout { grid-template-columns: 1fr !important; }
+          }
           @media (max-width: 768px) {
             .stats-grid { grid-template-columns: 1fr !important; }
           }

@@ -4,43 +4,44 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X } from "lucide-react";
 
+
 const faqItems = [
   {
     id: 1,
-    question: "How can legal intake specialists help small law firms and solo attorneys?",
+    question:
+      "What is the difference between regular bookkeeping and law firm bookkeeping?",
     answer:
-      "Small firms and solo attorneys rarely have the budget or volume for full‑time intake staff, but they still lose real money every time a call goes to voicemail. Intake specialists give you professional coverage without full‑time salaries, benefits, or office space. They answer calls while you’re in court, qualify matters using your criteria, send retainers, and document everything in your system so you never wonder what happened to that “good lead” again.",
+      "Regular bookkeeping focuses on recording income and expenses and producing financial statements. Law firm bookkeeping must also support trust accounting, IOLTA rules, client ledgers, three way reconciliations and matter level cost tracking in line with state bar requirements.",
   },
   {
     id: 2,
-    question: "Can intake specialists handle practice areas like family law and immigration, or is this only for Mass Tort and PI?",
+    question:
+      "Can you really handle both my law firm books and my real estate investments?",
     answer:
-      "Intake specialists can be trained for any practice area you run Mass Tort, PI, MVA, workers’ comp, family law, estate planning, immigration, and more. The questions, criteria, and scripts are tuned to each practice: financial details and custody issues for family law, timelines and documentation for immigration, medical treatment and comorbidities for injury and torts.",
+      "Yes. Several of our clients are attorneys who also invest in real estate. We maintain separate but coordinated ledgers for the firm and for each property or entity, respect trust and IOLTA rules for client funds and present a joined up view of cash flow and profitability that covers both sides of your financial life.",
   },
   {
     id: 3,
-    question: "Do intake specialists actually handle retainer signing and onboarding?",
+    question:
+      "How often do you reconcile trust accounts and bank accounts?",
     answer:
-      "Yes. For qualified claimants, the team sends your retainer agreements via text or email for e‑signature and walks them through the process if needed. They also trigger the rest of your onboarding steps authorizations, HIPAA forms, questionnaire links so attorneys receive a file that is ready to review, not just a name and phone number.",
+      "For trust and IOLTA accounts, we perform full three way reconciliations at least monthly, matching bank statements, trust ledgers and the sum of client ledgers, in line with common bar guidance. Operating and property accounts are reconciled on a schedule that fits your transaction volume, usually monthly.",
   },
   {
     id: 4,
-    question: "How is a specialized legal intake partner different from a generic call center?",
+    question:
+      "Do we have to change our accounting software to work with you?",
     answer:
-      "Generic call centers are built for basic customer service: answer, apologize, take a message. A legal intake partner is built for case evaluation and conversion. Specialists understand legal terminology, practice‑area nuances, and what qualifies or disqualifies a matter. They can handle sensitive topics with empathy, follow your compliance rules, and move qualified callers through to signed retainer and onboarding.", },
+      "In most cases, no. We work inside widely used accounting and legal platforms including QuickBooks Online, Xero, Clio, LeanLaw, CosmoLex and common real estate or property management tools. If there are gaps or limitations, we discuss options with you rather than forcing a single system.",
+  },
   {
     id: 5,
-    question: "Can a legal intake partner work alongside my existing marketing agency or intake platform?",
+    question: "How do we get started?",
     answer:
-      "Yes. If a marketing agency or platform is already handling your media and technology, the intake team simply plugs in as the human layer. The agency keeps running campaigns and tracking attribution; the intake team makes sure every call, chat, and form is answered, qualified, and converted into a signed case when appropriate. That setup protects your marketing investment and gives you cleaner data on what’s really working.",
-  },
-  {
-    id: 6,
-    question: "How long does it take to launch an outsourced intake program?",
-    answer:
-      "Simple setups like after‑hours coverage for existing PI and MVA campaigns can often go live in a couple of weeks once scripts, criteria, and system access are in place. More complex programs, such as multi‑practice firms or high‑volume Mass Tort campaigns, are typically phased in over several weeks to protect your existing workflows while adding capacity and quality controls.",
+      "We start with a short discovery call and a light review of your existing books, trust accounts and real estate entities. From there we propose a scope and cadence, agree on a simple checklist of what happens each month and then begin with a structured onboarding and clean up phase if needed.",
   },
 ];
+
 
 export default function FAQSection() {
   const [activeId, setActiveId] = useState<number | null>(1);
@@ -98,7 +99,7 @@ export default function FAQSection() {
                 </motion.div>
 
                 <h2 className="font-marcellus text-4xl md:text-5xl leading-tight mb-6">
-                Contact Center & Legal Intake Specialists FAQ's
+                Accounting & Trust Bookkeeping FAQs
                 </h2>
 
                 {/* <p className="font-dm text-base md:text-lg text-slate-300">

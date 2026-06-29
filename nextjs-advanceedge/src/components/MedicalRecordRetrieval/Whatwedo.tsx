@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import React from "react";
 
 const tasks = [
   {
@@ -42,11 +43,14 @@ const tasks = [
     title: "Delivers records securely and hands them off for review",
     body: "Delivers records via encrypted channels into your DMS/CMS or a secure portal. When you use Medical Record Review, retrieval feeds directly into clinician-led timelines, summaries, and issue lists, rather than dumping raw PDFs on your team.",
   },
+  {
+    number: "09",
+    title: "Continuously refines performance",
+    body: "Analyzes throughput, error rates, and feedback to optimize retrieval workflows. As your caseload changes, we adjust the strategy to ensure costs stay managed and records arrive faster, turning routine retrieval into an operational asset.",
+  },
 ];
 
 export default function WhatWeDo() {
-  const [active, setActive] = useState<number | null>(null);
-
   return (
     <section
       style={{
@@ -56,7 +60,7 @@ export default function WhatWeDo() {
         overflow: "hidden",
       }}
     >
-      {/* Dot texture */}
+      {}
       <div
         style={{
           position: "absolute",
@@ -67,164 +71,123 @@ export default function WhatWeDo() {
         }}
       />
 
-      <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-        {/* Section label */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
-          <span
+      <div style={{ maxWidth: "1000px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {}
+        <div style={{ marginBottom: "60px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
+            <span
+              style={{
+                color: "#ff3600",
+                fontWeight: "900",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              Day-to-Day Operations
+            </span>
+          </div>
+
+          <h2
             style={{
-              color: "#ff3600",
-              fontWeight: "900",
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "12px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
+              fontFamily: "'Marcellus', serif",
+              fontSize: "clamp(26px, 3.5vw, 40px)",
+              fontWeight: 400,
+              color: "#ffffff",
+              lineHeight: 1.2,
+              marginBottom: "20px",
             }}
           >
-            Day-to-Day Operations
-          </span>
+            What Our Medical Record Retrieval{" "}
+            <span style={{ color: "#ff9a28" }}>Specialists Do Day-to-Day</span>
+          </h2>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "16px",
+              color: "rgba(255,255,255,0.55)",
+              lineHeight: 1.8,
+            }}
+          >
+            This is what &ldquo;we handle medical record retrieval for law firms&rdquo; means in
+            practice. Day-to-day, the AdvanceEdge team:
+          </p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1.5fr",
-            gap: "80px",
-            alignItems: "start",
-          }}
-          className="whatwedo-layout"
-        >
-          {/* Left sticky */}
-          <div style={{ position: "sticky", top: "40px" }}>
-            <h2
-              style={{
-                fontFamily: "'Marcellus', serif",
-                fontSize: "clamp(26px, 3.5vw, 40px)",
-                fontWeight: 400,
-                color: "#ffffff",
-                lineHeight: 1.2,
-                marginBottom: "20px",
-              }}
-            >
-              What Our Medical Record Retrieval{" "}
-              <span style={{ color: "#ff9a28" }}>Specialists Do Day-to-Day</span>
-            </h2>
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "15px",
-                color: "rgba(255,255,255,0.55)",
-                lineHeight: 1.8,
-                marginBottom: "32px",
-              }}
-            >
-              This is what &ldquo;we handle medical record retrieval for law firms&rdquo; means in
-              practice. Day-to-day, the AdvanceEdge team:
-            </p>
+        {}
+        <div style={{ display: "flex", flexDirection: "column", gap: "32px", marginBottom: "60px" }}>
+          {tasks.map((task, i) => (
             <div
+              key={i}
               style={{
-                background: "rgba(255,154,40,0.08)",
-                border: "1px solid rgba(255,154,40,0.25)",
-                borderRadius: "8px",
-                padding: "24px",
+                paddingBottom: "32px",
+                borderBottom: "1px solid rgba(255,255,255,0.1)",
               }}
             >
+              <div style={{ display: "flex", gap: "20px", marginBottom: "12px" }}>
+                <span
+                  style={{
+                    fontFamily: "'Marcellus', serif",
+                    fontSize: "14px",
+                    color: "#ff9a28",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {task.number}
+                </span>
+                <h3
+                  style={{
+                    fontFamily: "'Marcellus', serif",
+                    fontSize: "20px",
+                    fontWeight: 400,
+                    color: "#ffffff",
+                    margin: 0,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {task.title}
+                </h3>
+              </div>
               <p
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "13px",
-                  color: "#ff9a28",
-                  lineHeight: 1.75,
-                  margin: 0,
-                  fontStyle: "italic",
+                  fontSize: "15px",
+                  color: "rgba(255,255,255,0.7)",
+                  lineHeight: 1.8,
+                  margin: "0 0 0 48px",
                 }}
               >
-                ✦ All of this is managed by an AI‑trained team that uses AI for tracking, deduplication, routing, and document organization, keeping humans in charge of provider communication, exception handling, and final QA, while the routine work is automated wherever safely possible.
+                {task.body}
               </p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right — expandable task list */}
-          <div>
-            {tasks.map((task, i) => (
-              <div
-                key={i}
-                style={{
-                  borderBottom: "1px solid rgba(255,255,255,0.07)",
-                  cursor: "pointer",
-                }}
-                onClick={() => setActive(active === i ? null : i)}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "20px",
-                    padding: "20px 0",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Marcellus', serif",
-                      fontSize: "13px",
-                      color: "#ff9a28",
-                      minWidth: "28px",
-                      opacity: 0.7,
-                    }}
-                  >
-                    {task.number}
-                  </span>
-                  <h3
-                    style={{
-                      fontFamily: "'Marcellus', serif",
-                      fontSize: "16px",
-                      fontWeight: 400,
-                      color: active === i ? "#ff9a28" : "#ffffff",
-                      flex: 1,
-                      margin: 0,
-                      lineHeight: 1.3,
-                      transition: "color 0.2s",
-                    }}
-                  >
-                    {task.title}
-                  </h3>
-                  <span
-                    style={{
-                      color: "#ff9a28",
-                      fontSize: "18px",
-                      flexShrink: 0,
-                      transition: "transform 0.2s",
-                      transform: active === i ? "rotate(45deg)" : "rotate(0deg)",
-                    }}
-                  >
-                    +
-                  </span>
-                </div>
-                {active === i && (
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                      color: "rgba(255,255,255,0.6)",
-                      lineHeight: 1.8,
-                      margin: "0 0 20px 48px",
-                      padding: "0",
-                    }}
-                  >
-                    {task.body}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+        {}
+        <div
+          style={{
+            background: "rgba(255,154,40,0.08)",
+            border: "1px solid rgba(255,154,40,0.25)",
+            borderRadius: "8px",
+            padding: "24px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "13px",
+              color: "#ff9a28",
+              lineHeight: 1.75,
+              margin: 0,
+              fontStyle: "italic",
+            }}
+          >
+            ✦ All of this is managed by an AI‑trained team that uses AI for tracking, deduplication, routing, and document organization, keeping humans in charge of provider communication, exception handling, and final QA, while the routine work is automated wherever safely possible.
+          </p>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 860px) {
-          .whatwedo-layout { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

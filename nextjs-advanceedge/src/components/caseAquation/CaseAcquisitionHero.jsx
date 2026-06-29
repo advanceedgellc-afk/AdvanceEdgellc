@@ -1,122 +1,70 @@
-"use client";
+"use client"
+import React from 'react';
+import { useBookingModal } from "@/context/BookingModalContext";
 
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-
-export default function CaseAcquisitionHero() {
+/**
+ * Case Acquisition Hero Component
+ * * A responsive, dark-themed hero section for case acquisition and legal marketing services.
+ */
+export default function App() {
+  const { openBookingModal } = useBookingModal();
   return (
-    <section className="py-16 md:py-24 px-5 md:px-0 bg-[#F6F6F6] overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Left: Image with border and animations */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-auto"
-          >
-            {/* Image container */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative group rounded-3xl overflow-hidden border border-slate-300"
-            >
-              {/* Glow border on hover */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent group-hover:border-[#FF9A28] group-hover:shadow-[0_0_12px_rgba(255,154,40,0.8)] transition-all duration-300" />
+    <section className="relative w-full lg:min-h-[80vh] md:pt-24 min-h-[100vh] pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+      
+      {}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000&auto=format&fit=crop" 
+          alt="Case acquisition and strategic legal growth" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/85"></div>
+      </div>
 
-              {/* Image wrapper with aspect ratio */}
-              <div className="relative w-full aspect-[4/3]">
-                <Image
-                  src="/caseAquation/AE-case-aq.webp"
-                  alt="Case Acquisition for Law Firms"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </motion.div>
-          </motion.div>
+      {}
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
+        
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
+          Case Acquisition for <span className="text-[#fb923c]">Law Firms & Legal Marketing Firms</span>
+        </h1>
 
-          {/* Right: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {/* Main heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-marcellus text-4xl md:text-5xl lg:text-[40px] leading-tight text-slate-900"
-            >
-              Case Acquisition for Law Firms & Legal Marketing Firms
-            </motion.h1>
+        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Delivering High-Intent Plaintiffs for Mass Tort & Personal Injury Cases.
+        </p>
 
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-marcellus text-lg md:text-2xl text-slate-700"
-            >
-              Delivering High-Intent Plaintiffs for Mass Tort & Personal Injury Cases
-            </motion.p>
+        {}
+        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-4">
+            At Advance Edge LLC, we provide a seamless case acquisition solution for both law firms and legal marketing firms, ensuring a steady pipeline of qualified claimants.
+          </p>
+          <ul className="space-y-2 text-slate-400 text-sm md:text-base mb-4 list-disc pl-5">
+            <li><strong>For Law Firms</strong> – We deliver screened, high-value plaintiffs ready for litigation.</li>
+            <li><strong>For Legal Marketing Firms</strong> – We help you scale your case acquisition efforts with data-backed strategies and compliance-driven lead generation.</li>
+          </ul>
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+            No more chasing unverified leads—get cases that convert into settlements.
+          </p>
+        </div>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="font-dm text-base text-slate-600 leading-relaxed"
-            >
-              At Advance Edge LLC, we provide a seamless case acquisition solution for both law firms and legal marketing firms, ensuring a steady pipeline of qualified claimants.
-            </motion.p>
-
-            {/* Features list */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-3 pt-4"
-            >
-              <div className="flex gap-3 items-start">
-                <span className="w-2 h-2 rounded-full bg-[#FF9A28] mt-2 flex-shrink-0"></span>
-                <p className="font-dm text-slate-700">
-                  <span className="font-semibold">For Law Firms</span> – We deliver screened, high-value plaintiffs ready for litigation.
-                </p>
-              </div>
-
-              <div className="flex gap-3 items-start">
-                <span className="w-2 h-2 rounded-full bg-[#FF9A28] mt-2 flex-shrink-0"></span>
-                <p className="font-dm text-slate-700">
-                  <span className="font-semibold">For Legal Marketing Firms</span> – We help you scale your case acquisition efforts with data-backed strategies and compliance-driven lead generation.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Bottom text */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-dm text-slate-600 pt-4 border-t border-slate-200"
-            >
-              No more chasing unverified leads—get cases that convert into settlements.
-            </motion.p>
-          </motion.div>
+        {}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button
+                type="button"
+                onClick={openBookingModal}
+                className="inline-flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md font-semibold border-gray-50  isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FF9A28] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-8 py-4 overflow-hidden border-2  rounded-full group text-gray-800 font-dm"
+              >
+                BOOK A CALL
+                <svg
+                  className="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1.5 rotate-45"
+                  viewBox="0 0 16 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                    className="fill-gray-800 group-hover:fill-gray-800"
+                  ></path>
+                </svg>
+              </button>
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 "use client";
 
+import React from 'react';
+
 const steps = [
   {
     number: "01",
@@ -36,146 +38,81 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section
+      className="relative py-24 px-6 overflow-hidden text-white"
       style={{
         background: "linear-gradient(180deg, #0d1520 0%, #121e2e 100%)",
-        padding: "100px 20px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
-      {/* Dot texture */}
+      {/* Decorative dot texture */}
       <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: "absolute",
-          inset: 0,
           backgroundImage: "radial-gradient(rgba(201,160,71,0.05) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
-          pointerEvents: "none",
         }}
       />
 
-      <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-        {/* Section label */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-          <span style={{ display: "block", width: "28px", height: "2px", background: "#ff3600" }} />
-          <span
-            style={{
-              color: "#ff3600",
-              fontWeight: "900",
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "12px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-            }}
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="mb-20">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="block w-8 h-[2px] bg-[#ff3600]" />
+            <span
+              className="text-[#ff3600] font-black text-xs tracking-[0.18em] uppercase font-sans"
+            >
+              Our Process
+            </span>
+          </div>
+
+          <h2
+            className="font-serif text-[clamp(2rem,3.5vw,2.5rem)] font-light leading-tight text-white mb-6"
           >
-            Our Process
-          </span>
+            How Our Medical Record{" "}
+            <span className="text-[#ff9a28]">Retrieval Process Works</span>
+          </h2>
         </div>
 
-        <h2
-          style={{
-            fontFamily: "'Marcellus', serif",
-            fontSize: "clamp(26px, 3.5vw, 40px)",
-            fontWeight: 400,
-            color: "#ffffff",
-            lineHeight: 1.2,
-            marginBottom: "64px",
-            maxWidth: "560px",
-          }}
-        >
-          How Our Medical Record{" "}
-          <span style={{ color: "#ff9a28" }}>Retrieval Process Works</span>
-        </h2>
+        {/* Timeline */}
+        <div className="relative space-y-12 pl-12 md:pl-0">
+          {/* Vertical line connector */}
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-px bg-white/10" />
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "2px",
-            background: "rgba(255,255,255,0.05)",
-            borderRadius: "10px",
-            overflow: "hidden",
-          }}
-          className="steps-grid"
-        >
           {steps.map((step, i) => (
             <div
               key={i}
-              style={{
-                background: "linear-gradient(135deg, #0d1520 0%, #121e2e 100%)",
-                padding: "40px 36px",
-                borderBottom: i < steps.length - 2 ? "1px solid rgba(255,255,255,0.05)" : "none",
-                transition: "background 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background =
-                  "linear-gradient(135deg, #131f2e 0%, #162438 100%)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background =
-                  "linear-gradient(135deg, #0d1520 0%, #121e2e 100%)";
-              }}
+              className={`relative flex flex-col md:flex-row gap-8 ${
+                i % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
+              {/* Timeline marker */}
               <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  marginBottom: "16px",
-                }}
+                className="absolute left-0 md:left-1/2 -ml-[19px] w-10 h-10 rounded-full bg-[#121e2e] border-2 border-[#ff9a28] flex items-center justify-center font-serif text-[#ff9a28] font-bold z-10 shadow-[0_0_15px_rgba(255,154,40,0.3)]"
               >
-                <span
-                  style={{
-                    fontFamily: "'Marcellus', serif",
-                    fontSize: "11px",
-                    color: "#ff9a28",
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Step {step.number}
-                </span>
-                <span
-                  style={{
-                    flex: 1,
-                    height: "1px",
-                    background: "rgba(255,154,40,0.2)",
-                  }}
-                />
+                {step.number}
               </div>
-              <h3
-                style={{
-                  fontFamily: "'Marcellus', serif",
-                  fontSize: "19px",
-                  fontWeight: 400,
-                  color: "#ffffff",
-                  marginBottom: "12px",
-                  lineHeight: 1.3,
-                }}
-              >
-                {step.title}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "14px",
-                  color: "rgba(255,255,255,0.55)",
-                  lineHeight: 1.8,
-                  margin: 0,
-                }}
-              >
-                {step.body}
-              </p>
+
+              {/* Content box */}
+              <div className="md:w-1/2">
+                <div
+                  className="bg-[#0d1520]/80 p-8 rounded-2xl border border-white/5 hover:border-[#ff9a28]/30 transition-colors duration-300 backdrop-blur-sm"
+                >
+                  <h3
+                    className="font-serif text-xl text-white mb-3 leading-tight"
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="font-sans text-sm text-white/60 leading-relaxed"
+                  >
+                    {step.body}
+                  </p>
+                </div>
+              </div>
+              <div className="md:w-1/2" /> {/* Spacer for flex grid */}
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .steps-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

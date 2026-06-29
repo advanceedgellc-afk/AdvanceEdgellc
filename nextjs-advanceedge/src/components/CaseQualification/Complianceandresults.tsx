@@ -346,61 +346,7 @@ export default function ComplianceAndResults() {
                 </div>
               ))}
 
-              {/* CTA */}
-              <div
-                style={{
-                  marginTop: "8px",
-                  padding: "28px 28px",
-                  background: "#0f1923",
-                  borderRadius: "8px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "16px",
-                }}
-              >
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.7)",
-                    fontFamily: "DM Sans, serif",
-                    fontSize: "14px",
-                    lineHeight: 1.8,
-                    margin: 0,
-                  }}
-                >
-                  Book a 20-minute working session to walk through your current
-                  qualification criteria. You'll leave with a practical roadmap —
-                  whether you use AdvanceEdge or not.
-                </p>
-                <Link
-                  href="/contact"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    padding: "13px 24px",
-                    background: "#ff9a28",
-                    border: "2px solid #ff9a28",
-                    borderRadius: "40px",
-                    color: "#0f1923",
-                    fontFamily: "DM Sans, serif",
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    alignSelf: "flex-start",
-                    transition: "all 0.25s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#ff9a28";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#ff9a28";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#0f1923";
-                  }}
-                >
-                  Book a 20-Minute Review →
-                </Link>
-              </div>
+    
             </div>
           </div>
         </div>

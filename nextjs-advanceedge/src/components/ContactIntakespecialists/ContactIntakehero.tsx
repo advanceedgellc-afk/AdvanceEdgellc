@@ -1,98 +1,44 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+"use client"
+import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 
-export default function CaseAcquisitionHero() {
-    const { openBookingModal } = useBookingModal();
-
+/**
+ * Contact Center & Legal Intake Hero Component
+ * * A responsive, dark-themed hero section for contact center and intake services.
+ */
+export default function App() {
+  const { openBookingModal } = useBookingModal();
   return (
-    <section className="py-16 md:py-24 px-5 md:px-0 bg-[#0D1521] overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Left: Image with border and animations */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-auto"
-          >
-            {/* Image container */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative group rounded-3xl overflow-hidden border border-slate-300"
-            >
-              {/* Glow border on hover */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent group-hover:border-[#FF9A28] group-hover:shadow-[0_0_12px_rgba(255,154,40,0.8)] transition-all duration-300" />
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+      
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000&auto=format&fit=crop" 
+          alt="Contact center and professional communication" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/85"></div>
+      </div>
 
-              {/* Image wrapper with aspect ratio */}
-              <div className="relative w-full aspect-[4/4]">
-                <Image
-                  src="/intake-leaders/intake-and-contact-center.webp"
-                  alt="Case Acquisition for Law Firms"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </motion.div>
-          </motion.div>
+      {}
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
+        
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
+          Contact Center & Legal Intake Specialists for <span className="text-[#fb923c]">Law Firms</span>
+        </h1>
 
-          {/* Right: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {/* Main heading */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-marcellus text-4xl md:text-5xl lg:text-[40px] leading-tight text-white"
-            >
-              Contact Center & Legal Intake Specialists for Law Firms
-            </motion.h2>
+        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          24/7 intake coverage, case qualification, and retainer signing for law firms of all sizes: solo practices, growing firms, high‑volume Mass Tort/PI, family law, estate planning, immigration, and the legal marketing agencies that drive their calls.
+        </p>
 
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-marcellus text-lg md:text-2xl text-[#a6abb2]"
-            >
-              24/7 intake coverage, case qualification, and retainer signing for law firms 
-              of all sizes, solo practices, growing firms, Mass Tort/PI operations, family law,
-               estate planning, immigration, and the legal marketing agencies that drive their calls.
-            </motion.p>
+        {}
+        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+            If you’ve ever watched good cases slip away because nobody answered the phone, nobody followed up, or nobody pushed a qualified caller to a signed retainer, this page is for you. AdvanceEdge provides legal intake specialists and contact center coverage that behaves like an extension of your firm, not a generic call center. Your scripts, your criteria, your systems run by people who understand legal workflows across multiple practice areas.
+          </p>
+        </div>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="font-dm text-base text-[#a5a9af] leading-relaxed"
-            >
-              Whether you're a solo attorney missing calls during court, a small firm 
-              juggling multiple practice areas, or a legal marketing agency accountable
-               for signed retainers, intake makes or breaks results. AdvanceEdge provides
-                legal intake specialists who work like an extension of your firm across any
-                 practice area, trained on legal workflows and available around the clock without weekend premiums.
-            </motion.p>
-             {/* CTA Button */}
-        <div className="flex justify-center gap-3 mt-12 opacity-0 animate-fadeInUp" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
                 type="button"
                 onClick={openBookingModal}
@@ -110,8 +56,6 @@ export default function CaseAcquisitionHero() {
                   ></path>
                 </svg>
               </button>
-        </div>          
-          </motion.div>
         </div>
       </div>
     </section>

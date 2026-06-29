@@ -7,39 +7,35 @@ import {
   Stethoscope,
   Scale,
   BrainCircuit,
+  FileText,
+  AlertTriangle,
+  Search,
+  Activity,
+  Pill,
+  ClipboardList,
+  LibraryBig
 } from 'lucide-react';
-
-interface SectionProps {
-  children: React.ReactNode;
-  dark?: boolean;
-}
-
-interface SectionHeaderProps {
-  title: string;
-  dark?: boolean;
-}
-
-/**
- * SEO METADATA:
- * Title: Medical Record Review Services for Law Firms | AdvanceEdge
- * Description: Clinician-led medical record review services for Mass Tort, PI, MVA, malpractice, and complex injury dockets.
- */
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const Section = ({ children, dark = false }: SectionProps) => (
+const slideInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+};
+
+const Section = ({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) => (
   <section className={`py-24 px-6 ${dark ? 'bg-[#0a0a0c] text-white' : 'bg-white text-slate-900'}`}>
     <div className="max-w-6xl mx-auto">{children}</div>
   </section>
 );
 
-const SectionHeader = ({ title, dark = false }: SectionHeaderProps) => (
+const SectionHeader = ({ title, dark = false }: { title: string; dark?: boolean }) => (
   <motion.h2 
     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-    className={`text-3xl md:text-5xl font-bold mb-12 ${dark ? 'text-white' : 'text-slate-900'}`}
+    className={`text-3xl md:text-5xl font-bold mb-6 ${dark ? 'text-white' : 'text-slate-900'}`}
   >
     {title}
   </motion.h2>
@@ -49,20 +45,44 @@ export default function MedicalRecordReviewApp() {
   return (
     <div className="min-h-screen bg-white">
       
-
-
       {/* 1. Why it's its own job */}
       <Section dark={false}>
-        <SectionHeader title="Why Medical Record Review Is Its Own Job, Not Just “More Paralegal Work”" />
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-lg text-slate-700 mb-12 max-w-3xl">
-          <p className="mb-6">In Mass Tort and serious injury litigation, medical records are the ultimate arbiter of liability, causation, and damages. Despite their criticality, many firms still treat medical record review as an informal, ad-hoc task: a massive PDF is handed off to a busy associate or paralegal with the hope that they’ll surface the right facts before a deadline. This lack of structure typically leads to:</p>
-          <div className="space-y-4">
-            <p><strong className="text-[#FF9A28]">Late discoveries.</strong> Pre‑existing conditions, confounding factors, or missing surgeries are discovered only when defense raises them, not when you’re still in control of the narrative.</p>
-            <p><strong className="text-[#FF9A28]">Inconsistent outputs.</strong> Each reviewer summarizes differently, so partners can’t rely on a standard package to make decisions.</p>
-            <p><strong className="text-[#FF9A28]">Attorney time spent on non‑attorney work.</strong> Highly paid litigators get dragged into basic chart reading instead of focusing on case strategy, negotiation, and trial prep.</p>
-          </div>
-          <p className="mt-8">Rather than treating medical record review for law firms as an informal task, AdvanceEdge approaches it as a structured operation with clear inputs and standardized results. Our expert reviewers provide the reliable clinical insights you need without overloading your internal staff.</p>
-        </motion.div>
+        <div className="mb-16">
+          <SectionHeader title="Why Medical Record Review Is Its Own Job, Not Just “More Paralegal Work”" />
+          <motion.p 
+             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+             className="text-xl text-slate-500"
+          >
+ In Mass Tort and serious injury litigation, medical records are the ultimate arbiter of liability, causation, and damages. Despite their criticality, many firms still treat medical record review as an informal, ad-hoc task: a massive PDF is handed off to a busy associate or paralegal with the hope that they’ll surface the right facts before a deadline. This lack of structure typically leads to:
+             
+          </motion.p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideInLeft}>
+            <div className="aspect-[4/3] rounded-3xl bg-slate-100 border border-slate-200 overflow-hidden relative shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A28]/10 to-transparent" />
+              <div className="w-full h-full flex items-center justify-center text-slate-400">
+              <img 
+          src="/medical-review/paralegal-work.webp" 
+          alt="Accounting and financial records" 
+          className="w-full h-full object-cover rounded-3xl "
+        />
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+            <div className="text-lg text-slate-700">
+              <div className="space-y-4">
+                <p><strong className="text-[#FF9A28]">Late discoveries.</strong> Pre‑existing conditions, confounding factors, or missing surgeries are discovered only when defense raises them, not when you’re still in control of the narrative.</p>
+                <p><strong className="text-[#FF9A28]">Inconsistent outputs.</strong> Each reviewer summarizes differently, so partners can’t rely on a standard package to make decisions.</p>
+                <p><strong className="text-[#FF9A28]">Attorney time spent on non‑attorney work.</strong> Highly paid litigators get dragged into basic chart reading instead of focusing on case strategy, negotiation, and trial prep.</p>
+              </div>
+              <p className="mt-8">Rather than treating medical record review for law firms as an informal task, AdvanceEdge approaches it as a structured operation with clear inputs and standardized results. Our expert reviewers provide the reliable clinical insights you need without overloading your internal staff.</p>
+            </div>
+          </motion.div>
+        </div>
       </Section>
 
       {/* 2. Clinicians, Analysts, AI */}
@@ -78,7 +98,7 @@ export default function MedicalRecordReviewApp() {
             { icon: Scale, title: "Legal‑aware analysts", text: "Reviewers trained on Mass Tort, PI, MVA, malpractice, and disability patterns who know how to connect medical facts to liability, causation, and damages. They flag proof of use, proof of injury, treatment gaps, comparative fault signals, and defense‑friendly facts that attorneys must address." },
             { icon: BrainCircuit, title: "AI‑assisted workflows", text: "AI tools handle OCR, de‑duplication, sectioning, and basic tagging, so human reviewers aren’t manually wrestling with 5,000-page PDFs. Pattern‑detection helps surface repeated drugs, providers, or injuries, which clinicians then confirm and contextualize. All clinical and legal judgments remain with human experts; AI is there to accelerate, not replace, review." }
           ].map((item, i) => (
-            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="bg-[#16161a] p-8 rounded-2xl border border-white/5">
+            <motion.div key={i} whileHover={{ y: -10 }} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="bg-[#16161a] p-8 rounded-2xl border border-white/5 transition-all">
               <item.icon className="text-[#FF9A28] mb-6" size={40} />
               <h3 className="text-xl font-bold mb-4">{item.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{item.text}</p>
@@ -96,17 +116,17 @@ export default function MedicalRecordReviewApp() {
         </motion.p>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { t: "Chronological medical timelines", d: "Visit‑by‑visit summaries showing dates, providers, diagnoses, procedures, medications, and key findings in order." },
-            { t: "Case‑specific issue lists", d: "Clear identification of facts relevant to liability, causation, and damages: first exposure/use dates, onset of symptoms, and aggravating factors." },
-            { t: "Treatment gap analysis", d: "Flags where treatment stops, changes, or is inconsistent with the claimed injury, so attorneys can proactively explain or address those gaps." },
-            { t: "Gap detection and missing‑record identification", d: "Reviewers spot missing periods and notify your team exactly what records need to be retrieved so gaps can be closed." },
-            { t: "Pre‑existing and comorbid condition mapping", d: "Structured summaries of prior conditions, including how defense might use them and how they relate to the alleged harm." },
-            { t: "Medication and exposure analysis", d: "For drug/environmental matters, capture of drug names, dosages, NDCs, and exposure data." },
-            { t: "Damages‑focused summaries", d: "High‑level write‑ups focused on functional impact, duration of impairment, and intensity of treatment." },
-            { t: "Source‑based indexing", d: "Organized record sets by facility and date, with references back to specific pages for quick verification." }
+            { icon: FileText, t: "Chronological medical timelines", d: "Visit‑by‑visit summaries showing dates, providers, diagnoses, procedures, medications, and key findings in order." },
+            { icon: AlertTriangle, t: "Case‑specific issue lists", d: "Clear identification of facts relevant to liability, causation, and damages: first exposure/use dates, onset of symptoms, and aggravating or mitigating factors, co‑morbidities, and potential alternative causes." },
+            { icon: Search, t: "Treatment gap analysis", d: "Flags where treatment stops, changes, or is inconsistent with the claimed injury, so attorneys can proactively explain or address those gaps rather than being surprised in deposition." },
+            { icon: ClipboardList, t: "Gap detection and missing‑record identification", d: "Reviewers are trained to spot when not enough records exist to support the story being told. If a claimant reports treatment from 2011–2018 and records stop in 2017, or they report surgery in January 2017 but there are no records from December 2016 through April 2017, those missing periods are flagged. Your team is notified exactly what additional records need to be retrieved so those gaps can be closed before valuation or trial." },
+            { icon: Activity, t: "Pre‑existing and comorbid condition mapping", d: "Structured summaries of prior conditions and injuries, including how defense might use them, and how they actually relate (or don’t relate) to the alleged harm." },
+            { icon: Pill, t: "Medication and exposure analysis", d: "For drug and environmental matters, capture of drug names, dosages, NDCs, start/stop dates, lab values, and exposure data that underpin proof of use and proof of injury." },
+            { icon: FileText, t: "Damages‑focused summaries", d: "High‑level write‑ups focused on functional impact, duration of impairment, and intensity of treatment to support demand ranges and mediation strategy." },
+            { icon: LibraryBig, t: "Source‑based indexing", d: "Organized record sets by facility and date, with references back to specific pages so litigators and experts can quickly find the underlying documentation." }
           ].map((item, i) => (
-            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
-              <CheckCircle2 className="text-[#FF9A28] shrink-0" size={24} />
+            <motion.div key={i} whileHover={{ scale: 1.02 }} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200 transition-all">
+              <item.icon className="text-[#FF9A28] shrink-0 mt-1" size={24} />
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">{item.t}</h4>
                 <p className="text-slate-600 text-sm">{item.d}</p>

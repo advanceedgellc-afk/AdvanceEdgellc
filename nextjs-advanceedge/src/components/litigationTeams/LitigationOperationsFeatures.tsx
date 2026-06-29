@@ -2,152 +2,169 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  BrainCircuit, 
-  ShieldCheck, 
-  Settings, 
-  TrendingUp, 
-  ArrowRight,
-  Zap,
-  Lock,
-  FileCheck,
-  ClipboardCheck,
-  History
-} from 'lucide-react';
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
-
-export default function LitigationOperationsFeatures() {
-  return (
-    <div className="w-full">
-      {/* 1. Human-Led, AI-Accelerated */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
+const ComplianceSection = () => (
+  <section className="bg-white py-24 px-6 text-slate-800">
+    <div className="max-w-7xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-[#19191a] py-24 px-6 text-white"
+        className="text-center mb-16 space-y-4"
       >
-        <div className="max-w-4xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-bold mb-8">
-            Human‑Led, AI‑Accelerated Litigation Operations
-          </motion.h2>
-          <motion.div variants={fadeIn} className="space-y-6 text-slate-400 text-lg leading-relaxed">
-            <p>In real engagements, AI and human expertise work together.</p>
-            <p><strong className="text-white">AI assists</strong> with document classification, de‑duplication, and routing, reducing the manual load on paralegals and operations staff.</p>
-            <p><strong className="text-white">Analytics and dashboards</strong> surface trends such as deficiency rates, vendor performance, and conversion, so leadership can act in time rather than in hindsight.</p>
-            <p><strong className="text-white">Human specialists handle judgment calls</strong>, for example, deciding whether a disqualified lead really meets criteria, whether a packet is truly complete, or whether an intake script is drifting in a way that affects case quality.</p>
-            <p className="font-medium text-[#FF9A28]">You get scale and speed without giving up control or quality.</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+          Compliance, Confidentiality, and Quality Controls
+        </h2>
+        <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto">
+          Litigation support and back office work touch sensitive intake data, contracts, and sometimes PHI. Workflows are designed around law firm expectations, not generic contact center norms.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { text: "Confidentiality and access control based on roles and least privilege, with clear data segregation by client, campaign, and firm." },
+          { text: "Written SOPs and checklists for all recurring workflows, including contract audits, e‑signature reconciliation, disqualified lead review, and QA programs." },
+          { text: "Two-step QA for critical outputs such as settlement packets and high-impact reports, with a second reviewer checking against a checklist before delivery." },
+          { text: "Audit-ready logs that show who did what, when, and for which matter, so there is always a clear operational history." }
+        ].map((item, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="flex flex-col gap-4 p-6 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm hover:border-[#FF9A28]/50 hover:shadow-md transition-all duration-300"
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FF9A28]/10 flex items-center justify-center text-[#FF9A28]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <p className="text-slate-600 leading-relaxed text-sm font-medium">{item.text}</p>
           </motion.div>
-        </div>
-      </motion.section>
+        ))}
+      </div>
 
-      {/* 2. Compliance & Controls */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-slate-50 py-24 px-6"
+        className="mt-12 text-center max-w-3xl mx-auto p-8 bg-[#FF9A28]/5 rounded-3xl border border-[#FF9A28]/10"
       >
-        <div className="max-w-4xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-bold mb-12 text-slate-900">
-            Compliance, Confidentiality, and Quality Controls
-          </motion.h2>
-          <motion.div variants={fadeIn} className="mb-12 text-slate-600 text-lg">
-            Litigation support and back office work touch sensitive intake data, contracts, and sometimes PHI. Workflows are designed around law firm expectations, not generic contact center norms.
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { icon: Lock, title: "Confidentiality & Access", text: "Role-based access control and least privilege policies with strict data segregation." },
-              { icon: FileCheck, title: "Written SOPs", text: "Standardized checklists for all workflows from contract audits to lead reviews." },
-              { icon: ClipboardCheck, title: "Two-Step QA", text: "Mandatory verification for settlement packets and high-impact reports before delivery." },
-              { icon: History, title: "Audit-Ready Logs", text: "Full operational history showing who did what, when, and for which matter." }
-            ].map((item, i) => (
-              <motion.div key={i} variants={fadeIn} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <item.icon className="text-[#FF9A28] mb-4" size={28} />
-                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                <p className="text-sm text-slate-600">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-          <motion.p variants={fadeIn} className="mt-12 text-slate-700 font-medium">
-            AdvanceEdge handles operations. Your lawyers and marketing leaders retain control of criteria, strategy, and decisions.
-          </motion.p>
-        </div>
-      </motion.section>
-
-      {/* 3. Single Legal Operations Engine */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="bg-[#0a0a0c] py-24 px-6 text-white"
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-bold mb-8">
-            Part of a Single Legal Operations Engine
-          </motion.h2>
-          <motion.p variants={fadeIn} className="text-lg text-slate-400 mb-12">
-            Litigation Support & Back‑Office is one layer in a broader system:
-          </motion.p>
-          <div className="space-y-4">
-            {[
-              { name: "Intake & Contact Center", desc: "Captures structured info and documents." },
-              { name: "Case Qualification", desc: "Turns raw leads into qualified cases." },
-              { name: "Medical Retrieval & Review", desc: "Builds and interprets medical evidence." },
-              { name: "Litigation Support & Back‑Office", desc: "Keeps data clean, packets assembled, and reports flowing." },
-              { name: "Accounting & Bookkeeping", desc: "Closes the loop financially." }
-            ].map((step, i) => (
-              <motion.div key={i} variants={fadeIn} className="flex items-center gap-4 p-4 border-b border-white/10">
-                <div className="w-8 h-8 rounded-full bg-[#FF9A28]/20 flex items-center justify-center text-[#FF9A28] font-bold text-sm">
-                  {i + 1}
-                </div>
-                <div>
-                  <div className="font-bold">{step.name}</div>
-                  <div className="text-sm text-slate-500">{step.desc}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.p variants={fadeIn} className="mt-12 text-lg font-semibold text-white">
-            The result is one coordinated operations partner that understands your pipeline from first call to final packet.
-          </motion.p>
-        </div>
-      </motion.section>
-
-      {/* 4. Results */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="bg-slate-50 py-24 px-6"
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-bold mb-12 text-slate-900">
-            What Better Litigation Support & Back‑Office Delivers
-          </motion.h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { title: "More real cases", text: "Rescued from disqualified pools and cleaned vendor data." },
-              { title: "Lower defect rates", text: "QA programs catch and correct issues before they become bottlenecks." },
-              { title: "Cleaner reporting", text: "Decisions based on current data, not estimates or guesses." },
-              { title: "Strategic focus", text: "More attorney and leadership time on work that drives outcomes." }
-            ].map((item, i) => (
-              <motion.div key={i} variants={fadeIn} className="flex gap-4">
-                <TrendingUp className="text-[#FF9A28] shrink-0" size={24} />
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
-                  <p className="text-slate-600 text-sm">{item.text}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      
+        <p className="text-slate-700 leading-relaxed font-medium">
+          AdvanceEdge handles operations. Your lawyers and marketing leaders retain control of criteria, strategy, and decisions.
+        </p>
+      </motion.div>
     </div>
+  </section>
+);
+
+const LegalOperationsEngine = () => (
+  <section className="bg-[#0a0a0c] py-24 px-6 text-slate-300">
+    <div className="max-w-4xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="space-y-4 text-center mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+          Part of a Single Legal Operations Engine
+        </h2>
+        <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          Litigation Support & Back‑Office is one layer in a broader system:
+        </p>
+      </motion.div>
+      
+      <div className="space-y-8">
+        {[
+          "Intake & Contact Center captures structured information and documents from every call.",
+          "Case Qualification turns raw leads into qualified or disqualified cases based on your rules.",
+          "Medical Record Retrieval and Medical Record Review build and interpret the medical evidence.",
+          "Litigation Support & Back‑Office keeps data clean, contracts reconciled, packets assembled, QA running, and reports flowing.",
+          "Accounting & Bookkeeping and trust accounting close the loop financially."
+        ].map((item, i) => (
+             <motion.div 
+               key={i} 
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: i * 0.1 }}
+               className="flex gap-6 items-center group"
+             >
+               <div className="flex-shrink-0 w-8 h-8 rounded-full border border-[#FF9A28] flex items-center justify-center text-[#FF9A28] font-bold text-sm">
+                 {i + 1}
+               </div>
+               <div className="flex-grow border-b border-white/5 pb-8 group-last:border-none">
+                 <span className="text-lg text-slate-300 group-hover:text-white transition-colors duration-300">{item}</span>
+               </div>
+             </motion.div>
+        ))}
+      </div>
+      
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center mt-12 text-slate-400 font-semibold max-w-2xl mx-auto border-t border-white/10 pt-12"
+      >
+        The result is one coordinated operations partner that understands your pipeline from first call to final packet.
+      </motion.p>
+    </div>
+  </section>
+);
+
+const ResultsSection = () => (
+  <section className="bg-white py-24 px-6 text-slate-800">
+    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <motion.div 
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="space-y-8"
+      >
+        <h2 className="text-4xl font-bold leading-tight text-slate-900">
+          What Better Litigation Support & Back‑Office Delivers
+        </h2>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          From real client work, firms and legal marketing agencies typically see:
+        </p>
+        <ul className="space-y-4 text-slate-600">
+          {[
+            "More real cases from the same marketing spend, as viable cases are rescued from disqualified pools and vendor data is cleaned.",
+            "Lower defect and deficiency rates in contracts, packets, and calls, as QA programs identify and correct issues early.",
+            "Cleaner and faster reporting so operations and leadership can make decisions on current data rather than guesses.",
+            "More attorney and leadership time on work that actually drives outcomes, and less time inside portals, spreadsheets, and call logs."
+          ].map((item, i) => (
+             <li key={i} className="flex gap-3 bg-[#FF9A28]/5 p-4 rounded-xl border border-[#FF9A28]/10">
+               <span className="text-[#FF9A28] font-bold mt-0.5">✓</span>
+               <span className="text-slate-700 text-sm md:text-base">{item}</span>
+             </li>
+          ))}
+        </ul>
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="aspect-square rounded-3xl bg-slate-100 border border-slate-200 flex items-center justify-center p-8"
+      >
+              <img 
+          src="/litigation-teams/litigation-support-book.webp" 
+          alt="Accounting and financial records" 
+          className="w-full h-full object-cover rounded-3xl "
+        />
+      </motion.div>
+    </div>
+  </section>
+);
+
+export default function App() {
+  return (
+    <main className="font-sans">
+      <ComplianceSection />
+      <LegalOperationsEngine />
+      <ResultsSection />
+    </main>
   );
 }

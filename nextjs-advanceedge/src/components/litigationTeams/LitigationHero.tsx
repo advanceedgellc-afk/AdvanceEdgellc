@@ -1,51 +1,52 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+"use client"
+import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 
-export default function LitigatioSupportHero() {
-    const { openBookingModal } = useBookingModal();
-
+/**
+ * Litigation Support & Back-Office Hero Component
+ * * A responsive, dark-themed hero section for litigation operations services.
+ */
+export default function App() {
+  const { openBookingModal } = useBookingModal();
   return (
-    <section className="py-16 md:py-24 px-5 md:px-0 bg-[#0D1521] overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Left: Image with border and animations */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-auto"
-          >
-            {/* Image container */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative group rounded-3xl overflow-hidden border border-slate-300"
-            >
-              {/* Glow border on hover */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent group-hover:border-[#FF9A28] group-hover:shadow-[0_0_12px_rgba(255,154,40,0.8)] transition-all duration-300" />
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+      
+      {}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop" 
+          alt="Litigation operations and office teamwork" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/85"></div>
+      </div>
 
-              {/* Image wrapper with aspect ratio */}
-              <div className="relative w-full aspect-[4/4]">
-                <Image
-                  src="/litigation-teams/litigation-support-Hero.webp"
-                  alt="Case Acquisition for Law Firms"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              
-            </motion.div>
-                         {/* CTA Button */}
-        <div className="flex justify-center gap-3 mt-12 opacity-0 animate-fadeInUp" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+      {}
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
+        
+        {/* H1 */}
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
+          Litigation Support & Back‑Office for <span className="text-[#fb923c]">High‑Volume Legal Operations</span>
+        </h1>
+
+        {/* Subheading */}
+        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          An experienced, AI‑trained operations team that keeps your Mass Tort, PI, MVA, and multi‑practice dockets moving - lead cleanup, contract and packet workflows, QA, reporting, and platform support handled as a single, integrated function.
+        </p>
+
+        {}
+        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+            Behind every successful campaign or docket, there is an invisible layer of operations. Data entry, lead cleanup, contract validation, call auditing, packet assembly, reporting, and system maintenance all have to work in sync, or everything else slows down. For one national legal marketing client, our team spent an entire quarter focused on exactly that work, reviewing almost ten thousand disqualified leads to rescue qualified cases, cleaning more than forty thousand call records, auditing thousands of contracts, and building the reports their law firm partners actually run their businesses on.
+          </p>
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed mt-4">
+            AdvanceEdge acts as an operations partner and extension of your business, not a generic vendor. We plug into your Intake & Contact Center, Case Qualification, Medical Record Retrieval, Medical Record Review, and Accounting & Bookkeeping rails so your firm has one connected operations engine rather than a patchwork of disconnected tasks.
+          </p>
+        </div>
+
+        {}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
         <button
                 type="button"
                 onClick={openBookingModal}
@@ -63,61 +64,6 @@ export default function LitigatioSupportHero() {
                   ></path>
                 </svg>
               </button>
-        </div> 
-          </motion.div>
-
-          {/* Right: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {/* Main heading */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-marcellus text-4xl md:text-5xl lg:text-[40px] leading-tight text-white"
-            >
-              Litigation Support & Back‑Office for High‑Volume Legal Operations
-            </motion.h2>
-
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-marcellus text-lg md:text-2xl text-[#FF9A28]"
-            >An experienced, AI‑trained operations team that keeps your Mass Tort, PI, MVA, and multi‑practice 
-            dockets moving - lead cleanup, contract and packet workflows, QA, reporting, and platform support handled as a single, integrated function.
-
-            </motion.p>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="font-dm text-base text-[#a5a9af] leading-relaxed"
-            >
-Behind every successful campaign or docket, there is an invisible layer of operations. Data entry, lead cleanup, contract validation,
- call auditing, packet assembly, reporting, and system maintenance all have to work in sync, or everything else slows down. 
- For one national legal marketing client, our team spent an entire quarter focused on exactly that work, reviewing almost
-  ten thousand disqualified leads to rescue qualified cases, cleaning more than forty thousand 
-  call records, auditing thousands of contracts, and building the reports their law firm partners actually run their businesses on.
-  <br/> <br/>
-AdvanceEdge acts as an operations partner and extension of your business, not a generic vendor. We plug into your Intake & Contact
- Center, Case Qualification, Medical Record Retrieval, Medical Record Review, and Accounting & Bookkeeping rails so your firm has
-  one connected operations engine rather than a patchwork of disconnected tasks.
-
-            </motion.p>
-         
-          </motion.div>
         </div>
       </div>
     </section>

@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Hero from "@/components/litigationTeams/Hero";
+
 import LitigationHero from "@/components/litigationTeams/LitigationHero";
 import DayToDayServices from "@/components/litigationTeams/DayToDayServices";
 import HowFirmsUseUs from "@/components/litigationTeams/HowFirmsUseUs";
 import LitigationProcess from "@/components/litigationTeams/LitigationProcess";
+import HumanLed from "@/components/litigationTeams/HumanLed";
 import LitigationOperationsFeatures from "@/components/litigationTeams/LitigationOperationsFeatures";
 import LitigationFaq from "@/components/litigationTeams/LitigationFaq";
 
@@ -99,7 +100,7 @@ export default function LitigationSupportPage() {
   return (
     <div className="bg-white min-h-screen text-slate-800">
         {/* Hero Section */}
-      <Hero/>
+     
       <LitigationHero/>
     
 
@@ -136,7 +137,7 @@ export default function LitigationSupportPage() {
 <HowFirmsUseUs/>
       {/* Process Section */}
 <LitigationProcess/>
-
+<HumanLed/>
       <LitigationOperationsFeatures/>
 <LitigationFaq/>
     </div>
