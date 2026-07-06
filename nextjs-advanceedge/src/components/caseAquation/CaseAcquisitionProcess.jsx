@@ -69,7 +69,7 @@ export default function CaseAcquisitionProcess() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 animate-fadeInDown">
-          <h2 className="text-4xl md:text-6xl font-light text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
             Our Case Acquisition Process
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">

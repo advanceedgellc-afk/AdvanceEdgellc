@@ -26,7 +26,7 @@ export default function App() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left content */}
           <div className="max-w-3xl text-center lg:text-left">
-            <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+            <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
               Contact Center & Legal Intake Specialists for{" "}
               <span className="text-[#fb923c] font-medium">Law Firms</span>
             </h1>

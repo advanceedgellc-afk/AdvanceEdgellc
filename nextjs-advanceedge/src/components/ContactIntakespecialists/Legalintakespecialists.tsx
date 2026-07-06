@@ -80,7 +80,7 @@ export default function LegalIntakeSpecialists() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-500 leading-tight"
+            className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-500 leading-tight"
           >
             What do our Legal Intake Specialists Do?
           </motion.h1>

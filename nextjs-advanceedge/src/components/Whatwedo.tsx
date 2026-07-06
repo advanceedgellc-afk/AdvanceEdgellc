@@ -161,7 +161,7 @@ import {
             
             <div className="max-w-4xl mx-auto text-center mb-20">
               <h2 className="font-bold tracking-[0.3em] uppercase text-sm mb-4" style={{ color: ORANGE }}>Strategic Capacity</h2>
-              <h3 className="text-4xl md:text-6xl font-black leading-tight mb-8" style={{ color: NAVY }}>For Managing Partners, COOs, and Firm Owners</h3>
+              <h3 className="text-4xl md:text-5xl font-black leading-tight mb-8" style={{ color: NAVY }}>For Managing Partners, COOs, and Firm Owners</h3>
               <p className="text-xl md:text-2xl leading-relaxed font-light" style={{ color: `${NAVY}99` }}>
                 Your real constraint isn&apos;t leads or even talent—it&apos;s operational capacity and cost structure. AdvanceEdge gives you a flexible partner instead of another block of fixed headcount.
               </p>

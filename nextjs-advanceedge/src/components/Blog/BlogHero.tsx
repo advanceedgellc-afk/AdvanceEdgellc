@@ -3,20 +3,17 @@ import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 import GhlContactForm from "@/components/forms/GhlContactForm";
 
-/**
- * Case Acquisition Hero Component
- * * A responsive, dark-themed hero section for case acquisition and legal marketing services.
- */
+
 export default function App() {
   const { openBookingModal } = useBookingModal();
   return (
-    <section className="relative w-full lg:min-h-[80vh]  min-h-[100vh] pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       
       {}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000&auto=format&fit=crop" 
-          alt="Case acquisition and strategic legal growth" 
+          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop" 
+          alt="Case qualification and professional strategy" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-slate-950/85"></div>
@@ -25,31 +22,21 @@ export default function App() {
       {}
       <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* Left content */}
-          <div className="max-w-3xl text-center lg:text-left"> 
-        <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
-          Case Acquisition for <span className="text-[#fb923c] font-medium">Law Firms & Legal Marketing Firms</span>
+                  {/* Left content */}
+                  <div className="max-w-3xl text-center lg:text-left">
+        {/* H1 */}
+        <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-center leading-tight text-slate-100">
+        Legal Growt <span className="text-[#fb923c] font-medium">Insights & Strategies</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Delivering High-Intent Plaintiffs for Mass Tort & Personal Injury Cases.
+        {/* Subheading */}
+        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto text-center leading-relaxed">
+        Deep dives on intake, advertising, and operations to help your firm turn attention into signed cases.
         </p>
 
-        {}
-        <div className=" rounded-2xl  text-left mb-10">
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-4">
-            At Advance Edge LLC, we provide a seamless case acquisition solution for both law firms and legal marketing firms, ensuring a steady pipeline of qualified claimants.
-          </p>
-          <ul className="space-y-2 text-slate-400 text-sm md:text-base mb-4 list-disc pl-5">
-            <li><strong>For Law Firms</strong> – We deliver screened, high-value plaintiffs ready for litigation.</li>
-            <li><strong>For Legal Marketing Firms</strong> – We help you scale your case acquisition efforts with data-backed strategies and compliance-driven lead generation.</li>
-          </ul>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-            No more chasing unverified leads—get cases that convert into settlements.
-          </p>
-        </div>
 
-        {}
+
+        {/* Call to Action Section */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
                 type="button"
@@ -68,12 +55,13 @@ export default function App() {
                   ></path>
                 </svg>
               </button>
-        </div>
-      </div>
-                {/* Right form */}
-                <div className="w-full max-w-2xl mx-auto lg:mx-0">
+              </div>
+              </div>
+                        {/* Right form */}
+          <div className="w-full max-w-2xl mx-auto lg:mx-0">
             <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
-          </div>
+          
+        </div>
         </div>
       </div>
     </section>

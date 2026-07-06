@@ -79,7 +79,7 @@ export default function ContactPageClient() {
           <div className="inline-block bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full font-dm text-sm font-semibold mb-6 border border-orange-500/30">
             GET IN TOUCH
           </div>
-          <h1 className="font-marcellus text-5xl md:text-6xl mb-6">Contact Us</h1>
+          <h1 className="font-marcellus text-5xl md:text-5xl mb-6">Contact Us</h1>
           <p className="font-dm text-xl text-gray-300 max-w-3xl mx-auto">
             Let's discuss how we can help transform your legal practice with innovative solutions
           </p>

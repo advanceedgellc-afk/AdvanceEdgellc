@@ -51,7 +51,7 @@ export default function HeroClient() {
                 </span>
               </div>
 
-              <h1 className="font-marcellus text-4xl md:text-6xl text-white mb-6 leading-tight tracking-wide">
+              <h1 className="font-marcellus text-4xl md:text-5xl text-white mb-6 leading-tight tracking-wide">
                 Legal Intake and Operations Partner for{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9A28] to-[#FF9A28]/70">
                   Modern Law Firms

@@ -43,7 +43,7 @@ export default function WhoBenefits() {
       >
         {}
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
             Who Benefits Most from Our Contact Center & Intake Support
           </h2>
           <div className="h-1 w-20 bg-[#FF9A28] mx-auto rounded-full" />

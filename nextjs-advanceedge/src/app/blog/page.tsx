@@ -5,6 +5,7 @@ import Image from "next/image";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import BlogPostShareWrapper from "@/components/BlogPostShareWrapper";
+import BlogHero from "@/components/Blog/BlogHero";
 
 interface Category {
   title: string;
@@ -94,36 +95,7 @@ export default async function Blog() {
   return (
     <main className="bg-slate-950 text-slate-50">
       {/* HERO */}
-      <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#1a1f2e] via-[#050814] to-[#050711]">
-        <div className="pointer-events-none absolute -right-40 top-[-40px] h-80 w-80 rounded-full bg-[#FF9A28]/20 blur-3xl" />
-        <div className="pointer-events-none absolute -left-40 bottom-[-40px] h-80 w-80 rounded-full bg-[#FF9A28]/10 blur-3xl" />
-
-
-        {/* Flex container - centered */}
-        <div className="relative z-10 min-h-[450px] md:min-h-[580px] flex items-center justify-center px-4 pt-24 pb-0">
-          <div className="flex flex-col items-center justify-center text-center gap-6 max-w-4xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-slate-200 animate-fadeInUp">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FF9A28]" />
-              Insights for modern law firms
-            </span>
-
-
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight animate-fadeInUp animation-delay-200">
-              Legal Growth
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF9A28] via-[#ffd08c] to-[#FF9A28]">
-                Insights & Strategies
-              </span>
-            </h1>
-
-
-            <p className="max-w-2xl text-base md:text-lg text-slate-300 animate-fadeInUp animation-delay-400">
-              Deep dives on intake, advertising, and operations to help your firm
-              turn attention into signed cases.
-            </p>
-          </div>
-        </div>
-      </section>
-
+     <BlogHero/>
 
       {/* BLOG LIST */}
       <section className="py-16 md:py-20 bg-slate-950">

@@ -29,7 +29,7 @@ export default function App() {
           <div className="max-w-3xl text-center lg:text-left">
         
         {/* H1 */}
-        <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+        <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
           Medical Record Retrieval for <span className="text-[#fb923c] font-medium ">Law Firms & Legal Marketing Agencies</span>
         </h1>
 
