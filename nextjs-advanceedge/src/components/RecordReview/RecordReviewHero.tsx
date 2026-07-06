@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
+import GhlContactForm from "@/components/forms/GhlContactForm";
 /**
  * Medical Record Review Hero Component
  * * A responsive, dark-themed hero section updated with brand color #fb923c.
@@ -9,7 +10,7 @@ export default function App() {
   const { openBookingModal } = useBookingModal();
 
   return (
-    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh]  pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -20,12 +21,13 @@ export default function App() {
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
-        
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left content */}
+          <div className="max-w-3xl text-center lg:text-left">
         {/* H1 */}
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
-          Medical Record Review for <span className="text-[#fb923c]">Litigation‑Focused Law Firms</span>
+        <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+          Medical Record Review for <span className="text-[#fb923c] font-medium">Litigation‑Focused Law Firms</span>
         </h1>
 
         {/* Subheading */}
@@ -34,7 +36,7 @@ export default function App() {
         </p>
 
         {/* Detailed Body Section */}
-        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+        <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
             Getting medical records is only half the battle. The real work starts when someone has to read hundreds or thousands of pages and answer two questions: “Do we have a valid case?” and “What is this case really worth?” In today’s market, many firms and platforms use instant retrieval tools like SettLiT, ConnectMD, etc to validate proof of use and proof of injury before they ever invest in full record retrieval or litigation. At later stages, attorneys need deep, structured medical analysis to support settlement, mediation, or trial.
           </p>
@@ -64,6 +66,13 @@ export default function App() {
               </button>
         </div>
       </div>
+      
+          {/* Right form */}
+          <div className="w-full max-w-2xl mx-auto lg:mx-0">
+            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+          </div>
+          </div>
+          </div>
     </section>
   );
 }

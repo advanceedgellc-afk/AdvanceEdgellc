@@ -3,7 +3,7 @@ import HeroClient from "./HeroClient";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-10 ">
+    <section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-10 pt-16">
       {/* Background image (LCP element) */}
       <div className="absolute inset-0 z-0">
         <Image

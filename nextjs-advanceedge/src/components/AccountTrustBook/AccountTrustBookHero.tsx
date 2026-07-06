@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
-
+import GhlContactForm from "@/components/forms/GhlContactForm";
 
 /**
  * Accounting & Trust Bookkeeping Hero Component
@@ -22,11 +22,12 @@ export default function App() {
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
-        
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
-          Accounting & Trust Bookkeeping for <span className="text-[#fb923c]">Law Firms and Real Estate Investors</span>
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left content */}
+          <div className="max-w-3xl text-center lg:text-left">
+        <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+          Accounting & Trust Bookkeeping for <span className="text-[#fb923c] font-medium">Law Firms and Real Estate Investors</span>
         </h1>
 
         <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -34,7 +35,7 @@ export default function App() {
         </p>
 
         {/* Detailed Body Section */}
-        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+        <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
           If you are a lawyer who also invests in real estate, your financial life is more complex than a standard small business. You have client trust rules, matter level costs, retainers and settlements on one side, and rent rolls, property expenses and lender reporting on the other.
           </p>
@@ -62,6 +63,12 @@ export default function App() {
                 </svg>
               </button>
 
+        </div>
+      </div>
+                {/* Right form */}
+                <div className="w-full max-w-2xl mx-auto lg:mx-0">
+            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+          </div>
         </div>
       </div>
     </section>

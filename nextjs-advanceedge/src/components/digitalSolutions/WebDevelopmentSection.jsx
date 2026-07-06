@@ -23,7 +23,7 @@ export default function WebDevelopmentSection() {
             <div className="mt-4 h-1 w-20 bg-[#D89C3C] rounded-full" />
 
             <p className="mt-8 text-base md:text-base text-[#6b6b6b] leading-relaxed ">
-              Your website is your brand&apos;s first impression—make it count. Our expert developers craft fast,
+              Your website is your brand&apos;s first impression make it count. Our expert developers craft fast,
               secure, and conversion‑focused websites tailored to your business needs.
             </p>
           </div>

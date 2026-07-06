@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
+import GhlContactForm from "@/components/forms/GhlContactForm";
 
 /**
  * Medical Record Retrieval Hero Component
@@ -10,7 +11,7 @@ import { useBookingModal } from "@/context/BookingModalContext";
 export default function App() {
   const { openBookingModal } = useBookingModal();
   return (
-    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh]  pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       
       {}
       <div className="absolute inset-0 z-0">
@@ -22,12 +23,14 @@ export default function App() {
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>
 
-      {/* ... existing code ... */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left content */}
+          <div className="max-w-3xl text-center lg:text-left">
         
         {/* H1 */}
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
-          Medical Record Retrieval for <span className="text-[#fb923c]">Law Firms & Legal Marketing Agencies</span>
+        <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+          Medical Record Retrieval for <span className="text-[#fb923c] font-medium ">Law Firms & Legal Marketing Agencies</span>
         </h1>
 
         {/* ... existing code ... */}
@@ -36,7 +39,7 @@ export default function App() {
         </p>
 
         {/* ... existing code ... */}
-        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+        <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
             For most plaintiff‑side firms, the real bottleneck isn’t drafting demands or arguing motions; it’s waiting on hospitals, clinics, and pharmacies to send complete medical records. Requests get rejected for minor errors, stuck in fax queues, or lost inside portal logins. AdvanceEdge runs medical record retrieval for law firms as a dedicated function, not a side task: a verified database of 90k+ U.S. facilities and copy services, disciplined follow‑up, and tight integration with your Intake Specialists & Contact Center, Case Qualification, and Medical Record Review.
           </p>
@@ -61,6 +64,12 @@ export default function App() {
                   ></path>
                 </svg>
               </button>
+        </div>
+        </div>
+                  {/* Right form */}
+                  <div className="w-full max-w-2xl mx-auto lg:mx-0">
+            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+          </div>
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@ export default function ScaleYourFirmSection() {
   {/* Orange Underline */}
   <div className="w-16 h-1 bg-[#FF9A28] mb-6"></div>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Your website is more than just an online presence—it’s your 24/7 marketing engine. At AdvanceEdge, we provide cutting-edge web development and digital marketing solutions designed to attract, engage, and convert your audience.
+            Your website is more than just an online presence it’s your 24/7 marketing engine. At AdvanceEdge, we provide cutting-edge web development and digital marketing solutions designed to attract, engage, and convert your audience.
 
            </p>
 

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
-
+import GhlContactForm from "@/components/forms/GhlContactForm";
 /**
  * Litigation Support & Back-Office Hero Component
  * * A responsive, dark-themed hero section for litigation operations services.
@@ -9,7 +9,7 @@ import { useBookingModal } from "@/context/BookingModalContext";
 export default function App() {
   const { openBookingModal } = useBookingModal();
   return (
-    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh]  pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       
       {}
       <div className="absolute inset-0 z-0">
@@ -22,11 +22,14 @@ export default function App() {
       </div>
 
       {}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left content */}
+          <div className="max-w-3xl text-center lg:text-left">
         
         {/* H1 */}
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
-          Litigation Support & Back‑Office for <span className="text-[#fb923c]">High‑Volume Legal Operations</span>
+        <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+          Litigation Support & Back‑Office for <span className="text-[#fb923c] font-medium">High‑Volume Legal Operations</span>
         </h1>
 
         {/* Subheading */}
@@ -35,7 +38,7 @@ export default function App() {
         </p>
 
         {}
-        <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm text-left mb-10">
+        <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
             Behind every successful campaign or docket, there is an invisible layer of operations. Data entry, lead cleanup, contract validation, call auditing, packet assembly, reporting, and system maintenance all have to work in sync, or everything else slows down. For one national legal marketing client, our team spent an entire quarter focused on exactly that work, reviewing almost ten thousand disqualified leads to rescue qualified cases, cleaning more than forty thousand call records, auditing thousands of contracts, and building the reports their law firm partners actually run their businesses on.
           </p>
@@ -66,6 +69,12 @@ export default function App() {
               </button>
         </div>
       </div>
+                {/* Right form */}
+                <div className="w-full max-w-2xl mx-auto lg:mx-0">
+            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+          </div>
+          </div>
+          </div>
     </section>
   );
 }

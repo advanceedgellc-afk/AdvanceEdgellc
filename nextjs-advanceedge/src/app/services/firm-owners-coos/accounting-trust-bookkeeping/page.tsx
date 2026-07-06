@@ -8,13 +8,6 @@ import RealEstateAccounting from '@/components/AccountTrustBook/RealEstateAccoun
 import ClientExample from '@/components/AccountTrustBook/ClientExample';
 import AccountingTimeline from '@/components/AccountTrustBook/AccountingTimeline';
 import HumanAIAccounting from '@/components/AccountTrustBook/HumanAIAccounting';
-
-
-
-import WhoOurServices from '@/components/AccountTrustBook/WhoOurServices';
-import HowOurProcess from '@/components/AccountTrustBook/HowOurProcess';
-import HumanLedAI from '@/components/AccountTrustBook/HumanLedAI';
-import OperationsSections from '@/components/AccountTrustBook/OperationsSections';
 import FaqSection from '@/components/AccountTrustBook/FaqSection';
 
 export const metadata: Metadata = {
@@ -103,11 +96,6 @@ export default function accountingTrustBookkeeping() {
 <AccountingTimeline/>
 <HumanAIAccounting/>
 
-
-  {/* <WhoOurServices/>
-  <HowOurProcess/>
-  <HumanLedAI/>
-  <OperationsSections/> */}
   <FaqSection/>
     </main>
   );

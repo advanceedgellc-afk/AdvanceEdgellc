@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
-
+import GhlContactForm from "@/components/forms/GhlContactForm";
 /**
  * Web Development & Marketing Hero Component
  * * A responsive, dark-themed hero section for web development and digital marketing services.
@@ -11,7 +11,7 @@ export default function App() {
   const { openBookingModal } = useBookingModal();
 
   return (
-    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] md:pt-24 pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative w-full lg:min-h-[80vh] min-h-[100vh]  pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
@@ -23,11 +23,12 @@ export default function App() {
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24 max-w-5xl text-center">
-        
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-100">
-          Dominate the <span className="text-[#fb923c]">Digital Space</span> With High Impact Web Development & Marketing That Drives Results!
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left content */}
+          <div className="max-w-3xl text-center lg:text-left">
+        <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-tight text-slate-100">
+          Dominate the <span className="text-[#fb923c] font-medium">Digital Space</span> With High Impact Web Development & Marketing That Drives Results!
         </h1>
 
         <p className="text-2xl md:text-3xl font-semibold text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -52,6 +53,12 @@ export default function App() {
                   ></path>
                 </svg>
               </button>
+        </div>
+      </div>
+                {/* Right form */}
+                <div className="w-full max-w-2xl mx-auto lg:mx-0">
+            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+          </div>
         </div>
       </div>
     </section>
