@@ -75,7 +75,7 @@ function MegaLink({ page, onNavigate }: {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1.5">
           <p
-            className="text-sm font-semibold leading-tight transition-colors duration-200"
+            className="text-[13px] lg:text-sm font-semibold leading-tight  transition-colors duration-200"
             style={{ color: hovered ? "#ea580c" : "#1e293b" }}
           >
             {page.name}
@@ -145,25 +145,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-50">
 
         {/* ── Top Bar ── only rendered when not scrolled so it takes zero space */}
-        {!scrolled && (
-        <div className="hidden md:block bg-[#0a0d1e]">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center py-3 text-sm text-white">
-              <span>Mon &ndash; Sun: 9:00 am &ndash; 8:00pm</span>
-              <div className="flex items-center gap-6">
-                <a href="mailto:info@advanceedgellc.com" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
-                  <Mail className="text-orange-400 w-4 h-4 flex-shrink-0" />
-                  <span>info@advanceedgellc.com</span>
-                </a>
-                <span className="flex items-center gap-2">
-                  <MapPin className="text-orange-400 w-4 h-4 flex-shrink-0" />
-                  <span>1008 Hamilton St, Immokalee, FL 34142</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        )}
+
 
         {/* ── Main Nav ── */}
         <nav className={`transition-all duration-500 py-2 ${!scrolled ? "lg:py-4" : ""} ${
@@ -273,24 +255,24 @@ export default function Header() {
         {/* ── MEGA MENU PANEL ──
             Rendered directly inside <header> (the position:fixed root).
             left-0 right-0 = full viewport width. No container wrapping the grid. */}
-        {megaOpen && (
-          <div
-            className="mega-animate hidden lg:block absolute left-1/4 z-[9998] px-6 pb-6 w-1/2"
-            style={{ top: "100%" }}
-            onMouseEnter={openMega}
-            onMouseLeave={closeMegaDelayed}
-          >
+{megaOpen && (
+  <div
+    className="mega-animate hidden lg:block absolute left-1/4 -translate-x-1/2 z-[9998] px-4 pb-6 w-[94vw] sm:w-[90vw] md:w-[85vw] lg:w-[720px] xl:w-[820px] max-w-4xl"
+    style={{ top: "100%" }}
+    onMouseEnter={openMega}
+    onMouseLeave={closeMegaDelayed}
+  >
             <div className="bg-white rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.18)] border border-slate-200 overflow-hidden">
               {/* Orange accent top bar */}
               <div className="h-1 w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-300" />
               {/* Force 3 equal columns with inline style to guarantee horizontal layout */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                {whatWeDo.map((group, gi) => (
-                  <div
-                    key={group.group}
-                    className="p-8"
-                    style={{ borderRight: gi < whatWeDo.length - 1 ? "1px solid #f1f5f9" : "none" }}
-                  >
+  {whatWeDo.map((group, gi) => (
+    <div
+      key={group.group}
+      className="p-4 md:p-5 lg:p-6 xl:p-8"
+      style={{ borderRight: gi < whatWeDo.length - 1 ? "1px solid #f1f5f9" : "none" }}
+    >
                     {/* Group header */}
                     <div className="flex items-center gap-3 mb-5 pb-4 border-b border-orange-100">
                       <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 shadow-sm">
