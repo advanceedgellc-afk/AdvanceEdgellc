@@ -8,6 +8,7 @@ import {
   Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowRight,
   Target, Bot, Megaphone, FileSearch, UserCheck, TrendingUp,
   Headphones, Stethoscope, Briefcase, Scale, HandCoins, Calculator,
+  BookOpen, FileText,
 } from "lucide-react";
 
 const whatWeDo = [
@@ -43,6 +44,10 @@ const whatWeDo = [
   },
 ];
 
+const resourcesLinks = [
+  { name: "Blog", href: "/resources/blog", icon: BookOpen, desc: "Insights & industry updates" },
+  { name: "Case Studies", href: "/resources/case-studies", icon: FileText, desc: "Real client results" },
+];
 
 // Mega menu link with reliable hover state via onMouseEnter/Leave
 function MegaLink({ page, onNavigate }: {
@@ -101,11 +106,50 @@ function MegaLink({ page, onNavigate }: {
   );
 }
 
+// Simple dropdown link (for Resources — lighter weight than MegaLink)
+function SimpleDropdownLink({ item, onNavigate }: {
+  item: { name: string; href: string; icon: React.ElementType; desc: string };
+  onNavigate: () => void;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <Link
+      href={item.href}
+      onClick={onNavigate}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-center gap-3 px-4 py-3 transition-colors duration-150"
+      style={{ background: hovered ? "#fff7ed" : "transparent" }}
+    >
+      <div
+        className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200"
+        style={{
+          background: hovered ? "#f97316" : "#f1f5f9",
+          boxShadow: hovered ? "0 4px 12px rgba(249,115,22,0.35)" : "none",
+        }}
+      >
+        <item.icon size={16} style={{ color: hovered ? "#ffffff" : "#64748b" }} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p
+          className="text-sm font-semibold leading-tight transition-colors duration-150"
+          style={{ color: hovered ? "#ea580c" : "#1e293b" }}
+        >
+          {item.name}
+        </p>
+        <p className="text-[11px] mt-0.5 text-slate-400">{item.desc}</p>
+      </div>
+    </Link>
+  );
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const resourcesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -118,6 +162,7 @@ export default function Header() {
   useEffect(() => {
     setMobileMenuOpen(false);
     setMegaOpen(false);
+    setResourcesOpen(false);
   }, [pathname]);
 
   const isActive = (path: string) =>
@@ -130,6 +175,16 @@ export default function Header() {
   const closeMegaDelayed = () => {
     closeTimer.current = setTimeout(() => setMegaOpen(false), 150);
   };
+
+  const openResources = () => {
+    if (resourcesCloseTimer.current) clearTimeout(resourcesCloseTimer.current);
+    setResourcesOpen(true);
+  };
+  const closeResourcesDelayed = () => {
+    resourcesCloseTimer.current = setTimeout(() => setResourcesOpen(false), 150);
+  };
+
+  const isResourcesActive = isActive("/resources/blog") || isActive("/resources/case-studies");
 
   return (
     <>
@@ -185,7 +240,43 @@ export default function Header() {
                 </button>
 
                 <Link href="/about" className={`text-sm font-medium uppercase py-2 px-3 rounded-md transition-colors ${isActive("/about") ? "text-orange-400" : scrolled ? "text-slate-900 hover:text-orange-400" : "text-white hover:text-orange-400"}`}>ABOUT</Link>
-                <Link href="/blog" className={`text-sm font-medium uppercase py-2 px-3 rounded-md transition-colors ${isActive("/blog") ? "text-orange-400" : scrolled ? "text-slate-900 hover:text-orange-400" : "text-white hover:text-orange-400"}`}>BLOG</Link>
+
+                {/* RESOURCES trigger — simple dropdown (Blog + Case Studies) */}
+                <div
+                  className="relative"
+                  onMouseEnter={openResources}
+                  onMouseLeave={closeResourcesDelayed}
+                >
+                  <button
+                    className={`flex items-center gap-1 text-sm font-medium uppercase py-2 px-3 rounded-md transition-colors outline-none ${
+                      isResourcesActive || resourcesOpen ? "text-orange-400" : scrolled ? "text-slate-900 hover:text-orange-400" : "text-white hover:text-orange-400"
+                    }`}
+                  >
+                    RESOURCES
+                    <ChevronDown size={12} className={`transition-transform duration-300 ${resourcesOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {resourcesOpen && (
+                    <div
+                      className="mega-animate absolute left-1/2 -translate-x-1/2 z-[9998] pt-3 w-64"
+                      style={{ top: "100%" }}
+                    >
+                      <div className="bg-white rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.18)] border border-slate-200 overflow-hidden">
+                        <div className="h-1 w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-300" />
+                        <div className="py-1">
+                          {resourcesLinks.map((item) => (
+                            <SimpleDropdownLink
+                              key={item.name}
+                              item={item}
+                              onNavigate={() => setResourcesOpen(false)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
                 <Link href="/contact" className={`text-sm font-medium uppercase py-2 px-3 rounded-md transition-colors ${isActive("/contact") ? "text-orange-400" : scrolled ? "text-slate-900 hover:text-orange-400" : "text-white hover:text-orange-400"}`}>CONTACT</Link>
               </div>
 
@@ -244,7 +335,22 @@ export default function Header() {
                     </details>
                   </li>
                   <li><Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block py-3 px-4 text-slate-900 font-medium text-lg hover:text-orange-500 transition-colors">About</Link></li>
-                  <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block py-3 px-4 text-slate-900 font-medium text-lg hover:text-orange-500 transition-colors">Blog</Link></li>
+                  <li>
+                    <details className="group">
+                      <summary className="font-medium text-slate-900 cursor-pointer py-2 px-4 select-none flex items-center justify-between">
+                        Resources <ChevronDown size={16} className="group-open:rotate-180 transition-transform" />
+                      </summary>
+                      <ul className="pl-6 space-y-1 mt-2">
+                        {resourcesLinks.map((item) => (
+                          <li key={item.name}>
+                            <Link href={item.href} onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-700 font-medium hover:text-orange-500 transition-colors">
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  </li>
                   <li><Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block py-3 px-4 text-slate-900 font-medium text-lg hover:text-orange-500 transition-colors">Contact</Link></li>
                 </ul>
               </div>
@@ -255,24 +361,24 @@ export default function Header() {
         {/* ── MEGA MENU PANEL ──
             Rendered directly inside <header> (the position:fixed root).
             left-0 right-0 = full viewport width. No container wrapping the grid. */}
-{megaOpen && (
-  <div
-    className="mega-animate hidden lg:block absolute left-1/4 -translate-x-1/2 z-[9998] px-4 pb-6 w-[94vw] sm:w-[90vw] md:w-[85vw] lg:w-[720px] xl:w-[820px] max-w-4xl"
-    style={{ top: "100%" }}
-    onMouseEnter={openMega}
-    onMouseLeave={closeMegaDelayed}
-  >
+        {megaOpen && (
+          <div
+            className="mega-animate hidden lg:block absolute md:left-[10%]  left-[25%] -translate-x-1/2 z-[9998] px-4 pb-6 w-[94vw] sm:w-[90vw] md:w-[85vw] lg:w-[880px] xl:w-[900px] max-w-4xl"
+            style={{ top: "100%" }}
+            onMouseEnter={openMega}
+            onMouseLeave={closeMegaDelayed}
+          >
             <div className="bg-white rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.18)] border border-slate-200 overflow-hidden">
               {/* Orange accent top bar */}
               <div className="h-1 w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-300" />
               {/* Force 3 equal columns with inline style to guarantee horizontal layout */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-  {whatWeDo.map((group, gi) => (
-    <div
-      key={group.group}
-      className="p-4 md:p-5 lg:p-6 xl:p-8"
-      style={{ borderRight: gi < whatWeDo.length - 1 ? "1px solid #f1f5f9" : "none" }}
-    >
+                {whatWeDo.map((group, gi) => (
+                  <div
+                    key={group.group}
+                    className="p-4 md:p-5 lg:p-6 xl:p-8"
+                    style={{ borderRight: gi < whatWeDo.length - 1 ? "1px solid #f1f5f9" : "none" }}
+                  >
                     {/* Group header */}
                     <div className="flex items-center gap-3 mb-5 pb-4 border-b border-orange-100">
                       <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 shadow-sm">
