@@ -1,188 +1,105 @@
-'use client';
+import React from 'react';
 
-import React, { useState, useEffect } from 'react';
-import { useBookingModal } from "@/context/BookingModalContext";
-
-export default function AboutAdvanceEdgeSection() {
-  const { openBookingModal } = useBookingModal();
-
-  const [count, setCount] = useState(0);
-  const targetCount = 100;
-
-  useEffect(() => {
-    if (count < targetCount) {
-      const timer = setTimeout(() => {
-        setCount(count + 1);
-      }, 20);
-      return () => clearTimeout(timer);
+/**
+ * AboutSection component
+ * A stylish, editorial-inspired light theme layout with a balanced grid.
+ */
+export default function AboutSection() {
+  const services = [
+    {
+      title: "Mass Tort & MDL Operations",
+      description: "High-volume case support across dockets such as Camp Lejeune, 3M Earplugs, AFFF, Suboxone, Roundup, Hair Relaxer, Pelvic Mesh, and more. We help manage data, documents, and workflows from intake through settlement."
+    },
+    {
+      title: "Legal Intake & Lead Management",
+      description: "Intake teams, lead cleanup, and contract packet support that bridge the gap between legal marketing agencies and law firms. We synchronize lead records, contracts, and packets across CRMs and case management systems, and rescue qualified leads from “disqualified” pools."
+    },
+    {
+      title: "Medical Records & Case-Building Workflows",
+      description: "Ordering, indexing, and reviewing medical records at scale, with QA programs designed to catch gaps and inconsistencies before they hurt case value."
+    },
+    {
+      title: "Settlement & Litigation Support",
+      description: "Assembly and QA of settlement and mediation packets, discovery support, and large-scale project execution under court-ordered timelines."
+    },
+    {
+      title: "Back-Office & Accounting Pods",
+      description: "Specialized bookkeeping for law firms and attorney-investors, including IOLTA-compliant trust bookkeeping, matter-level cost tracking, and real-estate, property-level ledgers where relevant. Accounting is one of the pillars we run so that your operational story and financials stay in sync."
+    },
+    {
+      isSummary: true,
+      description: "All of this is delivered as a managed legal operations layer that integrates with your existing systems instead of replacing them."
     }
-  }, [count]);
+  ];
 
   return (
-    <section className="bg-white py-10 md:py-20 px-5 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF9A28]/5 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none"></div>
-      <div className="absolute top-1/3 right-20 opacity-10 pointer-events-none">
-        <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
-          <circle cx="150" cy="150" r="140" stroke="#FF9A28" strokeWidth="1" />
-          <circle cx="150" cy="150" r="100" stroke="#FF9A28" strokeWidth="1" />
-          <path d="M150 50 Q200 100 150 150 Q100 100 150 50" stroke="#FF9A28" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
+    <section className="bg-[#FAFAFA] py-24 px-6 font-['DM_Sans',sans-serif] relative overflow-hidden">
+      {}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full blur-[120px] opacity-60" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {}
+        <div className="mb-10">
+          <span className="text-[#FF9A28] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Who We Are</span>
+          <h1 className="text-4xl md:text-5xl font-['Marcellus',serif] text-slate-900 leading-[1.1] max-w-5xl">
+            About AdvanceEdge: AI‑Integrated Legal Operations for High‑Volume Law Firms
+          </h1>
+        </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Section - Image with Badge */}
-          <div style={{
-            animation: 'fadeInLeft 0.8s ease-out',
-          }}>
-            <div className="relative">
-              {/* Profile Image - Using Placeholder */}
-              <div className="rounded-tr-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-300 to-gray-400 w-[90%] h-full flex items-center justify-center">
-                <img
-                  src="/about/About_us-hero.webp"
-                  alt="AdvanceEdge Professional"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
-                />
-              </div>
-
-              {/* Orange Badge - 100+ */}
-              <div className="absolute -bottom-10 left-0 md:-left-14 bg-[#FF9A28]  rounded-bl-3xl px-6 py-8 shadow-xl transform hover:scale-105 transition-transform duration-300"
-                style={{
-                  animation: 'slideInUp 0.7s ease-out 300ms both',
-                }}>
-                <div className="text-white">
-                  <p className="text-5xl font-bold mb-2">{count}+</p>
-                  <p className="text-sm font-bold tracking-widest">
-                    PROFESSIONALS ACROSS OUR<br />GLOBAL DELIVERY CENTERS
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Section - Content */}
-          <div className='mt-6' style={{
-            animation: 'fadeInRight 0.8s ease-out',
-          }}>
-            {/* Header Tag */}
-            <div className="mb-6" style={{ animation: 'fadeInDown 0.6s ease-out 100ms both' }}>
-              <p className="text-[#FF9A28] text-sm font-bold tracking-widest mb-4">
-                🟠 ABOUT ADVANCE EDGE 🟠
-              </p>
-            </div>
-
-            {/* Main Title */}
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 leading-tight"
-              style={{ animation: 'fadeInUp 0.6s ease-out 150ms both' }}>
-              Empowering Law Firms & Businesses with Expert Virtual Solutions
-            </h2>
-
-            {/* Divider */}
-            <div className="w-16 h-1 bg-[#FF9A28] mb-8"
-              style={{ animation: 'fadeInUp 0.6s ease-out 200ms both' }}></div>
-
-            {/* Description */}
-            <p className="text-gray-700 leading-relaxed text-base mb-8"
-              style={{ animation: 'fadeInUp 0.6s ease-out 250ms both' }}>
-              At AdvanceEdge, we specialize in high-performance Virtual Legal Support, Web Development, and Digital Marketing tailored to the evolving needs of law firms and businesses. With a deep understanding of mass tort litigation, legal operations, and digital transformation, we provide expert-driven, scalable solutions that optimize efficiency and drive measurable results.
+        {}
+        <div className="  mb-32">
+     
+          <div className=" space-y-6 text-slate-600 text-lg leading-relaxed">
+            <p>
+              AdvanceEdge is a legal operations partner for Mass Tort and Personal Injury law firms and the marketing organizations that drive their caseloads. We design and run AI‑assisted, human‑led workflows that connect marketing, intake, medical records, litigation, settlement, and back‑office support into one reliable engine.
             </p>
+            <p>
+              Instead of hiring, training, and managing large internal teams for every new docket, our clients plug into dedicated pods that understand high‑volume litigation and deliver consistent results at scale.
+            </p>
+          </div>
+        </div>
 
-            {/* Quote Section */}
-            <div className="bg-gray-50 border-l-4 border-[#FF9A28] pl-6 py-6 mb-8 rounded-sm"
-              style={{ animation: 'fadeInUp 0.6s ease-out 300ms both' }}>
-              <div className="flex gap-4">
-                <span className="text-4xl text-[#FF9A28]">"</span>
-                <p className="text-gray-700 italic leading-relaxed">
-                  We believe everyone deserves affordable and simple access to legal services and helping people.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex gap-3"
-              style={{ animation: 'fadeInUp 0.6s ease-out 350ms both' }}>
-             <button
-                type="button"
-                onClick={openBookingModal}
-                className="inline-flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md font-semibold border-gray-50  isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FF9A28] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-8 py-4 overflow-hidden border-2  rounded-full group text-gray-800 font-dm"
+        {}
+        <div className="mb-16">
+          <h3 className="text-4xl font-['Marcellus',serif] text-slate-900 mb-16 text-center">
+            What We Do for Law Firms and Legal Marketing Teams
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className={`p-10 transition-all duration-500 ${
+                  service.isSummary 
+                    ? "bg-white flex items-center justify-center text-center" 
+                    : "bg-white hover:bg-slate-50"
+                }`}
               >
-                BOOK A CALL
-                <svg
-                  className="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1.5 rotate-45"
-                  viewBox="0 0 16 19"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-gray-800 group-hover:fill-gray-800"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+                {service.isSummary ? (
+                  <p className="text-xl md:text-2xl font-['Marcellus',serif] text-slate-800 leading-relaxed italic border-l-4 border-[#FF9A28] pl-6 py-2">
+                    {service.description}
+                  </p>
+                ) : (
+                  <div className="group">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="w-10 h-10 rounded-full border border-orange-200 flex items-center justify-center font-['Marcellus',serif] text-[#FF9A28] group-hover:bg-[#FF9A28] group-hover:text-white transition-all duration-300">
+                        0{index + 1}
+                      </div>
+                      <h4 className="text-2xl font-['Marcellus',serif] mt-1 text-slate-900">
+                        {service.title}
+                      </h4>
+                    </div>
+                    <p className="leading-relaxed text-sm pl-14 text-slate-500">
+                      {service.description}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px) scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-      `}</style>
     </section>
   );
 }

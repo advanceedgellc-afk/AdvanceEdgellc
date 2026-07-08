@@ -48,16 +48,7 @@ import {
                 <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light mb-10">
                   You spend real money to make the phone ring. Our job is to make sure those calls turn into clean, qualified cases, not wasted impressions.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <p className="font-bold text-2xl mb-1" style={{ color: ORANGE }}>24/7</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400">Availability</p>
-                  </div>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <p className="font-bold text-2xl mb-1" style={{ color: ORANGE }}>99%</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400">Audit Score</p>
-                  </div>
-                </div>
+
               </div>
   
               {/* Right Cards */}
@@ -159,7 +150,7 @@ import {
         <section className="py-24 md:py-32 px-6 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             
-            <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="max-w-7xl mx-auto text-left mb-20">
               <h2 className="font-bold tracking-[0.3em] uppercase text-sm mb-4" style={{ color: ORANGE }}>Strategic Capacity</h2>
               <h3 className="text-4xl md:text-5xl font-black leading-tight mb-8" style={{ color: NAVY }}>For Managing Partners, COOs, and Firm Owners</h3>
               <p className="text-xl md:text-2xl leading-relaxed font-light" style={{ color: `${NAVY}99` }}>
@@ -203,13 +194,26 @@ import {
             </div>
   
             {/* Bottom Label */}
-            <div className="mt-16 flex justify-center">
-              <div className="inline-flex items-center gap-6 px-8 py-4 rounded-full text-white" style={{ backgroundColor: NAVY, boxShadow: `0 20px 40px ${NAVY}33` }}>
-                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: ORANGE }}>Core Advantage</span>
-                <div className="h-4 w-px bg-white/20" />
-                <span className="text-lg font-bold">Elastic Legal Infrastructure</span>
-              </div>
-            </div>
+            <div className="flex justify-center mt-12 mb-8 group cursor-default">
+      <div className="flex items-center gap-4 px-2 py-2">
+        
+        {/* Animated Gradient Accent Bar */}
+        <div className="relative w-1 h-6 bg-gradient-to-b from-[#FF9A28] to-orange-400 rounded-full group-hover:h-8 transition-all duration-300" />
+        
+        {/* Tag with subtle letter spacing */}
+        <span className="text-sm font-bold uppercase tracking-[0.25em] text-[#FF9A28] font-['DM_Sans',sans-serif]">
+          Core Advantage
+        </span>
+        
+        {/* Refined Divider */}
+        <div className="h-4 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent mx-1" />
+        
+        {/* Main Text with Subtle Gradient Hover */}
+        <span className="text-sm font-medium text-slate-800 font-['Marcellus',serif] transition-all duration-300 ">
+          Elastic Legal Infrastructure
+        </span>
+      </div>
+    </div>
           </div>
         </section>
   

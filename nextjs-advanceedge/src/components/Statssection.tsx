@@ -19,11 +19,7 @@ const stats = [
     label: "Medical record retrieval calls placed to facilities",
     icon: "📞",
   },
-  {
-    value: "10M+",
-    label: "Legal support tasks executed for firms and agencies",
-    icon: "✅",
-  },
+
 ];
 
 // Animated number counter
@@ -240,37 +236,13 @@ export default function StatsSection() {
       >
 
         {/* Stats grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} index={index} />
           ))}
         </div>
 
-        {/* Bottom tagline */}
-        <motion.div
-          className="mt-16 flex items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <div
-            className="h-px flex-1 max-w-[80px]"
-            style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.4))" }}
-          />
-          <p
-            className="text-center text-sm"
-            style={{ color: "#64748b", fontStyle: "italic", letterSpacing: "0.01em" }}
-          >
-            <span style={{ color: "rgba(249,115,22,0.5)", fontSize: "1.25rem", lineHeight: 1, verticalAlign: "middle", marginRight: "4px" }}>&ldquo;</span>
-            Clients include leading legal marketing agencies and high‑volume law firms nationwide
-            <span style={{ color: "rgba(249,115,22,0.5)", fontSize: "1.25rem", lineHeight: 1, verticalAlign: "middle", marginLeft: "4px" }}>&rdquo;</span>
-          </p>
-          <div
-            className="h-px flex-1 max-w-[80px]"
-            style={{ background: "linear-gradient(to left, transparent, rgba(249,115,22,0.4))" }}
-          />
-        </motion.div>
+
       </motion.div>
     </section>
   );

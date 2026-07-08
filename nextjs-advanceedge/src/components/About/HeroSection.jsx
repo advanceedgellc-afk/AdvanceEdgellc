@@ -3,10 +3,7 @@ import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 import GhlContactForm from "@/components/forms/GhlContactForm";
 
-/**
- * Case Qualification Hero Component
- * * A responsive, dark-themed hero section for case qualification services.
- */
+
 export default function App() {
   const { openBookingModal } = useBookingModal();
   return (

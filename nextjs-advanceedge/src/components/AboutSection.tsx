@@ -116,11 +116,11 @@ export default function AboutSection() {
               {/* Heading - GPU accelerated */}
                         {/* Headline */}
           <h2
-            className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-12 leading-[1.05] text-brand-navy" 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-12 leading-[1.05] text-brand-navy" 
           >
             Trusted by legal teams {' '}
             <br className="hidden md:block" />
-            <span className="text-orange-400" >that can&apos;t afford to miss</span>
+            <span className="text-orange-400" >handling high-volume, time-sensitive work</span>
           </h2>
 
               {/* Description - GPU accelerated */}

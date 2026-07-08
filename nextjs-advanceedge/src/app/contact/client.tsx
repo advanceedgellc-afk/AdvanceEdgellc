@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, CheckCircle, Clock } from "lucide-react";
 import StatsSectionCountdown from "@/components/contact/StatsSectionCountdown";
 import MapSection from "@/components/contact/MapSection";
+import IndustryExpertiseSection from "@/components/About/IndustryExpertiseSection";
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({
@@ -295,7 +296,7 @@ export default function ContactPageClient() {
           </div>
         </div>
       </section>
-
+<IndustryExpertiseSection/>
       <StatsSectionCountdown />
       <MapSection />
     </main>

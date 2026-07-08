@@ -341,7 +341,7 @@ export default function WhyChooseUsSection() {
                     className="leading-[1.05] text-white"
                     style={{
                       
-                      fontSize: "clamp(2.8rem, 5vw, 5rem)",
+                      fontSize: "clamp(2.8rem, 3vw, 5rem)",
                       letterSpacing: "-0.02em",
                     }}
                   >
@@ -413,31 +413,7 @@ export default function WhyChooseUsSection() {
         </svg>
       </button>
 
-                  {/* Stars */}
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.6 + i * 0.08, type: "spring", stiffness: 200 }}
-                          >
-                            <Star size={14} className="fill-orange-500 text-orange-500" />
-                          </motion.div>
-                        ))}
-                      </div>
-                      <span className="text-sm font-black text-white">5.0</span>
-                    </div>
-                    <span
-                      className="text-[9px] uppercase tracking-[0.2em] font-bold"
-                      style={{ color: "#475569" }}
-                    >
-                      Industry Trusted Partner
-                    </span>
-                  </div>
+
                 </div>
               </motion.div>
             </div>

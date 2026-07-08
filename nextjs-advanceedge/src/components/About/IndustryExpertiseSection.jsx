@@ -72,26 +72,7 @@ export default function IndustryExpertiseSection() {
               With years of experience in legal support services and digital growth strategies, we bring the right talent, technology, and insights to help businesses scale effectively.
             </p>
 
-            {/* Rating Section */}
-            <div 
-              className="border-t border-dashed border-gray-600 pt-6 order-1 md:order-3"
-              style={{ animation: 'slideInUp 0.8s ease-out 700ms both' }}
-            >
-              <p className="text-sm font-semibold text-gray-300 mb-3">
-                Our Best Skilled Attorneys, Trust Score 4.5
-              </p>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <span 
-                    key={i} 
-                    className="text-[#FF9A28] text-lg"
-                    style={{ animation: 'popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', animationDelay: `${800 + i * 80}ms` }}
-                  >
-                    ★
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
           </div>
 

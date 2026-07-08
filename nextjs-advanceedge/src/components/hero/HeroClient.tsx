@@ -46,8 +46,8 @@ export default function HeroClient() {
             >
               <div className="inline-flex items-center gap-2 bg-[#FF9A28]/10 border border-[#FF9A28]/30 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#FF9A28] rounded-full animate-pulse" />
-                <span className="text-[#FF3600] text-base font-medium font-dm">
-                  The Legal Industry&apos;s
+                <span className="text-[#FF9A28] text-base font-medium font-dm">
+                THE LEGAL INDUSTRY'S TRUSTED PARTNER
                 </span>
               </div>
 
@@ -58,10 +58,10 @@ export default function HeroClient() {
                 </span>
               </h1>
 
-              <p className="font-dm text-[19px] text-gray-200 mb-10 leading-relaxed max-w-3xl">
+              <p className="font-dm text-md text-gray-200 mb-10 leading-relaxed tracking-wide max-w-3xl">
                 Human-led, AI-accelerated intake, case qualification, and
                 back-office support for law firms and legal marketing
-                agencies—from solo practices to high-volume Mass Tort and PI
+                agencies from solo practices to high-volume Mass Tort and PI
                 shops.
               </p>
 

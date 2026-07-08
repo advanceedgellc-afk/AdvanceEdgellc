@@ -3,10 +3,11 @@ import type { Metadata } from 'next'
 import HeroSection from "@/components/About/HeroSection";
 import AboutAdvanceEdge from "@/components/About/AboutAdvanceEdge";
 import PartnerInGrowthCTA from "@/components/About/PartnerInGrowthCTA";
-import IndustryExpertiseSection from "@/components/About/IndustryExpertiseSection";
-import CommitmentSection from "@/components/About/CommitmentSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import OurApproachSection from "@/components/About/OurApproachSection";
-
+import HistorySection from "@/components/About/HistorySection";
+import WorkProcessSection from "@/components/About/WorkProcessSection";
+import HumanLedSection from "@/components/About/HumanLedSection";
 // ✅ NEW: SEO Meta tags for About page
 export const metadata: Metadata = {
   title: 'About AdvanceEdge | Virtual Legal Support & Mass Tort Experts',
@@ -58,15 +59,14 @@ export default function About() {
       
       {/* AboutAdvanceEdge Section */}
       <AboutAdvanceEdge />
-      
+      <HistorySection/>
       {/* PartnerInGrowthCTA Section */}
       <PartnerInGrowthCTA />
-      
+      <WorkProcessSection/>
       {/* IndustryExpertiseSection Section */}
-      <IndustryExpertiseSection />
-      
+      <WhyChooseUsSection />
+      <HumanLedSection/>
       {/* CommitmentSection Section */}
-      <CommitmentSection />
       
       {/* OurApproachSection Section */}
       <OurApproachSection />

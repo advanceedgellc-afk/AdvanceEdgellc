@@ -199,8 +199,7 @@ export default function Footer() {
                 >
                   <MapPin className="w-5 h-5 text-[#FF9A28]" />
                   <span>
-                    1008 Hamilton St, Immokalee
-                    <br /> FL 34142
+                    Florida
                   </span>
                 </a>
               </li>

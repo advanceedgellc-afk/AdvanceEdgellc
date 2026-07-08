@@ -5,7 +5,7 @@ import Hero from "@/components/hero/Hero"
 import Statssection from '@/components/Statssection'
 import AboutSection from "@/components/AboutSection"
 
-import WhyChooseUsSection from "@/components/WhyChooseUsSection"
+
 import FAQSection from "@/components/FAQSection"
 import { client } from "@/sanity/client"
 import { urlFor } from "@/lib/sanity"
@@ -110,7 +110,7 @@ export default async function Home() {
       <AboutSection />
       <Whoweworkwith/>
       <Whatwedo/>
-      <WhyChooseUsSection />
+    
     
       <FAQSection />
 
