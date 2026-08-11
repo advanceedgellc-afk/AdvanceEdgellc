@@ -56,7 +56,7 @@ export default function WorkProcessSection() {
           <div className={`relative transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://placehold.co/800x1000/e2e8f0/64748b?text=Professional+Operations" 
+                src="/about/About-2-edited.webp" 
                 alt="Operations Workflow" 
                 className="w-full h-auto object-cover"
               />

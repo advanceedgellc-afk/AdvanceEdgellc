@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, CheckCircle, Clock } from "lucide-react";
 import StatsSectionCountdown from "@/components/contact/StatsSectionCountdown";
 import MapSection from "@/components/contact/MapSection";
 import IndustryExpertiseSection from "@/components/About/IndustryExpertiseSection";
+import GhlContactForm from "@/components/forms/GhlContactForm";
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({
@@ -166,132 +167,8 @@ export default function ContactPageClient() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
-              <h3 className="font-marcellus text-3xl font-semibold mb-6 text-gray-800">Send Us a Message</h3>
-              
-              {submitted && (
-                <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-4 rounded-lg mb-6 flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <div>
-                    <p className="font-dm font-semibold">Thank you!</p>
-                    <p className="font-dm text-sm">We've received your message and will get back to you soon.</p>
-                  </div>
-                </div>
-              )}
-
-              {error && (
-                <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-4 rounded-lg mb-6">
-                  <p className="font-dm">{error}</p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Full Name */}
-                <div>
-                  <label htmlFor="name" className="block font-dm text-sm font-semibold text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full font-dm px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block font-dm text-sm font-semibold text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full font-dm px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block font-dm text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full font-dm px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-
-                {/* Service Interest */}
-                <div>
-                  <label htmlFor="service" className="block font-dm text-sm font-semibold text-gray-700 mb-2">
-                    Service Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full font-dm px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="case-acquisition">Case Acquisition</option>
-                    <option value="virtual-agents">Virtual Agents</option>
-                    <option value="digital-marketing">Digital Marketing</option>
-                    <option value="all-services">All Services</option>
-                  </select>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block font-dm text-sm font-semibold text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full font-dm px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all resize-none"
-                    placeholder="Tell us about your project..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button 
-                  type="submit"
-                  disabled={loading}
-                  className="w-full inline-flex justify-center gap-2 items-center shadow-xl text-base bg-gray-50 backdrop-blur-md font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-6 py-3 overflow-hidden border-2 rounded-lg group text-gray-800 font-dm disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? "Sending..." : "Send Message"}
-                  <svg
-                    className="w-6 h-6 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
-                    viewBox="0 0 16 19"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      className="fill-gray-800 group-hover:fill-gray-800"
-                    ></path>
-                  </svg>
-                </button>
-              </form>
+            <div className="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100">
+<GhlContactForm/>
             </div>
           </div>
         </div>

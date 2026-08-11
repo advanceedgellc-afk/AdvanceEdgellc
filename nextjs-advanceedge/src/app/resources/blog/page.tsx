@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'Legal Growth Insights & Strategies | AdvanceEdge Blog',
     description: 'Deep dives on intake, advertising, and operations to help your law firm turn attention into signed cases.',
     type: 'website',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/blog`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog`,
     siteName: 'AdvanceEdge',
     images: [
       {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-blog.jpg`],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/blog`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog`,
   },
   robots: {
     index: true,
@@ -127,7 +127,7 @@ export default async function Blog() {
                         <div className="grid gap-6 md:gap-7 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1.2fr)] items-stretch">
                           {/* IMAGE */}
                           <Link
-                            href={`/blog/${post.slug.current}`}
+                            href={`/resources/blog/${post.slug.current}`}
                             className="relative block overflow-hidden rounded-2xl bg-slate-800/70"
                           >
                             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
@@ -172,7 +172,7 @@ export default async function Blog() {
                                   {post.categories.map((cat) => (
                                     <Link
                                       key={cat.slug.current}
-                                      href={`/blog?category=${cat.slug.current}`}
+                                      href={`/resources/blog?category=${cat.slug.current}`}
                                       className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 text-[11px] font-medium text-slate-200 hover:border-[#FF9A28] hover:text-[#FF9A28] transition-colors"
                                     >
                                       {cat.title}
@@ -184,7 +184,7 @@ export default async function Blog() {
 
 
                             {/* Title */}
-                            <Link href={`/blog/${post.slug.current}`}>
+                            <Link href={`/resources/blog/${post.slug.current}`}>
                               <h2 className="text-xl md:text-2xl font-semibold leading-snug text-slate-50 mb-3 line-clamp-2 group-hover:text-[#FF9A28] transition-colors">
                                 {post.title}
                               </h2>
@@ -197,7 +197,7 @@ export default async function Blog() {
                                 {post.tags.map((tag) => (
                                   <Link
                                     key={tag}
-                                    href={`/blog?tag=${tag}`}
+                                    href={`/resources/blog?tag=${tag}`}
                                     className="rounded-full bg-slate-800/70 px-3 py-1 text-[11px] font-medium text-slate-200 hover:bg-[#FF9A28] hover:text-slate-950 transition-colors"
                                   >
                                     #{tag}
@@ -224,7 +224,7 @@ export default async function Blog() {
                             {/* Footer: Read more + share */}
                             <div className="flex flex-wrap items-center justify-between gap-4">
                               <Link
-                                href={`/blog/${post.slug.current}`}
+                                href={`/resources/blog/${post.slug.current}`}
                                 className="inline-flex items-center gap-2 rounded-full bg-[#FF9A28] px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-[#FF9A28]/30 transition-transform hover:-translate-y-0.5 hover:bg-[#ffb454]"
                               >
                                 Read article
@@ -259,7 +259,7 @@ export default async function Blog() {
                       {posts.slice(0, 5).map((post) => (
                         <li key={post._id}>
                           <Link
-                            href={`/blog/${post.slug.current}`}
+                            href={`/resources/blog/${post.slug.current}`}
                             className="text-sm text-slate-300 hover:text-[#FF9A28] transition-colors line-clamp-2"
                           >
                             {post.title}
@@ -280,7 +280,7 @@ export default async function Blog() {
                       {allCategories.map((category) => (
                         <li key={category.slug.current}>
                           <Link
-                            href={`/blog?category=${category.slug.current}`}
+                            href={`/resources/blog?category=${category.slug.current}`}
                             className="flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-2 text-xs font-medium text-slate-200 hover:bg-slate-700/80 hover:text-[#FF9A28] transition-colors"
                           >
                             <span>{category.title}</span>

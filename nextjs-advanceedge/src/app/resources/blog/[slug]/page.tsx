@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const title = post.seoTitle || post.title;
     const description = post.seoDescription || post.excerpt || 'Read the latest legal insights from AdvanceEdge.';
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/blog/${post.slug}`;
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog/${post.slug}`;
     const ogImage = post.ogImage || (post.image ? urlFor(post.image)?.width(1200).height(630).url() : null);
 
     return {
@@ -125,7 +125,7 @@ export default async function BlogPost({ params }: Props) {
               The article you're looking for doesn't exist.
             </p>
             <Link
-              href="/blog"
+              href="/resources/blog"
               className="inline-flex items-center gap-2 text-sm font-medium text-[#FF9A28] hover:text-white transition-colors"
             >
               <span className="text-lg">←</span>
@@ -161,7 +161,7 @@ export default async function BlogPost({ params }: Props) {
             <div className="max-w-6xl mx-auto flex content-center items-center h-auto md:h-[600px] px-4 md:px-6 pt-36 md:pt-32 pb-0">
               <div className="flex flex-col content-center gap-6 max-w-3xl">
                 <Link
-                  href="/blog"
+                  href="/resources/blog"
                   className="inline-flex w-fit items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#FF9A28] transition-colors"
                 >
                   <span className="text-lg">←</span>
@@ -339,7 +339,7 @@ export default async function BlogPost({ params }: Props) {
                   <span className="text-lg">↗</span>
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/resources/blog"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-7 py-3 text-sm md:text-base font-medium text-slate-100 hover:border-[#FF9A28] hover:text-[#FF9A28] transition-colors"
                 >
                   Read More Articles
@@ -362,7 +362,7 @@ export default async function BlogPost({ params }: Props) {
             There was an error loading this article.
           </p>
           <Link
-            href="/blog"
+            href="/resources/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-[#FF9A28] hover:text-white transition-colors"
           >
             <span className="text-lg">←</span>
