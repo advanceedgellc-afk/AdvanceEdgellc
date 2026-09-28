@@ -35,11 +35,11 @@ const POSTS_QUERY = `
 
 // ✅ SEO Meta tags for homepage (viewport and themeColor removed - moved to layout.tsx)
 export const metadata: Metadata = {
-  title: 'AdvanceEdge Legal Support Services | Case Acquisition, Virtual Agents & Digital Marketing',
-  description: 'AdvanceEdge empowers legal professionals with expert case acquisition, virtual legal agents, and digital marketing solutions tailored for law firms across the United States.',
+  title: 'Legal Intake & Operations Partner for Law Firms | AdvanceEdge',
+  description: 'Human-led, AI-accelerated legal intake, case qualification & medical record retrieval for Mass Tort and PI firms. 24/7 coverage. Book a call today.',
   openGraph: {
-    title: 'AdvanceEdge | Legal Marketing & Virtual Intake Solutions',
-    description: 'Boost your law firm\'s growth with innovative digital solutions, virtual intake specialists, and data-driven marketing strategies.',
+    title: 'Legal Intake & Operations Partner for Law Firms | AdvanceEdge',
+    description: 'Human-led, AI-accelerated legal intake, case qualification & medical record retrieval for Mass Tort and PI firms. 24/7 coverage. Book a call today.',
     type: 'website',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/',
     siteName: 'AdvanceEdge',
