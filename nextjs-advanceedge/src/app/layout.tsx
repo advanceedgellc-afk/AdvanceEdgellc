@@ -27,7 +27,7 @@ const marcellus = Marcellus({
 /* ---------------- Metadata ---------------- */
 
 export const metadata: Metadata = {
-  title: "Advance Edge LLC - Empowering Legal Professionals",
+  title: "AdvanceEdge LLC - Empowering Legal Professionals",
   description:
     "High-quality case acquisition, expert virtual agents, and cutting-edge digital marketing services for law firms.",
   icons: {

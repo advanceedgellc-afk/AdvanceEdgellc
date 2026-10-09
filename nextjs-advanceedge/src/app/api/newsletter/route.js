@@ -34,7 +34,7 @@ export async function POST(request) {
     const subscriberEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #0a0d1e 0%, #1a1f3a 100%); padding: 40px 20px; text-align: center; border-radius: 8px 8px 0 0;">
-          <h1 style="color: #FF9A28; margin: 0; font-size: 28px;">Welcome to Advance Edge</h1>
+          <h1 style="color: #FF9A28; margin: 0; font-size: 28px;">Welcome to AdvanceEdge</h1>
         </div>
         
         <div style="background: #f5f5f5; padding: 40px 20px; border-radius: 0 0 8px 8px;">
@@ -63,7 +63,7 @@ export async function POST(request) {
           </a>
           
           <p style="color: #999; font-size: 12px; margin-top: 30px;">
-            © 2025 Advance Edge LLC. All rights reserved.
+            © 2025 AdvanceEdge LLC. All rights reserved.
           </p>
         </div>
       </div>
@@ -84,9 +84,9 @@ export async function POST(request) {
     // Send confirmation email to subscriber
     console.log("📤 Sending welcome email to:", email);
     await transporter.sendMail({
-      from: `"Advance Edge" <${process.env.GMAIL_USER}>`,
+      from: `"AdvanceEdge" <${process.env.GMAIL_USER}>`,
       to: email,
-      subject: "Welcome to Advance Edge Newsletter",
+      subject: "Welcome to AdvanceEdge Newsletter",
       html: subscriberEmailHtml,
     });
     console.log("✅ Welcome email sent");
@@ -94,7 +94,7 @@ export async function POST(request) {
     // Send notification to admin
     console.log("📤 Sending admin notification...");
     await transporter.sendMail({
-      from: `"Advance Edge" <${process.env.GMAIL_USER}>`,
+      from: `"AdvanceEdge" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       subject: `New Newsletter Subscription - ${email}`,
       html: adminEmailHtml,

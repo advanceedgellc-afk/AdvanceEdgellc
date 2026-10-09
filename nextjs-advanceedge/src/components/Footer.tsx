@@ -127,7 +127,7 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <Link href="/" className="inline-block mb-6">
-              <img src="/footer-logo-AE.webp" alt="Advance Edge Logo" className="w-44" />
+              <img src="/footer-logo-AE.webp" alt="AdvanceEdge Logo" className="w-44" />
             </Link>
 
             <p className="font-dm text-gray-400 mb-6">
@@ -158,19 +158,26 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-marcellus text-xl mb-6">Our Services</h3>
+            <h3 className="font-marcellus text-xl mb-6">Useful Links</h3>
             <ul className="space-y-3 font-dm">
-              {[
-                ["Case Acquisition", "/services/masstort-case-acquisition-services"],
-                ["Virtual Agents", "/services/virtual-legal-agents-services"],
-                ["Digital Solutions", "/services/legal-digital-marketing-solutions"],
-              ].map(([label, link]) => (
-                <li key={link}>
-                  <Link href={link} className="text-gray-400 hover:text-[#FF9A28]">
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <a href="/about" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                 
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                  
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                  
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -179,9 +186,9 @@ export default function Footer() {
             <h3 className="font-marcellus text-xl mb-6">Connect with Us</h3>
             <ul className="space-y-3 font-dm text-gray-400">
               <li>
-                <a href="mailto:info@advancedgellc.com" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="mailto:info@advanceedgellc.com" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   <Mail className="w-5 h-5 text-[#FF9A28]" />
-                  info@advancedgellc.com
+                  info@advanceedgellc.com
                 </a>
               </li>
               <li>
@@ -199,7 +206,9 @@ export default function Footer() {
                 >
                   <MapPin className="w-5 h-5 text-[#FF9A28]" />
                   <span>
-                    Florida
+                    1008 Hamilton St
+Immokalee, FL 34142
+United States
                   </span>
                 </a>
               </li>
@@ -240,10 +249,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 pb-10 text-sm text-gray-400 flex flex-col md:flex-row justify-between">
-          <p>© 2026 Advance Edge LLC. All rights reserved.</p>
+          <p>© 2026 <Link href="/" className=" hover:text-[#FF9A28]">AdvanceEdgeLLC.</Link> All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
+            <Link href="/privacy-policy" className=" hover:text-[#FF9A28]">Privacy Policy</Link>
+            <Link href="/terms-of-service" className=" hover:text-[#FF9A28]">Terms of Service</Link>
           </div>
         </div>
       </div>

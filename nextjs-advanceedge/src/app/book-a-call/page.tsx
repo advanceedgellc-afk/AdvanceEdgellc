@@ -26,7 +26,7 @@ export default function BookACallPage() {
             Book A Call
           </h1>
           <p className="font-dm text-lg md:text-xl text-gray-300 max-w-2xl">
-            Schedule a meeting with our team to discuss how Advance Edge can
+            Schedule a meeting with our team to discuss how AdvanceEdge can
             support your firm&apos;s growth and efficiency.
           </p>
         </div>

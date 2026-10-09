@@ -29,7 +29,7 @@ export default function WhyDigitalSolutionsSection() {
         {/* Header */}
         <div className="text-center mb-16 animate-fadeInDown">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-            Why Outsource to Advance Edge?
+            Why Outsource to AdvanceEdge?
           </h2>
           <div className="w-16 h-1 bg-[#FF9A28] mx-auto"></div>
         </div>

@@ -39,7 +39,7 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-line;">${message}</p>
         <p style="color:#666; font-size: 13px; margin-top: 24px;">
-          This email was generated from the Advance Edge website contact form.
+          This email was generated from the AdvanceEdge website contact form.
         </p>
       </div>
     `;
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
         <div style="background: #f5f5f5; padding: 32px 24px; border-radius: 0 0 8px 8px;">
           <h2 style="color: #0a0d1e; margin-top: 0; font-size: 20px;">Hi ${name || "there"},</h2>
           <p style="color: #333; line-height: 1.6; font-size: 15px;">
-            We’ve received your message and a member of the Advance Edge team will review it shortly.
+            We’ve received your message and a member of the AdvanceEdge team will review it shortly.
             You can expect a response within one business day.
           </p>
 
@@ -72,7 +72,7 @@ export async function POST(request: Request) {
           </a>
 
           <p style="color: #999; font-size: 12px; margin-top: 24px;">
-            © ${new Date().getFullYear()} Advance Edge LLC. All rights reserved.
+            © ${new Date().getFullYear()} AdvanceEdge LLC. All rights reserved.
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
 
     // Send admin email
     await transporter.sendMail({
-      from: `"Advance Edge Website" <${process.env.GMAIL_USER}>`,
+      from: `"AdvanceEdge Website" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER, // your inbox
       subject: `New Contact Form Submission from ${name}`,
       replyTo: email,
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
 
     // Send welcome email to user
     await transporter.sendMail({
-      from: `"Advance Edge" <${process.env.GMAIL_USER}>`,
+      from: `"AdvanceEdge" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: "We’ve received your message",
       html: userHtml,

@@ -15,7 +15,7 @@ import BlogPostsSection from "@/components/BlogPostsSection"
 import Whoweworkwith from "@/components/Whoweworkwith"
 import Whatwedo from "@/components/Whatwedo"
 
-
+// import LeadForm from "@/components/LeadForm"
 
 const POSTS_QUERY = `
 *[
@@ -113,7 +113,7 @@ export default async function Home() {
     
     
       <FAQSection />
-
+{/* <LeadForm/> */}
       {/* ✅ Related Articles */}
       <section className="my-20">
         <BlogPostsSection posts={posts} />

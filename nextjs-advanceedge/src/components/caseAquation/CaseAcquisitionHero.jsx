@@ -38,7 +38,7 @@ export default function App() {
         {}
         <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-4">
-            At Advance Edge LLC, we provide a seamless case acquisition solution for both law firms and legal marketing firms, ensuring a steady pipeline of qualified claimants.
+            At AdvanceEdge LLC, we provide a seamless case acquisition solution for both law firms and legal marketing firms, ensuring a steady pipeline of qualified claimants.
           </p>
           <ul className="space-y-2 text-slate-400 text-sm md:text-base mb-4 list-disc pl-5">
             <li><strong>For Law Firms</strong> – We deliver screened, high-value plaintiffs ready for litigation.</li>

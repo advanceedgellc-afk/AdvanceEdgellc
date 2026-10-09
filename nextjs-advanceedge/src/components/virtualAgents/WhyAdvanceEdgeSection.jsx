@@ -51,7 +51,7 @@ export default function WhyAdvanceEdgeSection() {
             Why Choose Us
           </p>
           <h2 className="text-4xl md:text-4xl font-light text-gray-900 mb-4 leading-tight">
-            Why Advance Edge Virtual Agents?
+            Why AdvanceEdge Virtual Agents?
           </h2>
           
           <div className="w-16 h-1 bg-gradient-to-r from-[#FF9A28] to-transparent mt-8"></div>

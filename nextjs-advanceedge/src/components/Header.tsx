@@ -213,7 +213,7 @@ export default function Header() {
               <Link href="/" className="flex items-center pb-3 flex-shrink-0 transition-transform hover:scale-105 duration-300">
                 <Image
                   src="/Logo-ae.webp"
-                  alt="Advance Edge Logo"
+                  alt="AdvanceEdge Logo"
                   width={176} height={48}
                   className="w-44 h-auto object-contain"
                   priority

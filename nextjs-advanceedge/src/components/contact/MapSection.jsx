@@ -19,7 +19,7 @@ export default function MapSection() {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Advance Edge LLC Location - 1008 Hamilton St, Immokalee, FL 34142"
+          title="AdvanceEdge LLC Location - 1008 Hamilton St, Immokalee, FL 34142"
         ></iframe>
 
 

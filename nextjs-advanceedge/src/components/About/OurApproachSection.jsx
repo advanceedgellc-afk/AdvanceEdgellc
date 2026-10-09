@@ -56,7 +56,7 @@ export default function OurApproachSection() {
             className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
             style={{ animation: 'fadeInUp 0.8s ease-out 300ms both' }}
           >
-            At Advance Edge, we don't just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. Our expertise in legal and digital domains allows us to craft customized strategies that align with your business objectives.
+            At AdvanceEdge, we don't just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. Our expertise in legal and digital domains allows us to craft customized strategies that align with your business objectives.
           </p>
         </div>
 
