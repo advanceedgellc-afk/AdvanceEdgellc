@@ -167,7 +167,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/blog" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="/resources/blog" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   
                   Blog
                 </a>
