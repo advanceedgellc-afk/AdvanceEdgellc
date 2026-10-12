@@ -131,7 +131,7 @@ export default function Footer() {
             </Link>
 
             <p className="font-dm text-gray-400 mb-6">
-              Empowering legal professionals with innovative solutions and expertise since 2011.
+              Legal intake and operations partner for modern law firms.
             </p>
 
             {/* Social Icons */}
@@ -158,24 +158,24 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-marcellus text-xl mb-6">Useful Links</h3>
+            <h3 className="font-marcellus text-xl mb-6">Services</h3>
             <ul className="space-y-3 font-dm">
               <li>
-                <a href="/about" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="/services/intake-leaders/contact-center-intake-specialists" className="flex items-center gap-2 hover:text-[#FF9A28]">
                  
-                  About
+                 Contact Center & Intake Specialists
                 </a>
               </li>
               <li>
-                <a href="/resources/blog" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="/services/litigation-teams/medical-record-review" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   
-                  Blog
+                 Medical Record Review
                 </a>
               </li>
               <li>
-                <a href="/contact" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="/services/firm-owners-coos/virtual-legal-agents" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   
-                  Contact
+                  Virtual Legal Agents
                 </a>
               </li>
             </ul>

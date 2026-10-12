@@ -2,268 +2,413 @@
 
 import Link from "next/link";
 
+const siteUrl = "https://advanceedgellc.com/";
+
+function PolicySection({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="space-y-3">
+      <h3 className="text-xl font-marcellus">{title}</h3>
+      {children}
+    </section>
+  );
+}
+
+function BulletList({ items }: { items: React.ReactNode[] }) {
+  return (
+    <ul className="list-disc pl-5 space-y-2 text-gray-700">
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+function ContactLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="text-[#FF7A1A] hover:underline break-all"
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[#0a0d1e] text-white">
       {/* Hero section */}
-      <section className="relative  h-[400px]  border-b border-white/10 flex items-center content-center pt-24 pb-2">
-        <div className="container mx-auto px-4 ">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-marcellus text-center">
+      <section className="relative flex h-[400px] items-center justify-center border-b border-white/10 px-4 pt-24 pb-2">
+        <div className="container mx-auto">
+          <h1 className="text-center font-marcellus text-3xl sm:text-4xl md:text-5xl">
             Privacy Policy
           </h1>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-10 sm:py-16 bg-white text-[#111827]">
+      {/* Privacy policy content */}
+      <section className="bg-white py-10 text-[#111827] sm:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto font-dm text-sm sm:text-base leading-relaxed space-y-8">
-            {/* Heading + intro */}
-            <header className="space-y-2">
-              <h2 className="text-2xl font-marcellus">
+          <div className="mx-auto max-w-4xl space-y-8 font-dm text-sm leading-relaxed sm:text-base">
+            {/* Introduction */}
+            <header className="space-y-3">
+              <h2 className="font-marcellus text-2xl">
                 Privacy Policy for AdvanceEdge LLC
               </h2>
+
               <p className="text-gray-700">
-                <span className="font-semibold">Last updated:</span> [Insert Date]
+                <span className="font-semibold">Last updated:</span>{" "}
+                October 12, 2026
               </p>
+
               <p className="text-gray-700">
-                Welcome to AdvanceEdge LLC (“we”, “us”, “our”). Your privacy is
-                important to us. This Privacy Policy explains how we collect,
-                use, disclose, and protect your personal information when you
-                visit and interact with our website{" "}
-                <Link
-                  href="https://advanceedgellc.com/"
-                  className="text-[#FF7A1A] hover:underline break-all"
-                >
-                  https://advanceedgellc.com/
-                </Link>{" "}
-                (the “Site”).
+                AdvanceEdge LLC (&quot;AdvanceEdge,&quot; &quot;we,&quot;
+                &quot;us,&quot; or &quot;our&quot;) respects your privacy.
+                This Privacy Policy explains how we collect, use, share, and
+                protect personal information when you visit{" "}
+                <ContactLink href={siteUrl}>
+                  https://advanceedgellc.com
+                </ContactLink>
+                , submit a form, book a call, subscribe to our newsletter,
+                call us, or receive texts or emails from us (together, the
+                &quot;Site&quot;).
               </p>
             </header>
 
-            {/* 1. Information we collect */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">
-                1. Information We Collect
-              </h3>
+            {/* 1. Scope */}
+            <PolicySection title="1. Scope of This Policy">
               <p className="text-gray-700">
-                We may collect personal information that you voluntarily provide
-                to us when you use our Site, including:
+                This policy covers information we collect through the Site
+                and our own sales and marketing communications.
               </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+
+              <p className="text-gray-700">
+                It does not cover information we process on behalf of our law
+                firm and agency clients when delivering services, such as
+                claimant intake data, case files, and medical records. We
+                handle that information as a service provider under our
+                Client Agreements, including business associate agreements
+                where HIPAA applies, and only as our clients instruct. If you
+                are a claimant or client of a law firm we support, please
+                contact that law firm about your information.
+              </p>
+            </PolicySection>
+
+            {/* 2. Information collected */}
+            <PolicySection title="2. Information We Collect">
+              <p className="font-semibold text-gray-800">
+                Information you give us:
+              </p>
+
+              <BulletList
+                items={[
+                  <>
+                    <span className="font-semibold">
+                      Contact details:
+                    </span>{" "}
+                    Name, email address, phone number, law firm or company
+                    name, and job title.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Inquiry details:
+                    </span>{" "}
+                    The message you send and the services you are interested
+                    in.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Booking details:
+                    </span>{" "}
+                    The date, time, and notes you provide when booking a call.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Newsletter sign-up:
+                    </span>{" "}
+                    Your email address.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Communications:
+                    </span>{" "}
+                    Records of emails, calls, and text messages with us.
+                    Calls may be recorded where permitted by law.
+                  </>,
+                ]}
+              />
+
+              <p className="pt-2 font-semibold text-gray-800">
+                Information collected automatically:
+              </p>
+
+              <BulletList
+                items={[
+                  <>
+                    <span className="font-semibold">
+                      Device and browser data:
+                    </span>{" "}
+                    IP address, browser type, operating system, and device
+                    identifiers.
+                  </>,
+                  <>
+                    <span className="font-semibold">Usage data:</span>{" "}
+                    Pages viewed, time on page, referring website, and clicks.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Cookies and similar technologies:
+                    </span>{" "}
+                    Technologies including those set through Google Tag
+                    Manager and analytics or advertising tools (see Section
+                    5).
+                  </>,
+                ]}
+              />
+
+              <p className="rounded-md border border-gray-200 bg-gray-50 p-4 text-gray-800">
+                <span className="font-semibold">Important:</span> Please do
+                not submit protected health information, medical records,
+                Social Security numbers, or confidential case details through
+                our public forms or chat.
+              </p>
+            </PolicySection>
+
+            {/* 3. How we use information */}
+            <PolicySection title="3. How We Use Information">
+              <BulletList
+                items={[
+                  "To respond to inquiries, schedule calls, and provide information about our services.",
+                  "To send updates, newsletters, and marketing messages where you have agreed or where permitted by law.",
+                  "To operate, secure, analyze, and improve the Site.",
+                  "To measure the performance of our marketing and advertising.",
+                  "To comply with legal obligations, enforce our Terms of Service, and prevent fraud or misuse.",
+                ]}
+              />
+            </PolicySection>
+
+            {/* 4. SMS */}
+            <PolicySection title="4. Text Messaging (SMS)">
+              <p className="text-gray-700">
+                If you provide your mobile number and agree to receive texts,
+                we may send messages about your inquiry, scheduled calls, and
+                our services. Message frequency varies. Message and data rates
+                may apply. Reply STOP to opt out or HELP for help.
+              </p>
+
+              <p className="text-gray-700">
+                We do not sell, rent, or share mobile phone numbers or text
+                messaging opt-in data and consent with third parties or
+                affiliates for their marketing or promotional purposes. Text
+                messaging originator opt-in data and consent will not be
+                shared with any third parties, except with service providers
+                that help us deliver messages.
+              </p>
+            </PolicySection>
+
+            {/* 5. Cookies */}
+            <PolicySection title="5. Cookies and Tracking Technologies">
+              <p className="text-gray-700">
+                We use cookies, pixels, and similar technologies to remember
+                your preferences, understand how the Site is used, and measure
+                our marketing. These may include Google Tag Manager, Google
+                Analytics, and advertising or social media pixels.
+              </p>
+
+              <p className="text-gray-700">
+                You can block or delete cookies in your browser settings. You
+                can opt out of Google Analytics at{" "}
+                <ContactLink href="https://tools.google.com/dlpage/gaoptout">
+                  https://tools.google.com/dlpage/gaoptout
+                </ContactLink>{" "}
+                and manage ad personalization at{" "}
+                <ContactLink href="https://adssettings.google.com">
+                  https://adssettings.google.com
+                </ContactLink>
+                . Blocking cookies may affect some Site features.
+              </p>
+            </PolicySection>
+
+            {/* 6. Information sharing */}
+            <PolicySection title="6. How We Share Information">
+              <p className="text-gray-700">
+                We do not sell your personal information. We share it only as
+                follows:
+              </p>
+
+              <BulletList
+                items={[
+                  <>
+                    <span className="font-semibold">
+                      Service providers:
+                    </span>{" "}
+                    Providers that help us run our business, such as website
+                    hosting, CRM and marketing automation, form, chat, and
+                    scheduling tools, email and SMS delivery, analytics, and
+                    AI-assisted productivity tools. They may use the
+                    information only to provide services to us.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Our personnel and contractors:
+                    </span>{" "}
+                    Including team members who may be located outside the
+                    United States, under confidentiality obligations.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Legal and safety reasons:
+                    </span>{" "}
+                    When required by law, subpoena, or court order, or to
+                    protect our rights, users, or others.
+                  </>,
+                  <>
+                    <span className="font-semibold">Business transfers:</span>{" "}
+                    Such as a merger, acquisition, or sale of assets, subject
+                    to this policy.
+                  </>,
+                  <>
+                    <span className="font-semibold">With your consent:</span>{" "}
+                    Or at your direction.
+                  </>,
+                ]}
+              />
+            </PolicySection>
+
+            {/* 7. Retention */}
+            <PolicySection title="7. Data Retention">
+              <p className="text-gray-700">
+                We keep personal information only as long as needed for the
+                purposes in this policy, including to maintain business
+                records, resolve disputes, and meet legal requirements. When
+                it is no longer needed, we delete or de-identify it.
+              </p>
+            </PolicySection>
+
+            {/* 8. Security */}
+            <PolicySection title="8. Data Security">
+              <p className="text-gray-700">
+                We use reasonable administrative, technical, and physical
+                safeguards, including access controls and encryption in
+                transit, to protect personal information. No method of
+                transmission or storage is completely secure, so we cannot
+                guarantee absolute security.
+              </p>
+            </PolicySection>
+
+            {/* 9. Choices and rights */}
+            <PolicySection title="9. Your Choices and Rights">
+              <BulletList
+                items={[
+                  <>
+                    <span className="font-semibold">Marketing emails:</span>{" "}
+                    Use the unsubscribe link in any email.
+                  </>,
+                  <>
+                    <span className="font-semibold">Text messages:</span>{" "}
+                    Reply STOP.
+                  </>,
+                  <>
+                    <span className="font-semibold">
+                      Access, correction, and deletion:
+                    </span>{" "}
+                    You may ask to access, correct, or delete the personal
+                    information we hold about you.
+                  </>,
+                ]}
+              />
+
+              <p className="text-gray-700">
+                Depending on your state of residence, you may have additional
+                rights under state privacy laws, such as the right to know
+                what we collect, to opt out of targeted advertising, and not
+                to be discriminated against for exercising your rights. To
+                make a request, contact us using the details below. We may
+                need to verify your identity before acting on a request, and
+                we will respond within the time required by law.
+              </p>
+            </PolicySection>
+
+            {/* 10. International visitors */}
+            <PolicySection title="10. International Visitors">
+              <p className="text-gray-700">
+                The Site is intended for users in the United States. If you
+                visit from another country, your information will be
+                processed in the United States and in other countries where
+                our service providers and team members operate. Data
+                protection laws there may differ from those in your country.
+              </p>
+            </PolicySection>
+
+            {/* 11. Children's privacy */}
+            <PolicySection title="11. Children's Privacy">
+              <p className="text-gray-700">
+                The Site is not directed to anyone under 18. We do not
+                knowingly collect personal information from children under
+                13. If we learn that we have, we will delete it promptly.
+              </p>
+            </PolicySection>
+
+            {/* 12. Third-party websites */}
+            <PolicySection title="12. Third-Party Websites">
+              <p className="text-gray-700">
+                The Site may link to third-party websites and social media
+                pages. We are not responsible for their privacy practices.
+                Please review their privacy policies.
+              </p>
+            </PolicySection>
+
+            {/* 13. Policy updates */}
+            <PolicySection title="13. Changes to This Policy">
+              <p className="text-gray-700">
+                We may update this Privacy Policy from time to time. We will
+                post the updated policy on this page and change the
+                &quot;Last updated&quot; date above.
+              </p>
+            </PolicySection>
+
+            {/* 14. Contact */}
+            <PolicySection title="14. Contact Us">
+              <p className="text-gray-700">
+                If you have questions about this Privacy Policy or wish to
+                exercise your privacy rights, contact us:
+              </p>
+
+              <ul className="space-y-2 text-gray-700">
                 <li>
-                  <span className="font-semibold">Contact information:</span>{" "}
-                  Name, email address, phone number (for example, when you
-                  submit a contact form).
+                  <span className="font-semibold">Company:</span> AdvanceEdge
+                  LLC
                 </li>
                 <li>
-                  <span className="font-semibold">Usage data:</span>{" "}
-                  Information about how you use the Site, such as pages you
-                  visit, time spent, and your IP address.
+                  <span className="font-semibold">Address:</span> 1008
+                  Hamilton St, Immokalee, FL 34142, United States
                 </li>
                 <li>
-                  <span className="font-semibold">Device &amp; browser data:</span>{" "}
-                  Browser type, operating system, and device identifiers.
+                  <span className="font-semibold">Email:</span>{" "}
+                  <ContactLink href="mailto:info@advanceedgellc.com">
+                    info@advanceedgellc.com
+                  </ContactLink>
                 </li>
                 <li>
-                  <span className="font-semibold">
-                    Cookies &amp; tracking technologies:
-                  </span>{" "}
-                  Information collected through cookies and similar tracking
-                  technologies.
+                  <span className="font-semibold">Phone:</span>{" "}
+                  <ContactLink href="tel:+18329377738">
+                    832-937-7738
+                  </ContactLink>
                 </li>
               </ul>
-            </section>
-
-            {/* 2. How we use your info */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">
-                2. How We Use Your Information
-              </h3>
-              <p className="text-gray-700">
-                We use the information we collect for purposes such as:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                <li>
-                  Providing, maintaining, improving, and personalizing our Site.
-                </li>
-                <li>Responding to your inquiries or customer service requests.</li>
-                <li>
-                  Sending updates or marketing communications if you opt in.
-                </li>
-                <li>
-                  Monitoring and analyzing usage to improve user experience.
-                </li>
-                <li>
-                  Complying with legal obligations and preventing fraud.
-                </li>
-              </ul>
-            </section>
-
-            {/* 3. Cookies */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">
-                3. Cookies and Tracking Technologies
-              </h3>
-              <p className="text-gray-700">
-                We use cookies and similar technologies to collect information
-                about your interaction with the Site. Cookies help us:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                <li>Recognize your device on return visits.</li>
-                <li>Analyze Site usage and performance.</li>
-                <li>Deliver targeted content and ads (if applicable).</li>
-              </ul>
-              <p className="text-gray-700">
-                You can choose to disable cookies in your browser settings, but
-                this may affect your ability to use certain features of the
-                Site.
-              </p>
-            </section>
-
-            {/* 4. Third-party services */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">4. Third-Party Services</h3>
-              <p className="text-gray-700">
-                We may use third-party services, such as analytics or marketing
-                tools, that may access your data as part of their services.
-                These providers have their own privacy policies that govern
-                their data practices.
-              </p>
-              <p className="text-gray-700">Examples may include:</p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                <li>Google Analytics for tracking usage data.</li>
-                <li>Third-party form or chat tools.</li>
-                <li>Email marketing platforms.</li>
-              </ul>
-              <p className="text-gray-700">
-                We do not control the privacy policies or practices of these
-                third parties.
-              </p>
-            </section>
-
-            {/* 5. Data sharing */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">
-                5. Data Sharing and Disclosure
-              </h3>
-              <p className="text-gray-700">
-                We do not sell your personal data to third parties. We may share
-                your information with:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                <li>
-                  Service providers who help operate, maintain, or improve the
-                  Site.
-                </li>
-                <li>
-                  Legal authorities, if required by law, court order, or to
-                  protect our rights.
-                </li>
-                <li>
-                  Entities involved in a business transaction, such as a merger,
-                  acquisition, or sale of assets.
-                </li>
-              </ul>
-            </section>
-
-            {/* 6. Security */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">6. Security</h3>
-              <p className="text-gray-700">
-                We implement reasonable technical and organizational measures to
-                protect the personal information we collect. However, no method
-                of transmission over the Internet or electronic storage is 100%
-                secure, and we cannot guarantee absolute security.
-              </p>
-            </section>
-
-            {/* 7. International users */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">7. International Users</h3>
-              <p className="text-gray-700">
-                If you are visiting the Site from outside the United States,
-                including the European Union, you acknowledge that your
-                information may be transferred to, stored in, and processed in
-                the United States, where data protection laws may differ from
-                those in your jurisdiction.
-              </p>
-              <p className="text-gray-700">
-                We may update this policy to reflect additional requirements
-                under applicable international privacy laws.
-              </p>
-            </section>
-
-            {/* 8. Your rights */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">8. Your Rights</h3>
-              <p className="text-gray-700">
-                Depending on your location, you may have certain rights regarding
-                your personal information, such as:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                <li>Accessing the personal data we hold about you.</li>
-                <li>Requesting correction or deletion of your information.</li>
-                <li>Withdrawing consent where processing is based on consent.</li>
-              </ul>
-              <p className="text-gray-700">
-                To exercise your rights or submit a privacy-related request,
-                please contact us using the details provided in the{" "}
-                <span className="font-semibold">Contact Us</span> section below.
-              </p>
-            </section>
-
-            {/* 9. Children */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">9. Children’s Privacy</h3>
-              <p className="text-gray-700">
-                Our Site is not intended for children under the age of 13, and
-                we do not knowingly collect personal data from children under
-                13. If we become aware that we have collected such information,
-                we will take steps to delete it.
-              </p>
-            </section>
-
-            {/* 10. Updates */}
-            <section className="space-y-3">
-              <h3 className="text-xl font-marcellus">10. Policy Updates</h3>
-              <p className="text-gray-700">
-                We may update this Privacy Policy from time to time. When we do,
-                we will revise the “Last updated” date at the top of this page.
-                Your continued use of the Site after any changes are posted
-                constitutes your acceptance of the updated policy.
-              </p>
-            </section>
-
-            {/* 11. Contact */}
-            <section className="space-y-3 pb-4">
-              <h3 className="text-xl font-marcellus">11. Contact Us</h3>
-              <p className="text-gray-700">
-                If you have questions or concerns about this Privacy Policy or
-                our privacy practices, you can contact us at:
-              </p>
-              <ul className="space-y-1 text-gray-700">
-                <li>
-                  📧 Email:{" "}
-                  <Link
-                    href="mailto:info@advancedgellc.com"
-                    className="text-[#FF7A1A] hover:underline break-all"
-                  >
-                    info@advancedgellc.com
-                  </Link>
-                  
-                </li>
-                <li>
-                  🌐 Website:{" "}
-                  <Link
-                    href="https://advanceedgellc.com/"
-                    className="text-[#FF7A1A] hover:underline break-all"
-                  >
-                    https://advanceedgellc.com/
-                  </Link>
-                </li>
-              </ul>
-            </section>
+            </PolicySection>
           </div>
         </div>
       </section>
