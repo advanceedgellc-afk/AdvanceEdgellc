@@ -1,31 +1,14 @@
-"use client";
-
-import { Metadata } from "next";
-import { useEffect } from "react";
-
+import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: 'Book a Call | AdvanceEdge Legal Intake & Operations',
-  description: 'Schedule a 30-minute call to map your intake and operations bottlenecks and see where a dedicated pod fits.',
-
-
-}
+  title: "Book a Call | AdvanceEdge Legal Intake & Operations",
+  description:
+    "Schedule a 30-minute call to map your intake and operations bottlenecks and see where a dedicated pod fits.",
+  alternates: { canonical: "/book-a-call" },
+};
 
 export default function BookACallPage() {
-  useEffect(() => {
-    // Load TidyCal embed script once
-    const existingScript = document.querySelector(
-      'script[src="https://asset-tidycal.b-cdn.net/js/embed.js"]'
-    ) as HTMLScriptElement | null;
-
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
-
   return (
     <main className="min-h-screen bg-[#050811] text-white">
       {/* Hero / Title */}
@@ -49,6 +32,12 @@ export default function BookACallPage() {
           </div>
         </div>
       </section>
+
+      {/* Loads the TidyCal embed once, after the page is interactive */}
+      <Script
+        src="https://asset-tidycal.b-cdn.net/js/embed.js"
+        strategy="afterInteractive"
+      />
     </main>
   );
 }
