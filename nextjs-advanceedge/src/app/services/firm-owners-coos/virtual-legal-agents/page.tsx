@@ -1,7 +1,25 @@
-"use client";
 
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/virtualAgents/HeroSection";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Virtual Legal Agents & Remote Legal Staff | AdvanceEdge",
+  description:
+    "Dedicated remote intake specialists, paralegals, records staff and bookkeepers for law firms, from $12/hour, without full-time overhead.",
+  alternates: {
+    canonical: "https://www.advanceedgellc.com/services/firm-owners-coos/virtual-legal-agents",
+  },
+  openGraph: {
+    title: "Virtual Legal Agents & Remote Legal Staff | AdvanceEdge",
+    description:
+      "Dedicated remote intake specialists, paralegals, records staff and bookkeepers for law firms, from $12/hour, without full-time overhead.",
+    url: "https://www.advanceedgellc.com/services/firm-owners-coos/virtual-legal-agents",
+    type: "website",
+  },
+};
+
 
 // ✅ Code-split all heavy sections
 const ScaleYourFirmSection = dynamic(

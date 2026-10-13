@@ -23,7 +23,7 @@ const features = [
     title: "Proven Success",
     description:
       "We take pride in delivering top-quality case acquisition and legal support solutions that drive real results for our clients.",
-    statLabel: "Client retention",
+    
     accent: "#f97316",
   },
   {
@@ -31,7 +31,7 @@ const features = [
     title: "Deep Legal Domain Experience",
     description:
       "AdvanceEdge\u2019s leadership team brings decades of experience in legal services, with particular depth in Mass Tort, PI, and MVA operations, so your work isn\u2019t handled by generic \u201ccustomer service\u201d agents.",
-    statLabel: "Years combined",
+   
     accent: "#fb923c",
   },
   {
@@ -40,7 +40,7 @@ const features = [
     description:
       "Your agent pool includes professionals from multiple work specializations—physicians, pharmacists, dentists, nurses, and seasoned legal support staff—trained specifically for complex medical and legal intake and record work.​",
 
-    statLabel: "Specialists",
+    
     accent: "#f97316",
   },
   {
@@ -49,7 +49,7 @@ const features = [
     description:
       "Across the team, AdvanceEdge has reviewed over 1.5 million medical records, made more than 4.5 million record retrieval calls, and executed over 10 million paralegal and support tasks for legal matters.​",
    
-    statLabel: "Tasks executed",
+  
     accent: "#ea580c",
   },
   {
@@ -58,7 +58,7 @@ const features = [
     description:
       "Nights, weekends, and holiday coverage are part of the model, not an add‑on line item, so you don't wake up Monday to a full voicemail box and an empty pipeline.​",
    
-    statLabel: "Days/year",
+   
     accent: "#fb923c",
   },
   {
@@ -67,7 +67,7 @@ const features = [
     description:
       "Every team is trained on AI tools: summarization, drafting, and data validation, so you get the speed and consistency of automation with the judgment and accountability of experienced humans.​",
    
-    statLabel: "Faster delivery",
+   
     accent: "#f97316",
   },
 ];
@@ -153,9 +153,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
             <div className="text-2xl font-black text-orange-400 font-mono leading-none">
               
             </div>
-            <div className="text-[9px] text-orange-400/60 uppercase tracking-widest font-bold mt-0.5">
-              {feature.statLabel}
-            </div>
+          
           </motion.div>
         </div>
 
@@ -345,7 +343,7 @@ export default function WhyChooseUsSection() {
                       letterSpacing: "-0.02em",
                     }}
                   >
-                    Results Driven{" "}
+                    Results-Driven{" "}
                     <br />
                     <span className="relative inline-block">
                       <span

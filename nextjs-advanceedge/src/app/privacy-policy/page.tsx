@@ -1,6 +1,24 @@
 // app/privacy-policy/page.tsx
 
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | AdvanceEdge",
+  description:
+    "How AdvanceEdge collects, uses and protects information submitted through this website.",
+  alternates: {
+    canonical: "https://www.advanceedgellc.com/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | AdvanceEdge",
+    description:
+      "How AdvanceEdge collects, uses and protects information submitted through this website.",
+    url: "https://www.advanceedgellc.com/privacy-policy",
+    type: "website",
+  },
+};
+
 
 const siteUrl = "https://advanceedgellc.com/";
 

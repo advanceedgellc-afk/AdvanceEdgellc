@@ -151,7 +151,7 @@ const ResultsSection = () => (
       >
               <img 
           src="/litigation-teams/litigation-support-book.webp" 
-          alt="Accounting and financial records" 
+          alt="Paralegal team organizing case files and discovery documents" 
           className="w-full h-full object-cover rounded-3xl "
         />
       </motion.div>

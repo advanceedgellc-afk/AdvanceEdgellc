@@ -60,9 +60,7 @@ export default function HeroClient() {
 
               <p className="font-dm text-md text-gray-200 mb-10 leading-relaxed tracking-wide max-w-3xl">
                 Human-led, AI-accelerated intake, case qualification, and
-                back-office support for law firms and legal marketing
-                agencies from solo practices to high-volume Mass Tort and PI
-                shops.
+                back-office support for law firms and legal marketing agencies, from solo practices to high-volume Mass Tort and PI shops.
               </p>
 
               <div className="flex flex-wrap gap-4">

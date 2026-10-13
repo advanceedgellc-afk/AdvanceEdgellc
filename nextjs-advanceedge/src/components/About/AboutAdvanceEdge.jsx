@@ -42,9 +42,9 @@ export default function AboutSection() {
         {}
         <div className="mb-10">
           <span className="text-[#FF9A28] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Who We Are</span>
-          <h1 className="text-4xl md:text-5xl font-['Marcellus',serif] text-slate-900 leading-[1.1] max-w-5xl">
+          <h2 className="text-4xl md:text-5xl font-['Marcellus',serif] text-slate-900 leading-[1.1] max-w-5xl">
             About AdvanceEdge: AI‑Integrated Legal Operations for High‑Volume Law Firms
-          </h1>
+          </h2>
         </div>
 
         {}

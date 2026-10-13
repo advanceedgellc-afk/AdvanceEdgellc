@@ -70,7 +70,7 @@ export default function Results() {
 
 <img 
           src="/intake-leaders/intake-and-contact-center.webp" 
-          alt="Accounting and financial records" 
+          alt="Legal intake specialists answering calls in a contact center" 
           className="w-full h-full object-cover rounded-3xl "
         />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent" />

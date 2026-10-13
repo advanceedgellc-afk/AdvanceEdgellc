@@ -84,7 +84,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "AEO: How can law firms optimize for voice search and AI-driven results?",
+      name: "How can law firms optimize for voice search and AI-driven results?",
       acceptedAnswer: {
         "@type": "Answer",
         text: `To rank in voice search & AI-powered results, we optimize:
@@ -98,7 +98,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "AEO: How do featured snippets help law firms get more visibility?",
+      name: "How do featured snippets help law firms get more visibility?",
       acceptedAnswer: {
         "@type": "Answer",
         text: `Featured snippets boost rankings & click-through rates by:

@@ -10,11 +10,11 @@ import WorkProcessSection from "@/components/About/WorkProcessSection";
 import HumanLedSection from "@/components/About/HumanLedSection";
 // ✅ NEW: SEO Meta tags for About page
 export const metadata: Metadata = {
-  title: 'About AdvanceEdge | Virtual Legal Support & Mass Tort Experts',
-  description: 'Learn about AdvanceEdge, a virtual legal support and digital solutions partner specializing in mass tort litigation, legal operations, and digital transformation for law firms.',
+  title: 'About AdvanceEdge | Legal Operations Partner Since 2011',
+  description: 'Legal intake, medical records and back-office operations for Mass Tort and PI firms since 2011. Human-led, AI-assisted, 24/7.',
   openGraph: {
-    title: 'About AdvanceEdge | Legal Marketing & Intake Solutions',
-    description: 'Discover how AdvanceEdge empowers law firms with innovative digital solutions and proven growth strategies to increase client acquisition.',
+    title: 'About AdvanceEdge | Legal Operations Partner Since 2011',
+  description: 'Legal intake, medical records and back-office operations for Mass Tort and PI firms since 2011. Human-led, AI-assisted, 24/7.',
     type: 'website',
     url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/about`,
     siteName: 'AdvanceEdge',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About AdvanceEdge | Legal Marketing & Intake Solutions',
-    description: 'Learn how AdvanceEdge helps law firms grow with digital solutions and innovative intake strategies.',
+    title: 'About AdvanceEdge | Legal Operations Partner Since 2011',
+    description: 'Legal intake, medical records and back-office operations for Mass Tort and PI firms since 2011. Human-led, AI-assisted, 24/7.',
     images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-about.jpg`],
   },
   alternates: {

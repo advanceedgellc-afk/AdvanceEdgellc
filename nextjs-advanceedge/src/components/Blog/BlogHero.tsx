@@ -12,9 +12,9 @@ export default function App() {
       {}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop" 
+          src="/blog/blog-hero-bg.webp" 
           alt="Case qualification and professional strategy" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover center object-top"
         />
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>

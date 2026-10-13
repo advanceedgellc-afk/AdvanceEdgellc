@@ -249,7 +249,7 @@ United States
         </div>
 
         <div className="border-t border-white/10 pt-6 pb-10 text-sm text-gray-400 flex flex-col md:flex-row justify-between">
-          <p>© 2026 <Link href="/" className=" hover:text-[#FF9A28]">AdvanceEdgeLLC.</Link> All rights reserved.</p>
+          <p>© 2026 <Link href="/" className=" hover:text-[#FF9A28]">AdvanceEdge LLC.</Link> All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className=" hover:text-[#FF9A28]">Privacy Policy</Link>
             <Link href="/terms-of-service" className=" hover:text-[#FF9A28]">Terms of Service</Link>

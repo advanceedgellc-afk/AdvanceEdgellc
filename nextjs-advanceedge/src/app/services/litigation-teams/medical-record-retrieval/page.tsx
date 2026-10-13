@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import MedicalRecordHero from "@/components/MedicalRecordRetrieval/MedicalRecordHero";
 import WhyBottleneck from "@/components/MedicalRecordRetrieval/Whybottleneck";

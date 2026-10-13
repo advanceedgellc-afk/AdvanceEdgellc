@@ -40,7 +40,7 @@ export default function OurApproachSection() {
             className="text-4xl md:text-5xl font-light text-gray-900 mb-4 leading-tight"
             style={{ animation: 'fadeInDown 0.8s ease-out' }}
           >
-            Our Approach:
+            Our Approach
           </h2>
           <h3 
             className="text-4xl md:text-5xl font-light text-gray-800 mb-8"
@@ -56,7 +56,7 @@ export default function OurApproachSection() {
             className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
             style={{ animation: 'fadeInUp 0.8s ease-out 300ms both' }}
           >
-            At AdvanceEdge, we don't just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. Our expertise in legal and digital domains allows us to craft customized strategies that align with your business objectives.
+            At AdvanceEdge, we don't just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. We build each pod around your dockets, systems and SLAs, so the work fits how your firm already runs.
           </p>
         </div>
 
@@ -124,14 +124,7 @@ export default function OurApproachSection() {
                   </p>
 
                   {/* Highlight badge for center card */}
-                  {approach.highlighted && (
-                    <div
-                      className="mt-6 inline-block px-4 py-2 bg-[#FF9A28]/20 text-[#FF9A28] text-sm font-semibold rounded-full"
-                      style={{ animation: 'popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 600ms both' }}
-                    >
-                      Featured
-                    </div>
-                  )}
+                 
                 </div>
 
                 {/* Animated border glow on hover */}

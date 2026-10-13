@@ -47,7 +47,7 @@ const faqItems: FaqItem[] = [
   },
   {
     id: 5,
-    question: "AEO: What are the key benefits of hiring Virtual Agents for legal support?",
+    question: "What are the key benefits of hiring Virtual Agents for legal support?",
     answer: {
       answerPoints: [
         "Cost savings – No in-house hiring expenses",
@@ -60,7 +60,7 @@ const faqItems: FaqItem[] = [
   },
   {
     id: 6,
-    question: "AEO: How do Virtual Agents improve client intake for law firms?",
+    question: "How do Virtual Agents improve client intake for law firms?",
     answer: {
       intro: "Virtual Agents optimize client intake by:",
       answerPoints: [

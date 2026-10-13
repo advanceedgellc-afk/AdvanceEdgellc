@@ -42,7 +42,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
               </div>
 
               <h2 className="font-marcellus text-4xl md:text-5xl text-slate-900 mb-4">
-                What News Do We Have<br /> Today, Latest Blog
+                Insights for Intake and Operations Leaders
               </h2>
             </motion.div>
 
@@ -51,7 +51,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
               {posts.map((post) => (
                 <Link
                   key={post._id}
-                  href={`/blog/${post.slug.current}`}
+                  href={`/resources/blog/${post.slug.current}`}
                   className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Image */}
@@ -107,7 +107,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
             {/* View All Button */}
             <div className="text-center mt-12">
               <Link
-                href="/blog"
+                href="/resources/blog"
                 className="inline-flex items-center gap-2 px-8 py-3 bg-orange-700 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 View All Articles

@@ -13,17 +13,17 @@ import Legalintakespecialists from '@/components/ContactIntakespecialists/Legali
 import FAQSection from '@/components/ContactIntakespecialists/FAQSection';
 
 export const metadata: Metadata = {
-  title: "Masstort Case Acquisition Services | AdvanceEdge Legal Growth Solutions",
+  title: "24/7 Legal Intake & Contact Center Specialists | AdvanceEdge",
   description:
-    "AdvanceEdge delivers qualified mass tort and personal injury case acquisition services, helping law firms grow high-value dockets with compliant intake and pre-vetted leads.",
+    "Legal-trained intake specialists answer, qualify and sign cases 24/7 for Mass Tort, PI and other practices, in your CRM, with no weekend premiums.",
   alternates: {
-    canonical: "https://advanceedgellc.com/masstort-case-acquisition-services",
+    canonical: "https://www.advanceedgellc.com/services/intake-leaders/contact-center-intake-specialists",
   },
   openGraph: {
-    title: "Masstort Case Acquisition Services | AdvanceEdge Legal Growth Solutions",
+    title: "24/7 Legal Intake & Contact Center Specialists | AdvanceEdge",
     description:
-      "AdvanceEdge delivers qualified mass tort and personal injury case acquisition services, helping law firms grow high-value dockets with compliant intake and pre-vetted leads.",
-    url: "https://advanceedgellc.com/masstort-case-acquisition-services",
+      "Legal-trained intake specialists answer, qualify and sign cases 24/7 for Mass Tort, PI and other practices, in your CRM, with no weekend premiums.",
+    url: "https://www.advanceedgellc.com/services/intake-leaders/contact-center-intake-specialists",
     type: "website",
   },
 };

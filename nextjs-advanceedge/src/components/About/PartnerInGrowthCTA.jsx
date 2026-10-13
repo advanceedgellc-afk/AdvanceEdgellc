@@ -21,7 +21,7 @@ export default function PartnerInGrowthCTA() {
             {/* Header Tag */}
             <div style={{ animation: 'fadeInDown 0.6s ease-out 100ms both' }}>
               <p className="text-[#FF9A28] text-sm text-center font-bold tracking-widest mb-6">
-                🟠 Your Partner in Growth 🟠
+                Your Partner in Growth
               </p>
             </div>
 

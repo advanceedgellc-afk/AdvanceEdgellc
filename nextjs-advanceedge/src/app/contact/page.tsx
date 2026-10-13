@@ -3,11 +3,11 @@ import type { Metadata } from 'next'
 import ContactPageClient from './client'
 
 export const metadata: Metadata = {
-  title: 'Contact AdvanceEdge | Legal Support, Case Acquisition & Virtual Agents',
-  description: 'Get in touch with AdvanceEdge to learn how expert legal support, case acquisition, and virtual legal agents can help your firm scale operations and mass tort campaigns.',
+  title: 'Contact AdvanceEdge | Legal Intake & Operations Support',
+  description: 'Talk to AdvanceEdge about 24/7 legal intake, case qualification, medical record retrieval and review, and virtual legal staff.',
   openGraph: {
-    title: 'Contact AdvanceEdge | Legal Marketing Solutions',
-    description: 'Reach out to AdvanceEdge today. We\'re here to help your law firm grow with cutting-edge marketing and intake solutions.',
+    title: 'Contact AdvanceEdge | Legal Intake & Operations Support',
+    description: 'Talk to AdvanceEdge about 24/7 legal intake, case qualification, medical record retrieval and review, and virtual legal staff.',
     type: 'website',
     url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/contact`,
     siteName: 'AdvanceEdge',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact AdvanceEdge | Legal Marketing Solutions',
-    description: 'Get in touch with AdvanceEdge. Let\'s discuss how to transform your legal practice.',
+    title: 'Contact AdvanceEdge | Legal Intake & Operations Support',
+    description: 'Talk to AdvanceEdge about 24/7 legal intake, case qualification, medical record retrieval and review, and virtual legal staff.',
     images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/og-contact.jpg`],
   },
   alternates: {

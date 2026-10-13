@@ -83,7 +83,7 @@ export default function ContactPageClient() {
           </div>
           <h1 className="font-marcellus text-5xl md:text-5xl mb-6">Contact Us</h1>
           <p className="font-dm text-xl text-gray-300 max-w-3xl mx-auto">
-            Let's discuss how we can help transform your legal practice with innovative solutions
+            Tell us where intake or operations are slowing you down. We reply within one business day.
           </p>
         </div>
       </section>

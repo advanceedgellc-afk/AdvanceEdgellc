@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -110,7 +111,7 @@ Over the last 15 years, our reviewers have worked on:
           <div className=" ">
           <img 
           src="/medical-review/phi-protection.webp" 
-          alt="Accounting and financial records" 
+          alt="Secure, access-controlled handling of patient health records" 
           className="w-full h-full object-cover rounded-3xl "
         />
           </div>

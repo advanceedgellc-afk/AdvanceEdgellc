@@ -44,7 +44,7 @@ export default function Compliance() {
           >
               <img 
           src="/intake-leaders/case-qualification.webp" 
-          alt="Accounting and financial records" 
+          alt="Intake specialist reviewing a case qualification checklist" 
           className="w-full h-full object-cover rounded-3xl "
         />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent" />

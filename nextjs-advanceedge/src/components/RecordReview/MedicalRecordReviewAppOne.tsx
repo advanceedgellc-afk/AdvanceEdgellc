@@ -65,7 +65,7 @@ export default function MedicalRecordReviewApp() {
               <div className="w-full h-full flex items-center justify-center text-slate-400">
               <img 
           src="/medical-review/paralegal-work.webp" 
-          alt="Accounting and financial records" 
+          alt="Paralegal reviewing a stack of medical records for a case" 
           className="w-full h-full object-cover rounded-3xl "
         />
               </div>

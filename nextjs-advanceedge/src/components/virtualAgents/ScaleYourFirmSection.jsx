@@ -18,7 +18,7 @@ export default function ScaleYourFirmSection() {
       icon: (
         <img 
                 src="/virtualAgents/data-driven.png" 
-                alt="expertise"
+                alt="data-driven"
                 className="w-12 h-auto flex-shrink-0"
               />
       ),
@@ -28,7 +28,7 @@ export default function ScaleYourFirmSection() {
       icon: (
         <img 
                 src="/virtualAgents/scalability.png" 
-                alt="expertise"
+                alt="scalability"
                 className="w-12 h-auto flex-shrink-0"
               />
       ),
@@ -38,7 +38,7 @@ export default function ScaleYourFirmSection() {
       icon: (
         <img 
         src="/virtualAgents/cost-effectiveness.png" 
-        alt="expertise"
+        alt="cost-effectiveness"
         className="w-12 h-auto flex-shrink-0"
       />
       ),
@@ -82,7 +82,7 @@ export default function ScaleYourFirmSection() {
 
             {/* Pricing */}
             <p className="text-lg font-bold text-gray-900">
-              Starting at just <span className="text-[#FF9A28]">$10/hour</span> – Get expert support without hiring full-time staff!
+              Starting at just <span className="text-[#FF9A28]">$12/hour</span> – Get expert support without hiring full-time staff!
             </p>
           </div>
 

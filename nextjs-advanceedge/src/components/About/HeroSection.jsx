@@ -26,12 +26,12 @@ export default function App() {
                   <div className="max-w-3xl text-center lg:text-left">
         {/* H1 */}
         <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-center leading-tight text-slate-100">
-        Where Legal Expertise Meets <span className="text-[#fb923c] font-medium">Digital Innovation</span>
+        Legal Operations Built for  <span className="text-[#fb923c] font-medium">High-Volume Firms</span>
         </h1>
 
         {/* Subheading */}
         <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto text-center leading-relaxed">
-        Delivering Scalable, Expert-Driven Solutions for Law Firms & Businesses.
+       Intake, medical records, settlement and back-office pods for Mass Tort and PI teams since 2011.
         </p>
 
 

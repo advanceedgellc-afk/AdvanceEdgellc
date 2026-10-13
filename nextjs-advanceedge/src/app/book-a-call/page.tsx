@@ -1,6 +1,15 @@
 "use client";
 
+import { Metadata } from "next";
 import { useEffect } from "react";
+
+
+export const metadata: Metadata = {
+  title: 'Book a Call | AdvanceEdge Legal Intake & Operations',
+  description: 'Schedule a 30-minute call to map your intake and operations bottlenecks and see where a dedicated pod fits.',
+
+
+}
 
 export default function BookACallPage() {
   useEffect(() => {

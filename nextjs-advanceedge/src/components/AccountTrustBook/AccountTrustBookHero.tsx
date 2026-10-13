@@ -16,7 +16,7 @@ export default function App() {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop" 
-          alt="Accounting and financial records" 
+          alt="Bookkeeper reviewing law firm trust account ledgers" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-slate-950/85"></div>

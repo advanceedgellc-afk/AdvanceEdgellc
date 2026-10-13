@@ -50,7 +50,7 @@ Our SEO strategies ensure higher rankings and more client inquiries.`,
   {
     id: 5,
     question:
-      "AEO: How can law firms optimize for voice search and AI-driven results?",
+      " How can law firms optimize for voice search and AI-driven results?",
     answer: `To rank in voice search & AI-powered results, we optimize:
 🔹 FAQ-rich content with concise answers
 🔹 Schema markup for featured snippets
@@ -61,7 +61,7 @@ This helps your firm appear in Siri, Alexa, and Google Assistant searches.`,
   },
   {
     id: 6,
-    question: "AEO: How do featured snippets help law firms get more visibility?",
+    question: "How do featured snippets help law firms get more visibility?",
     answer: `Featured snippets boost rankings & click-through rates by:
 🔹 Answering legal queries concisely
 🔹 Using structured headings & lists

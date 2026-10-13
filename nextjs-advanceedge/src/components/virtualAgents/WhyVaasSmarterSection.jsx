@@ -42,7 +42,7 @@ export default function WhyVaasSmarterSection() {
             </h3>
             <p className="text-lg font-bold text-gray-900 mb-8">
               Starts at<br />
-              <span className="text-[#FF9A28] text-3xl">$60,000</span> <span className="text-gray-600 font-normal">/per year</span>
+              <span className="text-[#FF9A28] text-3xl">$60,000</span> <span className="text-gray-600 font-normal">/ year</span>
             </p>
 
             <div className="space-y-4">

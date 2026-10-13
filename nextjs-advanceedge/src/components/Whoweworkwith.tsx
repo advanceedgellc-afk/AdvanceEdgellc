@@ -26,9 +26,9 @@ export default function WhoWeWorkWith() {
             >
               Who we work with
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: NAVY }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: NAVY }}>
               Who We Work With
-            </h3>
+            </h2>
             <p className="text-lg md:text-xl leading-relaxed" style={{ color: `${NAVY}B3` }}>
               Different teams, same problem: more demand than capacity. AdvanceEdge is a legal intake and operations partner for organizations that can&apos;t afford dropped calls, stale leads, or clogged litigation workflows.
             </p>

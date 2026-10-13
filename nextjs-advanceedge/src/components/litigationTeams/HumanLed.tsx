@@ -21,7 +21,7 @@ export default function LitigationOperations() {
 
               <img 
           src="/litigation-teams/human-led.webp" 
-          alt="Accounting and financial records" 
+          alt="Litigation support specialist checking AI-assisted document review" 
           className="w-full h-full object-cover rounded-3xl "
         />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0c]/80 to-transparent" />

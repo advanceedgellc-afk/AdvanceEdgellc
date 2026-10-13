@@ -45,11 +45,11 @@ const options = { next: { revalidate: 30 } };
 
 // ✅ NEW: SEO Meta tags for blog listing page
 export const metadata: Metadata = {
-  title: 'AdvanceEdge Legal Blog | Mass Torts, Legal Ops & Virtual Support Insights',
-  description: 'Explore the AdvanceEdge legal blog for insights on mass tort litigation, legal operations, virtual legal agents, intake optimization, and digital marketing strategies.',
+  title: 'AdvanceEdge Blog | Legal Intake & Operations Insights',
+  description: 'Practical guides on legal intake, case qualification, medical records and Mass Tort operations for law firms and legal marketers.',
   openGraph: {
-    title: 'Legal Growth Insights & Strategies | AdvanceEdge Blog',
-    description: 'Deep dives on intake, advertising, and operations to help your law firm turn attention into signed cases.',
+    title: 'AdvanceEdge Blog | Legal Intake & Operations Insights',
+    description: 'Practical guides on legal intake, case qualification, medical records and Mass Tort operations for law firms and legal marketers.',
     type: 'website',
     url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog`,
     siteName: 'AdvanceEdge',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Legal Growth Insights & Strategies | AdvanceEdge Blog',
+    title: 'AdvanceEdge Blog | Legal Intake & Operations Insights',
     description: 'Deep dives on intake, advertising, and operations for law firms.',
     images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-blog.jpg`],
   },

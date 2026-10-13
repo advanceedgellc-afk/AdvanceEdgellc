@@ -27,7 +27,7 @@ export default function LegalAccountingPage() {
             <div className="relative  a p-4  shadow-2xl">
             <img 
           src="/accounting/trust-bookkeeping.webp" 
-          alt="Accounting and financial records" 
+          alt="Law firm financial reports and IOLTA trust account records" 
           className="w-full h-full object-cover rounded-3xl"
         />
             </div>

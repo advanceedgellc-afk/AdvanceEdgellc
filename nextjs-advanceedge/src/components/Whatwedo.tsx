@@ -71,7 +71,7 @@ import {
                   },
                   {
                     title: "AI‑Assisted Workflows, Human QA",
-                    text: "AI tools support summaries, follow‑ups, and data entry, while trained legal specialists make the judgment calls. Hence, you get speed without losing nuance in liability, medical history, or coverage questions.",
+                    text: "AI tools support summaries, follow‑ups, and data entry, while trained legal specialists make the judgment calls. Hence, You get speed without losing nuance in liability, medical history, or coverage questions.",
                     icon: <Cpu size={22} />
                   }
                 ].map((item, i) => (
@@ -177,7 +177,7 @@ import {
                 },
                 {
                   title: "Elastic Capacity with 30‑Day Adjustments",
-                  text: "Scale teams up or down with short-notice windows (for example, 30 days), so you can match staffing to campaign peaks instead of carrying idle seats during slow periods.",
+                  text: "Scale teams up or down on 30 days' notice, so staffing matches campaign peaks instead of carrying idle seats in slow periods.",
                   icon: <Layers size={28} />
                 }
               ].map((item, i) => (
@@ -193,28 +193,7 @@ import {
               ))}
             </div>
   
-            {/* Bottom Label */}
-            <div className="flex justify-center mt-12 mb-8 group cursor-default">
-      <div className="flex items-center gap-4 px-2 py-2">
-        
-        {/* Animated Gradient Accent Bar */}
-        <div className="relative w-1 h-6 bg-gradient-to-b from-[#FF9A28] to-orange-400 rounded-full group-hover:h-8 transition-all duration-300" />
-        
-        {/* Tag with subtle letter spacing */}
-        <span className="text-sm font-bold uppercase tracking-[0.25em] text-[#FF9A28] font-['DM_Sans',sans-serif]">
-          Core Advantage
-        </span>
-        
-        {/* Refined Divider */}
-        <div className="h-4 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent mx-1" />
-        
-        {/* Main Text with Subtle Gradient Hover */}
-        <span className="text-sm font-medium text-slate-800 font-['Marcellus',serif] transition-all duration-300 ">
-          Elastic Legal Infrastructure
-        </span>
-      </div>
-    </div>
-          </div>
+       </div>
         </section>
   
       </div>
