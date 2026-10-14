@@ -1,109 +1,56 @@
-import Link from "next/link";
-import { Metadata } from "next";
-import WhyChooseSection from '@/components/caseAquation/WhyChooseSection';
-import CaseAcquisitionProcess from '@/components/caseAquation/CaseAcquisitionProcess';
-import WhoWeServe from '@/components/caseAquation/WhoWeServe';
-import TypesOfCases from '@/components/caseAquation/TypesOfCases';
-import WhyWorkWithUs from '@/components/caseAquation/WhyWorkWithUs';
-import FAQSection from "@/components/caseAquation/FAQSection";
+import type { Metadata } from "next";
 import CaseAcquisitionHero from "@/components/caseAquation/CaseAcquisitionHero";
+import WhyChooseSection from "@/components/caseAquation/WhyChooseSection";
+import CaseAcquisitionProcess from "@/components/caseAquation/CaseAcquisitionProcess";
+import WhoWeServe from "@/components/caseAquation/WhoWeServe";
+import TypesOfCases from "@/components/caseAquation/TypesOfCases";
+import FAQSection from "@/components/caseAquation/FAQSection";
+import WhyWorkWithUs from "@/components/caseAquation/WhyWorkWithUs";
+import { faqItems } from "@/components/caseAquation/faqItems";
+
+const PAGE_PATH = "/services/firm-owners-coos/case-acquisition";
+const TITLE = "Mass Tort & PI Case Acquisition for Law Firms | AdvanceEdge";
+const DESCRIPTION =
+  "Pre-qualified Mass Tort and personal injury cases for law firms: compliant intake, medical and legal verification, and exclusive or limited-share leads.";
 
 export const metadata: Metadata = {
-  title: "Masstort Case Acquisition Services | AdvanceEdge Legal Growth Solutions",
-  description:
-    "AdvanceEdge delivers qualified mass tort and personal injury case acquisition services, helping law firms grow high-value dockets with compliant intake and pre-vetted leads.",
-  alternates: {
-    canonical: "https://advanceedgellc.com/masstort-case-acquisition-services",
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: "Masstort Case Acquisition Services | AdvanceEdge Legal Growth Solutions",
-    description:
-      "AdvanceEdge delivers qualified mass tort and personal injury case acquisition services, helping law firms grow high-value dockets with compliant intake and pre-vetted leads.",
-    url: "https://advanceedgellc.com/masstort-case-acquisition-services",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     type: "website",
   },
 };
 
+// Built from the same questions the page shows, so Google sees exactly what visitors see.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do you source and qualify potential claimants?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We use targeted marketing, data analytics, and AI-driven screening to identify and pre-qualify claimants. Leads undergo medical and legal verification, compliance checks, and eligibility screening to ensure high conversion potential.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you differentiate from other case acquisition providers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We focus on quality, compliance, and performance. Our rigorous pre-qualification, exclusive lead options, and customized acquisition strategies ensure higher conversion rates and better ROI for your firm.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you ensure lead exclusivity and prevent saturation?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We offer fully exclusive or limited-share leads to prevent oversaturation. Our market analysis ensures claim viability, protecting your firm's competitive advantage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What pricing models do you offer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We provide performance-based, flat-rate, and hybrid pricing to match your firm's needs. You pay only for pre-qualified leads, ensuring maximum ROI and predictable costs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you accommodate firms with fluctuating case intake needs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes! Our services are fully scalable, allowing firms to increase or decrease lead volume on demand with no long-term commitments.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you ensure compliance with legal advertising rules?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We strictly follow ABA, TCPA, HIPAA, and CAN-SPAM regulations. Our ethical marketing ensures full compliance, minimizing risk while maximizing lead quality.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
-export default function CaseAcquisition() {
+export default function CaseAcquisitionPage() {
   return (
     <main>
-      {/* Hero Section */}
-      
-      {/* CaseAcquisitionHero Section */}
       <CaseAcquisitionHero />
-      
-      {/* WhyChooseSection */}
       <WhyChooseSection />
-      
-      {/* CaseAcquisitionProcess */}
       <CaseAcquisitionProcess />
-      
-      {/* WhoWeServe Section */}
       <WhoWeServe />
-      
-      {/* TypesOfCases Section */}
       <TypesOfCases />
-      
-      {/* FAQSection */}
       <FAQSection />
-      
-      {/* WhyWorkWithUs Section */}
       <WhyWorkWithUs />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </main>
   );
 }

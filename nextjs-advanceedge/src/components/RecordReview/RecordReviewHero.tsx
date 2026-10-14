@@ -38,7 +38,7 @@ export default function App() {
         {/* Detailed Body Section */}
         <div className=" rounded-2xl  text-left mb-10">
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-            Getting medical records is only half the battle. The real work starts when someone has to read hundreds or thousands of pages and answer two questions: “Do we have a valid case?” and “What is this case really worth?” In today’s market, many firms and platforms use instant retrieval tools like SettLiT, ConnectMD, etc to validate proof of use and proof of injury before they ever invest in full record retrieval or litigation. At later stages, attorneys need deep, structured medical analysis to support settlement, mediation, or trial.
+            Getting medical records is only half the battle. The real work starts when someone has to read hundreds or thousands of pages and answer two questions: “Do we have a valid case?” and “What is this case really worth?” In today’s market, many firms and platforms use instant retrieval tools such as SettLiT and ConnectMD to validate proof of use and proof of injury before they ever invest in full record retrieval or litigation. At later stages, attorneys need deep, structured medical analysis to support settlement, mediation, or trial.
           </p>
           <p className="text-slate-400 text-sm md:text-base leading-relaxed mt-4">
             AdvanceEdge’s medical record review services for law firms cover that full spectrum, from initial case validation to detailed chronologies and packet‑level exhibit pulls, integrated with your Medical Record Retrieval, Case Qualification, and Litigation Support & Back‑Office workflows.

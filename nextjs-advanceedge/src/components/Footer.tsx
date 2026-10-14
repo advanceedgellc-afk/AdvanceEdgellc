@@ -158,7 +158,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-marcellus text-xl mb-6">Services</h3>
+            <h3 className="font-marcellus text-xl mb-6">What We Do</h3>
             <ul className="space-y-3 font-dm">
               <li>
                 <a href="/services/intake-leaders/contact-center-intake-specialists" className="flex items-center gap-2 hover:text-[#FF9A28]">
@@ -249,7 +249,7 @@ United States
         </div>
 
         <div className="border-t border-white/10 pt-6 pb-10 text-sm text-gray-400 flex flex-col md:flex-row justify-between">
-          <p>© {new Date().getFullYear()}<Link href="/" className=" hover:text-[#FF9A28]"> AdvanceEdge LLC.</Link> All rights reserved.</p>
+          <p>© {new Date().getFullYear()}<Link href="/" className=" hover:text-[#FF9A28]">  AdvanceEdge LLC.</Link> All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className=" hover:text-[#FF9A28]">Privacy Policy</Link>
             <Link href="/terms-of-service" className=" hover:text-[#FF9A28]">Terms of Service</Link>

@@ -115,8 +115,7 @@ Over the last 15 years, our reviewers have worked on:
           className="w-full h-full object-cover rounded-3xl "
         />
           </div>
-          <p className="text-slate-400 leading-relaxed">Medical record review involves PHI at scale. Workflows are designed to align with law‑firm‑grade security and privacy expectations.</p>
-            
+     
         </div>
       </Section>
 
@@ -175,7 +174,7 @@ Over the last 15 years, our reviewers have worked on:
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { n: "01", t: "Faster, more confident case decisions", d: "Attorneys can decide whether to advance, settle, or exit a case based on clear, structured evidence." },
-            { n: "02", t: "More consistent valuations", d: "Settlement ranges, and trial posture are grounded in standardized, comparable summaries rather than scattered notes." },
+            { n: "02", t: "More consistent valuations", d: "Settlement ranges and trial posture are grounded in standardized, comparable summaries rather than scattered notes." },
             { n: "03", t: "Better use of attorney and expert time", d: "Lawyers and experts focus on strategy, argument, and opinion, not basic chart review"},
             { n: "04", t: "Cleaner communication with clients, co‑counsel, and decision‑makers", d: "You can explain strengths and weaknesses in plain language backed by precise references to the record." },
           ].map((s, i) => (

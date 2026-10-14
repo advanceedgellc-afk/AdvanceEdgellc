@@ -1,102 +1,60 @@
-import Link from "next/link";
-import { Metadata } from "next";
-import AccountTrustBookHero from '@/components/AccountTrustBook/AccountTrustBookHero';
-import LegalAccounting from '@/components/AccountTrustBook/LegalAccounting';
-import WhatOurProps from '@/components/AccountTrustBook/WhatOurProps';
-import TrustAccounting from '@/components/AccountTrustBook/TrustAccounting';
-import RealEstateAccounting from '@/components/AccountTrustBook/RealEstateAccounting';
-import ClientExample from '@/components/AccountTrustBook/ClientExample';
-import AccountingTimeline from '@/components/AccountTrustBook/AccountingTimeline';
-import HumanAIAccounting from '@/components/AccountTrustBook/HumanAIAccounting';
-import FaqSection from '@/components/AccountTrustBook/FaqSection';
+import type { Metadata } from "next";
+import AccountTrustBookHero from "@/components/AccountTrustBook/AccountTrustBookHero";
+import LegalAccounting from "@/components/AccountTrustBook/LegalAccounting";
+import WhatOurProps from "@/components/AccountTrustBook/WhatOurProps";
+import TrustAccounting from "@/components/AccountTrustBook/TrustAccounting";
+import RealEstateAccounting from "@/components/AccountTrustBook/RealEstateAccounting";
+import ClientExample from "@/components/AccountTrustBook/ClientExample";
+import AccountingTimeline from "@/components/AccountTrustBook/AccountingTimeline";
+import HumanAIAccounting from "@/components/AccountTrustBook/HumanAIAccounting";
+import FaqSection from "@/components/AccountTrustBook/FaqSection";
+import { faqItems } from "@/components/AccountTrustBook/faqItems";
+
+const PAGE_PATH = "/services/firm-owners-coos/accounting-trust-bookkeeping";
+const TITLE = "Law Firm Accounting & Trust Bookkeeping | AdvanceEdge";
+const DESCRIPTION =
+  "Trust and IOLTA bookkeeping, monthly three-way reconciliation and financial reporting for law firms, run by human-led, AI-assisted accounting teams.";
 
 export const metadata: Metadata = {
-  title: "Law Firm Accounting and Trust Bookkeeping Services | AdvanceEdge",
-  description:
-    "Law firm accounting and trust bookkeeping services for solo attorneys, small firms, and high-volume practices. Operating and trust account bookkeeping, IOLTA compliance, three-way reconciliation, and financial reporting delivered by AI-trained legal accounting teams as an extension of your firm.",
-  alternates: {
-    canonical: "https://advanceedgellc.com/firm-owners-coos/accounting-trust-bookkeeping",
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: "Law Firm Accounting and Trust Bookkeeping Services | AdvanceEdge",
-    description:
-      "Law firm accounting and trust bookkeeping services for solo attorneys, small firms, and high-volume practices. Operating and trust account bookkeeping, IOLTA compliance, three-way reconciliation, and financial reporting delivered by AI-trained legal accounting teams as an extension of your firm.",
-    url: "https://advanceedgellc.com/firm-owners-coos/accounting-trust-bookkeeping",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_PATH,
     type: "website",
   },
 };
 
+// Built from the same questions the page shows, so Google sees exactly what visitors see.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do you source and qualify potential claimants?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We use targeted marketing, data analytics, and AI-driven screening to identify and pre-qualify claimants. Leads undergo medical and legal verification, compliance checks, and eligibility screening to ensure high conversion potential.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you differentiate from other case acquisition providers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We focus on quality, compliance, and performance. Our rigorous pre-qualification, exclusive lead options, and customized acquisition strategies ensure higher conversion rates and better ROI for your firm.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you ensure lead exclusivity and prevent saturation?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We offer fully exclusive or limited-share leads to prevent oversaturation. Our market analysis ensures claim viability, protecting your firm's competitive advantage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What pricing models do you offer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We provide performance-based, flat-rate, and hybrid pricing to match your firm's needs. You pay only for pre-qualified leads, ensuring maximum ROI and predictable costs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you accommodate firms with fluctuating case intake needs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes! Our services are fully scalable, allowing firms to increase or decrease lead volume on demand with no long-term commitments.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you ensure compliance with legal advertising rules?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We strictly follow ABA, TCPA, HIPAA, and CAN-SPAM regulations. Our ethical marketing ensures full compliance, minimizing risk while maximizing lead quality.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
-export default function accountingTrustBookkeeping() {
+export default function AccountingTrustBookkeepingPage() {
   return (
     <main>
-      {/* Hero Section */}
-      
-    
       <AccountTrustBookHero />
-      <LegalAccounting/>
-      <WhatOurProps/>
-  <TrustAccounting/>
-<RealEstateAccounting/>
-<ClientExample/>
-<AccountingTimeline/>
-<HumanAIAccounting/>
+      <LegalAccounting />
+      <WhatOurProps />
+      <TrustAccounting />
+      <RealEstateAccounting />
+      <ClientExample />
+      <AccountingTimeline />
+      <HumanAIAccounting />
+      <FaqSection />
 
-  <FaqSection/>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </main>
   );
 }

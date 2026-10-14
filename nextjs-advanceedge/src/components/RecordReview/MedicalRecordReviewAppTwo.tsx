@@ -29,7 +29,7 @@ const reviewLevels = [
     {
       icon: FileText,
       title: "3. Packet‑level review for settlement packets and trial exhibits",
-      intro: "At the final stage, settlement packets, mediation binders, and trial exhibits are job-changed again. Here, our reviewers:",
+      intro: "At the final stage, settlement packets, mediation binders, and trial exhibits raise the bar again. Here, our reviewers:",
       bullets: [
         "Re‑review the record to extract and bookmark exact pages where key facts appear (proof of use, proof of injury, key surgeries, labs, imaging, disability findings)",
         "Build organized packets or exhibit sets with those pages copied, labeled, and linked, so mediators, adjusters, judges, and juries can see the proof without hunting through full record sets"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import GhlBookingCalendar from "@/components/forms/GhlBookingCalendar";
 
 export const metadata: Metadata = {
   title: "Book a Call | AdvanceEdge Legal Intake & Operations",
@@ -13,7 +13,7 @@ export default function BookACallPage() {
     <main className="min-h-screen bg-[#050811] text-white">
       {/* Hero / Title */}
       <section className="bg-[#050811] border-b border-white/5 h-[400px] md:h-[500px] flex content-center items-center">
-        <div className="max-w-6xl mx-auto px-4 pt-20 ">
+        <div className="max-w-6xl mx-auto px-4 pt-20">
           <h1 className="font-marcellus text-4xl md:text-5xl lg:text-6xl mb-4">
             Book A Call
           </h1>
@@ -24,20 +24,14 @@ export default function BookACallPage() {
         </div>
       </section>
 
-      {/* TidyCal Calendar Section */}
+      {/* Booking calendar */}
       <section className="bg-white">
-        <div className="w-full mx-auto px-4 py-10 md:py-16">
-          <div className="bg-white rounded-2xl  overflow-hidden">
-            <div className="tidycal-embed" data-path="victor-daniel/website"></div>
+        <div className="w-full max-w-5xl mx-auto px-4 py-10 md:py-16">
+          <div className="bg-white rounded-2xl overflow-hidden">
+            <GhlBookingCalendar />
           </div>
         </div>
       </section>
-
-      {/* Loads the TidyCal embed once, after the page is interactive */}
-      <Script
-        src="https://asset-tidycal.b-cdn.net/js/embed.js"
-        strategy="afterInteractive"
-      />
     </main>
   );
 }

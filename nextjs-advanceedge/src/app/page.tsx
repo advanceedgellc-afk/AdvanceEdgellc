@@ -123,48 +123,36 @@ export default async function Home() {
       <ScrollDownArrow />
 
       {/* ✅ SINGLE JSON-LD - NO DUPLICATES */}
-      <script
+            <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'AdvanceEdge',
-            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/',
-            logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/logo.png`,
-            description: 'AdvanceEdge provides digital marketing and virtual intake solutions for law firms.',
-            sameAs: [
-              'https://www.linkedin.com/company/advanceedge',
-              'https://www.facebook.com/advanceedge',
-              'https://twitter.com/advanceedge',
-            ],
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: "AdvanceEdge LLC",
+            url: "https://www.advanceedgellc.com",
+            logo: "https://www.advanceedgellc.com/Logo-ae.webp",
+            image: "https://www.advanceedgellc.com/og-home.jpg",
+            description:
+              "Legal intake and operations partner for law firms and legal marketing agencies.",
+            foundingDate: "2011",
+            telephone: "+1-832-937-7738",
+            email: "info@advanceedgellc.com",
             address: {
-              '@type': 'PostalAddress',
-              streetAddress: '1008 Hamilton St',
-              addressLocality: 'Immokalee',
-              addressRegion: 'FL',
-              postalCode: '34142',
-              addressCountry: 'US',
+              "@type": "PostalAddress",
+              streetAddress: "1008 Hamilton St",
+              addressLocality: "Immokalee",
+              addressRegion: "FL",
+              postalCode: "34142",
+              addressCountry: "US",
             },
-            contactPoint: {
-              '@type': 'ContactPoint',
-              contactType: 'Customer Service',
-              telephone: '832.937.7738',
-              email: 'info@advanceedgellc.com',
-              availableLanguage: 'en',
-            },
-            potentialAction: {
-              '@type': 'TradeAction',
-              target: {
-                '@type': 'EntryPoint',
-                urlTemplate: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/contact`,
-                actionPlatform: ['DesktopWebPlatform', 'MobileWebPlatform'],
-              },
-              result: {
-                '@type': 'Thing',
-                name: 'Legal Marketing Consultation',
-              },
-            },
+            areaServed: "US",
+            sameAs: [
+              "https://www.linkedin.com/company/advanceedge-solutions/",
+              "https://www.facebook.com/advanceedgellc",
+              "https://www.instagram.com/advanceedge_/",
+              "https://www.tiktok.com/@advanceedge",
+            ],
           }),
         }}
       />

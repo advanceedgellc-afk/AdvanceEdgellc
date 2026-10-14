@@ -3,76 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X } from "lucide-react";
-
+  import { faqItems, type FaqItem } from "./faqItems";
 // ✅ Proper TypeScript interface
-interface FaqItem {
-  id: number;
-  question: string;
-  answer: string | {
-    intro?: string;  // Add this line
-    answerPoints?: string[];
-    summary?: string;
-  };
-}
 
-const faqItems: FaqItem[] = [
-  {
-    id: 1,
-    question: "What are Virtual Agents, and how can they help law firms?",
-    answer: "Virtual Agents are legal support professionals who handle tasks like case research, client intake, document review, and marketing. They help law firms save time, reduce costs, and improve efficiency without hiring full-time staff.",
-  },
-  {
-    id: 2,
-    question: "What types of Virtual Agents do you offer?",
-    answer: {
-      intro: "We provide:",
-      answerPoints: [        
-        "Virtual Attorneys – Case review & legal research",
-        "Super Paralegals – Document preparation & e-filing",
-        "Marketing Experts – SEO, PPC & lead generation",
-        "Web Developers – Legal website & CRM integration"
-      ],
-      summary: "Each agent is skilled, experienced, and trained for law firm needs."
-    }
-  },
-  {
-    id: 3,
-    question: "How can a Virtual Attorney assist my law firm?",
-    answer: "A Virtual Attorney provides legal research, case law analysis, demand letter drafting, and document review, ensuring firms stay productive without hiring full-time lawyers.",
-  },
-  {
-    id: 4,
-    question: "How does hiring a Virtual Agent save law firms money?",
-    answer: "Virtual Agents reduce overhead costs by handling legal tasks remotely without requiring office space, benefits, or full-time salaries—allowing law firms to scale operations efficiently.",
-  },
-  {
-    id: 5,
-    question: "What are the key benefits of hiring Virtual Agents for legal support?",
-    answer: {
-      answerPoints: [
-        "Cost savings – No in-house hiring expenses",
-        "Scalability – Hire agents as needed",
-        "Expertise – Specialized legal professionals",
-        "Efficiency – Faster case processing & lead handling"
-      ],
-      summary: "Virtual Agents streamline law firm operations and increase productivity."
-    }
-  },
-  {
-    id: 6,
-    question: "How do Virtual Agents improve client intake for law firms?",
-    answer: {
-      intro: "Virtual Agents optimize client intake by:",
-      answerPoints: [
-        "Handling inquiries via phone, chat, and email",
-        "Pre-screening potential clients based on case criteria",
-        "Managing appointment scheduling & follow-ups"
-      ],
-      summary: "This ensures qualified leads and a smooth client onboarding process."
-    }
-  },
-  
-];
+
+
 
 export default function FAQSection() {
   const [activeId, setActiveId] = useState<number | null>(1);

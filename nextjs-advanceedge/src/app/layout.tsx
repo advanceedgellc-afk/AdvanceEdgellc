@@ -27,9 +27,11 @@ const marcellus = Marcellus({
 /* ---------------- Metadata ---------------- */
 
 export const metadata: Metadata = {
-  title: "AdvanceEdge LLC - Empowering Legal Professionals",
+  // Every relative canonical, og:url and og:image resolves against this address.
+  metadataBase: new URL("https://www.advanceedgellc.com"),
+  title: "Legal Intake & Operations Partner for Law Firms | AdvanceEdge",
   description:
-    "High-quality case acquisition, expert virtual agents, and cutting-edge digital marketing services for law firms.",
+    "Human-led, AI-accelerated legal intake, case qualification, medical records and back-office support for Mass Tort and PI firms.",
   icons: {
     icon: [{ rel: "icon", url: "/favicon.png", type: "image/png" }],
   },
@@ -61,7 +63,6 @@ export default function RootLayout({
       className={`scroll-smooth ${dmSans.variable} ${marcellus.variable}`}
     >
       <head>
-        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -75,17 +76,6 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager */}
-
-        {/* Bootstrap Icons */}
-        <style>{`
-          @font-face {
-            font-family: 'bootstrap-icons';
-            src: url('/fonts/bootstrap-icons.woff2') format('woff2');
-            font-display: swap;
-            font-weight: 400;
-            font-style: normal;
-          }
-        `}</style>
       </head>
 
       <body
@@ -106,10 +96,11 @@ export default function RootLayout({
         <BookingModalProvider>
           <Header />
 
-          <main className="min-h-screen relative">
+          {/* Each page supplies its own <main>, so this wrapper is a plain div */}
+          <div className="min-h-screen relative">
             {children}
             <ScrollDownArrow />
-          </main>
+          </div>
 
           <Footer />
           <ScrollToTop />

@@ -292,7 +292,7 @@ export default function ComplianceAndScale() {
             }}>
               <img 
                 src="/medical-retrival/scale-and-exp.webp" 
-                alt="Scale and Experience visual reference: image_e9ad18.png" 
+               alt="Records specialist pulling patient files from a medical records cabinet"
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </div>
