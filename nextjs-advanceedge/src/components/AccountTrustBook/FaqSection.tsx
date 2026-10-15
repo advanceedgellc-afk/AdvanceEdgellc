@@ -1,112 +1,85 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, X } from "lucide-react";
+import { Plus } from "lucide-react";
+import { useBookingModal } from "@/context/BookingModalContext";
 import { faqItems } from "./faqItems";
-
-
 
 export default function FAQSection() {
   const [activeId, setActiveId] = useState<number | null>(1);
-  const [showBookingModal, setShowBookingModal] = useState(false);
-
-  // Load / reload TidyCal script when modal opens
-  useEffect(() => {
-    if (!showBookingModal) return;
-
-    const existingScript = document.querySelector(
-      'script[src="https://asset-tidycal.b-cdn.net/js/embed.js"]'
-    ) as HTMLScriptElement | null;
-    if (existingScript) existingScript.remove();
-
-    if (typeof window !== "undefined" && "TidyCal" in window) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (window as any).TidyCal;
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, [showBookingModal]);
+  const { openBookingModal } = useBookingModal();
 
   return (
-    <>
-      <section className="py-16 md:py-24 px-5 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
-        <div className="container w-[100%] mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
-            {/* LEFT SIDE */}
-            <motion.div
-              className="lg:sticky lg:top-24"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="mb-10 md:mb-12">
-                <motion.div
-                  className="flex items-center gap-3 pb-4 md:pb-5"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="w-12 h-1 rounded-full bg-[#FF9A28]" />
-                  <span className="font-dm text-sm font-bold tracking-widest text-[#FF3600] uppercase">
-                    How Can We Help?
-                  </span>
-                </motion.div>
-
-                <h2 className="font-marcellus text-4xl md:text-5xl leading-tight mb-6">
-                Accounting & Trust Bookkeeping FAQs
-                </h2>
-
-                {/* <p className="font-dm text-base md:text-lg text-slate-300">
-                  Answers You Need. Results You Trust. Your Edge in Mass Tort
-                  Success.
-                </p> */}
+    <section className="overflow-x-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-5 py-16 text-white md:py-24">
+      <div className="container mx-auto w-full px-4">
+        <div className="grid grid-cols-1 items-start gap-12 md:gap-16 lg:grid-cols-2">
+          {/* LEFT SIDE */}
+          <motion.div
+            className="lg:sticky lg:top-24"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mb-10 md:mb-12">
+              <div className="flex items-center gap-3 pb-4 md:pb-5">
+                <div className="h-1 w-12 rounded-full bg-[#FF9A28]" />
+                <span className="font-dm text-sm font-bold uppercase tracking-widest text-[#FF3600]">
+                  How Can We Help?
+                </span>
               </div>
 
-              {/* CTA BUTTON -> opens popup */}
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                <button
-                  type="button"
-                  onClick={() => setShowBookingModal(true)}
-                  className="inline-flex justify-center gap-2 items-center shadow-xl text-lg bg-white/10 backdrop-blur-md font-semibold isolation-auto 
-                    before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 
-                    before:rounded-full before:bg-white/20 hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 
-                    before:hover:duration-700 relative z-10 px-8 py-4 overflow-hidden border-2 border-white/30 hover:border-[#FF9A28] rounded-full 
-                    group text-white font-dm"
-                >
-                  BOOK A CALL
-                  <svg
-                    className="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-white/20 text-white ease-linear duration-300 rounded-full border border-white/50 group-hover:border-white p-1.5 rotate-45"
-                    viewBox="0 0 16 19"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      className="fill-white group-hover:fill-[#FF9A28]"
-                    ></path>
-                  </svg>
-                </button>
-              </motion.div>
-            </motion.div>
+              <h2 className="mb-6 font-marcellus text-4xl leading-tight md:text-5xl">
+                Accounting &amp; Trust Bookkeeping FAQs
+              </h2>
+            </div>
 
-            {/* RIGHT SIDE – ACCORDION */}
+            {/* CTA -> global GHL booking pop-up */}
             <motion.div
-              className="space-y-4"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
-              {faqItems.map((item, index) => (
+              <button
+                type="button"
+                onClick={openBookingModal}
+                aria-haspopup="dialog"
+                className="group relative z-10 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 font-dm text-lg font-semibold text-white shadow-xl backdrop-blur-md
+                  before:absolute before:-left-full before:-z-10 before:aspect-square before:w-full before:rounded-full before:bg-white/20 before:transition-all before:duration-700
+                  hover:border-[#FF9A28] hover:text-white before:hover:left-0 before:hover:w-full before:hover:scale-150 before:hover:duration-700"
+              >
+                BOOK A CALL
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  className="h-7 w-7 rotate-45 rounded-full border border-white/50 p-1.5 duration-300 ease-linear group-hover:rotate-90 group-hover:border-white group-hover:bg-white/20"
+                  viewBox="0 0 16 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                    className="fill-white group-hover:fill-[#FF9A28]"
+                  />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT SIDE – ACCORDION */}
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {faqItems.map((item, index) => {
+              const isOpen = activeId === item.id;
+              const buttonId = `accounting-faq-question-${item.id}`;
+              const panelId = `accounting-faq-answer-${item.id}`;
+
+              return (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -115,111 +88,63 @@ export default function FAQSection() {
                   transition={{ delay: index * 0.05 }}
                   className="group"
                 >
-                  {/* ACCORDION BUTTON */}
-                  <motion.button
-                    onClick={() =>
-                      setActiveId(activeId === item.id ? null : item.id)
-                    }
-                    className={`w-full text-left p-5 md:p-6 rounded-lg transition-all duration-300 border 
-                      border-slate-700 hover:border-[#FF9A28]/50 ${
-                        activeId === item.id
-                          ? "bg-slate-800/80 border-[#FF9A28]"
-                          : "bg-slate-800/40 hover:bg-slate-800/60"
+                  <h3>
+                    <motion.button
+                      type="button"
+                      id={buttonId}
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      onClick={() => setActiveId(isOpen ? null : item.id)}
+                      whileHover={{ x: 3 }}
+                      className={`w-full border p-5 text-left transition-all duration-300 md:p-6 ${
+                        isOpen
+                          ? "rounded-t-lg border-[#FF9A28] bg-slate-800/80"
+                          : "rounded-lg border-slate-700 bg-slate-800/40 hover:border-[#FF9A28]/50 hover:bg-slate-800/60"
                       }`}
-                    whileHover={{ x: 3 }}
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-dm font-semibold text-sm md:text-base text-[#FF9A28] group-hover:text-[#e98820] transition-colors leading-relaxed">
-                        {item.question}
-                      </h3>
+                    >
+                      <span className="flex items-start justify-between gap-4">
+                        <span className="font-dm text-sm font-semibold leading-relaxed text-[#FF9A28] transition-colors group-hover:text-[#e98820] md:text-base">
+                          {item.question}
+                        </span>
 
-                      {/* ICON */}
-                      <motion.div
-                        className="flex-none mt-1 w-6 h-6 rounded-full bg-[#FF9A28] flex items-center justify-center text-slate-950"
-                        animate={{ rotate: activeId === item.id ? 45 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <Plus className="w-4 h-4 font-bold" />
-                      </motion.div>
-                    </div>
-                  </motion.button>
+                        <motion.span
+                          aria-hidden="true"
+                          className="mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#FF9A28] text-slate-950"
+                          animate={{ rotate: isOpen ? 45 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <Plus className="h-4 w-4" />
+                        </motion.span>
+                      </span>
+                    </motion.button>
+                  </h3>
 
-                  {/* ANSWER */}
-                  <AnimatePresence>
-                    {activeId === item.id && (
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
                       <motion.div
+                        id={panelId}
+                        role="region"
+                        aria-labelledby={buttonId}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <motion.div
-                          className="p-5 md:p-6 bg-slate-800/30 border border-t-0 border-slate-700 rounded-b-lg"
-                          initial={{ y: -10, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={{ y: -10, opacity: 0 }}
-                        >
-                          <p className="font-dm text-slate-300 leading-relaxed text-sm md:text-base">
+                        <div className="rounded-b-lg border border-t-0 border-[#FF9A28] bg-slate-800/30 p-5 md:p-6">
+                          <p className="font-dm text-sm leading-relaxed text-slate-300 md:text-base">
                             {item.answer}
                           </p>
-                        </motion.div>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Modal */}
-      <AnimatePresence>
-        {showBookingModal && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setShowBookingModal(false)}
-          >
-            <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-8xl w-full max-h-[100vh] overflow-hidden relative flex flex-col"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setShowBookingModal(false)}
-                className="absolute top-6 right-6 p-2 bg-red-500 hover:bg-red-600 rounded-full transition-colors z-50 shadow-lg"
-                aria-label="Close modal"
-                type="button"
-              >
-                <X size={20} className="text-white" />
-              </button>
-
-              {/* Modal Header */}
-              <div className="bg-gradient-to-r from-[#0a0d1e] to-[#1a1d2e] p-8 text-white flex-shrink-0">
-                <h2 className="font-marcellus text-3xl mb-2">Book a Call</h2>
-                <p className="font-dm text-gray-300">
-                  Schedule a meeting with our team to discuss your needs
-                </p>
-              </div>
-
-              {/* TidyCal Embed */}
-              <div className="flex-1 overflow-y-auto p-8 bg-white">
-                <div
-                  className="tidycal-embed"
-                  data-path="victor-daniel/website"
-                ></div>
-              </div>
-            </motion.div>
+              );
+            })}
           </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+        </div>
+      </div>
+    </section>
   );
 }

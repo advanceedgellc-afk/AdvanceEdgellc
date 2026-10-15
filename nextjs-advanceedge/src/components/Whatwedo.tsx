@@ -107,7 +107,7 @@ import {
               </p>
             </div>
   
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   title: "Medical Record Retrieval",
@@ -124,11 +124,7 @@ import {
                   text: "Forms, data entry, document indexing, follow‑ups, and other paralegal‑level work executed by teams that have already handled millions of legal support tasks for U.S. law firms.",
                   icon: <Briefcase size={28} />
                 },
-                {
-                  title: "Settlement & Post‑Resolution Support",
-                  text: "Help with settlement packets, lien coordination, and other repeatable workflows that bog teams down at the exact moment cash should be flowing into the firm.",
-                  icon: <ShieldCheck size={28} />
-                }
+               
               ].map((item, i) => (
                 <div key={i} className="s2-card flex flex-col p-8 cursor-default overflow-hidden relative" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.8), #0F172A)' }}>
                   {/* Top animated bar */}

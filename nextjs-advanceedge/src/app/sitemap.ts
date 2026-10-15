@@ -22,7 +22,6 @@ const staticPages: Array<{ path: string; priority: number }> = [
   { path: "/services/litigation-teams/medical-record-retrieval", priority: 0.9 },
   { path: "/services/litigation-teams/medical-record-review", priority: 0.9 },
   { path: "/services/litigation-teams/litigation-support-back-office", priority: 0.9 },
-  { path: "/services/litigation-teams/settlement-post-resolution", priority: 0.9 },
 
   // Firm owners & COOs
   { path: "/services/firm-owners-coos/virtual-legal-agents", priority: 0.9 },

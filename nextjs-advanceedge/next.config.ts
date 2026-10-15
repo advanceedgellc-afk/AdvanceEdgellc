@@ -29,6 +29,7 @@ const legacyRedirects: Array<[source: string, destination: string]> = [
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp", "image/avif"],
+    qualities: [60, 75],
     minimumCacheTTL: 60,
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io", pathname: "/**" },

@@ -1,19 +1,18 @@
 import type { Metadata } from 'next'
-import Link from "next/link"
-import Image from "next/image"
 import Hero from "@/components/hero/Hero"
 import Statssection from '@/components/Statssection'
 import AboutSection from "@/components/AboutSection"
 
 
 import FAQSection from "@/components/FAQSection"
+import { faqItems } from "@/components/faqItems"
 import { client } from "@/sanity/client"
-import { urlFor } from "@/lib/sanity"
 import type { Post } from "@/types/post"
 import ScrollDownArrow from "@/components/ScrollDownArrow"
 import BlogPostsSection from "@/components/BlogPostsSection"
 import Whoweworkwith from "@/components/Whoweworkwith"
 import Whatwedo from "@/components/Whatwedo"
+import { SITE_URL } from "@/lib/site";
 
 // import LeadForm from "@/components/LeadForm"
 
@@ -41,12 +40,12 @@ export const metadata: Metadata = {
     title: 'Legal Intake & Operations Partner for Law Firms | AdvanceEdge',
     description: 'Human-led, AI-accelerated legal intake, case qualification & medical record retrieval for Mass Tort and PI firms. 24/7 coverage. Book a call today.',
     type: 'website',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/',
+    url: SITE_URL,
     siteName: 'AdvanceEdge',
     locale: 'en_US',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/og-home.jpg`,
+        url: `${SITE_URL}/og-home.jpg`,
         width: 1200,
         height: 630,
         alt: 'AdvanceEdge legal intake and operations',
@@ -58,11 +57,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Legal Intake & Operations Partner for Law Firms | AdvanceEdge',
     description: 'Human-led, AI-accelerated legal intake, case qualification & medical record retrieval for Mass Tort and PI firms. 24/7 coverage. Book a call today.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/og-home.jpg`],
+    images: [`${SITE_URL}/og-home.jpg`],
     creator: '@AdvanceEdge',
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/',
+    canonical: SITE_URL,
   },
   robots: {
     index: true,
@@ -90,7 +89,7 @@ export const metadata: Metadata = {
     'legal practice growth',
   ],
   applicationName: 'AdvanceEdge',
-  authors: [{ name: 'AdvanceEdge Team', url: 'https://advanceedgellc.com' }],
+  authors: [{ name: 'AdvanceEdge Team', url: SITE_URL }],
   creator: 'AdvanceEdge',
   publisher: 'AdvanceEdge',
   formatDetection: {
@@ -98,6 +97,16 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
 }
 
 export default async function Home() {
@@ -123,38 +132,54 @@ export default async function Home() {
       <ScrollDownArrow />
 
       {/* ✅ SINGLE JSON-LD - NO DUPLICATES */}
-            <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "AdvanceEdge LLC",
-            url: "https://www.advanceedgellc.com",
-            logo: "https://www.advanceedgellc.com/Logo-ae.webp",
-            image: "https://www.advanceedgellc.com/og-home.jpg",
-            description:
-              "Legal intake and operations partner for law firms and legal marketing agencies.",
-            foundingDate: "2011",
-            telephone: "+1-832-937-7738",
-            email: "info@advanceedgellc.com",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "1008 Hamilton St",
-              addressLocality: "Immokalee",
-              addressRegion: "FL",
-              postalCode: "34142",
-              addressCountry: "US",
-            },
-            areaServed: "US",
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'AdvanceEdge',
+            url: SITE_URL,
+            logo: `${SITE_URL}/Logo-ae.webp`,
+            description: 'AdvanceEdge provides digital marketing and virtual intake solutions for law firms.',
             sameAs: [
-              "https://www.linkedin.com/company/advanceedge-solutions/",
-              "https://www.facebook.com/advanceedgellc",
-              "https://www.instagram.com/advanceedge_/",
-              "https://www.tiktok.com/@advanceedge",
+              'https://www.linkedin.com/company/advanceedge',
+              'https://www.facebook.com/advanceedge',
+              'https://twitter.com/advanceedge',
             ],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '1008 Hamilton St',
+              addressLocality: 'Immokalee',
+              addressRegion: 'FL',
+              postalCode: '34142',
+              addressCountry: 'US',
+            },
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'Customer Service',
+              telephone: '832.937.7738',
+              email: 'info@advanceedgellc.com',
+              availableLanguage: 'en',
+            },
+            potentialAction: {
+              '@type': 'TradeAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${SITE_URL}/contact`,
+                actionPlatform: ['DesktopWebPlatform', 'MobileWebPlatform'],
+              },
+              result: {
+                '@type': 'Thing',
+                name: 'Legal Marketing Consultation',
+              },
+            },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </main>
   )
