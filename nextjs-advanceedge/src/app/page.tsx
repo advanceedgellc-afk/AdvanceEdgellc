@@ -8,7 +8,6 @@ import FAQSection from "@/components/FAQSection"
 import { faqItems } from "@/components/faqItems"
 import { client } from "@/sanity/client"
 import type { Post } from "@/types/post"
-import ScrollDownArrow from "@/components/ScrollDownArrow"
 import BlogPostsSection from "@/components/BlogPostsSection"
 import Whoweworkwith from "@/components/Whoweworkwith"
 import Whatwedo from "@/components/Whatwedo"
@@ -128,8 +127,6 @@ export default async function Home() {
         <BlogPostsSection posts={posts} />
       </section>
 
-      {/* ✅ PERFECT: ScrollDownArrow BEFORE closing </main> */}
-      <ScrollDownArrow />
 
       {/* ✅ SINGLE JSON-LD - NO DUPLICATES */}
       <script

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
 
 const stats = [
   {
@@ -22,30 +22,41 @@ const stats = [
 
 ];
 
-// Animated number counter
+// Animated number counter.
+// The real number is in the HTML from the start (so search engines and
+// no-JS visitors see "1.5M+", not "0"). When the card scrolls into view the
+// digits count up by writing straight to the DOM — no React re-render per
+// frame, which is what made this section so heavy on phones.
 function CountUp({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
-  const numericPart = parseFloat(value.replace(/[^0-9.]/g, ""));
-  const prefix = value.match(/^[^0-9]*/)?.[0] || "";
-  const suffix = value.match(/[^0-9.]+$/)?.[0] || "";
-
-  const springValue = useSpring(0, { stiffness: 50, damping: 18 });
-  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (isInView) springValue.set(numericPart);
-  }, [isInView, numericPart]);
+    const el = ref.current;
+    if (!isInView || !el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  useEffect(() => {
-    return springValue.onChange((v: number) => {
-      setDisplay(Math.round(v * 10) / 10);
+    const numericPart = parseFloat(value.replace(/[^0-9.]/g, ""));
+    const prefix = value.match(/^[^0-9]*/)?.[0] || "";
+    const suffix = value.match(/[^0-9.]+$/)?.[0] || "";
+    const decimals = value.includes(".") ? 1 : 0;
+
+    const controls = animate(0, numericPart, {
+      duration: 1.6,
+      ease: "easeOut",
+      onUpdate: (v: number) => {
+        el.textContent = `${prefix}${v.toFixed(decimals)}${suffix}`;
+      },
+      onComplete: () => {
+        el.textContent = value;
+      },
     });
-  }, [springValue]);
+    return () => controls.stop();
+  }, [isInView, value]);
 
   return (
     <span ref={ref} className="tabular-nums">
-      {prefix}{display}{suffix}
+      {value}
     </span>
   );
 }
@@ -55,15 +66,17 @@ function Orb({ size, x, y, color, delay }: {
   size: number; x: string | number; y: string | number; color: string; delay: number;
 }) {
   return (
-    <motion.div
-      className="absolute rounded-full pointer-events-none"
+    // CSS animation (runs off the main thread). No blur filter: the radial
+    // gradient is already soft, and animating a 60px blur repaints every frame.
+    <div
+      aria-hidden="true"
+      className="absolute rounded-full pointer-events-none motion-safe:animate-drift"
       style={{
         width: size, height: size, left: x, top: y,
         background: color,
-        filter: "blur(60px)",
+        animationDuration: `${14 + delay * 2}s`,
+        animationDelay: `${delay}s`,
       }}
-      animate={{ x: [0, 20, -15, 0], y: [0, -30, 15, 0], scale: [1, 1.08, 0.96, 1] }}
-      transition={{ duration: 14 + delay * 2, repeat: Infinity, ease: "easeInOut", delay }}
     />
   );
 }

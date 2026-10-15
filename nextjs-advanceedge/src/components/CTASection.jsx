@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 export default function CTASection() {
@@ -27,7 +25,7 @@ export default function CTASection() {
           {/* Left Content */}
           <div className="flex-1">
             <div className="mb-6 animate-[fadeInDown_0.8s_ease-out]">
-              <span className="text-[#FF3600] text-sm font-bold tracking-widest uppercase">
+              <span className="text-[#FF9A28] text-sm font-bold tracking-widest uppercase">
                  GET IN TOUCH 
               </span>
             </div>
@@ -47,9 +45,9 @@ export default function CTASection() {
           </div>
 
           {/* Right CTA Card */}
-<div className="flex-shrink-0 animate-[slideInRight_0.8s_ease-out_200ms_both]">
+<div className="flex-shrink-0 animate-slide-in-right">
   <a
-    href="tel:18329377738"
+    href="tel:+18329377738"
     className="block"
     aria-label="Call AdvanceEdge at 832-937-7738"
   >
@@ -73,30 +71,6 @@ export default function CTASection() {
         </div>
       </div>
 
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
 
     </section>
   );

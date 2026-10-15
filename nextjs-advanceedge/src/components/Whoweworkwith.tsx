@@ -2,6 +2,8 @@ import { User, TrendingUp, Megaphone } from 'lucide-react';
 
 const NAVY = '#0F172A';
 const ORANGE = '#E88720';
+// Darker orange for small text on light backgrounds (meets 4.5:1 contrast)
+const ORANGE_TEXT = '#B45309';
 
 export default function WhoWeWorkWith() {
   return (
@@ -20,12 +22,12 @@ export default function WhoWeWorkWith() {
           
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2
+            <p
               className="text-sm font-bold tracking-[0.2em] uppercase mb-4"
-              style={{ color: ORANGE }}
+              style={{ color: ORANGE_TEXT }}
             >
               Who we work with
-            </h2>
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: NAVY }}>
               Who We Work With
             </h2>
@@ -42,9 +44,9 @@ export default function WhoWeWorkWith() {
               <div className="icon-bg w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-8">
                 <User size={28} className="card-icon" />
               </div>
-              <h4 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
+              <h3 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
                 Solo &amp; Small Law Firms
-              </h4>
+              </h3>
               <p className="text-slate-600 leading-relaxed">
                 You&apos;re doing it all: consults, court, staff management, and marketing. Intake and admin work steal time from billable work. We give you trained virtual legal agents and intake specialists who work your matters like in&#8209;house staff, without the overhead of full&#8209;time hires.
               </p>
@@ -61,9 +63,9 @@ export default function WhoWeWorkWith() {
               >
                 <TrendingUp size={28} className="card-icon" />
               </div>
-              <h4 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
+              <h3 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
                 Growing &amp; High&#8209;Volume Firms (Mass Tort, PI, MVA, and more)
-              </h4>
+              </h3>
               <p className="text-slate-600 leading-relaxed" >
                 You&apos;re running campaigns, opening dockets, and juggling multiple torts. What you need is not &quot;more leads&quot; but clean intake, reliable case qualification, medical record workflows that don&apos;t stall, and coverage that doesn&apos;t break the budget on nights and weekends.
               </p>
@@ -74,9 +76,9 @@ export default function WhoWeWorkWith() {
               <div className="icon-bg w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-8">
                 <Megaphone size={28} className="card-icon" />
               </div>
-              <h4 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
+              <h3 className="text-2xl font-bold mb-6" style={{ color: NAVY }}>
                 Legal Marketing Agencies &amp; Intake Platforms
-              </h4>
+              </h3>
               <p className="text-slate-600 leading-relaxed">
                 You drive the phones and forms; your clients judge you on signed retainers. AdvanceEdge sits between your media and your clients&apos; case management systems, handling intake, qualification, and record workflows so your campaigns prove their value instead of exposing intake gaps.
               </p>

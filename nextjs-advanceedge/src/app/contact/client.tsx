@@ -125,7 +125,7 @@ export default function ContactPageClient() {
                   </div>
                   <div>
                     <h3 className="font-marcellus text-xl font-semibold text-gray-800 mb-2">Phone</h3>
-                    <a href="tel:8329377738" className="font-dm text-lg text-gray-600 hover:text-orange-500 transition-colors">
+                    <a href="tel:+18329377738" aria-label="Call AdvanceEdge at 832-937-7738" className="font-dm text-lg text-gray-600 hover:text-orange-500 transition-colors">
                       832.937.7738
                     </a>
                   </div>

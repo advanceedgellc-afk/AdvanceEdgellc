@@ -37,6 +37,8 @@ export default function ScrollDownArrow() {
     <AnimatePresence>
       {isVisible && (
         <motion.button
+          type="button"
+          aria-label="Back to top"
           onClick={scrollToTop}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

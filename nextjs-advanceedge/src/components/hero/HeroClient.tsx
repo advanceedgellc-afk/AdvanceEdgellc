@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Script from "next/script";
 import { useBookingModal } from "@/context/BookingModalContext";
-import GhlContactForm from "@/components/forms/GhlContactForm";
+import DeferredGhlContactForm from "@/components/forms/DeferredGhlContactForm";
+
 const handleScrollToServices = () => {
   const el = document.getElementById("services");
   if (!el) return;
@@ -13,41 +12,27 @@ const handleScrollToServices = () => {
 
 export default function HeroClient() {
   const { openBookingModal } = useBookingModal();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <>
-      <Script
-        src="https://api.advanceedgellc.com/js/form_embed.js"
-        strategy="afterInteractive"
-      />
-
       {/* Decorative pattern */}
       <div className="absolute inset-0 opacity-5 z-10 hero-pattern" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-24 right-80 w-96 h-96 bg-[#FF9A28]/10 rounded-full blur-3xl opacity-0 animate-fade-in z-10" />
-      <div className="absolute bottom-20 left-80 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl opacity-0 animate-fade-in-delay z-10" />
+      {/* Desktop only, anchored to the top so the form growing never moves them */}
+      <div aria-hidden="true" className="absolute top-24 right-80 hidden w-96 h-96 bg-[#FF9A28]/10 rounded-full blur-3xl opacity-0 animate-fade-in z-10 lg:block" />
+      <div aria-hidden="true" className="absolute top-[55%] left-80 hidden w-96 h-96 bg-blue-500/5 rounded-full blur-3xl opacity-0 animate-fade-in-delay z-10 lg:block" />
 
       <div className="container mx-auto px-4 relative z-20 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left content */}
           <div className="max-w-4xl pt-10 md:pt-20">
-            <div
-              className={`transition-all duration-1000 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
+            {/* No entrance animation: the headline is the page's main content
+                (LCP), so it must be visible on the very first paint */}
+            <div>
               <div className="inline-flex items-center gap-2 bg-[#FF9A28]/10 border border-[#FF9A28]/30 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#FF9A28] rounded-full animate-pulse" />
                 <span className="text-[#FF9A28] text-base font-medium font-dm">
-                THE LEGAL INDUSTRY'S TRUSTED PARTNER
+                THE LEGAL INDUSTRY&apos;S TRUSTED PARTNER
                 </span>
               </div>
 
@@ -90,23 +75,16 @@ export default function HeroClient() {
           </div>
 
           {/* Right form */}
-          <div
-            className={`transition-all duration-1000 delay-200 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-           
-            <GhlContactForm />
-       
+          <div>
+            <DeferredGhlContactForm />
           </div>
         </div>
       </div>
 
       <button
+        type="button"
         onClick={handleScrollToServices}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce z-20"
+        className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 animate-bounce z-20 lg:block"
         aria-label="Scroll to services"
       >
         <div

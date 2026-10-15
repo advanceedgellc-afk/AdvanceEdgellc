@@ -1,7 +1,5 @@
-'use client';
-
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
 import {
   Linkedin,
   Facebook,
@@ -11,6 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import NewsletterForm from "@/components/NewsletterForm";
 
 /* ✅ Stable TikTok SVG (hydration-safe) */
 function TikTokIcon({ className }: { className?: string }) {
@@ -29,64 +28,6 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<{ type: "success" | "error" | ""; text: string }>({
-    type: "",
-    text: "",
-  });
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!email.trim()) {
-      setMessage({ type: "error", text: "Please enter your email address" });
-      return;
-    }
-
-    if (!emailRegex.test(email)) {
-      setMessage({ type: "error", text: "Please enter a valid email address" });
-      return;
-    }
-
-    setLoading(true);
-    setMessage({ type: "", text: "" });
-
-    try {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage({
-          type: "success",
-          text: "✓ Successfully subscribed! Check your email for updates.",
-        });
-        setEmail("");
-        setTimeout(() => setMessage({ type: "", text: "" }), 5000);
-      } else {
-        setMessage({
-          type: "error",
-          text: data.message || "Failed to subscribe. Please try again.",
-        });
-      }
-    } catch (err) {
-      setMessage({
-        type: "error",
-        text: "An error occurred. Please try again later.",
-      });
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   /* ✅ Clean social config */
   const socialLinks = [
     {
@@ -127,7 +68,7 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <Link href="/" className="inline-block mb-6">
-              <img src="/footer-logo-AE.webp" alt="AdvanceEdge Logo" className="w-44" />
+              <Image src="/footer-logo-AE.webp" alt="AdvanceEdge Logo" width={176} height={80} className="h-auto w-44" />
             </Link>
 
             <p className="font-dm text-gray-400 mb-6">
@@ -158,25 +99,25 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-marcellus text-xl mb-6">What We Do</h3>
+            <h3 className="font-marcellus text-xl mb-6">Services</h3>
             <ul className="space-y-3 font-dm">
               <li>
-                <a href="/services/intake-leaders/contact-center-intake-specialists" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <Link href="/services/intake-leaders/contact-center-intake-specialists" className="flex items-center gap-2 hover:text-[#FF9A28]">
                  
                  Contact Center & Intake Specialists
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/litigation-teams/medical-record-review" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <Link href="/services/litigation-teams/medical-record-review" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   
                  Medical Record Review
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/firm-owners-coos/virtual-legal-agents" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <Link href="/services/firm-owners-coos/virtual-legal-agents" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   
                   Virtual Legal Agents
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -192,7 +133,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:18329377738" className="flex items-center gap-2 hover:text-[#FF9A28]">
+                <a href="tel:+18329377738" aria-label="Call AdvanceEdge at 832-937-7738" className="flex items-center gap-2 hover:text-[#FF9A28]">
                   <Phone className="w-5 h-5 text-[#FF9A28]" />
                   832-937-7738
                 </a>
@@ -218,41 +159,15 @@ United States
           {/* Newsletter */}
           <div>
             <h4 className="font-marcellus text-xl mb-6">Our Newsletter</h4>
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={loading}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-[#FF9A28] hover:bg-[#e98820] rounded-lg py-3 font-semibold"
-              >
-                {loading ? "Sending..." : "Send"}
-              </button>
-
-              {message.text && (
-                <div className={`text-sm rounded-lg px-4 py-2 ${
-                  message.type === "success"
-                    ? "bg-green-500/20 text-green-200"
-                    : "bg-red-500/20 text-red-200"
-                }`}>
-                  {message.text}
-                </div>
-              )}
-            </form>
+            <NewsletterForm />
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 pb-10 text-sm text-gray-400 flex flex-col md:flex-row justify-between">
-          <p>© {new Date().getFullYear()}<Link href="/" className=" hover:text-[#FF9A28]">  AdvanceEdge LLC.</Link> All rights reserved.</p>
+        <div className="border-t border-white/10 pt-4 pb-10 text-sm text-gray-400 flex flex-col gap-2 md:flex-row md:items-center justify-between">
+          <p>© {new Date().getFullYear()} <Link href="/" className="inline-block py-3 hover:text-[#FF9A28]">AdvanceEdge LLC.</Link> All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className=" hover:text-[#FF9A28]">Privacy Policy</Link>
-            <Link href="/terms-of-service" className=" hover:text-[#FF9A28]">Terms of Service</Link>
+            <Link href="/privacy-policy" className="inline-block py-3 hover:text-[#FF9A28]">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="inline-block py-3 hover:text-[#FF9A28]">Terms of Service</Link>
           </div>
         </div>
       </div>

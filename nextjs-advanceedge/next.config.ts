@@ -6,8 +6,8 @@ const withBA = withBundleAnalyzer({
 });
 
 /**
- * Old URLs (previous site, old sitemap, old links) mapped to the pages that
- * replaced them. Every entry is a permanent redirect.
+ * Old URLs (from the previous site, the old sitemap and old links) mapped to
+ * the pages that replaced them. Every entry is a permanent (308) redirect.
  */
 const legacyRedirects: Array<[source: string, destination: string]> = [
   // Blog moved from /blog to /resources/blog
@@ -28,7 +28,8 @@ const legacyRedirects: Array<[source: string, destination: string]> = [
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/webp", "image/avif"],
+    formats: ["image/avif", "image/webp"],
+    // Next 16 only honours qualities listed here; anything else falls back to 75
     qualities: [60, 75],
     minimumCacheTTL: 60,
     remotePatterns: [
@@ -57,15 +58,33 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Security headers for every page (Lighthouse "Best Practices")
+        source: "/:path*",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self'" },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
+        ],
+      },
+      {
         source: "/static/:path*",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
         source: "/_next/static/:path*",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
     ];

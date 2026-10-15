@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useBookingModal } from "@/context/BookingModalContext";
@@ -9,7 +9,6 @@ import { useBookingModal } from "@/context/BookingModalContext";
 export default function AboutSection() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const { openBookingModal } = useBookingModal();
-  const reduceMotion = useReducedMotion();
 
   // Video modal: close on Escape and lock page scroll while open
   useEffect(() => {
@@ -36,11 +35,7 @@ export default function AboutSection() {
             {/* LEFT IMAGE SECTION */}
             <div className="relative flex h-[500px] items-center justify-center lg:justify-start">
               {/* Back card */}
-              <motion.div
-                className="absolute top-1/4 h-[440px] w-full overflow-hidden rounded-2xl shadow-xl md:h-[520px] md:w-[340px]"
-                animate={reduceMotion ? undefined : { y: [0, -12, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="absolute top-1/4 h-[440px] w-full overflow-hidden rounded-2xl shadow-xl motion-safe:animate-float-up md:h-[520px] md:w-[340px]">
                 <Image
                   src="/about/About-2-edited.webp"
                   alt="AdvanceEdge team members collaborating on legal intake work"
@@ -48,14 +43,10 @@ export default function AboutSection() {
                   sizes="(min-width: 768px) 340px, 100vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </div>
 
               {/* Front card (desktop only) */}
-              <motion.div
-                className="absolute right-0 top-6 hidden h-[320px] w-[220px] overflow-hidden rounded-2xl border-8 border-white shadow-2xl md:right-12 md:block md:h-[480px] md:w-[380px]"
-                animate={reduceMotion ? undefined : { y: [0, 14, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="absolute right-0 top-6 hidden h-[320px] w-[220px] overflow-hidden rounded-2xl border-8 border-white shadow-2xl motion-safe:animate-float-down md:right-12 md:block md:h-[480px] md:w-[380px]">
                 <Image
                   src="/about/about-img-1.jpg"
                   alt="Legal support specialist reviewing case files for a law firm"
@@ -63,7 +54,7 @@ export default function AboutSection() {
                   sizes="380px"
                   className="object-cover"
                 />
-              </motion.div>
+              </div>
 
               {/* Decorative dot pattern */}
               <div
@@ -71,15 +62,10 @@ export default function AboutSection() {
                 className="absolute left-0 top-1/3 grid grid-cols-5 gap-3 md:-left-12"
               >
                 {Array.from({ length: 15 }).map((_, i) => (
-                  <motion.span
+                  <span
                     key={i}
-                    className="h-2 w-2 rounded-full bg-slate-300"
-                    animate={
-                      reduceMotion
-                        ? undefined
-                        : { opacity: [0.4, 1, 0.4], scale: [0.8, 1.2, 0.8] }
-                    }
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
+                    className="h-2 w-2 rounded-full bg-slate-300 motion-safe:animate-dot-pulse"
+                    style={{ animationDelay: `${i * 0.1}s` }}
                   />
                 ))}
               </div>
@@ -96,7 +82,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="h-1 w-12 rounded-full bg-[#FF9A28]" />
-                <span className="font-dm text-sm font-bold uppercase tracking-widest text-[#FF3600]">
+                <span className="font-dm text-sm font-bold uppercase tracking-widest text-[#D63000]">
                   About Us
                 </span>
               </motion.div>
@@ -105,7 +91,7 @@ export default function AboutSection() {
               <h2 className="mb-12 text-3xl font-bold leading-[1.05] tracking-tight text-brand-navy md:text-4xl lg:text-5xl">
                 Trusted by legal teams{" "}
                 <br className="hidden md:block" />
-                <span className="text-orange-400">
+                <span className="text-orange-600">
                   handling high-volume, time-sensitive work
                 </span>
               </h2>
@@ -151,11 +137,9 @@ export default function AboutSection() {
                     whileTap={{ scale: 0.95 }}
                     className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#FF9A28] shadow-lg transition-colors hover:bg-[#e88720]"
                   >
-                    <motion.span
+                    <span
                       aria-hidden="true"
-                      className="absolute inset-0 rounded-full border-2 border-[#FF9A28]"
-                      animate={reduceMotion ? undefined : { opacity: [1, 0], scale: [1, 1.3] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                      className="absolute inset-0 rounded-full border-2 border-[#FF9A28] motion-safe:animate-ring-pulse"
                     />
                     <Play
                       aria-hidden="true"

@@ -7,6 +7,8 @@ import {
   
   const NAVY = '#0F172A';
   const ORANGE = '#E88720';
+  // Darker orange for small text on light backgrounds (meets 4.5:1 contrast)
+  const ORANGE_TEXT = '#B45309';
   
   export default function WhatWeDo() {
     return (
@@ -40,7 +42,7 @@ import {
               <div className="lg:w-[50%]  lg:sticky lg:top-24">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-px w-12" style={{ backgroundColor: ORANGE }} />
-                  <span className="font-bold tracking-[0.2em] uppercase text-xs" style={{ color: ORANGE }}>Intake &amp; Growth</span>
+                  <span className="font-bold tracking-[0.2em] uppercase text-xs" style={{ color: ORANGE_TEXT }}>Intake &amp; Growth</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] tracking-tight mb-8" style={{ color: NAVY }}>
                   For Intake Directors, CMOs, and Marketing Owners
@@ -107,7 +109,7 @@ import {
               </p>
             </div>
   
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   title: "Medical Record Retrieval",
@@ -124,7 +126,11 @@ import {
                   text: "Forms, data entry, document indexing, follow‑ups, and other paralegal‑level work executed by teams that have already handled millions of legal support tasks for U.S. law firms.",
                   icon: <Briefcase size={28} />
                 },
-               
+                {
+                  title: "Settlement & Post‑Resolution Support",
+                  text: "Help with settlement packets, lien coordination, and other repeatable workflows that bog teams down at the exact moment cash should be flowing into the firm.",
+                  icon: <ShieldCheck size={28} />
+                }
               ].map((item, i) => (
                 <div key={i} className="s2-card flex flex-col p-8 cursor-default overflow-hidden relative" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.8), #0F172A)' }}>
                   {/* Top animated bar */}
@@ -147,7 +153,7 @@ import {
           <div className="max-w-7xl mx-auto relative z-10">
             
             <div className="max-w-7xl mx-auto text-left mb-20">
-              <h2 className="font-bold tracking-[0.3em] uppercase text-sm mb-4" style={{ color: ORANGE }}>Strategic Capacity</h2>
+              <p className="font-bold tracking-[0.3em] uppercase text-sm mb-4" style={{ color: ORANGE_TEXT }}>Strategic Capacity</p>
               <h3 className="text-4xl md:text-5xl font-black leading-tight mb-8" style={{ color: NAVY }}>For Managing Partners, COOs, and Firm Owners</h3>
               <p className="text-xl md:text-2xl leading-relaxed font-light" style={{ color: `${NAVY}99` }}>
                 Your real constraint isn&apos;t leads or even talent—it&apos;s operational capacity and cost structure. AdvanceEdge gives you a flexible partner instead of another block of fixed headcount.

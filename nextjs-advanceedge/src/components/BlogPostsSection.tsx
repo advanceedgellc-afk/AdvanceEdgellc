@@ -1,12 +1,9 @@
 // src/components/BlogPostsSection.tsx - REUSABLE COMPONENT
-'use client';
-
 import Link from "next/link";
 import Image from "next/image";
 import { Gavel, ArrowRight } from "lucide-react";
 import { urlFor } from "@/lib/sanity";
 import type { Post } from "@/types/post";
-import { motion } from "framer-motion";
 
 interface BlogPostsSectionProps {
   posts: Post[];
@@ -19,32 +16,20 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
         <section className="py-4 md:py-14 bg-gray-50">
           <div className="container mx-auto px-4">
             {/* Header */}
-            <motion.div
-              className="text-center mb-16 px-0"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="text-center mb-16 px-0">
               <div className="space-y-6 flex flex-col items-center justify-center">
-                <motion.div
-                  className="flex items-center gap-3 pb-5"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="flex items-center gap-3 pb-5">
                   <div className="w-12 h-1 rounded-full bg-[#FF9A28]" />
-                  <span className="font-dm text-sm font-bold tracking-widest text-[#FF3600] uppercase">
+                  <span className="font-dm text-sm font-bold tracking-widest text-[#D63000] uppercase">
                     Recent Articles
                   </span>
-                </motion.div>
+                </div>
               </div>
 
               <h2 className="font-marcellus text-4xl md:text-5xl text-slate-900 mb-4">
                 Insights for Intake and Operations Leaders
               </h2>
-            </motion.div>
+            </div>
 
             {/* Posts Grid */}
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -82,6 +67,7 @@ export default function BlogPostsSection({ posts }: BlogPostsSectionProps) {
                     <p className="text-sm text-orange-700 font-semibold mb-2">
                       {post.publishedAt
                         ? new Date(post.publishedAt).toLocaleDateString("en-US", {
+                            timeZone: "UTC",
                             year: "numeric",
                             month: "long",
                             day: "numeric",
