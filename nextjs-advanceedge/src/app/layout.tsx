@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { BookingModalProvider } from "@/context/BookingModalContext";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
 import ScrollToTop from "@/components/ScrollToTop";
-
+   import GhlChatWidget from "@/components/GhlChatWidget";
 /* ---------------- Fonts ---------------- */
 
 const dmSans = DM_Sans({
@@ -104,6 +104,7 @@ export default function RootLayout({
 
           <Footer />
           <ScrollToTop />
+          <GhlChatWidget />
         </BookingModalProvider>
       </body>
     </html>

@@ -44,7 +44,7 @@ export default function ScrollDownArrow() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="fixed right-6 bottom-8 z-40 group"
+          className="fixed left-6 bottom-8 z-40 group"
         >
           {/* Rotating border */}
           <motion.div
