@@ -1,17 +1,17 @@
 "use client";
+import Image from "next/image";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Building, 
-  Scale, 
-  Target, 
-  ShieldCheck, 
-  BrainCircuit, 
+import {
+  Building,
+  Scale,
+  Target,
+  BrainCircuit,
   CheckCircle2,
   Lock,
   FileCheck,
   ClipboardCheck,
-  History
+  History,
 } from 'lucide-react';
 
 const fadeIn = {
@@ -109,13 +109,15 @@ Over the last 15 years, our reviewers have worked on:
           </div>
        
           <div className=" ">
-          <img 
-          src="/medical-review/phi-protection.webp" 
-          alt="Secure, access-controlled handling of patient health records" 
-          className="w-full h-full object-cover rounded-3xl "
-        />
+          <Image
+            src="/medical-review/phi-protection.webp"
+            alt="Secure, access-controlled handling of patient health records"
+            width={560}
+            height={428}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="w-full h-full object-cover rounded-3xl "
+          />
           </div>
-     
         </div>
       </Section>
 

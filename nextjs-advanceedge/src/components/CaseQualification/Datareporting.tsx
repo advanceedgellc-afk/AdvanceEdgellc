@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const metrics = [
   {
@@ -107,9 +108,12 @@ export default function DataReporting() {
                 overflow: "hidden"
               }}
             >
-              <img 
-                src="/case-qualification/reporting.webp" 
+              <Image
+                src="/case-qualification/reporting.webp"
                 alt="Campaign Intelligence and Reporting"
+                width={454}
+                height={568}
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>

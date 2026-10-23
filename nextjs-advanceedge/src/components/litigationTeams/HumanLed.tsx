@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -19,11 +20,14 @@ export default function LitigationOperations() {
             <div className="aspect-square rounded-3xl   p-12 overflow-hidden relative">
               {/* Abstract Human-AI Synergy SVG */}
 
-              <img 
-          src="/litigation-teams/human-led.webp" 
-          alt="Litigation support specialist checking AI-assisted document review" 
-          className="w-full h-full object-cover rounded-3xl "
-        />
+              <Image
+                src="/litigation-teams/human-led.webp"
+                alt="Litigation support specialist checking AI-assisted document review"
+                width={598}
+                height={598}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-full object-cover rounded-3xl "
+              />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0c]/80 to-transparent" />
             </div>
           </motion.div>

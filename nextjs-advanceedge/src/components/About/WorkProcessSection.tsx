@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 
 /**
@@ -10,7 +11,9 @@ export default function WorkProcessSection() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Start the entrance animation on the next frame
+    const frame = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const processSteps = [
@@ -55,9 +58,12 @@ export default function WorkProcessSection() {
           {/* Left Column: Image */}
           <div className={`relative transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="/about/About-2-edited.webp" 
-                alt="Operations Workflow" 
+              <Image
+                src="/about/About-2-edited.webp"
+                alt="Operations Workflow"
+                width={365}
+                height={500}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#FF9A28]/20 to-transparent" />

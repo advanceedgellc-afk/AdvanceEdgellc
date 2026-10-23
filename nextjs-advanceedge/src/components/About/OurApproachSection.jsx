@@ -56,7 +56,7 @@ export default function OurApproachSection() {
             className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
             style={{ animation: 'fadeInUp 0.8s ease-out 300ms both' }}
           >
-            At AdvanceEdge, we don't just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. We build each pod around your dockets, systems and SLAs, so the work fits how your firm already runs.
+            At AdvanceEdge, we don&apos;t just provide services—we integrate seamlessly into your operations, ensuring precision, efficiency, and compliance at every step. We build each pod around your dockets, systems and SLAs, so the work fits how your firm already runs.
           </p>
         </div>
 

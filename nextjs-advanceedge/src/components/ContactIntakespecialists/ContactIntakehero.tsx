@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React from "react";
 import { useBookingModal } from "@/context/BookingModalContext";
@@ -14,10 +15,14 @@ export default function App() {
   return (
     <section className="relative w-full lg:min-h-[80vh] min-h-[100vh]  pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000&auto=format&fit=crop"
           alt="Contact center and professional communication"
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+          quality={60}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-slate-950/85" />
       </div>

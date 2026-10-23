@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useBookingModal } from "@/context/BookingModalContext";
 import GhlContactForm from "@/components/forms/GhlContactForm";
@@ -10,11 +11,15 @@ export default function BlogHero() {
     <section className="relative w-full lg:min-h-[80vh] min-h-[100vh] pt-32 pb-10 flex items-center justify-center overflow-hidden bg-slate-950">
       {/* Decorative background (empty alt so screen readers skip it) */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/blog/blog-hero-bg.webp"
+        <Image
+          src="/blog/blog-hero.webp"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-center"
+          fill
+          sizes="100vw"
+          priority
+          quality={60}
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-slate-950/85" />
       </div>

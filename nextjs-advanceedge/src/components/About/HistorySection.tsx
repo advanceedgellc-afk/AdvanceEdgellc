@@ -9,7 +9,9 @@ export default function HistorySection() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Start the entrance animation on the next frame
+    const frame = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const historyData = [

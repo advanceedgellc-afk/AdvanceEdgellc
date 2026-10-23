@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 import GhlContactForm from "@/components/forms/GhlContactForm";
@@ -14,10 +15,14 @@ export default function App() {
       
       {}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop" 
-          alt="Case qualification and professional strategy" 
-          className="w-full h-full object-cover"
+        <Image
+          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop"
+          alt="Case qualification and professional strategy"
+          fill
+          sizes="100vw"
+          priority
+          quality={60}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>

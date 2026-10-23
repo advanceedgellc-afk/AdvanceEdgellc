@@ -10,7 +10,7 @@ import FAQSection from "@/components/digitalSolutions/FAQSection";
 import { faqItems } from "@/components/digitalSolutions/faqItems";
 
 const PAGE_PATH = "/services/firm-owners-coos/digital-marketing";
-const TITLE = "Law Firm Websites, SEO & PPC | AdvanceEdge";
+const TITLE = "Law Firm Digital Marketing, SEO & Websites | AdvanceEdge";
 const DESCRIPTION =
   "Law firm web development, SEO and paid ads built around intake, so the leads your marketing pays for turn into signed cases.";
 

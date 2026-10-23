@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const stackItems = [
   {
     number: "01",
@@ -355,7 +357,7 @@ export default function IntegratedStack() {
                 worst bottlenecks, and see exactly where AdvanceEdge can plug in.
               </p>
             </div>
-            <a
+            <Link
               href="/contact"
               style={{
                 display: "inline-block",
@@ -380,7 +382,7 @@ export default function IntegratedStack() {
               }
             >
               Book a 20-Minute Records Workflow Review
-            </a>
+            </Link>
           </div>
         </div>
 

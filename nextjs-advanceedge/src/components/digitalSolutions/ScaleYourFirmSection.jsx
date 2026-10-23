@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 
 import { useBookingModal } from "@/context/BookingModalContext";
 export default function ScaleYourFirmSection() {    
@@ -11,9 +12,12 @@ export default function ScaleYourFirmSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-0">
            {/* Left Image */}
            <div className="animate-fadeInRight w-full h-full py-0">
-            <img 
-              src="/digitalSolutions/digital-success-new.webp " 
+            <Image
+              src="/digitalSolutions/digital-success-new.webp"
               alt="Professional man with glasses holding tablet"
+              width={544}
+              height={457}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="rounded-r-3xl shadow-2xl w-full h-full object-cover"
             />
           </div>
@@ -34,9 +38,12 @@ export default function ScaleYourFirmSection() {
 
             {/* Quote Section with Image */}
             <div className=" flex gap-4">
-              <img 
-                src="/virtualAgents/left-quote.png" 
+              <Image
+                src="/virtualAgents/left-quote.png"
                 alt="Quote mark"
+                width={64}
+                height={64}
+                sizes="48px"
                 className="w-12 h-auto flex-shrink-0"
               />
               <p className="text-lg italic text-gray-800">

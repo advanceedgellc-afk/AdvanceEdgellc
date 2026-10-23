@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const complianceItems = [
   {
@@ -290,14 +291,17 @@ export default function ComplianceAndScale() {
               overflow: "hidden",
               border: "1px solid rgba(255,255,255,0.1)"
             }}>
-              <img 
-                src="/medical-retrival/scale-and-exp.webp" 
-               alt="Records specialist pulling patient files from a medical records cabinet"
+              <Image
+                src="/medical-retrival/scale-and-exp.webp"
+                alt="Records specialist pulling patient files from a medical records cabinet"
+                width={518}
+                height={343}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </div>
            
-            {/* Right side Image (Referencing image_e9ad18.png) */}
+            {/* Right side text */}
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               <p
                 style={{

@@ -96,7 +96,32 @@ export default async function Blog() {
     <main className="bg-slate-950 text-slate-50">
       {/* HERO */}
      <BlogHero/>
-
+      {/* Blog intro */}
+      <section className="bg-slate-950 border-b border-slate-800/70">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-16 grid gap-10 lg:grid-cols-2 font-dm">
+          <div>
+            <h2 className="font-marcellus text-3xl md:text-4xl text-slate-50 mb-4">
+              Practical Guides for Law Firm Intake and Operations
+            </h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              The AdvanceEdge blog is written for managing partners, intake
+              leaders and litigation teams who want more signed cases from the
+              same marketing spend. Each article draws on our day-to-day work
+              supporting Mass Tort and personal injury firms, so you get
+              practical steps you can use, not theory.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-[#FF9A28] mb-4">What we cover</h3>
+            <ul className="space-y-3 text-slate-300 leading-relaxed">
+              <li><span className="font-semibold text-slate-100">Legal intake:</span> answering every call, qualifying faster and converting more inquiries into retained clients.</li>
+              <li><span className="font-semibold text-slate-100">Mass Tort campaigns:</span> case acquisition, criteria, compliance and keeping dockets healthy.</li>
+              <li><span className="font-semibold text-slate-100">Medical records:</span> retrieval and review workflows that keep cases moving.</li>
+              <li><span className="font-semibold text-slate-100">Law firm operations:</span> staffing, bookkeeping and scaling without adding fixed headcount.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       {/* BLOG LIST */}
       <section className="py-16 md:py-20 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 md:px-6">

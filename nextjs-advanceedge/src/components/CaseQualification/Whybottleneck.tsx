@@ -1,6 +1,5 @@
 "use client";
 
-import { Weight } from "lucide-react";
 
 const problems = [
   {
@@ -87,8 +86,8 @@ export default function WhyBottleneck() {
             maxWidth: "700px",
           }}
         >
-          For most growth-minded firms and agencies, the constraint isn't clicks or even
-          calls — it's the ability to consistently decide which matters deserve attorney
+          For most growth-minded firms and agencies, the constraint isn&apos;t clicks or even
+          calls — it&apos;s the ability to consistently decide which matters deserve attorney
           attention.
         </p>
 
@@ -180,10 +179,10 @@ export default function WhyBottleneck() {
               margin: 0,
             }}
           >
-            AdvanceEdge's case qualification program fixes this by creating a clear,
+            AdvanceEdge&apos;s case qualification program fixes this by creating a clear,
             documented layer between{" "}
-            <em style={{ color: "#ff9a28" }}>"someone reached out"</em> and{" "}
-            <em style={{ color: "#ff9a28" }}>"an attorney will invest time in this file."</em>{" "}
+            <em style={{ color: "#ff9a28" }}>&quot;someone reached out&quot;</em> and{" "}
+            <em style={{ color: "#ff9a28" }}>&quot;an attorney will invest time in this file.&quot;</em>{" "}
             That layer runs to your rules, not ours.
           </p>
         </div>

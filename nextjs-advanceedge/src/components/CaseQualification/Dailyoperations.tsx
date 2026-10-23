@@ -104,8 +104,8 @@ export default function DailyOperations() {
                 lineHeight: 1.8,
               }}
             >
-              Case qualification is far more than a single checkbox — it's a persistent
-              operational layer engineered around your firm's specific acceptance
+              Case qualification is far more than a single checkbox — it&apos;s a persistent
+              operational layer engineered around your firm&apos;s specific acceptance
               criteria, risk profile, and marketing strategy.<br/><b>On a daily basis, the AdvanceEdge team manages the following:</b>
             </p>
 

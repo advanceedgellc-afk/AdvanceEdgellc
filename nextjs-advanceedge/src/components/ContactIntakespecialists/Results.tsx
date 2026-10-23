@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PhoneIncoming, FileCheck, Clock, BarChart3, ThumbsUp } from 'lucide-react';
@@ -68,11 +69,13 @@ export default function Results() {
             className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] border border-slate-800"
           >
 
-<img 
-          src="/intake-leaders/intake-and-contact-center.webp" 
-          alt="Legal intake specialists answering calls in a contact center" 
-          className="w-full h-full object-cover rounded-3xl "
-        />
+<Image
+              src="/intake-leaders/intake-and-contact-center.webp"
+              alt="Legal intake specialists answering calls in a contact center"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover rounded-3xl"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent" />
           </motion.div>
         </div>

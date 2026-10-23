@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 
 export default function TypesOfCases() {
@@ -11,26 +12,31 @@ export default function TypesOfCases() {
       id: 1,
      
       image: '/caseAquation/Personal_Injury.webp',
+      alt: 'Personal injury cases',
     },
     {
       id: 2,
      
       image: '/caseAquation/Defective_Drugs.webp',
+      alt: 'Defective drug cases',
     },
     {
       id: 3,
      
       image: '/caseAquation/Medical_Devices.webp',
+      alt: 'Medical device cases',
     },
     {
       id: 4,
       
       image: '/caseAquation/Toxic_Exposure.webp',
+      alt: 'Toxic exposure cases',
     },
     {
       id: 5,
      
       image: '/caseAquation/Product_Liability.webp',
+      alt: 'Product liability cases',
     },
   ];
 
@@ -55,10 +61,8 @@ export default function TypesOfCases() {
       setActiveSlide((prev) => (prev + 1) % caseTypes.length);
     }, 2000);
     return () => clearInterval(timer);
-  }, [autoplay]);
+  }, [autoplay, caseTypes.length]);
 
-  const currentCase = caseTypes[activeSlide];
-  const nextCase = caseTypes[(activeSlide + 1) % caseTypes.length];
 
   return (
     <section className="bg-[#F6F6F6] py-10 md:py-20 px-5 overflow-hidden">
@@ -130,10 +134,12 @@ export default function TypesOfCases() {
                       idx === activeSlide ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <img
+                    <Image
                       src={caseType.image}
-                      alt={caseType.title}
-                      className="w-full h-full object-cover"
+                      alt={caseType.alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
                     />
                     {/* Gradient Overlay with Text */}
                     <div className="absolute inset-0  to-transparent flex items-end p-4">
@@ -152,10 +158,12 @@ export default function TypesOfCases() {
                       idx === (activeSlide + 1) % caseTypes.length ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
-                    <img
+                    <Image
                       src={caseType.image}
-                      alt={caseType.title}
-                      className="w-full h-full object-cover"
+                      alt={caseType.alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
                     />
                     {/* Gradient Overlay with Text */}
                     <div className="absolute inset-0  flex items-end p-4">

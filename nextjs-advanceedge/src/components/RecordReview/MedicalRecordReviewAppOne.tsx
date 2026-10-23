@@ -1,9 +1,9 @@
 "use client";
+import Image from "next/image";
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  CheckCircle2,
   Stethoscope,
   Scale,
   BrainCircuit,
@@ -13,7 +13,7 @@ import {
   Activity,
   Pill,
   ClipboardList,
-  LibraryBig
+  LibraryBig,
 } from 'lucide-react';
 
 const fadeIn = {
@@ -63,11 +63,14 @@ export default function MedicalRecordReviewApp() {
             <div className="aspect-[4/3] rounded-3xl bg-slate-100 border border-slate-200 overflow-hidden relative shadow-lg">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A28]/10 to-transparent" />
               <div className="w-full h-full flex items-center justify-center text-slate-400">
-              <img 
-          src="/medical-review/paralegal-work.webp" 
-          alt="Paralegal reviewing a stack of medical records for a case" 
-          className="w-full h-full object-cover rounded-3xl "
-        />
+              <Image
+                src="/medical-review/paralegal-work.webp"
+                alt="Paralegal reviewing a stack of medical records for a case"
+                width={544}
+                height={428}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-full object-cover rounded-3xl "
+              />
               </div>
             </div>
           </motion.div>

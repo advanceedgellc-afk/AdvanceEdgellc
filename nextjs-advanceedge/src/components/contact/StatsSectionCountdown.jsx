@@ -6,14 +6,8 @@ export default function StatsSection() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-
-  useEffect(() => {
-    setCount1(0);
-    setCount2(0);
-    setCount3(0);
-    setShouldAnimate(true);
-  }, []);
+  // Counters start at 0 and animate up as soon as the section mounts
+  const shouldAnimate = true;
 
   useEffect(() => {
     if (!shouldAnimate) return;

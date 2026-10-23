@@ -1,68 +1,11 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import { Mail, Phone, MapPin, CheckCircle, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import StatsSectionCountdown from "@/components/contact/StatsSectionCountdown";
 import MapSection from "@/components/contact/MapSection";
 import IndustryExpertiseSection from "@/components/About/IndustryExpertiseSection";
 import GhlContactForm from "@/components/forms/GhlContactForm";
 
 export default function ContactPageClient() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: ""
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
-
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: ""
-      });
-      
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (err) {
-      setError("Failed to send message. Please try again.");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <main>
       {/* Hero Section */}
@@ -96,8 +39,8 @@ export default function ContactPageClient() {
             <div>
               <h2 className="font-marcellus text-4xl mb-6 text-gray-800">Get in Touch</h2>
               <p className="font-dm text-lg text-gray-600 mb-12 leading-relaxed">
-                Have questions about our services? We're here to help. Reach out to us and
-                we'll respond as soon as possible.
+                Have questions about our services? We&apos;re here to help. Reach out to us and
+                we&apos;ll respond as soon as possible.
               </p>
 
               <div className="space-y-8">

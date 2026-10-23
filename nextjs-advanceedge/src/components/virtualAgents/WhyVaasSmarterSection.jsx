@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 
 import React, { useState, useEffect } from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
@@ -105,13 +106,15 @@ export default function WhyVaasSmarterSection() {
             onMouseLeave={() => setAutoplay(true)}
           >
             {sliderImages.map((img, idx) => (
-              <img
+              <Image
                 key={idx}
                 src={img}
                 alt={`Slide ${idx + 1}`}
-                className={`absolute inset-0  object-cover transition-opacity duration-700 ease-in-out ${
-                  idx === activeSlide ? 'opacity-100' : 'opacity-0'
-                }`}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className={`object-cover transition-opacity duration-700 ease-in-out ${
+ idx === activeSlide ? 'opacity-100' : 'opacity-0'
+ }`}
               />
             ))}
 

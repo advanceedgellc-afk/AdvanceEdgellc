@@ -5,10 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowRight,
-  Target, Bot, Megaphone, FileSearch, UserCheck, TrendingUp,
-  Headphones, Stethoscope, Briefcase, Scale, HandCoins, Calculator,
-  BookOpen, FileText,
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+  ArrowRight,
+  Target,
+  Bot,
+  Megaphone,
+  FileSearch,
+  UserCheck,
+  TrendingUp,
+  Headphones,
+  Stethoscope,
+  Briefcase,
+  Scale,
+  Calculator,
+  BookOpen,
+  FileText,
 } from "lucide-react";
 
 const whatWeDo = [
@@ -159,11 +173,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  // Close any open menus when the page changes (state adjusted during render,
+  // not in an effect, so React doesn't render the header twice)
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
     setMobileMenuOpen(false);
     setMegaOpen(false);
     setResourcesOpen(false);
-  }, [pathname]);
+  }
 
   const isActive = (path: string) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import React, { useState } from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 
@@ -65,10 +66,13 @@ export default function PartnerInGrowthCTA() {
           >
             {/* Main Image Container */}
             <div className="rounded-lg overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="/about/Growth.webp"
                 alt="Team Meeting"
-                className=" w-[100%] object-cover"
+                width={470}
+                height={314}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full object-cover"
               />
             </div>
 

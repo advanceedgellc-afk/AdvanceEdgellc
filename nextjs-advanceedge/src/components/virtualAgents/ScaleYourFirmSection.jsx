@@ -1,46 +1,30 @@
 'use client';
 
-import React from 'react';
+import Image from "next/image";
 
 export default function ScaleYourFirmSection() {
   const benefits = [
     { 
       icon: (
-        <img 
-                src="/virtualAgents/expertise.png" 
-                alt="expertise"
-                className="w-12 h-auto flex-shrink-0"
-              />
+        <Image src="/virtualAgents/expertise.png" alt="expertise" width={64} height={64} className="w-12 h-auto flex-shrink-0" />
       ),
       label: 'Professionally Trained'
     },
     { 
       icon: (
-        <img 
-                src="/virtualAgents/data-driven.png" 
-                alt="data-driven"
-                className="w-12 h-auto flex-shrink-0"
-              />
+        <Image src="/virtualAgents/data-driven.png" alt="data-driven" width={64} height={64} className="w-12 h-auto flex-shrink-0" />
       ),
       label: 'Results-Driven'
     },
     { 
       icon: (
-        <img 
-                src="/virtualAgents/scalability.png" 
-                alt="scalability"
-                className="w-12 h-auto flex-shrink-0"
-              />
+        <Image src="/virtualAgents/scalability.png" alt="scalability" width={64} height={64} className="w-12 h-auto flex-shrink-0" />
       ),
       label: 'Scalable'
     },
     { 
       icon: (
-        <img 
-        src="/virtualAgents/cost-effectiveness.png" 
-        alt="cost-effectiveness"
-        className="w-12 h-auto flex-shrink-0"
-      />
+        <Image src="/virtualAgents/cost-effectiveness.png" alt="cost-effectiveness" width={64} height={64} className="w-12 h-auto flex-shrink-0" />
       ),
       label: 'Cost-Effective'
     },
@@ -70,11 +54,7 @@ export default function ScaleYourFirmSection() {
 
             {/* Quote Section with Image */}
             <div className="mb-12 flex gap-4">
-              <img 
-                src="/virtualAgents/left-quote.png" 
-                alt="Quote mark"
-                className="w-12 h-auto flex-shrink-0"
-              />
+              <Image src="/virtualAgents/left-quote.png" alt="Quote mark" width={64} height={64} className="w-12 h-auto flex-shrink-0" />
               <p className="text-lg italic text-gray-800">
                 Scaling in the legal industry starts with smarter support— our virtual agents help you grow, streamline, and succeed.
               </p>
@@ -88,10 +68,13 @@ export default function ScaleYourFirmSection() {
 
           {/* Right Image */}
           <div className="animate-fadeInRight flex justify-end">
-            <img 
-              src="/virtualAgents/finances-section.webp" 
+            <Image
+              src="/virtualAgents/finances-section.webp"
               alt="Professional man with glasses holding tablet"
-              className="right w-[68%]"
+              width={470}
+              height={731}
+              sizes="(min-width: 1024px) 34vw, 68vw"
+              className="right h-auto w-[68%]"
             />
           </div>
         </div>

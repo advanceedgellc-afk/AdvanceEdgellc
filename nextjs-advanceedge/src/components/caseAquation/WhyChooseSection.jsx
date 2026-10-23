@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import React, { useState } from 'react';
 
 import { useBookingModal } from "@/context/BookingModalContext";
@@ -148,11 +149,13 @@ export default function WhyChooseSection() {
 
                 {/* Right Image */}
                 <div className="lg:w-1/2 w-[90%]">
-                <div className="w-[80%] relative overflow-hidden rounded-tl-[32px] rounded-br-[32px] shadow-lg bg-gray-100">
-                    <img
+                <div className="w-[80%] h-80 md:h-96 relative overflow-hidden rounded-tl-[32px] rounded-br-[32px] shadow-lg bg-gray-100">
+                    <Image
                     src={activeTabData.image}
                     alt={activeTabData.title}
-                    className="w-full h-80 md:h-96 object-cover object-center"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 72vw"
+                    className="object-cover object-center"
                     />
                 </div>
                 </div>

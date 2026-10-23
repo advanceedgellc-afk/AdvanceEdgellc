@@ -1,13 +1,15 @@
 // src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Marcellus } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BookingModalProvider } from "@/context/BookingModalContext";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
 import ScrollToTop from "@/components/ScrollToTop";
-   import GhlChatWidget from "@/components/GhlChatWidget";
+import GhlChatWidget from "@/components/GhlChatWidget";
+
 /* ---------------- Fonts ---------------- */
 
 const dmSans = DM_Sans({
@@ -62,26 +64,19 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`scroll-smooth ${dmSans.variable} ${marcellus.variable}`}
     >
-      <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-M99ZNLFC');
-            `,
-          }}
-        />
-        {/* End Google Tag Manager */}
-      </head>
-
       <body
         suppressHydrationWarning
         className={`${dmSans.className} antialiased`}
       >
+        {/* Google Tag Manager — loaded by Next.js right after the page becomes interactive */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-M99ZNLFC');`}
+        </Script>
+
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

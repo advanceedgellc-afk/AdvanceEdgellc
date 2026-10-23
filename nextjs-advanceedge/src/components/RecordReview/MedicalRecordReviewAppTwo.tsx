@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Scale, FileText, CheckCircle2, ChevronRight, Layers, Workflow, ShieldCheck } from 'lucide-react';
+import { Search, Scale, FileText } from 'lucide-react';
 
 const reviewLevels = [
     {

@@ -251,12 +251,12 @@ export default function FourLayerFramework() {
                 fontFamily: "DM Sans, serif",
                 fontSize: "15px",
                 lineHeight: 1.8,
-                marginBottom: (layer as any).summaryDetail ? "20px" : "28px",
+                marginBottom: (layer as { summaryDetail?: string }).summaryDetail ? "20px" : "28px",
               }}
             >
               {layer.summary}
             </p>
-            {(layer as any).summaryDetail && (
+            {(layer as { summaryDetail?: string }).summaryDetail && (
               <p
                 style={{
                   color: "rgba(255,255,255,0.6)",
@@ -266,7 +266,7 @@ export default function FourLayerFramework() {
                   marginBottom: "28px",
                 }}
               >
-                {(layer as any).summaryDetail}
+                {(layer as { summaryDetail?: string }).summaryDetail}
               </p>
             )}
 

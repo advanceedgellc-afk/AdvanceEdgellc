@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 
 import React from 'react';
 
@@ -26,7 +27,7 @@ export default function MeetVirtualTeamSection() {
           </h2>
           <div className="w-16 h-1 bg-[#FF9A28] mx-auto mb-6"></div>
           <p className="text-gray-300 text-lg">
-            10 Specialized Roles to Enhance Your Firm's Efficiency
+            10 Specialized Roles to Enhance Your Firm&apos;s Efficiency
           </p>
         </div>
 
@@ -42,10 +43,12 @@ export default function MeetVirtualTeamSection() {
               }}
             >
               {/* Agent Image */}
-              <img
+              <Image
                 src={agent.image}
                 alt={agent.name}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 20vw, 50vw"
+                className="object-cover"
               />
 
               {/* Light Blue Transparent Overlay - Always Visible */}

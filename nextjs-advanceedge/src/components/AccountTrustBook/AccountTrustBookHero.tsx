@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 import GhlContactForm from "@/components/forms/GhlContactForm";
@@ -14,10 +15,14 @@ export default function App() {
       
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop" 
-          alt="Bookkeeper reviewing law firm trust account ledgers" 
-          className="w-full h-full object-cover"
+        <Image
+          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop"
+          alt="Bookkeeper reviewing law firm trust account ledgers"
+          fill
+          sizes="100vw"
+          priority
+          quality={60}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-slate-950/85"></div>
       </div>

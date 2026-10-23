@@ -12,7 +12,7 @@ const withBA = withBundleAnalyzer({
 const legacyRedirects: Array<[source: string, destination: string]> = [
   // Blog moved from /blog to /resources/blog
   ["/blog", "/resources/blog"],
-  ["/blog/:slug", "/resources/blog/:slug"],
+ ["/blog/:slug([^./]+)", "/resources/blog/:slug"],
 
   // Old service URLs
   ["/services/masstort-case-acquisition-services", "/services/firm-owners-coos/case-acquisition"],

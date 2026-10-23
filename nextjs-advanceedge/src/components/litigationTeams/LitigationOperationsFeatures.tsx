@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -149,11 +150,14 @@ const ResultsSection = () => (
         viewport={{ once: true }}
         className="aspect-square rounded-3xl bg-slate-100 border border-slate-200 flex items-center justify-center p-8"
       >
-              <img 
-          src="/litigation-teams/litigation-support-book.webp" 
-          alt="Paralegal team organizing case files and discovery documents" 
-          className="w-full h-full object-cover rounded-3xl "
-        />
+              <Image
+                src="/litigation-teams/litigation-support-book.webp"
+                alt="Paralegal team organizing case files and discovery documents"
+                width={542}
+                height={542}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-full object-cover rounded-3xl "
+              />
       </motion.div>
     </div>
   </section>

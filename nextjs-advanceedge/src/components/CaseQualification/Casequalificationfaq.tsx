@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBookingModal } from "@/context/BookingModalContext";
-import { Plus, X } from "lucide-react";
+import { Plus} from "lucide-react";
 import { faqItems } from "./faqItems";
 
 export default function FAQSection() {

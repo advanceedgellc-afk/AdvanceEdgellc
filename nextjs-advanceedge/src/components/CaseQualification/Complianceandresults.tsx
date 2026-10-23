@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 
 const complianceItems = [
   {
@@ -104,7 +103,7 @@ export default function ComplianceAndResults() {
               maxWidth: "640px",
             }}
           >
-            Case qualification sits near your firm's risk surface: conflicts, consent,
+            Case qualification sits near your firm&apos;s risk surface: conflicts, consent,
             eligibility, and data accuracy all matter. The program is structured to
             support your obligations instead of working around them.
           </p>
@@ -283,7 +282,7 @@ export default function ComplianceAndResults() {
                     
                   }}
                 >
-                  You've already invested heavily in marketing, intake, and reputation.
+                  You&apos;ve already invested heavily in marketing, intake, and reputation.
                   Case qualification is the missing layer that makes that investment pay
                   off instead of draining attorney time and firm margin.
                 </p>

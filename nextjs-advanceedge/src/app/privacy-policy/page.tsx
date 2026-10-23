@@ -4,23 +4,21 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | AdvanceEdge",
+  title: "Privacy Policy | How AdvanceEdge LLC Protects Your Data",
   description:
-    "How AdvanceEdge collects, uses and protects information submitted through this website.",
-  alternates: {
-    canonical: "https://www.advanceedgellc.com/privacy-policy",
-  },
+    "How AdvanceEdge LLC collects, uses, shares and protects your information, including cookies, SMS consent and your privacy rights.",
+  alternates: { canonical: "/privacy-policy" },
   openGraph: {
-    title: "Privacy Policy | AdvanceEdge",
+    title: "Privacy Policy | How AdvanceEdge LLC Protects Your Data",
     description:
-      "How AdvanceEdge collects, uses and protects information submitted through this website.",
-    url: "https://www.advanceedgellc.com/privacy-policy",
+      "How AdvanceEdge LLC collects, uses, shares and protects your information, including cookies, SMS consent and your privacy rights.",
+    url: "/privacy-policy",
     type: "website",
   },
 };
 
 
-const siteUrl = "https://advanceedgellc.com/";
+const siteUrl = "https://www.advanceedgellc.com/";
 
 function PolicySection({
   title,

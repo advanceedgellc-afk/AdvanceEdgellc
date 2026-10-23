@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import React, { useState } from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
 export default function WhoWeServe() {
@@ -36,20 +37,24 @@ export default function WhoWeServe() {
             {/* Main Image */}
             <div className="relative w-full max-w-xl animate-fadeInLeft">
               <div className="relative rounded-tl-[40px] rounded-br-[40px] overflow-hidden shadow-2xl h-96 lg:h-[550px]">
-                <img
+                <Image
                   src="/caseAquation/Who-we-are.webp"
                   alt="Professional woman lawyer"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(min-width: 640px) 576px, 100vw"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
               </div>
 
               {/* Secondary Image Overlay */}
               <div className="absolute -bottom-8 left-0 md:-left-8  w-44 h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white hover:scale-110 transition-transform duration-300 animate-fadeInUp" style={{ animationDelay: '200ms' }}>
-                <img
+                <Image
                   src="/caseAquation/Serving-Every-Business.webp"
                   alt="Team collaboration"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="176px"
+                  className="object-cover"
                 />
               </div>
 

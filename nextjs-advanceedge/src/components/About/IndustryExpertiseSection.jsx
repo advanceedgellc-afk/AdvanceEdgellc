@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 
 import React from 'react';
 
@@ -38,9 +39,12 @@ export default function IndustryExpertiseSection() {
           {/* Left - Professional Image */}
           <div style={{ animation: 'fadeInLeft 0.8s ease-out' }} className='order-3 md:order-1'>
             <div className="relative">
-              <img
+              <Image
                 src="/about/Industry-expert.webp"
                 alt="Professional"
+                width={487}
+                height={731}
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="w-full h-full rounded-lg object-cover"
               />
             </div>

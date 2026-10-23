@@ -1,4 +1,5 @@
 import { PortableText, type SanityDocument } from "next-sanity";
+import Image from "next/image";
 
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -6,6 +7,7 @@ import type { Metadata } from 'next'
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import BlogPostShareWrapper from "@/components/BlogPostShareWrapper";
+import { SITE_URL } from "@/lib/site";
 
 // ... rest of code
 
@@ -59,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const title = post.seoTitle || post.title;
     const description = post.seoDescription || post.excerpt || 'Read the latest legal insights from AdvanceEdge.';
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog/${post.slug}`;
+    const url = `${SITE_URL}/resources/blog/${post.slug}`;
     const ogImage = post.ogImage || (post.image ? urlFor(post.image)?.width(1200).height(630).url() : null);
 
     return {
@@ -109,6 +111,21 @@ export async function generateStaticParams() {
   }
 }
 
+// Renders images placed inside a post's body (added in the Studio schema).
+const portableTextComponents = {
+  types: {
+    image: ({ value }: { value: { asset?: unknown; alt?: string } }) => {
+      const src = value?.asset ? urlFor(value as SanityImageSource)?.width(1400).fit("max").url() : null;
+      if (!src) return null;
+      return (
+        <figure className="my-8">
+          <Image src={src} alt={value.alt || ""} className="w-full h-auto rounded-2xl" loading="lazy" />
+        </figure>
+      );
+    },
+  },
+};
+
 export default async function BlogPost({ params }: Props) {
   try {
     const resolvedParams = await params;
@@ -122,7 +139,7 @@ export default async function BlogPost({ params }: Props) {
               Post Not Found
             </h1>
             <p className="text-slate-400 mb-6">
-              The article you're looking for doesn't exist.
+              The article you&apos;re looking for doesn&apos;t exist.
             </p>
             <Link
               href="/resources/blog"
@@ -221,17 +238,20 @@ export default async function BlogPost({ params }: Props) {
             <div className="lg:col-span-2 space-y-10">
               {postImageUrl && (
                 <div className="rounded-3xl border border-slate-800/70 bg-slate-900/40 overflow-hidden shadow-[0_24px_70px_rgba(15,23,42,0.85)]">
-                  <img
-                    src={postImageUrl}
-                    alt={post.title}
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                  />
+                  <Image
+                  src={postImageUrl}
+                  alt={(post.image as { alt?: string } | undefined)?.alt || post.title}
+                  width={1600}
+                  height={900}
+                  sizes="(min-width: 1024px) 760px, 100vw"
+                  priority
+                  className="w-full h-auto object-cover"
+                />
                 </div>
               )}
 
               <article className="prose prose-invert prose-lg max-w-none prose-headings:text-slate-50 prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-200 prose-p:leading-relaxed prose-a:text-[#FF9A28] hover:prose-a:text-[#ffb65b] prose-strong:text-slate-100 prose-em:text-slate-100 prose-li:text-slate-200 prose-li:marker:text-[#FF9A28] prose-blockquote:border-l-[#FF9A28]/60 prose-blockquote:text-slate-200 prose-code:text-[#FF9A28] prose-code:bg-slate-900/70 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-slate-900/80 prose-pre:border prose-pre:border-slate-800">
-                {Array.isArray(post.body) && <PortableText value={post.body} />}
+                {Array.isArray(post.body) && <PortableText value={post.body} components={portableTextComponents} />}
               </article>
 
               {/* Share Buttons */}
@@ -295,10 +315,10 @@ export default async function BlogPost({ params }: Props) {
                 </h4>
                 <p className="text-sm text-slate-300 mb-4">
                   Book a call with the AdvanceEdge team to see how this applies to
-                  your firm's intake and marketing.
+                  your firm&apos;s intake and marketing.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/book-a-call"
                   className="inline-flex items-center gap-2 rounded-full bg-[#FF9A28] px-5 py-2.5 text-xs font-semibold text-slate-950 shadow-lg shadow-[#FF9A28]/30 transition-transform hover:-translate-y-0.5 hover:bg-[#ffb454]"
                 >
                   Book a strategy call
@@ -332,7 +352,7 @@ export default async function BlogPost({ params }: Props) {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/book-a-call"
                   className="inline-flex items-center gap-2 rounded-full bg-[#FF9A28] px-8 py-3 text-sm md:text-base font-semibold text-slate-950 shadow-lg shadow-[#FF9A28]/30 transition-transform hover:-translate-y-0.5 hover:bg-[#ffb454]"
                 >
                   Book a Call

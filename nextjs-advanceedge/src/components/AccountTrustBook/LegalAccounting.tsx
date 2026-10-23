@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from 'react';
 
 export default function LegalAccountingPage() {
@@ -25,11 +26,14 @@ export default function LegalAccountingPage() {
           {/* Image Column */}
           <div className="w-full md:w-1/2 flex justify-center ">
             <div className="relative  a p-4  shadow-2xl">
-            <img 
-          src="/accounting/trust-bookkeeping.webp" 
-          alt="Law firm financial reports and IOLTA trust account records" 
-          className="w-full h-full object-cover rounded-3xl"
-        />
+            <Image
+              src="/accounting/trust-bookkeeping.webp"
+              alt="Law firm financial reports and IOLTA trust account records"
+              width={474}
+              height={578}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="w-full h-full object-cover rounded-3xl"
+            />
             </div>
           </div>
 

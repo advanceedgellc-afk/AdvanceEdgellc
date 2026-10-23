@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useBookingModal } from "@/context/BookingModalContext";
 
 import {
@@ -11,10 +11,6 @@ import {
   BarChart3,
   Moon,
   Cpu,
-  Star,
-  X,
-  ArrowRight,
-  Sparkles,
 } from "lucide-react";
 
 const features = [

@@ -7,7 +7,7 @@ import { useBookingModal } from "@/context/BookingModalContext";
 export default function VaasOnboardingSection() {
   const { openBookingModal } = useBookingModal();
 
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [ setHoveredCard] = useState(null);
 
   const steps = [
     {

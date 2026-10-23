@@ -2,7 +2,22 @@
 // app/terms-of-service/page.tsx
 
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Terms of Service | Website, SMS & Booking Terms | AdvanceEdge",
+  description:
+    "Read the terms for using AdvanceEdge's website, forms, chat and booking tools, including SMS consent, disclaimers and how to contact us.",
+  alternates: { canonical: "/terms-of-service" },
+  openGraph: {
+   title: "Terms of Service | Website, SMS & Booking Terms | AdvanceEdge",
+    description:
+      "The terms that govern use of the AdvanceEdge website, forms, chat and booking tools.",
+    url: "/terms-of-service",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
+};
 const siteUrl = "https://advanceedgellc.com/";
 
 function TermsSection({
