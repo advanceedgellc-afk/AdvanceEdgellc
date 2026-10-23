@@ -11,7 +11,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    deskTool(),   // deskTool is the standard Studio structure plugin
+    structureTool(),
     visionTool(), // Keep Vision for query testing
   ],
 
@@ -19,3 +19,7 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+function structureTool(): any {
+  throw new Error('Function not implemented.')
+}
+
