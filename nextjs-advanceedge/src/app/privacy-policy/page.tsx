@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
                 This Privacy Policy explains how we collect, use, share, and
                 protect personal information when you visit{" "}
                 <ContactLink href={siteUrl}>
-                  https://advanceedgellc.com
+                  https://www.advanceedgellc.com
                 </ContactLink>
                 , submit a form, book a call, subscribe to our newsletter,
                 call us, or receive texts or emails from us (together, the

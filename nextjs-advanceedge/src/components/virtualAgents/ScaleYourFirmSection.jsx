@@ -39,9 +39,9 @@ export default function ScaleYourFirmSection() {
           <div className="animate-fadeInLeft ">
             
 
-            <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 leading-tight">
               Scale Your Firm with Expert Virtual Agents
-            </h1>
+            </h2>
             {/* Orange Underline */}
             <div className="w-16 h-1 bg-[#FF9A28] mb-6"></div>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">

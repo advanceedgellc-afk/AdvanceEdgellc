@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     title: 'Contact AdvanceEdge | Legal Intake & Operations Support',
     description: 'Talk to AdvanceEdge about 24/7 legal intake, case qualification, medical record retrieval and review, and virtual legal staff.',
     type: 'website',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/contact`,
+    url: '/contact',
     siteName: 'AdvanceEdge',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/og-contact.jpg`,
+        url: '/og-contact.jpg',
         width: 1200,
         height: 630,
         alt: 'Contact AdvanceEdge - Legal Marketing Solutions',
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact AdvanceEdge | Legal Intake & Operations Support',
     description: 'Talk to AdvanceEdge about 24/7 legal intake, case qualification, medical record retrieval and review, and virtual legal staff.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/og-contact.jpg`],
+    images: ['/og-contact.jpg'],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com/'}/contact`,
+    canonical: '/contact',
   },
   robots: {
     index: true,

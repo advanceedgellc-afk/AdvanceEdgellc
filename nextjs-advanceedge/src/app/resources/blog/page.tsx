@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     title: 'AdvanceEdge Blog | Legal Intake & Operations Insights',
     description: 'Practical guides on legal intake, case qualification, medical records and Mass Tort operations for law firms and legal marketers.',
     type: 'website',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog`,
+    url: '/resources/blog',
     siteName: 'AdvanceEdge',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-blog.jpg`,
+        url: '/og-blog.jpg',
         width: 1200,
         height: 630,
         alt: 'AdvanceEdge Legal Growth Blog',
@@ -66,10 +66,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AdvanceEdge Blog | Legal Intake & Operations Insights',
     description: 'Deep dives on intake, advertising, and operations for law firms.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-blog.jpg`],
+    images: ['/og-blog.jpg'],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/resources/blog`,
+    canonical: '/resources/blog',
   },
   robots: {
     index: true,

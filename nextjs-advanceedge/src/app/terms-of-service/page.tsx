@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
-const siteUrl = "https://advanceedgellc.com/";
+const siteUrl = "https://www.advanceedgellc.com/";
 
 function TermsSection({
   title,
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
                 These Terms of Service (&quot;Terms&quot;) govern your use
                 of{" "}
                 <TermsLink href={siteUrl}>
-                  https://advanceedgellc.com
+                  https://www.advanceedgellc.com
                 </TermsLink>{" "}
                 and any related pages, forms, chat tools, booking pages,
                 newsletters, and communications (together, the

@@ -1,10 +1,18 @@
-import React from 'react';
+import type { Metadata } from 'next';
+
+// Placeholder until the service page is written: kept out of Google's index
+export const metadata: Metadata = {
+  title: 'Settlement & Post-Resolution Support | AdvanceEdge',
+  description: 'Settlement administration and post-resolution support for law firms from AdvanceEdge. Full details coming soon.',
+  alternates: { canonical: '/services/litigation-teams/settlement-post-resolution' },
+  robots: { index: false, follow: true },
+};
 
 /**
  * A modern, dark-themed "Coming Soon" page.
  * Updated to use an orange brand color.
  */
-export default function App() {
+export default function SettlementPostResolutionPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 font-sans antialiased">
       <div className="max-w-2xl w-full text-center space-y-8">

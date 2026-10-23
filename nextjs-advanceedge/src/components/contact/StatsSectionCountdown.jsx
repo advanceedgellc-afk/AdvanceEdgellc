@@ -3,34 +3,31 @@
 import React, { useState, useEffect } from 'react';
 
 export default function StatsSection() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [count3, setCount3] = useState(0);
-  // Counters start at 0 and animate up as soon as the section mounts
-  const shouldAnimate = true;
+  // Real numbers are in the HTML from the start (so search engines never see "0+").
+  // On the client the counters run up from 0 once.
+  const [count1, setCount1] = useState(25);
+  const [count2, setCount2] = useState(43000);
+  const [count3, setCount3] = useState(300);
 
   useEffect(() => {
-    if (!shouldAnimate) return;
-
-    // Odometer-style animation with smaller steps for smooth effect
-    const timer1 = setInterval(() => {
-      setCount1(prev => Math.min(prev + 1, 25));
-    }, 50);
-
-    const timer2 = setInterval(() => {
-      setCount2(prev => Math.min(prev + 1000, 43000));
-    }, 40);
-
-    const timer3 = setInterval(() => {
-      setCount3(prev => Math.min(prev + 15, 300));
-    }, 45);
-
-    return () => {
-      clearInterval(timer1);
-      clearInterval(timer2);
-      clearInterval(timer3);
+    const run = (target, step, ms, set) => {
+      let value = 0;
+      const timer = setInterval(() => {
+        value = Math.min(value + step, target);
+        set(value);
+        if (value === target) clearInterval(timer);
+      }, ms);
+      return timer;
     };
-  }, [shouldAnimate]);
+    const t1 = run(25, 1, 50, setCount1);
+    const t2 = run(43000, 1000, 40, setCount2);
+    const t3 = run(300, 15, 45, setCount3);
+    return () => {
+      clearInterval(t1);
+      clearInterval(t2);
+      clearInterval(t3);
+    };
+  }, []);
 
   const formatNumber = (num) => {
     if (num >= 1000) {

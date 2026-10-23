@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     title: 'About AdvanceEdge | Legal Operations Partner Since 2011',
   description: 'Legal intake, medical records and back-office operations for Mass Tort and PI firms since 2011. Human-led, AI-assisted, 24/7.',
     type: 'website',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/about`,
+    url: '/about',
     siteName: 'AdvanceEdge',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-about.jpg`,
+        url: '/og-about.jpg',
         width: 1200,
         height: 630,
         alt: 'About AdvanceEdge - Legal Solutions',
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About AdvanceEdge | Legal Operations Partner Since 2011',
     description: 'Legal intake, medical records and back-office operations for Mass Tort and PI firms since 2011. Human-led, AI-assisted, 24/7.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/og-about.jpg`],
+    images: ['/og-about.jpg'],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'}/about`,
+    canonical: '/about',
   },
   robots: {
     index: true,

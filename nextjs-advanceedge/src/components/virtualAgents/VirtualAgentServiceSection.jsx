@@ -9,22 +9,25 @@ export default function VirtualAgentSection() {
 
     const { openBookingModal } = useBookingModal();
   
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
+  // Real percentages are in the HTML from the start; the client counts them up once
+  const [count1, setCount1] = useState(70);
+  const [count2, setCount2] = useState(50);
 
-  // Animate counters
   useEffect(() => {
-    const timer1 = setInterval(() => {
-      setCount1((prev) => (prev < 70 ? prev + 1 : 70));
-    }, 30);
-
-    const timer2 = setInterval(() => {
-      setCount2((prev) => (prev < 50 ? prev + 1 : 50));
-    }, 30);
-
+    const run = (target, set) => {
+      let value = 0;
+      const timer = setInterval(() => {
+        value = Math.min(value + 1, target);
+        set(value);
+        if (value === target) clearInterval(timer);
+      }, 30);
+      return timer;
+    };
+    const t1 = run(70, setCount1);
+    const t2 = run(50, setCount2);
     return () => {
-      clearInterval(timer1);
-      clearInterval(timer2);
+      clearInterval(t1);
+      clearInterval(t2);
     };
   }, []);
 

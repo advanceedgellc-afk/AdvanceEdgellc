@@ -31,7 +31,7 @@ function TikTokIcon({
 
 export default function BlogPostShare({ title, slug }: BlogPostShareProps) {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://advanceedgellc.com'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.advanceedgellc.com'
   const postUrl = `${baseUrl}/blog/${slug}`
 
   const socialLinks = [
@@ -54,7 +54,7 @@ export default function BlogPostShare({ title, slug }: BlogPostShareProps) {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: `https://www.instagram.com/advanceedge_/#`,
+      url: `https://www.instagram.com/advanceedge_/`,
       color: 'hover:bg-[#E4405F]',
     },
     {
