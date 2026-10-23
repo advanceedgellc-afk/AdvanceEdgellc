@@ -67,7 +67,7 @@ export async function POST(request: Request) {
             If you need to add anything else, you can simply reply to this email.
           </p>
 
-          <a href="https://advanceedgellc.com" style="display: inline-block; background: #FF9A28; color: #0a0d1e; padding: 10px 26px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
+          <a href="https://www.advanceedgellc.com" style="display: inline-block; background: #FF9A28; color: #0a0d1e; padding: 10px 26px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
             Visit Our Website
           </a>
 

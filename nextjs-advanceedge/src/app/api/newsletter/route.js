@@ -58,7 +58,7 @@ export async function POST(request) {
             If you have any questions or need assistance, feel free to reach out to us at any time.
           </p>
           
-          <a href="https://advanceedgellc.com" style="display: inline-block; background: #FF9A28; color: #0a0d1e; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+          <a href="https://www.advanceedgellc.com" style="display: inline-block; background: #FF9A28; color: #0a0d1e; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold;">
             Visit Our Website
           </a>
           

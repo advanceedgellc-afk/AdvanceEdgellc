@@ -6,7 +6,7 @@ export default function StatsSection() {
   // Real numbers are in the HTML from the start (so search engines never see "0+").
   // On the client the counters run up from 0 once.
   const [count1, setCount1] = useState(25);
-  const [count2, setCount2] = useState(43000);
+  const [count2, setCount2] = useState(1500000);
   const [count3, setCount3] = useState(300);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function StatsSection() {
       return timer;
     };
     const t1 = run(25, 1, 50, setCount1);
-    const t2 = run(43000, 1000, 40, setCount2);
+    const t2 = run(1500000, 50000, 40, setCount2);
     const t3 = run(300, 15, 45, setCount3);
     return () => {
       clearInterval(t1);
@@ -29,7 +29,11 @@ export default function StatsSection() {
     };
   }, []);
 
+  // 1,500,000 -> "1.5M", 50,000 -> "50k"
   const formatNumber = (num) => {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
     if (num >= 1000) {
       return (num / 1000).toFixed(0) + 'k';
     }
