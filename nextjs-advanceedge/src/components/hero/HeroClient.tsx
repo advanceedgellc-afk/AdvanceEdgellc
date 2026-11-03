@@ -1,7 +1,7 @@
 "use client";
 
 import { useBookingModal } from "@/context/BookingModalContext";
-import DeferredGhlContactForm from "@/components/forms/DeferredGhlContactForm";
+import LeadForm from "@/components/forms/LeadForm";
 
 const handleScrollToServices = () => {
   const el = document.getElementById("services");
@@ -76,7 +76,7 @@ export default function HeroClient() {
 
           {/* Right form */}
           <div>
-            <DeferredGhlContactForm />
+            <LeadForm />
           </div>
         </div>
       </div>

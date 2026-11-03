@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import { useBookingModal } from "@/context/BookingModalContext";
-import GhlContactForm from "@/components/forms/GhlContactForm";
+import LeadForm from "@/components/forms/LeadForm";
 
 export default function BlogHero() {
   const { openBookingModal } = useBookingModal();
@@ -60,7 +60,7 @@ export default function BlogHero() {
 
           {/* Right: contact form */}
           <div className="w-full max-w-2xl mx-auto lg:mx-0">
-            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+            <LeadForm />
           </div>
         </div>
       </div>

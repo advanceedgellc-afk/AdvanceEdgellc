@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import StatsSectionCountdown from "@/components/contact/StatsSectionCountdown";
 import MapSection from "@/components/contact/MapSection";
 import IndustryExpertiseSection from "@/components/About/IndustryExpertiseSection";
-import GhlContactForm from "@/components/forms/GhlContactForm";
+import LeadForm from "@/components/forms/LeadForm";
 
 export default function ContactPageClient() {
   return (
@@ -110,8 +110,8 @@ export default function ContactPageClient() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100">
-<GhlContactForm/>
+            <div className="  rounded-2xl  border border-gray-100">
+<LeadForm title="Send Us a Message" />
             </div>
           </div>
         </div>

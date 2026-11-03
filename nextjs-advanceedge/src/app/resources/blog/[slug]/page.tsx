@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import BlogPostShareWrapper from "@/components/BlogPostShareWrapper";
+import GooglePreferredSource from "@/components/GooglePreferredSource";
 import { SITE_URL } from "@/lib/site";
 
 // ... rest of code
@@ -253,6 +254,9 @@ export default async function BlogPost({ params }: Props) {
               <article className="prose prose-invert prose-lg max-w-none prose-headings:text-slate-50 prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-200 prose-p:leading-relaxed prose-a:text-[#FF9A28] hover:prose-a:text-[#ffb65b] prose-strong:text-slate-100 prose-em:text-slate-100 prose-li:text-slate-200 prose-li:marker:text-[#FF9A28] prose-blockquote:border-l-[#FF9A28]/60 prose-blockquote:text-slate-200 prose-code:text-[#FF9A28] prose-code:bg-slate-900/70 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-slate-900/80 prose-pre:border prose-pre:border-slate-800">
                 {Array.isArray(post.body) && <PortableText value={post.body} components={portableTextComponents} />}
               </article>
+
+              {/* Google preferred source */}
+              <GooglePreferredSource />
 
               {/* Share Buttons */}
               <div className="mt-10 pt-8 border-t border-slate-800">

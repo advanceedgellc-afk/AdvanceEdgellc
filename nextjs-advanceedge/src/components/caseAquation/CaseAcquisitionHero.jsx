@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from 'react';
 import { useBookingModal } from "@/context/BookingModalContext";
-import GhlContactForm from "@/components/forms/GhlContactForm";
+import LeadForm from "@/components/forms/LeadForm";
 
 /**
  * Case Acquisition Hero Component
@@ -77,7 +77,7 @@ export default function App() {
       </div>
                 {/* Right form */}
                 <div className="w-full max-w-2xl mx-auto lg:mx-0">
-            <GhlContactForm className="min-h-[560px]" iframeHeight={531} />
+            <LeadForm />
           </div>
         </div>
       </div>

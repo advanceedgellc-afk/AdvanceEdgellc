@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import NewsletterForm from "@/components/NewsletterForm";
+import GooglePreferredSource from "@/components/GooglePreferredSource";
 
 /* Stable TikTok SVG (hydration-safe) */
 function TikTokIcon({ className }: { className?: string }) {
@@ -199,6 +200,9 @@ export default function Footer() {
               Practical intake and operations tips for law firms, straight to your inbox.
             </p>
             <NewsletterForm />
+            <div className="mt-6">
+              <GooglePreferredSource variant="compact" />
+            </div>
           </div>
         </div>
 

@@ -1,3 +1,10 @@
+// Website lead form -> GoHighLevel (free API route, no premium webhook trigger).
+// Creates or updates the contact, tags it "website-lead" (start your GHL
+// workflow with the free "Contact Tag" trigger), and adds a note with the
+// message, SMS consent and where the lead came from.
+
+const GHL_BASE = "https://services.leadconnectorhq.com";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -9,6 +16,9 @@ export async function POST(request: Request) {
     const phone = String(body.phone ?? "").trim();
     const email = String(body.email ?? "").trim();
     const message = String(body.message ?? "").trim();
+    const smsConsent = body.smsConsent === true;
+    const company = String(body.company ?? "").trim().slice(0, 120);
+    const service = String(body.service ?? "").trim().slice(0, 80);
 
     if (!name || !phone || !email) {
       return Response.json(
@@ -29,30 +39,95 @@ export async function POST(request: Request) {
       );
     }
 
-    const [firstName, ...rest] = name.split(/\s+/);
+    const token = process.env.GHL_API_TOKEN;
+    const locationId = process.env.GHL_LOCATION_ID;
+    if (!token || !locationId) {
+      console.error("GHL_API_TOKEN or GHL_LOCATION_ID is not set");
+      return Response.json({ success: false }, { status: 500 });
+    }
 
-    const res = await fetch(process.env.GHL_WEBHOOK_URL!, {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      Version: "2021-07-28",
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
+
+    const [firstName, ...rest] = name.split(/\s+/);
+    const tags = ["website-lead"];
+    if (smsConsent) tags.push("sms-consent");
+
+    // 1) Create or update the contact (GHL matches on email/phone, so a
+    //    returning lead updates their existing contact instead of duplicating it).
+    //    Tags are NOT sent here: upsert would replace all of the contact's tags.
+    const contactRes = await fetch(`${GHL_BASE}/contacts/upsert`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       signal: AbortSignal.timeout(8000),
       body: JSON.stringify({
-        first_name: firstName,
-        last_name: rest.join(" "),
-        full_name: name,
+        locationId,
+        firstName,
+        lastName: rest.join(" "),
+        name,
         email,
         phone,
-        message,
+        ...(company ? { companyName: company } : {}),
         source: "Website - Contact Form",
-        page_url: body.pageUrl ?? "",
-        utm_source: body.utm_source ?? "",
-        utm_medium: body.utm_medium ?? "",
-        utm_campaign: body.utm_campaign ?? "",
       }),
     });
 
-    if (!res.ok) {
-      console.error("GHL webhook error:", res.status, await res.text());
+    const contactData = await contactRes.json().catch(() => ({}));
+    if (!contactRes.ok) {
+      console.error("GHL contact error:", contactRes.status, contactData);
       return Response.json({ success: false }, { status: 502 });
+    }
+
+    // 2) Add the message and lead details as a note (a failure here doesn't lose the lead)
+    const contactId = contactData?.contact?.id;
+    if (contactId) {
+      const lines = [
+        `Interested in: ${service || "(not selected)"}`,
+        ...(company ? [`Firm: ${company}`] : []),
+        "",
+        message ? `Message:\n${message}` : "Message: (none)",
+        "",
+        `SMS consent: ${smsConsent ? "Yes" : "No"}`,
+        `Page: ${body.pageUrl ?? ""}`,
+      ];
+      const utm = ["utm_source", "utm_medium", "utm_campaign"]
+        .filter((k) => body[k])
+        .map((k) => `${k}: ${body[k]}`);
+      if (utm.length) lines.push(...utm);
+
+      const noteRes = await fetch(`${GHL_BASE}/contacts/${contactId}/notes`, {
+        method: "POST",
+        headers,
+        signal: AbortSignal.timeout(8000),
+        body: JSON.stringify({ body: lines.join("\n") }),
+      });
+      if (!noteRes.ok) console.error("GHL note error:", noteRes.status, await noteRes.text());
+    }
+
+    // 3) Tag the contact. This starts the "Contact Tag added: website-lead"
+    //    workflow. A returning contact already has the tag, so remove it first;
+    //    otherwise GHL sees no new tag and the workflow would not run again.
+    if (contactId) {
+      const tagUrl = `${GHL_BASE}/contacts/${contactId}/tags`;
+      if (contactData?.new === false) {
+        await fetch(tagUrl, {
+          method: "DELETE",
+          headers,
+          signal: AbortSignal.timeout(8000),
+          body: JSON.stringify({ tags: ["website-lead"] }),
+        }).catch((e) => console.error("GHL tag remove error:", e));
+      }
+      const tagRes = await fetch(tagUrl, {
+        method: "POST",
+        headers,
+        signal: AbortSignal.timeout(8000),
+        body: JSON.stringify({ tags }),
+      });
+      if (!tagRes.ok) console.error("GHL tag error:", tagRes.status, await tagRes.text());
     }
 
     return Response.json({ success: true });

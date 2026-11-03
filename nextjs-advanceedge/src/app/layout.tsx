@@ -68,13 +68,27 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${dmSans.className} antialiased`}
       >
-        {/* Google Tag Manager — loaded by Next.js right after the page becomes interactive */}
+        {/* Google Tag Manager — loaded on the visitor's first interaction
+            (scroll, tap, mouse move, key press) or 4 s after page load,
+            whichever comes first, so it doesn't slow down the first paint. */}
         <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-M99ZNLFC');`}
+          {`(function(w,d,i){
+  w.dataLayer=w.dataLayer||[];
+  var start=new Date().getTime(),done=false,timer;
+  var ev=['scroll','pointerdown','pointermove','keydown','touchstart'];
+  function load(){
+    if(done)return;done=true;
+    ev.forEach(function(e){w.removeEventListener(e,load);});
+    clearTimeout(timer);
+    w.dataLayer.push({'gtm.start':start,event:'gtm.js'});
+    var j=d.createElement('script');j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+    d.head.appendChild(j);
+  }
+  ev.forEach(function(e){w.addEventListener(e,load,{once:true,passive:true});});
+  function later(){timer=setTimeout(load,4000);}
+  if(d.readyState==='complete')later();else w.addEventListener('load',later,{once:true});
+})(window,document,'GTM-M99ZNLFC');`}
         </Script>
 
         {/* Google Tag Manager (noscript) */}
