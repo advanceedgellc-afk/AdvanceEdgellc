@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 
-const CALENDAR_ID = "s54GZdTRGQGhxQIVqVvU";
+const CALENDAR_ID = "g"; //s54GZdTRGQGhxQIVqVvU
 
 type GhlBookingCalendarProps = {
   className?: string;
