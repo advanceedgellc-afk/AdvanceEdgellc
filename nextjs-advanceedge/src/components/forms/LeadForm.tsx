@@ -20,6 +20,13 @@ import {
   RefreshCw
 } from "lucide-react";
 
+/**
+ * ON/OFF SWITCH for every website form (home hero, service pages, contact page).
+ * false = forms are completely hidden everywhere.
+ * true  = forms are shown.
+ */
+export const LEAD_FORM_ENABLED = false;
+
 // Professional legal services list
 const SERVICES = [
   "Legal Intake & Contact Center",
@@ -160,6 +167,9 @@ export default function LeadForm({
       </div>
     </div>
   );
+
+  // Forms switched off: render nothing.
+  if (!LEAD_FORM_ENABLED) return null;
 
   return (
     <div className={`${s.card} ${className}`}>

@@ -9,7 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import NewsletterForm from "@/components/NewsletterForm";
+// import NewsletterForm from "@/components/NewsletterForm";
 import GooglePreferredSource from "@/components/GooglePreferredSource";
 
 /* Stable TikTok SVG (hydration-safe) */
@@ -199,7 +199,7 @@ export default function Footer() {
             <p className="font-dm text-gray-400 mb-4">
               Practical intake and operations tips for law firms, straight to your inbox.
             </p>
-            <NewsletterForm />
+            {/* <NewsletterForm /> */}
             <div className="mt-6">
               <GooglePreferredSource variant="compact" />
             </div>
