@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const LOADER_SRC = "https://widgets.leadconnectorhq.com/loader.js";
 const RESOURCES_URL = "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
-const WIDGET_ID = "6ae8d799629a77bacfd877d9";
+const WIDGET_ID = "6a3eb91b00578e71d11476bf";
 
 /**
  * GoHighLevel chat bubble.
